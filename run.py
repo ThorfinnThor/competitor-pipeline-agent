@@ -382,18 +382,18 @@ def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
     source_url = ""
     raw_text = ""
 
-    if typ == "direct_pdf":
-    pdf_url = company["pdf_url"]
-    source_url = pdf_url
-    pdf = http_get(pdf_url).content
-    safe_text_dump(os.path.join(raw_dir, f"{today}.source.txt"),
+        if typ == "direct_pdf":
+            pdf_url = company["pdf_url"]
+            source_url = pdf_url
+            pdf = http_get(pdf_url).content
+             safe_text_dump(os.path.join(raw_dir, f"{today}.source.txt"),
                    f"PDF URL: {pdf_url}\nSHA256: {sha256_bytes(pdf)}\n")
     raw_text = pdf_to_text(pdf)
 
-    elif typ == "sec_latest_presentation":
-    cik = company["cik"]
-    pres_url = find_latest_biontech_presentation_from_sec(cik)
-    source_url = pres_url
+        elif typ == "sec_latest_presentation":
+            cik = company["cik"]
+            pres_url = find_latest_biontech_presentation_from_sec(cik)
+            source_url = pres_url
 
         r = http_get(pres_url, headers=sec_headers())
         r.raise_for_status()
