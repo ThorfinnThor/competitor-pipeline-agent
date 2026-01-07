@@ -3,19 +3,11 @@
   "programs": [
     {
       "asset": "AKEEGA (niraparib/abiraterone)",
-      "indication": null,
-      "phase": null,
-      "trial_or_program": null,
-      "partner": "TESARO, an oncology-focused business within GSK",
-      "notes": "niraparib/abiraterone"
-    },
-    {
-      "asset": "DARZALEX (daratumumab)",
       "indication": "M1 Metastatic Castration-Sensitive Prostate Cancer",
       "phase": null,
       "trial_or_program": "AMPLITUDE",
-      "partner": "Genmab A/S",
-      "notes": "daratumumab"
+      "partner": "TESARO, an oncology-focused business within GSK",
+      "notes": null
     },
     {
       "asset": "DARZALEX (daratumumab)",
@@ -23,7 +15,7 @@
       "phase": null,
       "trial_or_program": "AQUILA",
       "partner": "Genmab A/S",
-      "notes": "daratumumab"
+      "notes": null
     },
     {
       "asset": "DARZALEX (daratumumab)",
@@ -31,7 +23,7 @@
       "phase": null,
       "trial_or_program": "CEPHEUS",
       "partner": "Genmab A/S",
-      "notes": "daratumumab"
+      "notes": null
     },
     {
       "asset": "IMBRUVICA (ibrutinib)",
@@ -39,7 +31,7 @@
       "phase": null,
       "trial_or_program": "GLOW",
       "partner": "Pharmacyclics, LLC, an AbbVie company",
-      "notes": "ibrutinib"
+      "notes": null
     },
     {
       "asset": "IMBRUVICA (ibrutinib)",
@@ -47,7 +39,7 @@
       "phase": null,
       "trial_or_program": "Triangle",
       "partner": "Pharmacyclics, LLC, an AbbVie company",
-      "notes": "ibrutinib"
+      "notes": null
     },
     {
       "asset": "INLEXZO (gemcitabine intravesical system)",
@@ -55,7 +47,7 @@
       "phase": null,
       "trial_or_program": "SunRISe-1",
       "partner": null,
-      "notes": "gemcitabine intravesical system"
+      "notes": null
     },
     {
       "asset": "RYBREVANT (amivantamab)",
@@ -63,15 +55,15 @@
       "phase": null,
       "trial_or_program": "PAPILLON",
       "partner": null,
-      "notes": "amivantamab"
+      "notes": null
     },
     {
       "asset": "RYBREVANT (amivantamab)",
-      "indication": "Non Small Cell Lung Cancer",
+      "indication": null,
       "phase": null,
       "trial_or_program": "PALOMA-3",
       "partner": null,
-      "notes": "amivantamab; Subcutaneous formulation development"
+      "notes": "Subcutaneous"
     },
     {
       "asset": "Bleximenib",
@@ -87,7 +79,7 @@
       "phase": null,
       "trial_or_program": "CARTITUDE-5",
       "partner": "Legend Biotech",
-      "notes": "Ciltacabtagene autoleucel"
+      "notes": null
     },
     {
       "asset": "CARVYKTI (Ciltacabtagene autoleucel)",
@@ -95,7 +87,7 @@
       "phase": null,
       "trial_or_program": "CARTITUDE-6",
       "partner": "Legend Biotech",
-      "notes": "Ciltacabtagene autoleucel"
+      "notes": null
     },
     {
       "asset": "ERLEADA (apalutamide)",
@@ -103,7 +95,7 @@
       "phase": null,
       "trial_or_program": "ATLAS",
       "partner": "Regents of California and Memorial Sload Kettering",
-      "notes": "apalutamide"
+      "notes": null
     },
     {
       "asset": "ERLEADA (apalutamide)",
@@ -111,7 +103,7 @@
       "phase": null,
       "trial_or_program": "PROTEUS",
       "partner": "Regents of California and Memorial Sload Kettering",
-      "notes": "apalutamide"
+      "notes": null
     },
     {
       "asset": "INLEXZO (gemcitabine intravesical system)",
@@ -119,7 +111,7 @@
       "phase": null,
       "trial_or_program": "SunRISe-3",
       "partner": null,
-      "notes": "gemcitabine intravesical system"
+      "notes": null
     },
     {
       "asset": "INLEXZO (gemcitabine intravesical system)",
@@ -127,15 +119,15 @@
       "phase": null,
       "trial_or_program": "SunRISe-5",
       "partner": null,
-      "notes": "gemcitabine intravesical system"
+      "notes": null
     },
     {
-      "asset": "JNJ-1900",
+      "asset": "JNJ-1900 (NBTXR3)",
       "indication": "Head and Neck Cancer",
       "phase": null,
       "trial_or_program": null,
       "partner": "Nanobiotix",
-      "notes": "NBTXR3"
+      "notes": null
     },
     {
       "asset": "pasritamig",
@@ -151,7 +143,7 @@
       "phase": null,
       "trial_or_program": "ORIGAMI-2",
       "partner": null,
-      "notes": "amivantamab"
+      "notes": null
     },
     {
       "asset": "RYBREVANT (amivantamab)",
@@ -159,10 +151,18 @@
       "phase": null,
       "trial_or_program": "ORIGAMI-3",
       "partner": null,
-      "notes": "amivantamab"
+      "notes": null
     },
     {
       "asset": "TALVEY + TECVAYLI",
+      "indication": "Relapsed Refractory Multiple Myeloma CD38 exposed",
+      "phase": null,
+      "trial_or_program": "MonumenTAL-6",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TALVEY (talquetamab)",
       "indication": "Relapsed Refractory Multiple Myeloma CD38 exposed",
       "phase": null,
       "trial_or_program": "MonumenTAL-6",
@@ -175,15 +175,7 @@
       "phase": null,
       "trial_or_program": "MonumenTAL-3",
       "partner": null,
-      "notes": "talquetamab"
-    },
-    {
-      "asset": "TALVEY (talquetamab)",
-      "indication": "Relapsed Refractory Multiple Myeloma CD38 exposed",
-      "phase": null,
-      "trial_or_program": "MonumenTAL-6",
-      "partner": null,
-      "notes": "talquetamab"
+      "notes": null
     },
     {
       "asset": "TAR-210 (RIS/erdafitinib)",
@@ -191,7 +183,7 @@
       "phase": null,
       "trial_or_program": "MoonRISe-1",
       "partner": null,
-      "notes": "RIS/erdafitinib"
+      "notes": null
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -199,7 +191,7 @@
       "phase": null,
       "trial_or_program": "MajesTEC-3",
       "partner": null,
-      "notes": "teclistamab"
+      "notes": null
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -207,7 +199,7 @@
       "phase": null,
       "trial_or_program": "MajesTEC-4",
       "partner": null,
-      "notes": "teclistamab"
+      "notes": null
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -215,7 +207,15 @@
       "phase": null,
       "trial_or_program": "MajesTEC-7",
       "partner": null,
-      "notes": "teclistamab"
+      "notes": null
+    },
+    {
+      "asset": "TALVEY + TECVAYLI",
+      "indication": "TIE NDMM in combination with DR",
+      "phase": null,
+      "trial_or_program": "MajesTEC-7",
+      "partner": null,
+      "notes": null
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -223,10 +223,10 @@
       "phase": null,
       "trial_or_program": "MajesTEC-9",
       "partner": null,
-      "notes": "teclistamab"
+      "notes": null
     },
     {
-      "asset": "bleximenib",
+      "asset": "Bleximenib",
       "indication": "Relapsed Refractory Acute Myeloid Leukemia",
       "phase": null,
       "trial_or_program": "ALE1001",
@@ -239,15 +239,15 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": "ARX788"
+      "notes": null
     },
     {
-      "asset": "JNJ-1900",
+      "asset": "JNJ-1900 (NBTXR3)",
       "indication": "Lung Cancer",
       "phase": null,
       "trial_or_program": null,
       "partner": "Nanobiotix",
-      "notes": "NBTXR3"
+      "notes": null
     },
     {
       "asset": "TALVEY + TECVAYLI",
@@ -271,7 +271,7 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": "ARX305"
+      "notes": null
     },
     {
       "asset": "JNJ-1493",
@@ -367,7 +367,7 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": "ARX517"
+      "notes": null
     },
     {
       "asset": "JNJ-8377",
@@ -426,15 +426,15 @@
       "notes": null
     },
     {
-      "asset": "icotrokinra",
+      "asset": "SIMPONI (golimumab)",
       "indication": "Pediatric Ulcerative Colitis",
       "phase": null,
       "trial_or_program": "PURSUIT 2",
-      "partner": null,
+      "partner": "Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",
       "notes": null
     },
     {
-      "asset": "icotrokinra",
+      "asset": "STELARA (ustekinumab)",
       "indication": "Pediatric Crohn's Disease",
       "phase": null,
       "trial_or_program": "UNITI JR",
@@ -442,43 +442,43 @@
       "notes": null
     },
     {
-      "asset": "icotrokinra",
-      "indication": "Psoriatic Arthritis Structural Damage",
+      "asset": "STELARA (ustekinumab)",
+      "indication": "Pediatric Ulcerative Colitis",
       "phase": null,
-      "trial_or_program": "APEX",
+      "trial_or_program": "UNIFI JR",
       "partner": null,
       "notes": null
     },
     {
-      "asset": "icotrokinra",
-      "indication": "Ulcerative Colitis Subcutaneous Induction",
-      "phase": null,
-      "trial_or_program": "ASTRO",
-      "partner": null,
-      "notes": null
-    },
-    {
-      "asset": "icotrokinra",
+      "asset": "TREMFYA (guselkumab)",
       "indication": "Pediatric Juvenile Psoriatic Arthritis",
       "phase": null,
       "trial_or_program": null,
-      "partner": null,
+      "partner": "MorphoSys AG",
       "notes": null
     },
     {
-      "asset": "icotrokinra",
-      "indication": "Pediatric Crohn's Disease",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Psoriasis",
       "phase": null,
-      "trial_or_program": "MACARONI-23",
-      "partner": null,
+      "trial_or_program": "PROTOSTAR",
+      "partner": "MorphoSys AG",
       "notes": null
     },
     {
-      "asset": "icotrokinra",
-      "indication": "Pediatric Ulcerative Colitis",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Psoriatic Arthritis Structural Damage",
       "phase": null,
-      "trial_or_program": "QUASAR JR",
-      "partner": null,
+      "trial_or_program": "APEX",
+      "partner": "MorphoSys AG",
+      "notes": null
+    },
+    {
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Ulcerative Colitis Subcutaneous Induction",
+      "phase": null,
+      "trial_or_program": "ASTRO",
+      "partner": "MorphoSys AG",
       "notes": null
     },
     {
@@ -488,38 +488,6 @@
       "trial_or_program": null,
       "partner": null,
       "notes": null
-    },
-    {
-      "asset": "icotrokinra",
-      "indication": "Ulcerative Colitis",
-      "phase": null,
-      "trial_or_program": null,
-      "partner": null,
-      "notes": null
-    },
-    {
-      "asset": "SIMPONI (golimumab)",
-      "indication": null,
-      "phase": null,
-      "trial_or_program": null,
-      "partner": "Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",
-      "notes": "golimumab"
-    },
-    {
-      "asset": "STELARA (ustekinumab)",
-      "indication": null,
-      "phase": null,
-      "trial_or_program": null,
-      "partner": null,
-      "notes": "ustekinumab"
-    },
-    {
-      "asset": "TREMFYA (guselkumab)",
-      "indication": null,
-      "phase": null,
-      "trial_or_program": null,
-      "partner": "MorphoSys AG",
-      "notes": "guselkumab"
     },
     {
       "asset": "nipocalimab",
@@ -554,20 +522,20 @@
       "notes": null
     },
     {
-      "asset": "STELARA (ustekinumab)",
+      "asset": "TREMFYA (guselkumab)",
       "indication": "Pediatric Ulcerative Colitis",
       "phase": null,
-      "trial_or_program": "UNIFI JR",
-      "partner": null,
-      "notes": "ustekinumab"
+      "trial_or_program": "QUASAR JR",
+      "partner": "MorphoSys AG",
+      "notes": null
     },
     {
-      "asset": "TREMFYA (guselkumab)",
-      "indication": "Pediatric Crohn's Disease",
+      "asset": "icotrokinra",
+      "indication": "Ulcerative Colitis",
       "phase": null,
-      "trial_or_program": "MACARONI-23",
-      "partner": "MorphoSys AG",
-      "notes": "guselkumab"
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
     },
     {
       "asset": "JNJ-4804 Co-antibody Therapy",
@@ -647,23 +615,7 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": "lumateperone"
-    },
-    {
-      "asset": "CAPLYTA (lumateperone)",
-      "indication": "Bipolar Mania",
-      "phase": null,
-      "trial_or_program": null,
-      "partner": null,
-      "notes": "lumateperone"
-    },
-    {
-      "asset": "CAPLYTA (lumateperone)",
-      "indication": "Pediatric Psychiatric Indications",
-      "phase": null,
-      "trial_or_program": null,
-      "partner": null,
-      "notes": "lumateperone"
+      "notes": null
     },
     {
       "asset": "IMAAVY (nipocalimab)",
@@ -671,7 +623,7 @@
       "phase": null,
       "trial_or_program": "Vivacity MG3",
       "partner": null,
-      "notes": "nipocalimab"
+      "notes": null
     },
     {
       "asset": "IMAAVY (nipocalimab)",
@@ -679,7 +631,7 @@
       "phase": null,
       "trial_or_program": "VIBRANCE MG",
       "partner": null,
-      "notes": "nipocalimab"
+      "notes": null
     },
     {
       "asset": "SPRAVATO (esketamine)",
@@ -687,15 +639,23 @@
       "phase": null,
       "trial_or_program": "TRD4005",
       "partner": null,
-      "notes": "esketamine"
+      "notes": null
     },
     {
-      "asset": "SPRAVATO (esketamine)",
-      "indication": "Major Depressive Disorder with Suicidal Ideation Pediatrics",
+      "asset": "CAPLYTA (lumateperone)",
+      "indication": "Bipolar Mania",
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": "esketamine"
+      "notes": null
+    },
+    {
+      "asset": "CAPLYTA (lumateperone)",
+      "indication": "Pediatric Psychiatric Indications",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
     },
     {
       "asset": "nipocalimab",
@@ -711,7 +671,7 @@
       "phase": null,
       "trial_or_program": "LUMEOS",
       "partner": "UCL Business Plc",
-      "notes": null
+      "notes": "AAV-RPGR"
     },
     {
       "asset": "seltorexant",
@@ -746,20 +706,20 @@
       "notes": null
     },
     {
-      "asset": "JNJ-1887",
+      "asset": "JNJ-1887 sCD59",
       "indication": "Geographic Atrophy",
       "phase": null,
       "trial_or_program": null,
       "partner": "Hemera Biosciences",
-      "notes": "sCD59"
+      "notes": null
     },
     {
-      "asset": "JNJ-2056",
+      "asset": "JNJ-2056 (tau active immunotherapy)",
       "indication": "Alzheimer's Disease",
       "phase": null,
       "trial_or_program": "RETAIN",
       "partner": "AC Immune SA",
-      "notes": "tau active immunotherapy"
+      "notes": "AC Immune ACI-35.030"
     },
     {
       "asset": "JNJ-5120",
@@ -778,6 +738,14 @@
       "notes": null
     },
     {
+      "asset": "SPRAVATO (esketamine)",
+      "indication": "Major Depressive Disorder with Suicidal Ideation Pediatrics",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
       "asset": "CABENUVA",
       "indication": "HIV Adolescents",
       "phase": null,
@@ -791,7 +759,7 @@
       "phase": null,
       "trial_or_program": "SALTO",
       "partner": "Nippon Shinyaku",
-      "notes": "selexipag"
+      "notes": null
     },
     {
       "asset": "macitentan",
@@ -802,28 +770,28 @@
       "notes": null
     },
     {
-      "asset": "milvexian",
+      "asset": "milvexian (Factor Xla)",
       "indication": "Secondary Stroke Prevention",
       "phase": null,
       "trial_or_program": null,
       "partner": "Bristol Myers Squibb",
-      "notes": "Factor Xla"
+      "notes": null
     },
     {
-      "asset": "milvexian",
+      "asset": "milvexian (Factor Xla)",
       "indication": "Acute Coronary Syndrome",
       "phase": null,
       "trial_or_program": null,
       "partner": "Bristol Myers Squibb",
-      "notes": "Factor Xla"
+      "notes": null
     },
     {
-      "asset": "milvexian",
+      "asset": "milvexian (Factor Xla)",
       "indication": "Atrial Fibrillation",
       "phase": null,
       "trial_or_program": null,
       "partner": "Bristol Myers Squibb",
-      "notes": "Factor Xla"
+      "notes": null
     },
     {
       "asset": "SIRTURO",
@@ -846,7 +814,8 @@
     "run_date_utc": "2026-01-07",
     "source_url": "https://s203.q4cdn.com/636242992/files/doc_financials/2025/q3/JNJ-Pipeline-3Q25.pdf",
     "input_text_sha256": "c8346bd17a91794d9b776b0953bb625a6580b4ee8d53710ed2d456500a7a481d",
-    "ocr_max_pages": 20,
-    "ocr_dpi": 220
+    "ocr_max_pages": 12,
+    "ocr_dpi": 220,
+    "source_type": "jnj_q4cdn_auto"
   }
 }

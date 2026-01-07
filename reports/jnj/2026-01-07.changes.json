@@ -1,0 +1,800 @@
+{
+  "source_url": "https://s203.q4cdn.com/636242992/files/doc_financials/2025/q3/JNJ-Pipeline-3Q25.pdf",
+  "changes": [
+    {
+      "change_id": "new_asset:jnj 1887 scd59",
+      "type": "NEW_ASSET",
+      "asset": "JNJ-1887 sCD59",
+      "details": {
+        "added_rows": [
+          {
+            "asset": "JNJ-1887 sCD59",
+            "indication": "Geographic Atrophy",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Hemera Biosciences",
+            "notes": null
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "new_asset:jnj 1900 nbtxr3",
+      "type": "NEW_ASSET",
+      "asset": "JNJ-1900 (NBTXR3)",
+      "details": {
+        "added_rows": [
+          {
+            "asset": "JNJ-1900 (NBTXR3)",
+            "indication": "Head and Neck Cancer",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Nanobiotix",
+            "notes": null
+          },
+          {
+            "asset": "JNJ-1900 (NBTXR3)",
+            "indication": "Lung Cancer",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Nanobiotix",
+            "notes": null
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "new_asset:jnj 2056 tau active immunotherapy",
+      "type": "NEW_ASSET",
+      "asset": "JNJ-2056 (tau active immunotherapy)",
+      "details": {
+        "added_rows": [
+          {
+            "asset": "JNJ-2056 (tau active immunotherapy)",
+            "indication": "Alzheimer's Disease",
+            "phase": null,
+            "trial_or_program": "RETAIN",
+            "partner": "AC Immune SA",
+            "notes": "AC Immune ACI-35.030"
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "new_asset:milvexian factor xla",
+      "type": "NEW_ASSET",
+      "asset": "milvexian (Factor Xla)",
+      "details": {
+        "added_rows": [
+          {
+            "asset": "milvexian (Factor Xla)",
+            "indication": "Secondary Stroke Prevention",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Bristol Myers Squibb",
+            "notes": null
+          },
+          {
+            "asset": "milvexian (Factor Xla)",
+            "indication": "Acute Coronary Syndrome",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Bristol Myers Squibb",
+            "notes": null
+          },
+          {
+            "asset": "milvexian (Factor Xla)",
+            "indication": "Atrial Fibrillation",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Bristol Myers Squibb",
+            "notes": null
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "removed_asset:jnj 1887",
+      "type": "REMOVED_ASSET",
+      "asset": "JNJ-1887",
+      "details": {
+        "removed_rows": [
+          {
+            "asset": "JNJ-1887",
+            "indication": "Geographic Atrophy",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Hemera Biosciences",
+            "notes": "sCD59"
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "removed_asset:jnj 1900",
+      "type": "REMOVED_ASSET",
+      "asset": "JNJ-1900",
+      "details": {
+        "removed_rows": [
+          {
+            "asset": "JNJ-1900",
+            "indication": "Head and Neck Cancer",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Nanobiotix",
+            "notes": "NBTXR3"
+          },
+          {
+            "asset": "JNJ-1900",
+            "indication": "Lung Cancer",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Nanobiotix",
+            "notes": "NBTXR3"
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "removed_asset:jnj 2056",
+      "type": "REMOVED_ASSET",
+      "asset": "JNJ-2056",
+      "details": {
+        "removed_rows": [
+          {
+            "asset": "JNJ-2056",
+            "indication": "Alzheimer's Disease",
+            "phase": null,
+            "trial_or_program": "RETAIN",
+            "partner": "AC Immune SA",
+            "notes": "tau active immunotherapy"
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "removed_asset:milvexian",
+      "type": "REMOVED_ASSET",
+      "asset": "milvexian",
+      "details": {
+        "removed_rows": [
+          {
+            "asset": "milvexian",
+            "indication": "Secondary Stroke Prevention",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Bristol Myers Squibb",
+            "notes": "Factor Xla"
+          },
+          {
+            "asset": "milvexian",
+            "indication": "Acute Coronary Syndrome",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Bristol Myers Squibb",
+            "notes": "Factor Xla"
+          },
+          {
+            "asset": "milvexian",
+            "indication": "Atrial Fibrillation",
+            "phase": null,
+            "trial_or_program": null,
+            "partner": "Bristol Myers Squibb",
+            "notes": "Factor Xla"
+          }
+        ]
+      }
+    },
+    {
+      "change_id": "new_ind:akeega niraparib abiraterone:m1 metastatic castration sensitive prostate cancer",
+      "type": "NEW_INDICATION",
+      "asset": "AKEEGA (niraparib/abiraterone)",
+      "indication": "M1 Metastatic Castration-Sensitive Prostate Cancer",
+      "details": {
+        "current": {
+          "asset": "AKEEGA (niraparib/abiraterone)",
+          "indication": "M1 Metastatic Castration-Sensitive Prostate Cancer",
+          "phase": null,
+          "trial_or_program": "AMPLITUDE",
+          "partner": "TESARO, an oncology-focused business within GSK",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:akeega niraparib abiraterone:",
+      "type": "REMOVED_INDICATION",
+      "asset": "AKEEGA (niraparib/abiraterone)",
+      "indication": null,
+      "details": {
+        "previous": {
+          "asset": "AKEEGA (niraparib/abiraterone)",
+          "indication": null,
+          "phase": null,
+          "trial_or_program": null,
+          "partner": "TESARO, an oncology-focused business within GSK",
+          "notes": "niraparib/abiraterone"
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:darzalex daratumumab:m1 metastatic castration sensitive prostate cancer",
+      "type": "REMOVED_INDICATION",
+      "asset": "DARZALEX (daratumumab)",
+      "indication": "M1 Metastatic Castration-Sensitive Prostate Cancer",
+      "details": {
+        "previous": {
+          "asset": "DARZALEX (daratumumab)",
+          "indication": "M1 Metastatic Castration-Sensitive Prostate Cancer",
+          "phase": null,
+          "trial_or_program": "AMPLITUDE",
+          "partner": "Genmab A/S",
+          "notes": "daratumumab"
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:pediatric crohn s disease",
+      "type": "REMOVED_INDICATION",
+      "asset": "icotrokinra",
+      "indication": "Pediatric Crohn's Disease",
+      "details": {
+        "previous": {
+          "asset": "icotrokinra",
+          "indication": "Pediatric Crohn's Disease",
+          "phase": null,
+          "trial_or_program": "MACARONI-23",
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:pediatric juvenile psoriatic arthritis",
+      "type": "REMOVED_INDICATION",
+      "asset": "icotrokinra",
+      "indication": "Pediatric Juvenile Psoriatic Arthritis",
+      "details": {
+        "previous": {
+          "asset": "icotrokinra",
+          "indication": "Pediatric Juvenile Psoriatic Arthritis",
+          "phase": null,
+          "trial_or_program": null,
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:pediatric ulcerative colitis",
+      "type": "REMOVED_INDICATION",
+      "asset": "icotrokinra",
+      "indication": "Pediatric Ulcerative Colitis",
+      "details": {
+        "previous": {
+          "asset": "icotrokinra",
+          "indication": "Pediatric Ulcerative Colitis",
+          "phase": null,
+          "trial_or_program": "QUASAR JR",
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:psoriatic arthritis structural damage",
+      "type": "REMOVED_INDICATION",
+      "asset": "icotrokinra",
+      "indication": "Psoriatic Arthritis Structural Damage",
+      "details": {
+        "previous": {
+          "asset": "icotrokinra",
+          "indication": "Psoriatic Arthritis Structural Damage",
+          "phase": null,
+          "trial_or_program": "APEX",
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:ulcerative colitis subcutaneous induction",
+      "type": "REMOVED_INDICATION",
+      "asset": "icotrokinra",
+      "indication": "Ulcerative Colitis Subcutaneous Induction",
+      "details": {
+        "previous": {
+          "asset": "icotrokinra",
+          "indication": "Ulcerative Colitis Subcutaneous Induction",
+          "phase": null,
+          "trial_or_program": "ASTRO",
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:rybrevant amivantamab:",
+      "type": "NEW_INDICATION",
+      "asset": "RYBREVANT (amivantamab)",
+      "indication": null,
+      "details": {
+        "current": {
+          "asset": "RYBREVANT (amivantamab)",
+          "indication": null,
+          "phase": null,
+          "trial_or_program": "PALOMA-3",
+          "partner": null,
+          "notes": "Subcutaneous"
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:rybrevant amivantamab:non small cell lung cancer",
+      "type": "REMOVED_INDICATION",
+      "asset": "RYBREVANT (amivantamab)",
+      "indication": "Non Small Cell Lung Cancer",
+      "details": {
+        "previous": {
+          "asset": "RYBREVANT (amivantamab)",
+          "indication": "Non Small Cell Lung Cancer",
+          "phase": null,
+          "trial_or_program": "PALOMA-3",
+          "partner": null,
+          "notes": "amivantamab; Subcutaneous formulation development"
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:simponi golimumab:pediatric ulcerative colitis",
+      "type": "NEW_INDICATION",
+      "asset": "SIMPONI (golimumab)",
+      "indication": "Pediatric Ulcerative Colitis",
+      "details": {
+        "current": {
+          "asset": "SIMPONI (golimumab)",
+          "indication": "Pediatric Ulcerative Colitis",
+          "phase": null,
+          "trial_or_program": "PURSUIT 2",
+          "partner": "Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:simponi golimumab:",
+      "type": "REMOVED_INDICATION",
+      "asset": "SIMPONI (golimumab)",
+      "indication": null,
+      "details": {
+        "previous": {
+          "asset": "SIMPONI (golimumab)",
+          "indication": null,
+          "phase": null,
+          "trial_or_program": null,
+          "partner": "Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",
+          "notes": "golimumab"
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:stelara ustekinumab:pediatric crohn s disease",
+      "type": "NEW_INDICATION",
+      "asset": "STELARA (ustekinumab)",
+      "indication": "Pediatric Crohn's Disease",
+      "details": {
+        "current": {
+          "asset": "STELARA (ustekinumab)",
+          "indication": "Pediatric Crohn's Disease",
+          "phase": null,
+          "trial_or_program": "UNITI JR",
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:stelara ustekinumab:",
+      "type": "REMOVED_INDICATION",
+      "asset": "STELARA (ustekinumab)",
+      "indication": null,
+      "details": {
+        "previous": {
+          "asset": "STELARA (ustekinumab)",
+          "indication": null,
+          "phase": null,
+          "trial_or_program": null,
+          "partner": null,
+          "notes": "ustekinumab"
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:talvey tecvayli:tie ndmm in combination with dr",
+      "type": "NEW_INDICATION",
+      "asset": "TALVEY + TECVAYLI",
+      "indication": "TIE NDMM in combination with DR",
+      "details": {
+        "current": {
+          "asset": "TALVEY + TECVAYLI",
+          "indication": "TIE NDMM in combination with DR",
+          "phase": null,
+          "trial_or_program": "MajesTEC-7",
+          "partner": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:pediatric juvenile psoriatic arthritis",
+      "type": "NEW_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Juvenile Psoriatic Arthritis",
+      "details": {
+        "current": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": "Pediatric Juvenile Psoriatic Arthritis",
+          "phase": null,
+          "trial_or_program": null,
+          "partner": "MorphoSys AG",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:pediatric psoriasis",
+      "type": "NEW_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Psoriasis",
+      "details": {
+        "current": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": "Pediatric Psoriasis",
+          "phase": null,
+          "trial_or_program": "PROTOSTAR",
+          "partner": "MorphoSys AG",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:pediatric ulcerative colitis",
+      "type": "NEW_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Ulcerative Colitis",
+      "details": {
+        "current": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": "Pediatric Ulcerative Colitis",
+          "phase": null,
+          "trial_or_program": "QUASAR JR",
+          "partner": "MorphoSys AG",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:psoriatic arthritis structural damage",
+      "type": "NEW_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Psoriatic Arthritis Structural Damage",
+      "details": {
+        "current": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": "Psoriatic Arthritis Structural Damage",
+          "phase": null,
+          "trial_or_program": "APEX",
+          "partner": "MorphoSys AG",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:ulcerative colitis subcutaneous induction",
+      "type": "NEW_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Ulcerative Colitis Subcutaneous Induction",
+      "details": {
+        "current": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": "Ulcerative Colitis Subcutaneous Induction",
+          "phase": null,
+          "trial_or_program": "ASTRO",
+          "partner": "MorphoSys AG",
+          "notes": null
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:tremfya guselkumab:",
+      "type": "REMOVED_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": null,
+      "details": {
+        "previous": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": null,
+          "phase": null,
+          "trial_or_program": null,
+          "partner": "MorphoSys AG",
+          "notes": "guselkumab"
+        }
+      }
+    },
+    {
+      "change_id": "removed_ind:tremfya guselkumab:pediatric crohn s disease",
+      "type": "REMOVED_INDICATION",
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Crohn's Disease",
+      "details": {
+        "previous": {
+          "asset": "TREMFYA (guselkumab)",
+          "indication": "Pediatric Crohn's Disease",
+          "phase": null,
+          "trial_or_program": "MACARONI-23",
+          "partner": "MorphoSys AG",
+          "notes": "guselkumab"
+        }
+      }
+    }
+  ],
+  "analyses": [
+    {
+      "change_id": "new_asset:jnj 1887 scd59",
+      "why_it_matters": "J&J has clarified the nomenclature for its Geographic Atrophy candidate, JNJ-1887, indicating it targets sCD59. This highlights a specific mechanism of action in a competitive ophthalmology space.",
+      "watch_items": [
+        "Phase progression and clinical trial designs for JNJ-1887 sCD59.",
+        "Public disclosure of mechanism of action data.",
+        "Competitor pipelines targeting complement pathways in Geographic Atrophy."
+      ]
+    },
+    {
+      "change_id": "new_asset:jnj 1900 nbtxr3",
+      "why_it_matters": "J&J has specified its oncology asset JNJ-1900 as NBTXR3, a radioenhancer from partner Nanobiotix, for Head and Neck and Lung Cancers. This clarifies J&J's involvement in a novel radiation therapy enhancement approach.",
+      "watch_items": [
+        "Clinical trial progress and data for NBTXR3 in these indications.",
+        "Regulatory filings and potential approvals for NBTXR3.",
+        "Development of competing radioenhancers."
+      ]
+    },
+    {
+      "change_id": "new_asset:jnj 2056 tau active immunotherapy",
+      "why_it_matters": "J&J has updated its Alzheimer's pipeline to explicitly identify JNJ-2056 as a tau active immunotherapy, ACI-35.030, in partnership with AC Immune SA. This reaffirms J&J's commitment to addressing tau pathology, a critical target in Alzheimer's.",
+      "watch_items": [
+        "Clinical data readouts from the RETAIN trial.",
+        "Progression of other tau-targeting therapies in Alzheimer's.",
+        "J&J's broader Alzheimer's disease strategy."
+      ]
+    },
+    {
+      "change_id": "new_asset:milvexian factor xla",
+      "why_it_matters": "J&J has clarified its partnered asset, milvexian, explicitly as a Factor XIa inhibitor, for cardiovascular indications like stroke prevention, ACS, and AF. This emphasizes a key pipeline asset with significant potential in antithrombotic therapy, a large market.",
+      "watch_items": [
+        "Phase 3 trial results (e.g., OCEANIC program) for milvexian.",
+        "Regulatory submissions and approval timelines.",
+        "Competitive landscape for novel oral anticoagulants and Factor XIa inhibitors."
+      ]
+    },
+    {
+      "change_id": "removed_asset:jnj 1887",
+      "why_it_matters": "The removal of JNJ-1887 concurrent with the addition of 'JNJ-1887 sCD59' indicates a nomenclature clarification rather than a true asset discontinuation. This updates the asset's tracking to explicitly include its mechanism of action.",
+      "watch_items": [
+        "Confirmation that JNJ-1887 sCD59 is the direct continuation of JNJ-1887.",
+        "Any public statements from J&J regarding this pipeline update."
+      ]
+    },
+    {
+      "change_id": "removed_asset:jnj 1900",
+      "why_it_matters": "The removal of JNJ-1900 simultaneous with the addition of 'JNJ-1900 (NBTXR3)' signifies a nomenclature clarification for this oncology asset. This aligns the pipeline tracking with its specific identity as Nanobiotix's NBTXR3.",
+      "watch_items": [
+        "Confirmation that JNJ-1900 (NBTXR3) is the direct continuation of JNJ-1900.",
+        "Updates on the development status of NBTXR3 by Nanobiotix."
+      ]
+    },
+    {
+      "change_id": "removed_asset:jnj 2056",
+      "why_it_matters": "The removal of JNJ-2056, immediately followed by the addition of 'JNJ-2056 (tau active immunotherapy)', indicates a formal clarification of the asset's name and mechanism. This ensures more precise tracking of J&J's Alzheimer's disease pipeline.",
+      "watch_items": [
+        "Confirmation that JNJ-2056 (tau active immunotherapy) is the direct continuation of JNJ-2056.",
+        "Public communications detailing the significance of this naming update."
+      ]
+    },
+    {
+      "change_id": "removed_asset:milvexian",
+      "why_it_matters": "The removal of 'milvexian' alongside the addition of 'milvexian (Factor XIa)' suggests a clarification of the asset's mechanism of action in the pipeline tracking. This provides more specific details about J&J's partnered antithrombotic program.",
+      "watch_items": [
+        "Confirmation that milvexian (Factor XIa) is the direct continuation of milvexian.",
+        "Any joint statements from J&J and BMS on this asset's development."
+      ]
+    },
+    {
+      "change_id": "new_ind:akeega niraparib abiraterone:m1 metastatic castration sensitive prostate cancer",
+      "why_it_matters": "J&J has clarified the specific indication for AKEEGA (niraparib/abiraterone) as M1 Metastatic Castration-Sensitive Prostate Cancer, reflecting ongoing development in an area with high unmet need. This formalizes a key lifecycle management strategy for their oncology franchise.",
+      "watch_items": [
+        "Regulatory updates for AKEEGA in this indication.",
+        "Commercial launch and uptake post-approval.",
+        "Competitor activity in mCSPC."
+      ]
+    },
+    {
+      "change_id": "removed_ind:akeega niraparib abiraterone:",
+      "why_it_matters": "The removal of a generic/null indication for AKEEGA is a standard pipeline hygiene update, replaced by the specific M1 Metastatic Castration-Sensitive Prostate Cancer indication. This indicates more precise tracking of this key oncology combination.",
+      "watch_items": [
+        "Confirmation that the specific new indication adequately covers the previous 'null' entry.",
+        "Any impact on broader perception of AKEEGA's development strategy."
+      ]
+    },
+    {
+      "change_id": "removed_ind:darzalex daratumumab:m1 metastatic castration sensitive prostate cancer",
+      "why_it_matters": "J&J has removed the M1 Metastatic Castration-Sensitive Prostate Cancer indication for DARZALEX from its pipeline. This suggests a strategic deprioritization or discontinuation of this particular development path, potentially due to trial results or shifting oncology priorities.",
+      "watch_items": [
+        "Official communication from J&J regarding this decision.",
+        "Impact on Darzalex's long-term lifecycle strategy in prostate cancer.",
+        "Reallocation of resources to other Darzalex indications or prostate cancer assets."
+      ]
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:pediatric crohn s disease",
+      "why_it_matters": "The removal of 'icotrokinra' for Pediatric Crohn's Disease, alongside other icotrokinra indications, strongly suggests this was a placeholder asset now formally attributed to TREMFYA (guselkumab) or deprioritized.",
+      "watch_items": [
+        "Confirmation from J&J regarding the status of 'icotrokinra'.",
+        "Updates on Tremfya's pediatric IBD development, especially for Crohn's Disease.",
+        "Any public data that led to the removal of this program."
+      ]
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:pediatric juvenile psoriatic arthritis",
+      "why_it_matters": "The removal of 'icotrokinra' for Pediatric Juvenile Psoriatic Arthritis, aligning with the addition of this indication for TREMFYA, indicates a pipeline tracking clarification. 'Icotrokinra' was likely a placeholder now formally assigned to guselkumab.",
+      "watch_items": [
+        "Official confirmation that Tremfya (guselkumab) is now the designated asset for this indication.",
+        "Any remaining ambiguity around the 'icotrokinra' program."
+      ]
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:pediatric ulcerative colitis",
+      "why_it_matters": "The removal of 'icotrokinra' for Pediatric Ulcerative Colitis, coinciding with the addition of this indication for TREMFYA, suggests a pipeline update to assign development to the correct asset. This reflects improved data hygiene.",
+      "watch_items": [
+        "Official confirmation that Tremfya (guselkumab) is now the designated asset for this indication (QUASAR JR).",
+        "Updates on the QUASAR JR trial progress."
+      ]
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:psoriatic arthritis structural damage",
+      "why_it_matters": "The removal of 'icotrokinra' for Psoriatic Arthritis Structural Damage, aligning with the addition of this indication for TREMFYA, indicates a pipeline tracking clarification. 'Icotrokinra' was likely a placeholder now formally assigned to guselkumab.",
+      "watch_items": [
+        "Official confirmation that Tremfya (guselkumab) is now the designated asset for this indication (APEX).",
+        "Updates on the APEX trial progress."
+      ]
+    },
+    {
+      "change_id": "removed_ind:icotrokinra:ulcerative colitis subcutaneous induction",
+      "why_it_matters": "The removal of 'icotrokinra' for Ulcerative Colitis Subcutaneous Induction, coinciding with the addition of this indication for TREMFYA, suggests a pipeline update to assign development to the correct asset. This reflects improved data hygiene.",
+      "watch_items": [
+        "Official confirmation that Tremfya (guselkumab) is now the designated asset for this indication (ASTRO).",
+        "Updates on the ASTRO trial progress."
+      ]
+    },
+    {
+      "change_id": "new_ind:rybrevant amivantamab:",
+      "why_it_matters": "J&J is updating its pipeline to specifically track the subcutaneous formulation development for RYBREVANT (amivantamab), as indicated by the PALOMA-3 trial. This is a critical lifecycle management effort to improve patient convenience and potentially expand market reach in NSCLC.",
+      "watch_items": [
+        "Results from the PALOMA-3 study comparing SC vs. IV formulations.",
+        "Regulatory filings and potential approval for the SC formulation.",
+        "Commercial strategy for the new formulation and impact on competitive landscape."
+      ]
+    },
+    {
+      "change_id": "removed_ind:rybrevant amivantamab:non small cell lung cancer",
+      "why_it_matters": "The removal of a broad 'Non Small Cell Lung Cancer' indication for RYBREVANT with a 'Subcutaneous formulation development' note, replaced by a more specific 'Subcutaneous' entry, indicates a pipeline refinement. This highlights focused development on the SC formulation.",
+      "watch_items": [
+        "Confirmation that the new entry accurately reflects the ongoing development for the SC formulation.",
+        "Any public communication clarifying the scope of the PALOMA-3 trial."
+      ]
+    },
+    {
+      "change_id": "new_ind:simponi golimumab:pediatric ulcerative colitis",
+      "why_it_matters": "J&J has added Pediatric Ulcerative Colitis as a specific indication for SIMPONI (golimumab), underscoring a strategic effort to expand the asset's label into underserved pediatric populations. This extends the commercial lifespan and value of an established biologic.",
+      "watch_items": [
+        "Regulatory updates and potential approval timelines for this indication.",
+        "Market uptake and competitive dynamics in pediatric UC.",
+        "Further lifecycle management efforts for SIMPONI."
+      ]
+    },
+    {
+      "change_id": "removed_ind:simponi golimumab:",
+      "why_it_matters": "The removal of a generic/null indication for SIMPONI is a standard pipeline hygiene update, replaced by the specific Pediatric Ulcerative Colitis indication. This indicates more precise tracking of this mature asset.",
+      "watch_items": [
+        "Confirmation that the specific new indication adequately covers the previous 'null' entry.",
+        "Any impact on broader perception of SIMPONI's development strategy."
+      ]
+    },
+    {
+      "change_id": "new_ind:stelara ustekinumab:pediatric crohn s disease",
+      "why_it_matters": "J&J has added Pediatric Crohn's Disease as a new indication for STELARA (ustekinumab), demonstrating continued investment in this key asset's lifecycle management. This aims to secure Stelara's position in a pediatric inflammatory bowel disease market.",
+      "watch_items": [
+        "Regulatory filings and potential approval in pediatric Crohn's Disease.",
+        "Impact on Stelara's market share ahead of biosimilar entry.",
+        "Competition from other biologics in pediatric IBD."
+      ]
+    },
+    {
+      "change_id": "removed_ind:stelara ustekinumab:",
+      "why_it_matters": "The removal of a generic/null indication for STELARA is a standard pipeline hygiene update, replaced by the specific Pediatric Crohn's Disease indication. This indicates more precise tracking of this key IBD asset.",
+      "watch_items": [
+        "Confirmation that the specific new indication adequately covers the previous 'null' entry.",
+        "Any impact on broader perception of STELARA's development strategy."
+      ]
+    },
+    {
+      "change_id": "new_ind:talvey tecvayli:tie ndmm in combination with dr",
+      "why_it_matters": "J&J is advancing a combination therapy of TALVEY and TECVAYLI for TIE NDMM in combination with DR (Transplant Eligible Newly Diagnosed Multiple Myeloma with Daratumumab and Revlimid/other partner drug). This signifies J&J's aggressive strategy to combine its bispecific antibodies for deeper, earlier responses in multiple myeloma, a highly competitive area.",
+      "watch_items": [
+        "Progress and interim data from the MajesTEC-7 trial.",
+        "Efficacy and safety profile of the combination vs. standard of care.",
+        "Competitive responses to this combination strategy in NDMM."
+      ]
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:pediatric juvenile psoriatic arthritis",
+      "why_it_matters": "J&J has formally added Pediatric Juvenile Psoriatic Arthritis as a new indication for TREMFYA (guselkumab). This expands the asset's addressable market and strengthens its position in pediatric rheumatology, likely consolidating previously tracked placeholder programs.",
+      "watch_items": [
+        "Regulatory filings and approvals for this indication.",
+        "Trial progress and data for guselkumab in pJIA/pPsA.",
+        "Market dynamics in pediatric autoimmune diseases."
+      ]
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:pediatric psoriasis",
+      "why_it_matters": "J&J has formally added Pediatric Psoriasis as a new indication for TREMFYA (guselkumab), evidenced by the PROTOSTAR trial. This expands the asset's lifecycle management and strengthens its presence in the dermatology market for younger populations.",
+      "watch_items": [
+        "Clinical data readouts from the PROTOSTAR trial.",
+        "Regulatory submissions and potential approvals.",
+        "Competitive landscape for pediatric psoriasis treatments."
+      ]
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:pediatric ulcerative colitis",
+      "why_it_matters": "J&J has formally added Pediatric Ulcerative Colitis as a new indication for TREMFYA (guselkumab), as part of the QUASAR JR trial. This signifies a strategic expansion into pediatric IBD, leveraging Tremfya's mechanism of action for a broader patient population.",
+      "watch_items": [
+        "Trial results from QUASAR JR.",
+        "Regulatory filings and potential approvals for pediatric UC.",
+        "Competitive positioning against other biologics in pediatric IBD."
+      ]
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:psoriatic arthritis structural damage",
+      "why_it_matters": "J&J has formally added Psoriatic Arthritis Structural Damage as a new indication for TREMFYA (guselkumab), supported by the APEX trial. This highlights an effort to demonstrate comprehensive disease modification, a key differentiator in the PsA market.",
+      "watch_items": [
+        "Clinical data readouts from the APEX trial.",
+        "Regulatory implications of structural damage claims.",
+        "Competitive differentiation against other PsA therapies."
+      ]
+    },
+    {
+      "change_id": "new_ind:tremfya guselkumab:ulcerative colitis subcutaneous induction",
+      "why_it_matters": "J&J has formally added Ulcerative Colitis Subcutaneous Induction as a new indication for TREMFYA (guselkumab), supported by the ASTRO trial. This offers a convenient administration option for a critical phase of treatment, potentially enhancing market adoption.",
+      "watch_items": [
+        "Trial results from the ASTRO study.",
+        "Regulatory filings and potential approvals for SC induction.",
+        "Physician and patient uptake of subcutaneous options in UC."
+      ]
+    },
+    {
+      "change_id": "removed_ind:tremfya guselkumab:",
+      "why_it_matters": "The removal of a generic/null indication for TREMFYA is a standard pipeline hygiene update, replaced by several specific pediatric and adult indications. This reflects a maturation of J&J's tracking of its key IL-23 inhibitor.",
+      "watch_items": [
+        "Confirmation that the specific new indications adequately cover the previous 'null' entry.",
+        "Any impact on broader perception of Tremfya's development strategy."
+      ]
+    },
+    {
+      "change_id": "removed_ind:tremfya guselkumab:pediatric crohn s disease",
+      "why_it_matters": "J&J has removed Pediatric Crohn's Disease as a specific indication for TREMFYA (guselkumab). This suggests a strategic deprioritization or discontinuation of this particular development path, potentially due to trial results or shifting focus within its IBD portfolio.",
+      "watch_items": [
+        "Official communication from J&J regarding this decision for pediatric Crohn's.",
+        "Impact on Tremfya's overall pediatric IBD strategy, especially with the addition of pediatric UC.",
+        "Competitor activity in pediatric Crohn's disease."
+      ]
+    }
+  ]
+}
