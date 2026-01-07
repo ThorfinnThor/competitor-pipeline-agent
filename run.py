@@ -308,3 +308,266 @@ RAW TEXT:
 
     client = gemini_client()
     resp = client.models.generate_content(model=model, contents=prompt)
+    out = (resp.text or "").strip()
+
+    parsed = _try_parse_json(out)
+    if parsed is not None:
+        # Ensure keys exist
+        parsed.setdefault("as_of_date", None)
+        parsed.setdefault("programs", [])
+        return parsed
+
+    # If parsing fails, return debug info instead of crashing
+    return {
+        "as_of_date": None,
+        "programs": [],
+        "_llm_parse_error": "Could not parse JSON from model output",
+        "_llm_raw_output": out[:8000],
+    }
+
+
+# =============================
+# Diff logic + report
+# =============================
+def canon(s: Optional[str]) -> str:
+    if not s:
+        return ""
+    s = s.lower().strip()
+    s = re.sub(r"[\W_]+", " ", s)
+    return norm_ws(s)
+
+
+def diff_programs(prev: dict, curr: dict) -> dict:
+    prev_programs = prev.get("programs", []) if prev else []
+    curr_programs = curr.get("programs", []) if curr else []
+
+    def key(p: dict) -> str:
+        return canon(p.get("asset")) + " || " + canon(p.get("indication"))
+
+    prev_map = {key(p): p for p in prev_programs if p.get("asset")}
+    curr_map = {key(p): p for p in curr_programs if p.get("asset")}
+
+    added_keys = sorted(set(curr_map.keys()) - set(prev_map.keys()))
+    removed_keys = sorted(set(prev_map.keys()) - set(curr_map.keys()))
+    common_keys = sorted(set(prev_map.keys()) & set(curr_map.keys()))
+
+    phase_changes = []
+    for k in common_keys:
+        p0 = prev_map[k]
+        p1 = curr_map[k]
+        if canon(p0.get("phase")) != canon(p1.get("phase")):
+            phase_changes.append({
+                "asset": p1.get("asset"),
+                "indication": p1.get("indication"),
+                "from_phase": p0.get("phase"),
+                "to_phase": p1.get("phase"),
+            })
+
+    return {
+        "added": [curr_map[k] for k in added_keys],
+        "removed": [prev_map[k] for k in removed_keys],
+        "phase_changes": phase_changes,
+    }
+
+
+def confidence_score(d: dict) -> float:
+    score = 0.35
+    if d.get("phase_changes"):
+        score += 0.35
+    if d.get("added") or d.get("removed"):
+        score += 0.20
+    return max(0.0, min(0.95, score))
+
+
+def render_report(company: dict, source_url: str, prev_snapshot_path: str, curr_snapshot: dict, d: dict) -> str:
+    name = company["name"]
+    as_of = curr_snapshot.get("as_of_date")
+    score = confidence_score(d)
+
+    lines = []
+    lines.append(f"# Pipeline Change Report — {name}")
+    lines.append("")
+    lines.append(f"- Run date (UTC): {utc_today_str()}")
+    lines.append(f"- Source: {source_url}")
+    lines.append(f"- Extracted 'as of' date: {as_of if as_of else 'Unknown'}")
+    lines.append(f"- Confidence score (0–1): {score:.2f}")
+    lines.append("")
+
+    # Helpful debug for beginners: show if extraction looks empty
+    prog_count = len(curr_snapshot.get("programs", []))
+    lines.append(f"- Extracted program count: {prog_count}")
+    if curr_snapshot.get("_llm_parse_error"):
+        lines.append(f"- Extraction warning: {curr_snapshot.get('_llm_parse_error')}")
+    lines.append("")
+
+    def section(title: str, items: List[dict]):
+        lines.append(f"## {title}")
+        if not items:
+            lines.append("_None detected._")
+            lines.append("")
+            return
+        for it in items:
+            asset = it.get("asset")
+            ind = it.get("indication")
+            phase = it.get("phase")
+            trial = it.get("trial_or_program")
+            partner = it.get("partner")
+            bits = [f"**{asset}**"]
+            if ind:
+                bits.append(ind)
+            if phase:
+                bits.append(f"({phase})")
+            if trial:
+                bits.append(f"Trial/Program: {trial}")
+            if partner:
+                bits.append(f"Partner: {partner}")
+            lines.append("- " + " — ".join(bits))
+        lines.append("")
+
+    section("New / Added items", d.get("added", []))
+    section("Removed / Discontinued items", d.get("removed", []))
+
+    lines.append("## Phase changes")
+    pcs = d.get("phase_changes", [])
+    if not pcs:
+        lines.append("_None detected._")
+        lines.append("")
+    else:
+        for c in pcs:
+            lines.append(
+                f"- **{c.get('asset')}** — {c.get('indication') or ''} — {c.get('from_phase')} → {c.get('to_phase')}"
+            )
+        lines.append("")
+
+    lines.append("## Citations")
+    lines.append(f"- {source_url}")
+    lines.append(f"- Previous snapshot file: {prev_snapshot_path if os.path.exists(prev_snapshot_path) else 'None (first run)'}")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+# =============================
+# Company runner
+# =============================
+def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
+    slug = company["slug"]
+    typ = company["type"]
+    today = utc_today_str()
+
+    raw_dir = os.path.join("raw", slug)
+    snap_dir = os.path.join("snapshots", slug)
+    rep_dir = os.path.join("reports", slug)
+
+    ensure_dir(raw_dir)
+    ensure_dir(snap_dir)
+    ensure_dir(rep_dir)
+
+    prev_path = os.path.join(snap_dir, "latest.json")
+    prev = safe_json_load(prev_path)
+
+    source_url = ""
+    raw_text = ""
+
+    # OCR controls (optional in config; safe defaults)
+    ocr_max_pages = int(company.get("ocr_max_pages", 20))
+    ocr_dpi = int(company.get("ocr_dpi", 220))
+
+    if typ == "direct_pdf":
+        pdf_url = company["pdf_url"]
+        source_url = pdf_url
+
+        pdf_resp = http_get(pdf_url)
+        pdf_resp.raise_for_status()
+        pdf_bytes = pdf_resp.content
+
+        # text + OCR fallback
+        extracted_text = pdf_to_text(pdf_bytes)
+        combined_text = maybe_add_ocr(pdf_bytes, extracted_text, ocr_max_pages, ocr_dpi)
+        raw_text = combined_text
+
+        safe_text_dump(
+            os.path.join(raw_dir, f"{today}.source.txt"),
+            f"PDF URL: {pdf_url}\nSHA256: {sha256_bytes(pdf_bytes)}\n"
+            f"Text chars: {len(extracted_text)} | Combined chars (with OCR if used): {len(combined_text)}\n",
+        )
+
+    elif typ == "sec_latest_presentation":
+        cik = company["cik"]
+        pres_url = find_latest_presentation_from_sec(cik)
+        source_url = pres_url
+
+        r = http_get(pres_url, headers=sec_headers_html())
+        r.raise_for_status()
+
+        if pres_url.lower().endswith(".pdf"):
+            pdf_bytes = r.content
+            extracted_text = pdf_to_text(pdf_bytes)
+            combined_text = maybe_add_ocr(pdf_bytes, extracted_text, ocr_max_pages, ocr_dpi)
+            raw_text = combined_text
+
+            safe_text_dump(
+                os.path.join(raw_dir, f"{today}.source.txt"),
+                f"SEC URL (PDF): {pres_url}\nSHA256: {sha256_bytes(pdf_bytes)}\n"
+                f"Text chars: {len(extracted_text)} | Combined chars (with OCR if used): {len(combined_text)}\n",
+            )
+        else:
+            raw_text = html_to_text(r.text)
+            safe_text_dump(os.path.join(raw_dir, f"{today}.source.txt"), f"SEC URL (HTML): {pres_url}\n")
+
+    else:
+        raise RuntimeError(f"Unknown company type: {typ}")
+
+    # Save raw text preview for debugging (very helpful)
+    safe_text_dump(os.path.join(raw_dir, f"{today}.extracted_text_preview.txt"), raw_text[:20000])
+
+    # LLM extraction (cap input)
+    input_cap = 160000
+    extracted = llm_extract_pipeline(company["name"], raw_text[:input_cap], llm_model)
+
+    extracted["_meta"] = {
+        "run_date_utc": today,
+        "source_url": source_url,
+        "input_text_sha256": sha256_bytes(raw_text.encode("utf-8", errors="ignore")),
+        "ocr_max_pages": ocr_max_pages,
+        "ocr_dpi": ocr_dpi,
+    }
+
+    # Save snapshot
+    dated_path = os.path.join(snap_dir, f"{today}.json")
+    safe_json_dump(dated_path, extracted)
+    safe_json_dump(prev_path, extracted)
+
+    # If model output was not parseable JSON, save it for inspection
+    if extracted.get("_llm_raw_output"):
+        safe_text_dump(os.path.join(raw_dir, f"{today}.llm_raw_output.txt"), extracted["_llm_raw_output"])
+
+    # Diff + report
+    d = diff_programs(prev or {}, extracted)
+    report_md = render_report(company, source_url, prev_path, extracted, d)
+    report_path = os.path.join(rep_dir, f"{today}.md")
+    safe_text_dump(report_path, report_md)
+
+    return report_path, extracted, d, source_url
+
+
+def main() -> None:
+    with open("config.yml", "r", encoding="utf-8") as f:
+        cfg = yaml.safe_load(f)
+
+    llm_model = cfg.get("llm_model", "gemini-2.5-flash")
+    companies = cfg.get("companies", [])
+
+    print(f"Running pipeline agent for {len(companies)} companies using model={llm_model}")
+
+    for c in companies:
+        print(f"\n--- {c['name']} ---")
+        report_path, snapshot, d, url = run_company(c, llm_model)
+        print(f"Source: {url}")
+        print(f"Report written: {report_path}")
+        print(f"Extracted programs: {len(snapshot.get('programs', []))}")
+        print(f"Added: {len(d.get('added', []))} | Removed: {len(d.get('removed', []))} | Phase changes: {len(d.get('phase_changes', []))}")
+
+
+if __name__ == "__main__":
+    main()
