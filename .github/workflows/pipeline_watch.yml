@@ -1,0 +1,46 @@
+name: Pipeline Change Detection
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every Monday at 06:15 UTC (adjust later to your preference)
+    - cron: "15 6 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python run.py
+
+      - name: Commit results (if changed)
+        run: |
+          git config user.name "pipeline-bot"
+          git config user.email "pipeline-bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add raw snapshots reports
+            git commit -m "Update pipeline snapshots and reports"
+            git push
+          else
+            echo "No changes to commit."
+          fi
