@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.11"
 
-       - name: Install system OCR (tesseract)
+      - name: Install system OCR (tesseract)
         run: |
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr
