@@ -1,9 +1,11 @@
 {
-  "as_of_date": "November 12, 2025",
+  "as_of_date": "2025-11-11",
   "programs": [],
   "_meta": {
     "run_date_utc": "2026-01-07",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1776985/000177698525000067/form6-krddaypresentation12.htm",
-    "input_text_sha256": "f538835b530f55eae933c76d81079a962b525d009dbc349a563d24ad54cabb2f"
+    "input_text_sha256": "f538835b530f55eae933c76d81079a962b525d009dbc349a563d24ad54cabb2f",
+    "ocr_max_pages": 20,
+    "ocr_dpi": 220
   }
 }

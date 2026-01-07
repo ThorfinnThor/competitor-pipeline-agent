@@ -1,0 +1,256 @@
+Selected Innovative Medicines in Development as of October 14, 2025
+24
+19
+38
+22
+103
+Phase 1
+Phase 2
+Phase 3
+Registration
+Total
+
+Oncology (1 of 3)
+AKEEGA (niraparib/abiraterone)
+DARZALEX (daratumumab)
+DARZALEX (daratumumab)
+M1 Metastatic Castration-Sensitive Prostate Cancer 
+(AMPLITUDE)
+Smoldering Multiple Myeloma (AQUILA)
+Frontline multiple myeloma transplant ineligible 
+(CEPHEUS)
+IMBRUVICA (ibrutinib)
+IMBRUVICA (ibrutinib)
+INLEXZO (gemcitabine intravesical system) 
+Frontline Chronic Lymphocytic Leukemia (I + V fixed 
+duration) (GLOW)
+Frontline Mantle Cell Lymphoma (Triangle)
+Non Muscle Invasive Bladder Cancer (SunRISe-1)
+RYBREVANT (amivantamab)
+RYBREVANT (amivantamab)
+Bleximenib 
+Frontline Non Small Cell Lung Cancer in combination with 
+chemotherapy (PAPILLON)
+Subcutaneous (PALOMA-3)
+Newly Diagnosed AML, chemo ineligible in combination 
+with Venetoclax and Azacitidine (cAMeLot-2)
+CARVYKTI (Ciltacabtagene autoleucel)
+CARVYKTI (Ciltacabtagene autoleucel)
+ERLEADA (apalutamide)
+Frontline Multiple Myeloma TNI (CARTITUDE-5)
+Frontline Multiple Myeloma Transplant Eligible vs ASCT 
+(CARTITUDE-6)
+Localized Prostate Cancer (ATLAS)
+ERLEADA (apalutamide)
+INLEXZO (gemcitabine intravesical system) 
+INLEXZO (gemcitabine intravesical system) 
+High Risk Prostate Cancer (PROTEUS)
+Non Muscle Invasive Bladder Cancer BCG-naïve High Risk 
+(SunRISe-3)
+High Risk Non Muscle Invasive Bladder Cancer BGC 
+Experienced (SunRISe-5)
+JNJ-1900 (NBTXR3) 
+pasritamig 
+RYBREVANT (amivantamab)
+Head and Neck Cancer
+Prostate Cancer
+Colorectal Cancer (ORIGAMI-2)
+RYBREVANT (amivantamab)
+TALVEY + TECVAYLI 
+TALVEY (talquetamab)
+Colorectal Cancer 2L (ORIGAMI-3)
+Relapsed Refractory Multiple Myeloma CD38 exposed 
+(MonumenTAL-6)
+Relapsed Refractory Multiple Myeloma A-CD38 Naïve 
+(MonumenTAL-3)
+TALVEY (talquetamab)
+TALVEY (talquetamab)
+TAR-210 (RIS/erdafitinib)
+Relapsed Refractory Multiple Myeloma CD38 exposed 
+(MonumenTAL-6)
+TIE NDMM in combination with DR (MajesTEC-7)
+Intravesical Delivery System for Localized Bladder 
+Cancer (MoonRISe-1)
+
+Oncology (2 of 3)
+TECVAYLI (teclistamab)
+TECVAYLI (teclistamab)
+TECVAYLI (teclistamab)
+Multiple Myeloma 1-3PLs (MajesTEC-3)
+TE NDMM maintenance (MajesTEC-4)
+TIE NDMM in combination with DR (MajesTEC-7)
+TECVAYLI (teclistamab)
+bleximenib 
+JNJ-0683 (ARX788)
+Relapsed Refractory Multiple Myeloma CD38 exposed 
+(MajesTEC-9)
+Relapsed Refractory Acute Myeloid Leukemia (ALE1001)
+Breast Cancer
+JNJ-1900 (NBTXR3) 
+TALVEY + TECVAYLI 
+JNJ-0387 
+Lung Cancer
+Relapsed Refractory Multiple Myeloma (RedirecTT-1)
+Solid Tumors
+JNJ-0631 (ARX305)
+JNJ-1493 
+JNJ-2638 
+Renal Cancer
+Hematological Malignancies
+Gastrointestinal Cancer
+JNJ-2761 
+JNJ-3413 
+JNJ-4496 
+Multiple Myeloma
+Lymphoma
+Hematological Malignancies
+JNJ-4680 
+JNJ-4681 
+JNJ-4916 
+Lung Cancer
+Hematological Malignancies
+Lung Cancer
+JNJ-5322 
+JNJ-6420 
+JNJ-7446 
+Multiple Myeloma
+Prostate Cancer
+Lung Cancer
+JNJ-8177 (ARX517)
+JNJ-8377 
+JNJ-8543 
+Prostate Cancer
+Lymphoma
+Hematological Malignancies
+
+Oncology (3 of 3)
+JNJ-9401 
+JNJ-9530 
+JNJ-9892 
+Prostate Cancer
+Hematological Malignancies
+Hematological Malignancies
+JNJ-9968 
+Hematological Malignancies
+
+Immunology (1 of 2)
+icotrokinra 
+SIMPONI (golimumab)
+STELARA (ustekinumab)
+Psoriasis (ICONIC)
+Pediatric Ulcerative Colitis (PURSUIT 2)
+Pediatric Crohn's Disease (UNITI JR)
+STELARA (ustekinumab)
+TREMFYA (guselkumab)
+TREMFYA (guselkumab)
+Pediatric Juvenile Psoriatic Arthritis
+Pediatric Psoriasis (PROTOSTAR)
+Psoriatic Arthritis Structural Damage (APEX)
+TREMFYA (guselkumab)
+TREMFYA (guselkumab)
+icotrokinra 
+Ulcerative Colitis Subcutaneous Induction (ASTRO)
+Pediatric Juvenile Psoriatic Arthritis
+Psoriatic Arthritis
+nipocalimab​ 
+nipocalimab​ 
+nipocalimab​ 
+Warm Autoimmune Hemolytic Anemia (ENERGY)
+Sjogren's Disease
+Hemolytic Disease of the Fetus and Newborn (AZALEA)
+nipocalimab​ 
+STELARA (ustekinumab)
+TREMFYA (guselkumab)
+Fetal and Neonatal Alloimmune Thrombocytopenia 
+(FREESIA)
+Pediatric Ulcerative Colitis (UNIFI JR)
+Pediatric Crohn's Disease (MACARONI-23)
+TREMFYA (guselkumab)
+icotrokinra 
+JNJ-4804 Co-antibody Therapy 
+Pediatric Ulcerative Colitis (QUASAR JR)
+Ulcerative Colitis
+Ulcerative Colitis
+JNJ-4804 Co-antibody Therapy 
+JNJ-4804 Co-antibody Therapy 
+JNJ-5939 
+Psoriatic Arthritis
+Crohn's Disease
+Atopic Dermatitis
+nipocalimab​ 
+nipocalimab​ 
+JNJ-5108 
+Systemic Lupus Erythematosus
+Idiopathic Inflammatory Myopathy
+Immunological Diseases
+
+Immunology (2 of 2)
+JNJ-6848 
+JNJ-7528 
+Immunological Diseases
+Atopic Dermatitis
+
+Neuroscience
+CAPLYTA (lumateperone)
+IMAAVY (nipocalimab​)
+IMAAVY (nipocalimab​)
+Adjunctive Treatment for Major Depressive Disorder
+Generalized Myasthenia Gravis (Vivacity MG3)
+Generalized Myasthenia Gravis Pediatrics (VIBRANCE MG)
+SPRAVATO (esketamine)
+CAPLYTA (lumateperone)
+CAPLYTA (lumateperone)
+Treatment Resistant Depression monotherapy (TRD4005)
+Bipolar Mania
+Pediatric Psychiatric Indications
+nipocalimab​ 
+RPGR Gene Therapy 
+seltorexant 
+Chronic Inflammatory Demyelinating Polyneuropathy 
+(ARISE)
+Retinitis Pigmentosa (LUMEOS)
+Adjunctive Treatment for Major Depressive Disorder with 
+Insomnia Symptoms (OARS)
+ITI-1284 
+ITI-1284 
+ITI-1284 
+Generalized Anxiety Disorder
+Alzheimer's Disease-Related Psychosis
+Alzheimer's Disease-Related Agitation
+JNJ-1887​ sCD59 
+JNJ-2056 (tau active immunotherapy) *
+JNJ-5120 
+Geographic Atrophy
+Alzheimer's Disease (RETAIN)
+Major Depressive Disorder
+posdinemab 
+SPRAVATO (esketamine)
+Alzheimer's Disease (AUTONOMY)
+Major Depressive Disorder with Suicidal Ideation 
+Pediatrics
+
+Select Other Areas
+CABENUVA 
+UPTRAVI (selexipag)
+macitentan 
+HIV Adolescents
+Pediatric Pulmonary Arterial Hypertension (SALTO)
+Pulmonary Arterial Hypertension 75mg (UNISUS)
+milvexian (Factor Xla)
+milvexian (Factor Xla)
+milvexian (Factor Xla)
+Secondary Stroke Prevention
+Acute Coronary Syndrome
+Atrial Fibrillation
+SIRTURO 
+SIRTURO 
+Leprosy
+Tuberculosis Long Acting
+*This is not a fully exhaustive list of all pipeline programs and assets. The pipeline includes assets currently progressing through clinical trials as well as those under review by regulatory bodies. Inclusion in the pipeline is based on the current status of these 
+programs and assets and does not guarantee continued investment.  This information is as of October 14, 2025 to the best of the Company's knowledge. Johnson & Johnson assumes no obligation to update this information.  *AC Immune ACI-35.030. 
+Strategic Partnerships, Collaborations, and Licensing arrangements -milvexian: Bristol Myers Squibb; AAV-RPGR: UCL Business Plc; JNJ-1887: Hemera Biosciences;  Long acting HIV injectible treatment regimen of rilpivirine and cabotegravir: ViiV Healthcare; 
+REMICADE and SIMPONI/SIMPONI ARIA: Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation; TREMFYA: MorphoSys AG; JNJ-2113: Protagonist Therapeutics; Tau Immunotherapy: AC Immune SA; 
+IMBRUVICA: Pharmacyclics, LLC, an AbbVie company; ZYTIGA: BTG International;  DARZALEX and DARZALEX FASPRO: Genmab A/S; ERLEADA: Regents of California and Memorial Sload Kettering; CARVYKTI: Legend Biotech; AKEEGA: TESARO, an oncology-
+focused business within GSK; lazertinib: Yuhan Corporation; Duobody Platform bispecific antibody programs: Genmab A/S; ENHANZE platform; Halozyme Therapeutics; XmAb CD28 bispecific antibodies; Xencor; iPSC-derived chimeric antigen receptor 
+(CAR) NK and CAR T-cell product candidates: Fate Therapeutics; UPTRAVI and OPSUMIT: Nippon Shinyaku (co-promotion in Japan); CD20-directed autologous CAR-Ts: Cellular Biomedicine Group, Inc. (CBMG); muscarinic M1 receptor antagonist: Pipeline 
+Therapeutics; NBTXR3: Nanobiotix; A2a Receptor Antagonist: AdoRx Therapeutics Limited
