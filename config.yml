@@ -1,10 +1,11 @@
 llm_model: "gemini-2.5-flash"
 
 companies:
-  - name: "Johnson & Johnson"
+   - name: "Johnson & Johnson"
     slug: "jnj"
-    type: "jnj_pipeline_pdf"
-    pipeline_page_url: "https://www.investor.jnj.com/pipeline/development-pipeline/default.aspx"
+    type: "direct_pdf"
+    pdf_url: "https://s203.q4cdn.com/636242992/files/doc_financials/2025/q3/JNJ-Pipeline-3Q25.pdf"
+
 
   - name: "BioNTech"
     slug: "biontech"
