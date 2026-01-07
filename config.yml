@@ -1,0 +1,12 @@
+llm_model: "gemini-2.5-flash"
+
+companies:
+  - name: "Johnson & Johnson"
+    slug: "jnj"
+    type: "jnj_pipeline_pdf"
+    pipeline_page_url: "https://www.investor.jnj.com/pipeline/development-pipeline/default.aspx"
+
+  - name: "BioNTech"
+    slug: "biontech"
+    type: "sec_latest_presentation"
+    cik: "0001776985"
