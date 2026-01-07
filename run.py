@@ -57,12 +57,23 @@ def safe_text_dump(path: str, text: str) -> None:
 
 
 def http_get(url: str, headers: Optional[dict] = None, timeout: int = 60) -> requests.Response:
-    resp = requests.get(url, headers=headers or {}, timeout=timeout)
-    return resp
+    return requests.get(url, headers=headers or {}, timeout=timeout)
+
+
+def http_head_ok(url: str, timeout: int = 30) -> bool:
+    try:
+        r = requests.head(url, allow_redirects=True, timeout=timeout)
+        if r.status_code == 200:
+            ct = (r.headers.get("Content-Type") or "").lower()
+            # Content-Type might be missing; accept 200 anyway
+            return True if not ct else ("pdf" in ct or "octet-stream" in ct)
+        return False
+    except Exception:
+        return False
 
 
 # =============================
-# PDF / HTML extraction
+# PDF / HTML extraction + OCR
 # =============================
 def pdf_to_text(pdf_bytes: bytes) -> str:
     """Text extraction only (no OCR)."""
@@ -81,23 +92,13 @@ def html_to_text(html: str) -> str:
 
 
 def preprocess_for_ocr(pil_img: Image.Image) -> Image.Image:
-    """
-    Light preprocessing improves OCR on slide/table screenshots:
-    - convert to grayscale
-    - increase contrast
-    - optional autocontrast
-    """
     img = pil_img.convert("L")
     img = ImageOps.autocontrast(img)
     img = ImageEnhance.Contrast(img).enhance(1.8)
     return img
 
 
-def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 20, dpi: int = 220) -> str:
-    """
-    OCR first N pages of a PDF using Tesseract.
-    This is the critical fix for image/table-heavy pipeline PDFs.
-    """
+def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 12, dpi: int = 220) -> str:
     doc = fitz.open(stream=pdf_bytes, filetype="pdf")
     n_pages = min(doc.page_count, max_pages)
 
@@ -107,10 +108,8 @@ def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 20, dpi: int = 220) -> str:
         pix = page.get_pixmap(dpi=dpi)
         mode = "RGB" if pix.alpha == 0 else "RGBA"
         img = Image.frombytes(mode, [pix.width, pix.height], pix.samples)
-
         img = preprocess_for_ocr(img)
 
-        # Tesseract config: psm 6 often works OK for dense text blocks/tables
         t = pytesseract.image_to_string(img, config="--psm 6")
         t = t.strip()
         if t:
@@ -120,17 +119,10 @@ def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 20, dpi: int = 220) -> str:
 
 
 def maybe_add_ocr(pdf_bytes: bytes, text_extracted: str, ocr_max_pages: int, ocr_dpi: int) -> str:
-    """
-    If text extraction is too sparse, add OCR text.
-    """
-    # Heuristic: if extracted text is very short, OCR is needed.
-    # J&J pipeline PDFs often fall into this category.
-    if len(text_extracted.strip()) >= 5000:
+    if len((text_extracted or "").strip()) >= 5000:
         return text_extracted
-
     ocr_text = ocr_pdf_pages(pdf_bytes, max_pages=ocr_max_pages, dpi=ocr_dpi)
-    combined = (text_extracted or "") + "\n\n" + (ocr_text or "")
-    return combined
+    return (text_extracted or "") + "\n\n" + (ocr_text or "")
 
 
 # =============================
@@ -169,13 +161,6 @@ def accession_index_url(cik_no_leading_zeros: str, accession_no: str) -> str:
 
 
 def find_latest_presentation_from_sec(cik_10: str, max_filings_to_check: int = 80) -> str:
-    """
-    Heuristic:
-    - Fetch recent filings list from submissions JSON
-    - Look at recent 6-K filings
-    - Open the filing index page and search for exhibit filenames containing 'presentation' / 'deck' / 'slides'
-    - Fallback to primary doc if it looks like an exhibit
-    """
     cik_int = str(int(cik_10))  # remove leading zeros for Archives path
     sub_url = sec_submissions_url(cik_10)
 
@@ -207,33 +192,76 @@ def find_latest_presentation_from_sec(cik_10: str, max_filings_to_check: int = 8
 
             soup = BeautifulSoup(idx.text, "html.parser")
             candidates: List[str] = []
-
             for a in soup.find_all("a", href=True):
                 href = a["href"].strip()
                 if re.search(r"(presentation|deck|slides)", href, re.IGNORECASE):
-                    if href.startswith("http"):
-                        candidates.append(href)
-                    else:
-                        candidates.append("https://www.sec.gov" + href)
+                    candidates.append(href if href.startswith("http") else "https://www.sec.gov" + href)
 
             if candidates:
                 return candidates[0]
 
-            # Fallback: primary doc if it looks exhibit-like
             acc_nodash = accession.replace("-", "")
             primary_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{acc_nodash}/{primary}"
             if re.search(r"(ex99|presentation|deck|slides|investor)", primary, re.IGNORECASE):
                 return primary_url
 
         finally:
-            # Be gentle with SEC.
             time.sleep(0.25)
 
     raise RuntimeError("Could not locate a recent presentation/deck from SEC filings for this CIK.")
 
 
 # =============================
-# Gemini LLM extraction
+# J&J Q4 CDN auto-discovery
+# =============================
+def quarter_of_date(d: datetime.date) -> int:
+    return (d.month - 1) // 3 + 1
+
+
+def prev_quarter(year: int, q: int) -> Tuple[int, int]:
+    if q == 1:
+        return year - 1, 4
+    return year, q - 1
+
+
+def discover_latest_jnj_pipeline_pdf(q4cdn_base: str, filename_prefix: str, lookback_quarters: int) -> str:
+    """
+    Try recent quarters first and pick the newest URL that exists.
+    URL pattern observed in your working example:
+      {base}/{YYYY}/q{q}/{prefix}-{q}Q{YY}.pdf
+    Example:
+      .../2025/q3/JNJ-Pipeline-3Q25.pdf
+    """
+    today = datetime.datetime.utcnow().date()
+    y = today.year
+    q = quarter_of_date(today)
+
+    candidates = []
+    for _ in range(max(1, lookback_quarters)):
+        yy = y % 100
+        url = f"{q4cdn_base}/{y}/q{q}/{filename_prefix}-{q}Q{yy:02d}.pdf"
+        candidates.append((y, q, url))
+        y, q = prev_quarter(y, q)
+
+    # Check newest-to-oldest; first hit wins
+    for y, q, url in candidates:
+        if http_head_ok(url):
+            return url
+
+    # If HEAD is blocked (rare), try a tiny GET
+    for y, q, url in candidates:
+        try:
+            r = requests.get(url, stream=True, timeout=30)
+            if r.status_code == 200:
+                return url
+        except Exception:
+            pass
+
+    raise RuntimeError("Could not auto-discover a valid J&J pipeline PDF in the lookback window.")
+
+
+# =============================
+# Gemini LLM extraction + “why it matters”
 # =============================
 def gemini_client() -> genai.Client:
     key = os.environ.get("GEMINI_API_KEY", "").strip()
@@ -243,36 +271,23 @@ def gemini_client() -> genai.Client:
 
 
 def _try_parse_json(text: str) -> Optional[dict]:
-    """
-    Robust JSON parse:
-    - direct json.loads
-    - if that fails, try to extract the first {...} block and parse that
-    """
     text = (text or "").strip()
     if not text:
         return None
-
     try:
         return json.loads(text)
     except Exception:
         pass
-
-    # Attempt to extract a JSON object from within extra text
     m = re.search(r"\{.*\}", text, flags=re.DOTALL)
     if m:
-        candidate = m.group(0)
         try:
-            return json.loads(candidate)
+            return json.loads(m.group(0))
         except Exception:
             return None
-
     return None
 
 
 def llm_extract_pipeline(company_name: str, source_text: str, model: str) -> dict:
-    """
-    Converts extracted text (plus OCR if needed) into structured JSON pipeline.
-    """
     prompt = f"""
 You are a pharmaceutical competitive intelligence analyst.
 
@@ -312,12 +327,10 @@ RAW TEXT:
 
     parsed = _try_parse_json(out)
     if parsed is not None:
-        # Ensure keys exist
         parsed.setdefault("as_of_date", None)
         parsed.setdefault("programs", [])
         return parsed
 
-    # If parsing fails, return debug info instead of crashing
     return {
         "as_of_date": None,
         "programs": [],
@@ -326,8 +339,54 @@ RAW TEXT:
     }
 
 
+def llm_why_it_matters(company_name: str, changes: List[dict], model: str) -> List[dict]:
+    """
+    Given structured changes, return parallel list with why_it_matters + watch_items.
+    """
+    if not changes:
+        return []
+
+    payload = {"changes": changes}
+
+    prompt = f"""
+You are a senior pharma competitive intelligence analyst.
+
+Given these pipeline changes for {company_name}, write decision-oriented implications.
+
+Return ONLY valid JSON:
+{{
+  "analyses": [
+    {{
+      "change_id": string,
+      "why_it_matters": string,
+      "watch_items": [string]
+    }}
+  ]
+}}
+
+Rules:
+- Be concrete and brief.
+- Do not speculate wildly; if uncertain, say what additional evidence would raise confidence.
+- Keep why_it_matters to 1–3 sentences.
+- watch_items should be 1–4 short bullets.
+
+CHANGES_JSON:
+{json.dumps(payload, ensure_ascii=False)}
+""".strip()
+
+    client = gemini_client()
+    resp = client.models.generate_content(model=model, contents=prompt)
+    out = (resp.text or "").strip()
+
+    parsed = _try_parse_json(out)
+    if parsed and isinstance(parsed.get("analyses"), list):
+        return parsed["analyses"]
+
+    return []
+
+
 # =============================
-# Diff logic + report
+# Diff + classification
 # =============================
 def canon(s: Optional[str]) -> str:
     if not s:
@@ -337,111 +396,246 @@ def canon(s: Optional[str]) -> str:
     return norm_ws(s)
 
 
-def diff_programs(prev: dict, curr: dict) -> dict:
+def phase_rank(phase: Optional[str]) -> int:
+    order = {
+        "Preclinical": 1,
+        "Phase 1": 2,
+        "Phase 1/2": 3,
+        "Phase 2": 4,
+        "Phase 2/3": 5,
+        "Phase 3": 6,
+        "Registration": 7,
+        "Approved": 8,
+    }
+    return order.get(phase or "", 0)
+
+
+def index_programs(programs: List[dict]) -> Dict[str, List[dict]]:
+    by_asset = {}
+    for p in programs:
+        asset = p.get("asset")
+        if not asset:
+            continue
+        k = canon(asset)
+        by_asset.setdefault(k, []).append(p)
+    return by_asset
+
+
+def classify_changes(prev: dict, curr: dict) -> List[dict]:
     prev_programs = prev.get("programs", []) if prev else []
     curr_programs = curr.get("programs", []) if curr else []
 
-    def key(p: dict) -> str:
-        return canon(p.get("asset")) + " || " + canon(p.get("indication"))
+    prev_by_asset = index_programs(prev_programs)
+    curr_by_asset = index_programs(curr_programs)
 
-    prev_map = {key(p): p for p in prev_programs if p.get("asset")}
-    curr_map = {key(p): p for p in curr_programs if p.get("asset")}
+    changes: List[dict] = []
 
-    added_keys = sorted(set(curr_map.keys()) - set(prev_map.keys()))
-    removed_keys = sorted(set(prev_map.keys()) - set(curr_map.keys()))
-    common_keys = sorted(set(prev_map.keys()) & set(curr_map.keys()))
+    # New / removed assets
+    prev_assets = set(prev_by_asset.keys())
+    curr_assets = set(curr_by_asset.keys())
 
-    phase_changes = []
-    for k in common_keys:
-        p0 = prev_map[k]
-        p1 = curr_map[k]
-        if canon(p0.get("phase")) != canon(p1.get("phase")):
-            phase_changes.append({
-                "asset": p1.get("asset"),
-                "indication": p1.get("indication"),
-                "from_phase": p0.get("phase"),
-                "to_phase": p1.get("phase"),
+    for a in sorted(curr_assets - prev_assets):
+        example = curr_by_asset[a][0]
+        changes.append({
+            "change_id": f"new_asset:{a}",
+            "type": "NEW_ASSET",
+            "asset": example.get("asset"),
+            "details": {"added_rows": curr_by_asset[a]},
+        })
+
+    for a in sorted(prev_assets - curr_assets):
+        example = prev_by_asset[a][0]
+        changes.append({
+            "change_id": f"removed_asset:{a}",
+            "type": "REMOVED_ASSET",
+            "asset": example.get("asset"),
+            "details": {"removed_rows": prev_by_asset[a]},
+        })
+
+    # Asset present in both: compare indications + phase + partner
+    for a in sorted(prev_assets & curr_assets):
+        prev_rows = prev_by_asset[a]
+        curr_rows = curr_by_asset[a]
+
+        def row_key(r: dict) -> str:
+            return canon(r.get("indication"))
+
+        prev_map = {row_key(r): r for r in prev_rows}
+        curr_map = {row_key(r): r for r in curr_rows}
+
+        prev_inds = set(prev_map.keys())
+        curr_inds = set(curr_map.keys())
+
+        for ind in sorted(curr_inds - prev_inds):
+            r = curr_map[ind]
+            changes.append({
+                "change_id": f"new_ind:{a}:{ind}",
+                "type": "NEW_INDICATION",
+                "asset": r.get("asset"),
+                "indication": r.get("indication"),
+                "details": {"current": r},
             })
 
+        for ind in sorted(prev_inds - curr_inds):
+            r = prev_map[ind]
+            changes.append({
+                "change_id": f"removed_ind:{a}:{ind}",
+                "type": "REMOVED_INDICATION",
+                "asset": r.get("asset"),
+                "indication": r.get("indication"),
+                "details": {"previous": r},
+            })
+
+        for ind in sorted(prev_inds & curr_inds):
+            p0 = prev_map[ind]
+            p1 = curr_map[ind]
+
+            # Phase changes
+            if canon(p0.get("phase")) != canon(p1.get("phase")):
+                changes.append({
+                    "change_id": f"phase:{a}:{ind}",
+                    "type": "PHASE_CHANGE",
+                    "asset": p1.get("asset"),
+                    "indication": p1.get("indication"),
+                    "details": {"from": p0.get("phase"), "to": p1.get("phase")},
+                })
+
+            # Partner changes
+            if canon(p0.get("partner")) != canon(p1.get("partner")):
+                changes.append({
+                    "change_id": f"partner:{a}:{ind}",
+                    "type": "PARTNERSHIP_CHANGE",
+                    "asset": p1.get("asset"),
+                    "indication": p1.get("indication"),
+                    "details": {"from": p0.get("partner"), "to": p1.get("partner")},
+                })
+
+    return changes
+
+
+def base_confidence_for_change(change_type: str) -> float:
+    # Before registry corroboration, keep conservative.
     return {
-        "added": [curr_map[k] for k in added_keys],
-        "removed": [prev_map[k] for k in removed_keys],
-        "phase_changes": phase_changes,
-    }
+        "NEW_ASSET": 0.65,
+        "REMOVED_ASSET": 0.60,
+        "NEW_INDICATION": 0.60,
+        "REMOVED_INDICATION": 0.55,
+        "PHASE_CHANGE": 0.75,
+        "PARTNERSHIP_CHANGE": 0.70,
+    }.get(change_type, 0.50)
 
 
-def confidence_score(d: dict) -> float:
-    score = 0.35
-    if d.get("phase_changes"):
-        score += 0.35
-    if d.get("added") or d.get("removed"):
-        score += 0.20
-    return max(0.0, min(0.95, score))
+def phase_counts(programs: List[dict]) -> Dict[str, int]:
+    counts: Dict[str, int] = {}
+    for p in programs:
+        ph = p.get("phase") or "Unknown"
+        counts[ph] = counts.get(ph, 0) + 1
+    return dict(sorted(counts.items(), key=lambda x: phase_rank(x[0])))
 
 
-def render_report(company: dict, source_url: str, prev_snapshot_path: str, curr_snapshot: dict, d: dict) -> str:
+# =============================
+# Reporting
+# =============================
+def render_report(
+    company: dict,
+    source_url: str,
+    prev_snapshot_path: str,
+    curr_snapshot: dict,
+    changes: List[dict],
+    analyses: List[dict],
+) -> str:
     name = company["name"]
     as_of = curr_snapshot.get("as_of_date")
-    score = confidence_score(d)
+    programs = curr_snapshot.get("programs", []) or []
+    counts = phase_counts(programs)
 
-    lines = []
-    lines.append(f"# Pipeline Change Report — {name}")
+    analysis_by_id = {a.get("change_id"): a for a in analyses if a.get("change_id")}
+
+    lines: List[str] = []
+    lines.append(f"# Competitive Pipeline Report — {name}")
     lines.append("")
+    lines.append("## Executive summary")
     lines.append(f"- Run date (UTC): {utc_today_str()}")
     lines.append(f"- Source: {source_url}")
     lines.append(f"- Extracted 'as of' date: {as_of if as_of else 'Unknown'}")
-    lines.append(f"- Confidence score (0–1): {score:.2f}")
+    lines.append(f"- Programs extracted: {len(programs)}")
     lines.append("")
 
-    # Helpful debug for beginners: show if extraction looks empty
-    prog_count = len(curr_snapshot.get("programs", []))
-    lines.append(f"- Extracted program count: {prog_count}")
-    if curr_snapshot.get("_llm_parse_error"):
-        lines.append(f"- Extraction warning: {curr_snapshot.get('_llm_parse_error')}")
+    lines.append("### Pipeline size by phase (snapshot)")
+    if counts:
+        for k, v in counts.items():
+            lines.append(f"- {k}: {v}")
+    else:
+        lines.append("- No phase counts available (extraction likely empty).")
     lines.append("")
 
-    def section(title: str, items: List[dict]):
-        lines.append(f"## {title}")
-        if not items:
-            lines.append("_None detected._")
-            lines.append("")
-            return
-        for it in items:
-            asset = it.get("asset")
-            ind = it.get("indication")
-            phase = it.get("phase")
-            trial = it.get("trial_or_program")
-            partner = it.get("partner")
-            bits = [f"**{asset}**"]
-            if ind:
-                bits.append(ind)
-            if phase:
-                bits.append(f"({phase})")
-            if trial:
-                bits.append(f"Trial/Program: {trial}")
-            if partner:
-                bits.append(f"Partner: {partner}")
-            lines.append("- " + " — ".join(bits))
+    # Change log
+    lines.append("## Change log (previous vs current)")
+    if not changes:
+        lines.append("_No changes detected._")
         lines.append("")
-
-    section("New / Added items", d.get("added", []))
-    section("Removed / Discontinued items", d.get("removed", []))
-
-    lines.append("## Phase changes")
-    pcs = d.get("phase_changes", [])
-    if not pcs:
-        lines.append("_None detected._")
+        lines.append("Note: On the first successful run, this report establishes a baseline. Changes appear on the next run.")
         lines.append("")
     else:
-        for c in pcs:
-            lines.append(
-                f"- **{c.get('asset')}** — {c.get('indication') or ''} — {c.get('from_phase')} → {c.get('to_phase')}"
-            )
-        lines.append("")
+        for ch in changes:
+            ctype = ch.get("type")
+            asset = ch.get("asset")
+            ind = ch.get("indication")
+            conf = base_confidence_for_change(ctype)
+            what = ""
 
-    lines.append("## Citations")
-    lines.append(f"- {source_url}")
-    lines.append(f"- Previous snapshot file: {prev_snapshot_path if os.path.exists(prev_snapshot_path) else 'None (first run)'}")
+            if ctype == "PHASE_CHANGE":
+                what = f"{asset} — {ind or ''}: phase {ch['details'].get('from')} → {ch['details'].get('to')}"
+            elif ctype == "PARTNERSHIP_CHANGE":
+                what = f"{asset} — {ind or ''}: partner {ch['details'].get('from')} → {ch['details'].get('to')}"
+            elif ctype == "NEW_ASSET":
+                what = f"{asset}: new asset added to pipeline"
+            elif ctype == "REMOVED_ASSET":
+                what = f"{asset}: removed from pipeline (possible discontinuation or deprioritization)"
+            elif ctype == "NEW_INDICATION":
+                what = f"{asset}: new indication added — {ind}"
+            elif ctype == "REMOVED_INDICATION":
+                what = f"{asset}: indication removed — {ind}"
+            else:
+                what = f"{asset}: change detected"
+
+            lines.append(f"### {ctype}")
+            lines.append(f"- What changed: {what}")
+            lines.append(f"- Confidence (pre-corroboration): {conf:.2f}")
+
+            a = analysis_by_id.get(ch.get("change_id"))
+            if a:
+                lines.append(f"- Why it matters: {a.get('why_it_matters')}")
+                wis = a.get("watch_items") or []
+                if wis:
+                    lines.append("- Watch items:")
+                    for w in wis:
+                        lines.append(f"  - {w}")
+            else:
+                lines.append("- Why it matters: (not available)")
+
+            lines.append(f"- Citations: {source_url}")
+            lines.append("")
+
+    # Appendix: small preview of pipeline rows
+    lines.append("## Appendix: pipeline preview (first 15 rows)")
+    if not programs:
+        lines.append("_No programs extracted._")
+    else:
+        for p in programs[:15]:
+            bits = [p.get("asset", "")]
+            if p.get("indication"):
+                bits.append(p["indication"])
+            if p.get("phase"):
+                bits.append(f"({p['phase']})")
+            if p.get("partner"):
+                bits.append(f"Partner: {p['partner']}")
+            lines.append("- " + " — ".join([b for b in bits if b]))
+    lines.append("")
+
+    lines.append("## Citations and provenance")
+    lines.append(f"- Source URL: {source_url}")
+    lines.append(f"- Previous snapshot file: {prev_snapshot_path if os.path.exists(prev_snapshot_path) else 'None (baseline)'}")
     lines.append("")
 
     return "\n".join(lines)
@@ -450,7 +644,7 @@ def render_report(company: dict, source_url: str, prev_snapshot_path: str, curr_
 # =============================
 # Company runner
 # =============================
-def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
+def run_company(company: dict, llm_model: str) -> Tuple[str, dict, List[dict], str]:
     slug = company["slug"]
     typ = company["type"]
     today = utc_today_str()
@@ -469,11 +663,32 @@ def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
     source_url = ""
     raw_text = ""
 
-    # OCR controls (optional in config; safe defaults)
-    ocr_max_pages = int(company.get("ocr_max_pages", 20))
+    ocr_max_pages = int(company.get("ocr_max_pages", 12))
     ocr_dpi = int(company.get("ocr_dpi", 220))
 
-    if typ == "direct_pdf":
+    if typ == "jnj_q4cdn_auto":
+        q4cdn_base = company["q4cdn_base"]
+        prefix = company.get("filename_prefix", "JNJ-Pipeline")
+        lookback = int(company.get("lookback_quarters", 8))
+
+        pdf_url = discover_latest_jnj_pipeline_pdf(q4cdn_base, prefix, lookback)
+        source_url = pdf_url
+
+        pdf_resp = http_get(pdf_url)
+        pdf_resp.raise_for_status()
+        pdf_bytes = pdf_resp.content
+
+        extracted_text = pdf_to_text(pdf_bytes)
+        combined_text = maybe_add_ocr(pdf_bytes, extracted_text, ocr_max_pages, ocr_dpi)
+        raw_text = combined_text
+
+        safe_text_dump(
+            os.path.join(raw_dir, f"{today}.source.txt"),
+            f"PDF URL (auto): {pdf_url}\nSHA256: {sha256_bytes(pdf_bytes)}\n"
+            f"Text chars: {len(extracted_text)} | Combined chars: {len(combined_text)}\n",
+        )
+
+    elif typ == "direct_pdf":
         pdf_url = company["pdf_url"]
         source_url = pdf_url
 
@@ -481,7 +696,6 @@ def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
         pdf_resp.raise_for_status()
         pdf_bytes = pdf_resp.content
 
-        # text + OCR fallback
         extracted_text = pdf_to_text(pdf_bytes)
         combined_text = maybe_add_ocr(pdf_bytes, extracted_text, ocr_max_pages, ocr_dpi)
         raw_text = combined_text
@@ -489,7 +703,7 @@ def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
         safe_text_dump(
             os.path.join(raw_dir, f"{today}.source.txt"),
             f"PDF URL: {pdf_url}\nSHA256: {sha256_bytes(pdf_bytes)}\n"
-            f"Text chars: {len(extracted_text)} | Combined chars (with OCR if used): {len(combined_text)}\n",
+            f"Text chars: {len(extracted_text)} | Combined chars: {len(combined_text)}\n",
         )
 
     elif typ == "sec_latest_presentation":
@@ -509,7 +723,7 @@ def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
             safe_text_dump(
                 os.path.join(raw_dir, f"{today}.source.txt"),
                 f"SEC URL (PDF): {pres_url}\nSHA256: {sha256_bytes(pdf_bytes)}\n"
-                f"Text chars: {len(extracted_text)} | Combined chars (with OCR if used): {len(combined_text)}\n",
+                f"Text chars: {len(extracted_text)} | Combined chars: {len(combined_text)}\n",
             )
         else:
             raw_text = html_to_text(r.text)
@@ -518,37 +732,40 @@ def run_company(company: dict, llm_model: str) -> Tuple[str, dict, dict, str]:
     else:
         raise RuntimeError(f"Unknown company type: {typ}")
 
-    # Save raw text preview for debugging (very helpful)
     safe_text_dump(os.path.join(raw_dir, f"{today}.extracted_text_preview.txt"), raw_text[:20000])
 
-    # LLM extraction (cap input)
+    # LLM extraction
     input_cap = 160000
     extracted = llm_extract_pipeline(company["name"], raw_text[:input_cap], llm_model)
-
     extracted["_meta"] = {
         "run_date_utc": today,
         "source_url": source_url,
         "input_text_sha256": sha256_bytes(raw_text.encode("utf-8", errors="ignore")),
         "ocr_max_pages": ocr_max_pages,
         "ocr_dpi": ocr_dpi,
+        "source_type": typ,
     }
 
-    # Save snapshot
     dated_path = os.path.join(snap_dir, f"{today}.json")
     safe_json_dump(dated_path, extracted)
     safe_json_dump(prev_path, extracted)
 
-    # If model output was not parseable JSON, save it for inspection
     if extracted.get("_llm_raw_output"):
         safe_text_dump(os.path.join(raw_dir, f"{today}.llm_raw_output.txt"), extracted["_llm_raw_output"])
 
-    # Diff + report
-    d = diff_programs(prev or {}, extracted)
-    report_md = render_report(company, source_url, prev_path, extracted, d)
+    # Change classification + “why it matters”
+    changes = classify_changes(prev or {}, extracted)
+    analyses = llm_why_it_matters(company["name"], changes, llm_model)
+
+    report_md = render_report(company, source_url, prev_path, extracted, changes, analyses)
     report_path = os.path.join(rep_dir, f"{today}.md")
     safe_text_dump(report_path, report_md)
 
-    return report_path, extracted, d, source_url
+    # Save machine-readable change log for later aggregation
+    change_json_path = os.path.join(rep_dir, f"{today}.changes.json")
+    safe_json_dump(change_json_path, {"source_url": source_url, "changes": changes, "analyses": analyses})
+
+    return report_path, extracted, changes, source_url
 
 
 def main() -> None:
@@ -562,11 +779,11 @@ def main() -> None:
 
     for c in companies:
         print(f"\n--- {c['name']} ---")
-        report_path, snapshot, d, url = run_company(c, llm_model)
+        report_path, snapshot, changes, url = run_company(c, llm_model)
         print(f"Source: {url}")
         print(f"Report written: {report_path}")
         print(f"Extracted programs: {len(snapshot.get('programs', []))}")
-        print(f"Added: {len(d.get('added', []))} | Removed: {len(d.get('removed', []))} | Phase changes: {len(d.get('phase_changes', []))}")
+        print(f"Changes detected: {len(changes)}")
 
 
 if __name__ == "__main__":
