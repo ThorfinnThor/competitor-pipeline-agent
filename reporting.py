@@ -20,22 +20,79 @@ def _write_text(path: str, text: str) -> None:
         f.write(text)
 
 
+
 def _phase_norm(p: str) -> str:
-    if not p:
+    """
+    Normalize phase strings into a stable, human-readable set.
+
+    Canonical outputs:
+      Preclinical, Phase 1, Phase 1/2, Phase 2, Phase 2/3, Phase 3,
+      Registration, Approved, Unknown
+    """
+    if p is None:
         return "Unknown"
-    x = str(p).strip().lower()
-    # Basic normalization – customize if you want
-    if "reg" in x or "file" in x or "submission" in x:
+    x = str(p).strip()
+    if not x:
+        return "Unknown"
+
+    s = x.strip().lower()
+
+    # Common non-numeric statuses
+    if any(tok in s for tok in ["approved", "marketed", "on market", "launched"]):
+        return "Approved"
+    if any(tok in s for tok in ["reg", "file", "filing", "submission", "nda", "bla", "maa"]):
+        # avoid misclassifying "preclinical" containing "cl"
         return "Registration"
-    if "3" in x and "phase" in x:
+    if "preclinical" in s or "pre-clinical" in s or s in {"pre", "pc"}:
+        return "Preclinical"
+
+    # Compact forms: p1, p2, p3, ph1, etc.
+    s = re.sub(r"\bph\s*", "phase ", s)
+    s = re.sub(r"\bp\s*", "p", s)
+
+    # Roman numerals (phase i/ii/iii)
+    roman_map = {
+        "iii": "3",
+        "ii": "2",
+        "iv": "4",
+        "i": "1",
+    }
+    # Normalize "phase ii/iii" etc into digits while preserving separators
+    for r, d in roman_map.items():
+        s = re.sub(rf"\bphase\s*{r}\b", f"phase {d}", s)
+        s = re.sub(rf"\b{r}\s*/\s*{r}\b", f"{d}/{d}", s)  # no-op safety
+
+    # Composite phases
+    if re.search(r"\b(1|i)\s*[/\-–]\s*(2|ii)\b", s) or re.search(r"\bphase\s*1\s*[/\-–]\s*2\b", s):
+        return "Phase 1/2"
+    if re.search(r"\b(2|ii)\s*[/\-–]\s*(3|iii)\b", s) or re.search(r"\bphase\s*2\s*[/\-–]\s*3\b", s):
+        return "Phase 2/3"
+
+    # Plain numeric phases
+    if re.search(r"\bphase\s*3\b", s) or re.fullmatch(r"p?3", s):
         return "Phase 3"
-    if "2" in x and "phase" in x:
+    if re.search(r"\bphase\s*2\b", s) or re.fullmatch(r"p?2", s):
         return "Phase 2"
-    if "1" in x and "phase" in x:
+    if re.search(r"\bphase\s*1\b", s) or re.fullmatch(r"p?1", s):
         return "Phase 1"
-    if x in {"p1", "p2", "p3"}:
-        return {"p1": "Phase 1", "p2": "Phase 2", "p3": "Phase 3"}[x]
-    return p.strip() or "Unknown"
+
+    # If the model already produced canonical values, preserve them
+    canon = {
+        "phase 1/2": "Phase 1/2",
+        "phase 2/3": "Phase 2/3",
+        "phase 1": "Phase 1",
+        "phase 2": "Phase 2",
+        "phase 3": "Phase 3",
+        "registration": "Registration",
+        "approved": "Approved",
+        "preclinical": "Preclinical",
+        "unknown": "Unknown",
+    }
+    if s in canon:
+        return canon[s]
+
+    # Fall back to original (trimmed) for transparency, but avoid empty
+    return x.strip() or "Unknown"
 
 
 def _count_by_phase(programs: List[dict]) -> Dict[str, int]:
@@ -43,8 +100,23 @@ def _count_by_phase(programs: List[dict]) -> Dict[str, int]:
     for p in programs or []:
         ph = _phase_norm(p.get("phase") or "")
         out[ph] = out.get(ph, 0) + 1
-    return dict(sorted(out.items(), key=lambda kv: kv[0]))
 
+    # Stable, analyst-friendly ordering
+    order = [
+        "Preclinical",
+        "Phase 1",
+        "Phase 1/2",
+        "Phase 2",
+        "Phase 2/3",
+        "Phase 3",
+        "Registration",
+        "Approved",
+        "Unknown",
+    ]
+    def sort_key(k: str) -> Tuple[int, str]:
+        return (order.index(k) if k in order else 999, k)
+
+    return dict(sorted(out.items(), key=lambda kv: sort_key(kv[0])))
 
 def _safe_list(x: Any) -> List[Any]:
     return x if isinstance(x, list) else []
@@ -119,7 +191,36 @@ def build_snapshot_markdown(
             lines.append(f"- {k}: {v}")
     lines.append("")
 
-    # CT.gov summary
+    
+    # Compact inventory excerpt (keeps snapshot readable)
+    lines.append("## Programs inventory (excerpt)")
+    lines.append(f"_Full inventory is in the CSV export: `{programs_csv_path}`._")
+    lines.append("")
+    if not programs:
+        lines.append("_No programs available._")
+        lines.append("")
+    else:
+        # Show first N programs, sorted for readability
+        def _sort_key(p: dict) -> Tuple[str, str]:
+            return (str(p.get("asset") or "").lower(), str(p.get("indication") or "").lower())
+
+        excerpt = sorted(programs, key=_sort_key)[:30]
+        lines.append("| Asset | Indication | Phase | Page |")
+        lines.append("|---|---|---:|---:|")
+        for p in excerpt:
+            lines.append(f"| {p.get('asset','')} | {p.get('indication','') or ''} | {p.get('phase') or ''} | {p.get('source_page') or ''} |")
+        lines.append("")
+
+        # Late-stage quick scan
+        late = [p for p in programs if _phase_norm(p.get("phase")) in {"Phase 3", "Registration", "Approved"}]
+        if late:
+            lines.append("### Late-stage programs (Phase 3 / Registration / Approved)")
+            for p in sorted(late, key=_sort_key)[:25]:
+                lines.append(f"- **{p.get('asset','')}** — {p.get('indication','') or ''} ({_phase_norm(p.get('phase'))}, p.{p.get('source_page') or ''})")
+            if len(late) > 25:
+                lines.append(f"- _...and {len(late) - 25} more (see CSV)._")
+            lines.append("")
+# CT.gov summary
     lines.append("## ClinicalTrials.gov coverage")
     if not ctgov_summary.get("enabled"):
         lines.append("_Disabled._")
@@ -178,7 +279,6 @@ def build_snapshot_markdown(
     lines.append("")
 
     return "\n".join(lines)
-
 
 def build_delta_markdown(
     company_name: str,
@@ -275,22 +375,51 @@ def build_snapshot_pdf(pdf_path: str, md_text: str, company_name: str, run_date:
     story.append(Spacer(1, 0.25 * inch))
 
     # Sections as text (clean, professional)
-    for block in md_text.split("\n## "):
+    
+    # Render key sections from markdown (headings + bullet lists).
+    # This intentionally does not attempt full Markdown fidelity; it is a clean CI-style PDF.
+    blocks = md_text.split("\n## ")
+    for block in blocks:
         if not block.strip():
             continue
-        if block.startswith("# "):
-            continue
-        if block.startswith("Snapshot Pipeline Intelligence"):
-            continue
-        if block.startswith("Run coverage"):
-            title, body = block.split("\n", 1) if "\n" in block else (block, "")
-            story.append(Paragraph("Run coverage & provenance", styles["H1"]))
-            story.append(Spacer(1, 0.05 * inch))
-            story.append(Paragraph(body.replace("\n", "<br/>"), styles["Small"]))
-            story.append(Spacer(1, 0.15 * inch))
+        title, body = block.split("\n", 1) if "\n" in block else (block, "")
+        title = title.strip().lstrip("#").strip()
+        body = body.strip()
+
+        # Skip duplicated title if present
+        if title.lower().startswith("snapshot pipeline intelligence"):
             continue
 
-    # Inventory appendix (first N)
+        # Promote selected sections; ignore the inventory table in markdown (we render our own table below)
+        if title in {
+            "Run coverage & provenance",
+            "Pipeline size by phase (snapshot)",
+            "ClinicalTrials.gov coverage",
+            "SEC EDGAR coverage",
+            "Press release coverage",
+        }:
+            story.append(Paragraph(title, styles["H1"]))
+            story.append(Spacer(1, 0.05 * inch))
+            if body:
+                # Preserve bullets/newlines reasonably
+                story.append(Paragraph(body.replace("\n", "<br/>"), styles["Small"]))
+                story.append(Spacer(1, 0.15 * inch))
+            continue
+
+    # Topline inventory excerpt on page 1 (keeps the report from looking empty)
+    story.append(Paragraph("Programs inventory (excerpt — first 20)", styles["H1"]))
+    data1 = [["Asset", "Indication", "Phase", "Page"]]
+    for p in (programs or [])[:20]:
+        data1.append([
+            (p.get("asset") or "")[:60],
+            (p.get("indication") or "")[:70],
+            (p.get("phase") or "")[:20],
+            str(p.get("source_page") or ""),
+        ])
+    story.append(_table(data1, col_widths=[1.7 * inch, 3.2 * inch, 0.9 * inch, 0.7 * inch]))
+    story.append(Spacer(1, 0.15 * inch))
+
+# Inventory appendix (first N)
     story.append(PageBreak())
     story.append(Paragraph("Appendix — Pipeline inventory (first 60 rows)", styles["H1"]))
     story.append(Paragraph(f"Full inventory in CSV: {programs_csv_path}", styles["Small"]))
@@ -307,7 +436,6 @@ def build_snapshot_pdf(pdf_path: str, md_text: str, company_name: str, run_date:
     story.append(_table(data, col_widths=[1.7 * inch, 3.2 * inch, 0.9 * inch, 0.7 * inch]))
 
     doc.build(story)
-
 
 def build_delta_pdf(pdf_path: str, company_name: str, run_date: str, delta_md: str, diff: dict) -> None:
     ensure_dir(os.path.dirname(pdf_path))
