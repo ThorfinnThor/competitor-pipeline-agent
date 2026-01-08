@@ -9,46 +9,36 @@
   "kept": 10,
   "studies": [
     {
-      "nct_id": "NCT04662580",
-      "title": "A Phase 1, Multicenter, Open-Label, Dose-Escalation, and Dose-Expansion Study to Evaluate the Safety, Pharmacokinetics, and Anti-Tumor Activity of ARX517 as Monotherapy and in Combination With Androgen Receptor Pathway Inhibitors in Subjects With Metastatic Prostate Cancer",
+      "nct_id": "NCT07002320",
+      "title": "ASpiRE: A Proof-of-mechanism and Proof-of-concept Clinical Trial Evaluating the Safety, Tolerability, Biological and Anti-tumour Activity of Apalutamide With Dual CXCR1 and CXCR2 Blockade by SX-682 for Men Suffering From Metastatic Castration-resistant Prostate Cancer (mCRPC)",
       "overall_status": "RECRUITING",
-      "phase": "Phase 1",
-      "conditions": [
-        "Metastatic Prostate Cancer"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "ARX517",
-        "Apalutamide",
-        "Abiraterone acetate",
-        "Prednisone"
-      ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04662580"
-    },
-    {
-      "nct_id": "NCT04325828",
-      "title": "An Open-label Phase 2 Study to Evaluate the Efficacy and Safety of Apalutamide in Combination With Gonadotropin-releasing Hormone (GnRH) Agonist in Subjects With Locally Advanced or Recurrent/Metastatic and Androgen Receptor (AR) Expressing Salivary Gland Carcinoma",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
       "phase": "Phase 2",
       "conditions": [
-        "Salivary Gland Neoplasms"
+        "Metastatic Castrate-Resistant Prostate Cancer (mCRPC)"
       ],
-      "lead_sponsor": "Janssen Pharmaceutical K.K.",
-      "collaborators": [],
+      "lead_sponsor": "Institute of Cancer Research, United Kingdom",
+      "collaborators": [
+        "Prostate Cancer UK",
+        "Janssen Pharmaceutica N.V., Belgium",
+        "Oncology Institute of Southern Switzerland",
+        "Syntrix Biosystems, Inc.",
+        "Royal Marsden NHS Foundation Trust",
+        "Cambridge University Hospitals NHS Foundation Trust",
+        "Belfast Health and Social Care Trust",
+        "Institute of Oncology Research (IOR)"
+      ],
       "interventions": [
-        "Apalutamide",
-        "GnRH Agonist"
+        "SX-682",
+        "Apalutamide"
       ],
-      "last_update": "2025-12-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04325828"
+      "last_update": "2025-12-04",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07002320"
     },
     {
-      "nct_id": "NCT04108208",
-      "title": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Phase IV Study of Apalutamide in Chinese Participants With Non-Metastatic Castration-Resistant Prostate Cancer (NM-CRPC)",
+      "nct_id": "NCT03767244",
+      "title": "A Randomized, Double-blind, Placebo-controlled, Phase 3 Study of Apalutamide in Subjects With High-risk, Localized or Locally Advanced Prostate Cancer Who Are Candidates for Radical Prostatectomy",
       "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": null,
+      "phase": "Phase 3",
       "conditions": [
         "Prostatic Neoplasms"
       ],
@@ -56,71 +46,143 @@
       "collaborators": [],
       "interventions": [
         "Apalutamide",
-        "Placebo",
-        "Androgen-deprivation Therapy (ADT)"
+        "Androgen Deprivation Therapy (ADT)",
+        "Placebo"
       ],
-      "last_update": "2025-12-18",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04108208"
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03767244"
     },
     {
-      "nct_id": "NCT06019676",
-      "title": "Impact of Apalutamide in Metastatic Hormone Sensitive Prostate Cancer Patients, a Multicentre Prospective Observational Study",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": null,
-      "conditions": [
-        "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
-      ],
-      "lead_sponsor": "Royal Marsden NHS Foundation Trust",
-      "collaborators": [
-        "Janssen, LP"
-      ],
-      "interventions": [],
-      "last_update": "2025-09-18",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06019676"
-    },
-    {
-      "nct_id": "NCT02721979",
-      "title": "A Phase 2 Study of Apalutamide in Active Surveillance Patients",
-      "overall_status": "TERMINATED",
+      "nct_id": "NCT04523207",
+      "title": "A Multi-center, Open-label, Single-arm Phase 2 Study of the Adjuvant Treatment of Apalutamide and Androgen Deprivation Therapy (ADT) in Treatment-naïve Participants Who Have Undergone Radical Prostatectomy (RP) for Non-metastatic Prostate Cancer and Who Are at High Risk for Metastases",
+      "overall_status": "COMPLETED",
       "phase": "Phase 2",
       "conditions": [
-        "Prostate Adenocarcinoma"
+        "Prostatic Neoplasms"
       ],
-      "lead_sponsor": "University of Washington",
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Apalutamide",
+        "ADT",
+        "Relugolix"
+      ],
+      "last_update": "2025-04-25",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04523207"
+    },
+    {
+      "nct_id": "NCT03802682",
+      "title": "A Randomized, Open-label, Two-way, Crossover Study to Evaluate the Relative Bioavailability of Apalutamide Administered Orally as Whole Tablets and as a Mixture in Applesauce in Healthy Subjects",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Healthy"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Apalutamide"
+      ],
+      "last_update": "2025-02-03",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03802682"
+    },
+    {
+      "nct_id": "NCT04181203",
+      "title": "An Open Label, Randomized, Phase III Study, Evaluating the Efficacy of a Combination of Apalutamide With Radiotherapy and LHRH Agonist in High-risk Postprostatectomy Biochemically Relapsed Prostate Cancer Patients",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Prostate Cancer"
+      ],
+      "lead_sponsor": "UNICANCER",
       "collaborators": [
-        "Janssen Scientific Affairs, LLC",
-        "National Cancer Institute (NCI)"
+        "Janssen Pharmaceutica"
       ],
       "interventions": [
         "Apalutamide",
-        "Laboratory Biomarker Analysis",
-        "Quality-of-Life Assessment",
-        "Questionnaire Administration"
+        "Salvage radiotherapy (SRT)",
+        "Luteinising Hormone Releasing Hormone agonist (LHRHa)"
       ],
-      "last_update": "2023-02-09",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02721979"
+      "last_update": "2025-07-30",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04181203"
     },
     {
-      "nct_id": "NCT03365297",
-      "title": "Targeted Drug Intervention to Inhibit Cancer Progression in Men on Active Surveillance for Prostate Cancer. Therapeutics in Active Prostate Cancer Surveillance (TAPS01)",
+      "nct_id": "NCT03903835",
+      "title": "ProBio: An Outcome-adaptive and Randomized Multi-arm Biomarker Driven Study in Patients With Metastatic Prostate Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Metastatic Castration-resistant Prostate Cancer (mCRPC)",
+        "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+      ],
+      "lead_sponsor": "Karolinska Institutet",
+      "collaborators": [
+        "The Swedish Research Council",
+        "Kom Op Tegen Kanker",
+        "Janssen Pharmaceutica N.V., Belgium",
+        "AstraZeneca",
+        "Cancerfonden"
+      ],
+      "interventions": [
+        "Enzalutamide Oral Capsule",
+        "Abiraterone Oral Tablet",
+        "Carboplatin",
+        "Cabazitaxel 60 mg Solution for Injection",
+        "Docetaxel Injectable Solution",
+        "Radium Chloride Ra-223",
+        "Niraparib plus Abiraterone acetate plus Prednisone",
+        "Capivasertib plus Docetaxel",
+        "Apalutamide",
+        "Darolutamide"
+      ],
+      "last_update": "2025-04-09",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03903835"
+    },
+    {
+      "nct_id": "NCT05683964",
+      "title": "Understanding the Interaction Between Androgen Receptor Signaling and Prostate-Specific Membrane Antigen Expression",
+      "overall_status": "RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Prostate Adenocarcinoma",
+        "Prostate Cancer",
+        "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+      ],
+      "lead_sponsor": "Beth Israel Deaconess Medical Center",
+      "collaborators": [
+        "Dana-Farber Cancer Institute"
+      ],
+      "interventions": [
+        "Apalutamide [Erleada], darolutamide [Nubeqa], or enzalutamide [Xtandi]",
+        "Prostate-Specific Membrane Antigen (PSMA) PET/CT Scan"
+      ],
+      "last_update": "2024-08-16",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05683964"
+    },
+    {
+      "nct_id": "NCT02903368",
+      "title": "Phase II Randomized Study Of Neoadjuvant And Adjuvant Abiraterone Acetate + Apalutamide For Intermediate-High Risk Prostate Cancer Undergoing Prostatectomy",
       "overall_status": "COMPLETED",
       "phase": "Phase 2",
       "conditions": [
         "Prostate Cancer"
       ],
-      "lead_sponsor": "CCTU- Cancer Theme",
+      "lead_sponsor": "Dana-Farber Cancer Institute",
       "collaborators": [
-        "Janssen-Cilag Ltd."
+        "Janssen Scientific Affairs, LLC"
       ],
       "interventions": [
-        "Apalutamide"
+        "Apalutamide",
+        "Leuprolide",
+        "Prednisone",
+        "Abiraterone Acetate"
       ],
-      "last_update": "2019-11-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03365297"
+      "last_update": "2025-06-13",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02903368"
     },
     {
-      "nct_id": "NCT02257736",
-      "title": "A Phase 3 Randomized, Placebo-controlled Double-blind Study of JNJ-56021927 in Combination With Abiraterone Acetate and Prednisone Versus Abiraterone Acetate and Prednisone in Subjects With Chemotherapy-naive Metastatic Castration-resistant Prostate Cancer (mCRPC)",
+      "nct_id": "NCT02531516",
+      "title": "ATLAS: A Randomized, Double-blind, Placebo-controlled Phase 3 Study of JNJ-56021927 in Subjects With High-risk, Localized or Locally Advanced Prostate Cancer Receiving Treatment With Primary Radiation Therapy",
       "overall_status": "ACTIVE_NOT_RECRUITING",
       "phase": "Phase 3",
       "conditions": [
@@ -130,83 +192,30 @@
       "collaborators": [],
       "interventions": [
         "Apalutamide",
-        "Abiraterone acetate",
-        "Prednisone",
-        "Placebo"
+        "Bicalutamide",
+        "Bicalutamide Placebo",
+        "Apalutamide Placebo",
+        "GnRH (agonist)",
+        "74-80 Grays (units of radiation)"
       ],
-      "last_update": "2025-12-22",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02257736"
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02531516"
     },
     {
-      "nct_id": "NCT03436654",
-      "title": "Multi-arm Multi-modality Therapy for Very High Risk Localized and Low Volume Metastatic Prostatic Adenocarcinoma",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Prostate Cancer"
-      ],
-      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
-      "collaborators": [
-        "Dana-Farber Cancer Institute"
-      ],
-      "interventions": [
-        "Apalutamide",
-        "Abiraterone Acetate",
-        "Prednisone",
-        "Radical Prostatectomy",
-        "Extended Pelvic lymphadenectomy",
-        "GnRH agonist/antagonist",
-        "Stereotactic Body Radiation Therapy"
-      ],
-      "last_update": "2025-11-28",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03436654"
-    },
-    {
-      "nct_id": "NCT04585932",
-      "title": "Phase 2 Response Evaluation of Finite Systemic Therapy With Advanced Androgen Signaling Inhibition and Radiation Therapy for Oligorecurrent Prostate Cancer (RESTART)",
-      "overall_status": "WITHDRAWN",
-      "phase": "Phase 2",
-      "conditions": [
-        "Biochemically Recurrent Prostate Carcinoma",
-        "Metastatic Prostate Carcinoma",
-        "Oligometastatic Prostate Carcinoma",
-        "Stage IV Prostate Cancer AJCC v8",
-        "Stage IVA Prostate Cancer AJCC v8",
-        "Stage IVB Prostate Cancer AJCC v8"
-      ],
-      "lead_sponsor": "M.D. Anderson Cancer Center",
-      "collaborators": [
-        "National Cancer Institute (NCI)"
-      ],
-      "interventions": [
-        "Apalutamide",
-        "Degarelix",
-        "Leuprolide Acetate",
-        "Quality-of-Life Assessment",
-        "Questionnaire Administration",
-        "Radiation Therapy"
-      ],
-      "last_update": "2021-01-20",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04585932"
-    },
-    {
-      "nct_id": "NCT04421222",
-      "title": "A Phase 1, Open-label Study to Evaluate the Safety, Pharmacokinetics, and Anti-Tumor Activity of Oral EPI-7386 in Patients with Castration-Resistant Prostate Cancer",
-      "overall_status": "TERMINATED",
+      "nct_id": "NCT03569280",
+      "title": "A First-in-Human Study to Determine the Safety, Pharmacokinetics and Efficacy of KPG-121 When Administered With Enzalutamide, Abiraterone, or Apalutamide in Subjects With Non-Metastatic or Metastatic Castration-Resistant Prostate Cancer",
+      "overall_status": "COMPLETED",
       "phase": "Phase 1",
       "conditions": [
-        "Prostate Cancer"
+        "Castration-Resistant Prostate Cancer"
       ],
-      "lead_sponsor": "ESSA Pharmaceuticals",
+      "lead_sponsor": "Kangpu Biopharmaceuticals, Ltd.",
       "collaborators": [],
       "interventions": [
-        "EPI-7386 (QD)",
-        "EPI-7386 (BID)",
-        "Abiraterone acetate",
-        "Apalutamide"
+        "Enzalutamide or Abiraterone or Apalutamid"
       ],
-      "last_update": "2025-02-28",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04421222"
+      "last_update": "2023-07-18",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03569280"
     }
   ]
 }

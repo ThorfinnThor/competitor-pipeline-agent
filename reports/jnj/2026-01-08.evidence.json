@@ -69,16 +69,85 @@
       "feed_url": "https://www.jnj.com/rss-feed/all",
       "links_scanned": 10,
       "new_releases_processed": 0,
-      "releases_with_events": 0,
+      "releases_with_extracted_events": 0,
+      "processed_skipped": 10,
       "sources_path": "sources/jnj/press/2026-01-08"
     },
-    "press_events": []
+    "press_events": [],
+    "feed_items": [
+      {
+        "date": "2026-01-08",
+        "title": "Johnson & Johnson celebrates innovation in cancer research with 2025 Dr. Paul Janssen Award",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-celebrates-innovation-in-cancer-research-with-2025-dr-paul-janssen-award",
+        "already_processed": true
+      },
+      {
+        "date": "2026-01-07",
+        "title": "Johnson & Johnson Submits OTTAVA™ Robotic Surgical System to the U.S. Food and Drug Administration",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-ottava-robotic-surgical-system-to-the-u-s-food-and-drug-administration",
+        "already_processed": true
+      },
+      {
+        "date": "2026-01-06",
+        "title": "Johnson & Johnson submits application to the European Medicines Agency for TECVAYLI®▼ (teclistamab) in combination with DARZALEX® (daratumumab) subcutaneous formulation for patients with relapsed/refractory multiple myeloma",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-application-to-the-european-medicines-agency-for-tecvayli-teclistamab-in-combination-with-darzalex-daratumumab-subcutaneous-formulation-for-patients-with-relapsed-refractory-multiple-myeloma",
+        "already_processed": true
+      },
+      {
+        "date": "2026-01-06",
+        "title": "Johnson & Johnson unveils new data showing nipocalimab is the first and only investigational FcRn blocker with potential to reduce systemic lupus erythematosus (SLE) activity in a Phase 2 study",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-unveils-new-data-showing-nipocalimab-is-the-first-and-only-investigational-fcrn-blocker-with-potential-to-reduce-systemic-lupus-erythematosus-sle-activity-in-a-phase-2-study",
+        "already_processed": true
+      },
+      {
+        "date": "2026-01-02",
+        "title": "Johnson & Johnson Announces Quarterly Dividend for First Quarter 2026",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-quarterly-dividend-for-first-quarter-2026",
+        "already_processed": true
+      },
+      {
+        "date": "2025-12-29",
+        "title": "Johnson & Johnson completes acquisition of Halda Therapeutics and its novel platform to revolutionize cancer treatment and enable next-generation oral therapies",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-completes-acquisition-of-halda-therapeutics-and-its-novel-platform-to-revolutionize-cancer-treatment-and-enable-next-generation-oral-therapies",
+        "already_processed": true
+      },
+      {
+        "date": "2025-12-26",
+        "title": "Johnson & Johnson Statement on the Phase 2b DUPLEX-AD Study",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-statement-on-the-phase-2b-duplex-ad-study",
+        "already_processed": true
+      },
+      {
+        "date": "2025-12-22",
+        "title": "European Commission approves TREMFYA® (guselkumab) for the treatment of children with plaque psoriasis, marking the first paediatric indication for an IL-23 inhibitor",
+        "url": "https://www.jnj.com/media-center/press-releases/european-commission-approves-tremfya-guselkumab-for-the-treatment-of-children-with-plaque-psoriasis-marking-the-first-paediatric-indication-for-an-il-23-inhibitor",
+        "already_processed": true
+      },
+      {
+        "date": "2025-12-19",
+        "title": "Johnson & Johnson Backs HRS Registry to Advance Real-World Evidence in PFA",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-backs-hrs-registry-to-advance-real-world-evidence-in-pfa",
+        "already_processed": true
+      },
+      {
+        "date": "2025-12-18",
+        "title": "Johnson & Johnson Receives FDA Approval for TRUFILL n‑BCA Liquid Embolic System for the Treatment of Symptomatic Chronic Subdural Hematoma",
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-fda-approval-for-trufill-n-bca-liquid-embolic-system-for-the-treatment-of-symptomatic-chronic-subdural-hematoma",
+        "already_processed": true
+      }
+    ]
   },
   "final_brief": {
-    "headline": "No pipeline deck change detected",
-    "executive_summary": "The pipeline source document appears unchanged versus the last valid snapshot. This report therefore focuses on corroboration channels (ClinicalTrials.gov, EDGAR, and press signals).",
+    "headline": "Quiet Month: No Major Competitor Pipeline Shifts Detected",
+    "executive_summary": "This month's competitive intelligence update reflects a period of low reported activity among key competitors. Our automated monitoring systems, covering clinical trial registries, regulatory filings (SEC), and corporate press releases, did not detect any significant new pipeline assets, major phase advancements, strategic deals, or unexpected discontinuations within the reporting period. While our internal CT.gov monitoring for J&J's own assets remains active, external competitive signals were minimal. We maintain vigilance on high-priority areas and specific competitor programs.",
     "top_changes": [],
-    "watchlist": [],
-    "_deterministic": true
+    "watchlist": [
+      "Oncology: Next-generation ADCs, T-cell engagers, and novel IO combinations from Merck, Pfizer, BMS, AstraZeneca.",
+      "Immunology: Pipeline assets targeting IL-23, JAK inhibitors, and novel inflammatory pathways from AbbVie, Novartis, Sanofi, Lilly.",
+      "Neuroscience: Alzheimer's, Parkinson's, and Mood Disorder assets in mid-to-late stage development from Biogen, Eli Lilly, Eisai.",
+      "Cardiovascular & Metabolism: Emerging therapies for heart failure and metabolic dysfunction from Novartis, Amgen, Novo Nordisk.",
+      "Gene Therapy & Cell Therapy: Novel platforms and clinical progress from CRISPR Therapeutics, Vertex Pharmaceuticals, Gilead/Kite."
+    ],
+    "_llm_used": true
   }
 }

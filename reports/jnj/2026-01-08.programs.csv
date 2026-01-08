@@ -1,9 +1,9 @@
 asset,indication,phase,trial_or_program,partner,notes,source_page,ctgov_best_phase,ctgov_flag
 AKEEGA (niraparib/abiraterone),M1 Metastatic Castration-Sensitive Prostate Cancer,,AMPLITUDE,"TESARO, an oncology-focused business within GSK",,,Phase 3,ok
-DARZALEX (daratumumab),Smoldering Multiple Myeloma,,AQUILA,Genmab A/S,,,Phase 2,ok
-DARZALEX (daratumumab),Frontline multiple myeloma transplant ineligible,,CEPHEUS,Genmab A/S,,,Phase 2,ok
-IMBRUVICA (ibrutinib),Frontline Chronic Lymphocytic Leukemia (I + V fixed duration),,GLOW,"Pharmacyclics, LLC, an AbbVie company",,,Phase 2,ok
-IMBRUVICA (ibrutinib),Frontline Mantle Cell Lymphoma,,Triangle,"Pharmacyclics, LLC, an AbbVie company",,,Phase 2,ok
+DARZALEX (daratumumab),Smoldering Multiple Myeloma,,AQUILA,Genmab A/S,,,Phase 3,ok
+DARZALEX (daratumumab),Frontline multiple myeloma transplant ineligible,,CEPHEUS,Genmab A/S,,,Phase 3,ok
+IMBRUVICA (ibrutinib),Frontline Chronic Lymphocytic Leukemia (I + V fixed duration),,GLOW,"Pharmacyclics, LLC, an AbbVie company",,,Phase 3,ok
+IMBRUVICA (ibrutinib),Frontline Mantle Cell Lymphoma,,Triangle,"Pharmacyclics, LLC, an AbbVie company",,,Phase 3,ok
 INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer,,SunRISe-1,,,,Phase 3,ok
 RYBREVANT (amivantamab),Frontline Non Small Cell Lung Cancer in combination with chemotherapy,,PAPILLON,,,,Phase 3,ok
 RYBREVANT (amivantamab),,,PALOMA-3,,Subcutaneous,,Phase 3,ok

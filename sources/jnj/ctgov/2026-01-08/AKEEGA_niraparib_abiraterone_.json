@@ -104,6 +104,25 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT04577833"
     },
     {
+      "nct_id": "NCT04497844",
+      "title": "A Phase 3 Randomized, Placebo-controlled, Double-blind Study of Niraparib in Combination With Abiraterone Acetate and Prednisone Versus Abiraterone Acetate and Prednisone for the Treatment of Participants With Deleterious Germline or Somatic Homologous Recombination Repair (HRR) Gene-Mutated Metastatic Castration-Sensitive Prostate Cancer (mCSPC)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Metastatic Castration-sensitive Prostate Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Niraparib",
+        "Abiraterone acetate (AA)",
+        "Prednisone",
+        "Placebo for Niraparib"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04497844"
+    },
+    {
       "nct_id": "NCT03431350",
       "title": "A Phase 1b-2 Study of Niraparib Combination Therapies for the Treatment of Metastatic Castration-Resistant Prostate Cancer",
       "overall_status": "ACTIVE_NOT_RECRUITING",
@@ -124,25 +143,6 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT03431350"
     },
     {
-      "nct_id": "NCT04497844",
-      "title": "A Phase 3 Randomized, Placebo-controlled, Double-blind Study of Niraparib in Combination With Abiraterone Acetate and Prednisone Versus Abiraterone Acetate and Prednisone for the Treatment of Participants With Deleterious Germline or Somatic Homologous Recombination Repair (HRR) Gene-Mutated Metastatic Castration-Sensitive Prostate Cancer (mCSPC)",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 3",
-      "conditions": [
-        "Metastatic Castration-sensitive Prostate Cancer"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Niraparib",
-        "Abiraterone acetate (AA)",
-        "Prednisone",
-        "Placebo for Niraparib"
-      ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04497844"
-    },
-    {
       "nct_id": "NCT03748641",
       "title": "A Phase 3 Randomized, Placebo-controlled, Double-blind Study of Niraparib in Combination With Abiraterone Acetate and Prednisone Versus Abiraterone Acetate and Prednisone in Subjects With Metastatic Prostate Cancer",
       "overall_status": "ACTIVE_NOT_RECRUITING",
@@ -161,28 +161,6 @@
       ],
       "last_update": "2025-12-22",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT03748641"
-    },
-    {
-      "nct_id": "NCT06329830",
-      "title": "Safety and Anti-tumor Activity of Lutetium-177 (177Lu)-PSMA-617 Along With Niraparib and Abiraterone Acetate Plus Prednisone in Metastatic Castration Resistant Prostate Cancer - LUNAAR Study",
-      "overall_status": "WITHDRAWN",
-      "phase": "Phase 2",
-      "conditions": [
-        "Metastatic Prostate Cancer",
-        "Castration-resistant Prostate Cancer",
-        "Metastatic Castration-resistant Prostate Cancer"
-      ],
-      "lead_sponsor": "Baptist Health South Florida",
-      "collaborators": [
-        "Janssen Scientific Affairs, LLC"
-      ],
-      "interventions": [
-        "177Lu-PSMA-617",
-        "Niraparib abiraterone acetate",
-        "Prednisone"
-      ],
-      "last_update": "2024-09-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06329830"
     },
     {
       "nct_id": "NCT03903835",
@@ -217,28 +195,43 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT03903835"
     },
     {
-      "nct_id": "NCT04812366",
-      "title": "Genomic Biomarker-Selected Umbrella Neoadjuvant Study for High Risk Localized Prostate Cancer",
-      "overall_status": "RECRUITING",
+      "nct_id": "NCT06329830",
+      "title": "Safety and Anti-tumor Activity of Lutetium-177 (177Lu)-PSMA-617 Along With Niraparib and Abiraterone Acetate Plus Prednisone in Metastatic Castration Resistant Prostate Cancer - LUNAAR Study",
+      "overall_status": "WITHDRAWN",
       "phase": "Phase 2",
       "conditions": [
-        "Prostate Cancer"
+        "Metastatic Prostate Cancer",
+        "Castration-resistant Prostate Cancer",
+        "Metastatic Castration-resistant Prostate Cancer"
       ],
-      "lead_sponsor": "University of British Columbia",
+      "lead_sponsor": "Baptist Health South Florida",
       "collaborators": [
-        "Janssen Inc.",
-        "University Health Network, Toronto"
+        "Janssen Scientific Affairs, LLC"
       ],
       "interventions": [
-        "Apalutamide 60mg Tab",
-        "Abiraterone Acetate 250mg",
-        "Prednisone 5mg Tab",
-        "Docetaxel",
-        "Niraparib 100mg Oral Capsule",
-        "Atezolizumab"
+        "177Lu-PSMA-617",
+        "Niraparib abiraterone acetate",
+        "Prednisone"
       ],
-      "last_update": "2024-12-16",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04812366"
+      "last_update": "2024-09-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06329830"
+    },
+    {
+      "nct_id": "NCT05401214",
+      "title": "Pre-Approval Access Single Patient Request for Niraparib / Abiraterone Acetate Combination (Nira/AA Combination)",
+      "overall_status": "APPROVED_FOR_MARKETING",
+      "phase": null,
+      "conditions": [
+        "Metastatic Castration-resistant Prostate Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Niraparib plus Abiraterone Acetate (Nira/AA) combination",
+        "Prednisone/Prednisolone"
+      ],
+      "last_update": "2025-06-13",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05401214"
     }
   ]
 }

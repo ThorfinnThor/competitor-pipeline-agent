@@ -5,30 +5,9 @@
     "amivantamab",
     "RYBREVANT"
   ],
-  "returned_unique": 21,
+  "returned_unique": 24,
   "kept": 10,
   "studies": [
-    {
-      "nct_id": "NCT05379595",
-      "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Advanced or Metastatic Colorectal Cancer"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Amivantamab IV",
-        "Fluorouracil",
-        "Leucovorin",
-        "Oxaliplatin",
-        "Irinotecan",
-        "Amivantamab"
-      ],
-      "last_update": "2025-12-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
-    },
     {
       "nct_id": "NCT07276399",
       "title": "A Phase 3, Randomized, Open-Label, Multicenter Study of Amivantamab in Addition to Carboplatin and Pembrolizumab, Compared to Standard of Care Platinum and Pembrolizumab and 5-FU, in Participants With Treatment-Naïve Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
@@ -67,62 +46,66 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07227025"
     },
     {
-      "nct_id": "NCT04988295",
-      "title": "A Phase 3, Open-Label, Randomized Study of Amivantamab and Lazertinib in Combination With Platinum-Based Chemotherapy Compared With Platinum-Based Chemotherapy in Patients With EGFR-Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer After Osimertinib Failure",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 3",
+      "nct_id": "NCT05379595",
+      "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
       "conditions": [
-        "Carcinoma, Non-Small-Cell Lung"
+        "Advanced or Metastatic Colorectal Cancer"
       ],
       "lead_sponsor": "Janssen Research & Development, LLC",
       "collaborators": [],
       "interventions": [
-        "Lazertinib",
-        "Amivantamab",
-        "Pemetrexed",
-        "Carboplatin"
+        "Amivantamab IV",
+        "Fluorouracil",
+        "Leucovorin",
+        "Oxaliplatin",
+        "Irinotecan",
+        "Amivantamab"
       ],
-      "last_update": "2025-12-23",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04988295"
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
     },
     {
-      "nct_id": "NCT04606381",
-      "title": "An Open-label, Multicenter, Dose Escalation Phase 1b Study to Assess the Safety and Pharmacokinetics of Subcutaneous Delivery of Amivantamab, a Human Bispecific EGFR and cMet Antibody for the Treatment of Advanced Solid Malignancies",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 1",
+      "nct_id": "NCT06662786",
+      "title": "A Randomized, Open-label Phase 3 Study of Amivantamab and mFOLFOX6 or FOLFIRI Versus Cetuximab and mFOLFOX6 or FOLFIRI as First-line Treatment in Participants With KRAS/NRAS and BRAF Wild-type Unresectable or Metastatic Left-sided Colorectal Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
       "conditions": [
-        "Advanced Solid Malignancies"
+        "Colorectal Neoplasms"
       ],
       "lead_sponsor": "Janssen Research & Development, LLC",
       "collaborators": [],
       "interventions": [
-        "Ami-LC-MD",
-        "Ami-LC",
-        "Ami-HC",
-        "Ami-HC-CF",
+        "Amivantamab",
+        "Cetuximab",
+        "5-fluorouracil",
+        "Leucovorin calcium/Levoleucovorin",
+        "Oxaliplatin",
+        "Irinotecan Hydrochloride"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06662786"
+    },
+    {
+      "nct_id": "NCT04965090",
+      "title": "A Phase 2 Single-Arm Study of Amivantamab (JNJ-61186372) and Lazertinib in Metastatic EGFR-mutant Lung Cancer With Progressive or New CNS Metastases on Previous Treatment",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Metastatic Non Small Cell Lung Cancer",
+        "Recurrent Non Small Cell Lung Cancer"
+      ],
+      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC"
+      ],
+      "interventions": [
+        "Amivantamab",
         "Lazertinib"
       ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04606381"
-    },
-    {
-      "nct_id": "NCT04538664",
-      "title": "A Randomized, Open-label Phase 3 Study of Combination Amivantamab and Carboplatin-Pemetrexed Therapy, Compared With Carboplatin-Pemetrexed, in Patients With EGFR Exon 20ins Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 3",
-      "conditions": [
-        "Carcinoma, Non-Small-Cell Lung"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Amivantamab",
-        "Pemetrexed",
-        "Carboplatin",
-        "Pemetrexed"
-      ],
-      "last_update": "2025-12-23",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04538664"
+      "last_update": "2025-12-18",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04965090"
     },
     {
       "nct_id": "NCT04077463",
@@ -144,45 +127,27 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT04077463"
     },
     {
-      "nct_id": "NCT06532032",
-      "title": "A Phase 1/2 Study Evaluating the Safety and Efficacy of Amivantamab and Docetaxel Combination Therapy in Metastatic Non-small Cell Lung Cancer",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "nct_id": "NCT06385080",
+      "title": "A Phase 1b/2, Open-label Study of Amivantamab Monotherapy and Amivantamab in Addition to Other Therapeutic Agents in Participants With Head and Neck Squamous Cell Carcinoma",
+      "overall_status": "RECRUITING",
       "phase": "Phase 2",
       "conditions": [
-        "Carcinoma, Non-Small-Cell Lung"
+        "Squamous Cell Carcinoma of Head and Neck"
       ],
       "lead_sponsor": "Janssen Research & Development, LLC",
       "collaborators": [],
       "interventions": [
         "Amivantamab",
-        "Docetaxel"
+        "Pembrolizumab",
+        "Paclitaxel",
+        "Carboplatin"
       ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06532032"
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06385080"
     },
     {
-      "nct_id": "NCT02609776",
-      "title": "A Phase 1, First-in-Human, Open-Label, Dose Escalation Study of JNJ-61186372, a Human Bispecific EGFR and cMet Antibody, in Subjects With Advanced Non-Small Cell Lung Cancer",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 1",
-      "conditions": [
-        "Non-Small-Cell Lung Cancer"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Amivantamab",
-        "Amivantamab",
-        "Lazertinib",
-        "Carboplatin",
-        "Pemetrexed"
-      ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02609776"
-    },
-    {
-      "nct_id": "NCT04487080",
-      "title": "A Phase 3, Randomized Study of Amivantamab and Lazertinib Combination Therapy Versus Osimertinib Versus Lazertinib as First-Line Treatment in Patients With EGFR-Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer.",
+      "nct_id": "NCT04538664",
+      "title": "A Randomized, Open-label Phase 3 Study of Combination Amivantamab and Carboplatin-Pemetrexed Therapy, Compared With Carboplatin-Pemetrexed, in Patients With EGFR Exon 20ins Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
       "overall_status": "ACTIVE_NOT_RECRUITING",
       "phase": "Phase 3",
       "conditions": [
@@ -192,12 +157,51 @@
       "collaborators": [],
       "interventions": [
         "Amivantamab",
-        "Osimertinib",
-        "Lazertinib",
-        "Placebo"
+        "Pemetrexed",
+        "Carboplatin",
+        "Pemetrexed"
       ],
       "last_update": "2025-12-23",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04487080"
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04538664"
+    },
+    {
+      "nct_id": "NCT05498428",
+      "title": "A Phase 2, Open-Label, Parallel Cohort Study of Subcutaneous Amivantamab in Multiple Regimens in Patients With Advanced or Metastatic Solid Tumors Including EGFR-mutated Non-Small Cell Lung Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Carcinoma, Non-small-Cell Lung"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Amivantamab",
+        "Lazertinib",
+        "Carboplatin",
+        "Pemetrexed",
+        "Direct Oral Anticoagulant (DOAC)",
+        "Low Molecular Weight Heparin (LMWH)"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05498428"
+    },
+    {
+      "nct_id": "NCT05388669",
+      "title": "A Phase 3, Open-label, Randomized Study of Lazertinib With Subcutaneous Amivantamab Compared With Intravenous Amivantamab in Patients With EGFR-mutated Advanced or Metastatic Non-small Cell Lung Cancer After Progression on Osimertinib and Chemotherapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Advanced or Metastatic Non-small Cell Lung Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Lazertinib",
+        "Amivantamab Subcutaneous and Co-Formulated with Recombinant Human Hyaluronidase (SC CF)",
+        "Amivantamab Intravenous"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05388669"
     }
   ]
 }

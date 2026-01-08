@@ -7,10 +7,10 @@
   "kept": 5,
   "studies": [
     {
-      "nct_id": "NCT06852222",
-      "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, Study of Bleximenib, Venetoclax and Azacitidine for the Treatment of Participants With Newly Diagnosed Acute Myeloid Leukemia Harboring KMT2A Rearrangements or NPM1 Mutations Who Are Ineligible for Intensive Chemotherapy",
+      "nct_id": "NCT05453903",
+      "title": "A Phase 1b Study of Bleximenib in Combination With AML-Directed Therapies for Participants With Acute Myeloid Leukemia Harboring KMT2A or NPM1 Alterations",
       "overall_status": "RECRUITING",
-      "phase": "Phase 3",
+      "phase": "Phase 1",
       "conditions": [
         "Leukemia, Myeloid, Acute"
       ],
@@ -20,10 +20,11 @@
         "Bleximenib",
         "Venetoclax (VEN)",
         "Azacitidine (AZA)",
-        "Placebo"
+        "Cytarabine",
+        "Daunorubicin or Idarubicin"
       ],
-      "last_update": "2025-12-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06852222"
+      "last_update": "2025-12-24",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05453903"
     },
     {
       "nct_id": "NCT07295951",
@@ -45,10 +46,10 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07295951"
     },
     {
-      "nct_id": "NCT05453903",
-      "title": "A Phase 1b Study of Bleximenib in Combination With AML-Directed Therapies for Participants With Acute Myeloid Leukemia Harboring KMT2A or NPM1 Alterations",
+      "nct_id": "NCT06852222",
+      "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, Study of Bleximenib, Venetoclax and Azacitidine for the Treatment of Participants With Newly Diagnosed Acute Myeloid Leukemia Harboring KMT2A Rearrangements or NPM1 Mutations Who Are Ineligible for Intensive Chemotherapy",
       "overall_status": "RECRUITING",
-      "phase": "Phase 1",
+      "phase": "Phase 3",
       "conditions": [
         "Leukemia, Myeloid, Acute"
       ],
@@ -58,11 +59,10 @@
         "Bleximenib",
         "Venetoclax (VEN)",
         "Azacitidine (AZA)",
-        "Cytarabine",
-        "Daunorubicin or Idarubicin"
+        "Placebo"
       ],
-      "last_update": "2025-12-24",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05453903"
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06852222"
     },
     {
       "nct_id": "NCT04811560",

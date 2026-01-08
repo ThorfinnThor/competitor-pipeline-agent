@@ -28,6 +28,24 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT04892173"
     },
     {
+      "nct_id": "NCT07224152",
+      "title": "NBTXR3 With Radiation Therapy Alone for Locally-advanced Non-small Cell Lung Cancer",
+      "overall_status": "NOT_YET_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Locally-Advanced Non-Small Cell Lung Cancer"
+      ],
+      "lead_sponsor": "M.D. Anderson Cancer Center",
+      "collaborators": [
+        "Nanobiotix"
+      ],
+      "interventions": [
+        "NBTXR3"
+      ],
+      "last_update": "2025-12-16",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07224152"
+    },
+    {
       "nct_id": "NCT04862455",
       "title": "Phase II Study of NBTXR3 Activated by Radiation and Combined With Pembrolizumab for Patients With Recurrent or Metastatic Head and Neck Squamous Cell Carcinoma With Limited PD-L1 Expression or Refractory to PD-1 Blockade",
       "overall_status": "ACTIVE_NOT_RECRUITING",
@@ -48,24 +66,6 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT04862455"
     },
     {
-      "nct_id": "NCT07224152",
-      "title": "NBTXR3 With Radiation Therapy Alone for Locally-advanced Non-small Cell Lung Cancer",
-      "overall_status": "NOT_YET_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Locally-Advanced Non-Small Cell Lung Cancer"
-      ],
-      "lead_sponsor": "M.D. Anderson Cancer Center",
-      "collaborators": [
-        "Nanobiotix"
-      ],
-      "interventions": [
-        "NBTXR3"
-      ],
-      "last_update": "2025-12-16",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT07224152"
-    },
-    {
       "nct_id": "NCT07219212",
       "title": "A Study of JNJ-90301900 in Combination With Concurrent Chemoradiation Therapy in Participants With Locally Advanced Head and Neck Squamous Cell Carcinoma",
       "overall_status": "RECRUITING",
@@ -82,41 +82,6 @@
       ],
       "last_update": "2025-12-24",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07219212"
-    },
-    {
-      "nct_id": "NCT02379845",
-      "title": "A Multicenter Randomized, Open-Label Phase II/III Study, To Compare The Efficacy Of NBTXR3, Implanted As Intratumor Injection And Activated By Radiotherapy, Versus Radiotherapy Alone In Patients With Locally Advanced Soft Tissue Sarcoma Of The Extremity And Trunk Wall",
-      "overall_status": "COMPLETED",
-      "phase": "Phase 3",
-      "conditions": [
-        "Adult Soft Tissue Sarcoma"
-      ],
-      "lead_sponsor": "Nanobiotix",
-      "collaborators": [
-        "PharmaEngine"
-      ],
-      "interventions": [
-        "NBTXR3",
-        "Radiation therapy"
-      ],
-      "last_update": "2021-04-06",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02379845"
-    },
-    {
-      "nct_id": "NCT01433068",
-      "title": "An Open-Label, Single Arm, Feasibility And Safety Phase I Study With NBTXR3 Intratumor Implantation (By Injection) And Activated By External Beam Radiation Therapy In Patients With Soft Tissue Sarcoma Of The Extremity And Trunk Wall",
-      "overall_status": "COMPLETED",
-      "phase": "Phase 1",
-      "conditions": [
-        "Adult Soft Tissue Sarcoma"
-      ],
-      "lead_sponsor": "Nanobiotix",
-      "collaborators": [],
-      "interventions": [
-        "NBTXR3"
-      ],
-      "last_update": "2020-10-06",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT01433068"
     },
     {
       "nct_id": "NCT05039632",
@@ -142,65 +107,119 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT05039632"
     },
     {
-      "nct_id": "NCT02805894",
-      "title": "A Phase I-II Dose-escalation Study of NBTXR3 Activated by EBRT or EBRT With Brachytherapy in Patients With Newly Diagnosed Unfavorable Intermediate or High Risk Prostate Adenocarcinoma Treated With Androgen Deprivation",
-      "overall_status": "TERMINATED",
-      "phase": "Phase 2",
+      "nct_id": "NCT02379845",
+      "title": "A Multicenter Randomized, Open-Label Phase II/III Study, To Compare The Efficacy Of NBTXR3, Implanted As Intratumor Injection And Activated By Radiotherapy, Versus Radiotherapy Alone In Patients With Locally Advanced Soft Tissue Sarcoma Of The Extremity And Trunk Wall",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 3",
       "conditions": [
-        "Prostate Cancer"
+        "Adult Soft Tissue Sarcoma"
       ],
       "lead_sponsor": "Nanobiotix",
-      "collaborators": [],
-      "interventions": [
-        "NBTXR3 activated by IMRT only",
-        "NBTXR3 activated by Brachytherapy & IMRT"
+      "collaborators": [
+        "PharmaEngine"
       ],
-      "last_update": "2021-05-10",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02805894"
-    },
-    {
-      "nct_id": "NCT03589339",
-      "title": "A Phase I Dose Escalation / Dose Expansion Study of NBTXR3 Activated by Radiotherapy for Patients With Advanced Cancers Treated With An Anti-PD-1 Therapy",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 1",
-      "conditions": [
-        "Radiotherapy",
-        "Immunotherapy",
-        "Microsatellite Instability-High Solid Malignant Tumour",
-        "Metastasis From Malignant Tumor of Liver",
-        "Squamous Cell Carcinoma of Head and Neck",
-        "Metastasis From Malignant Tumor of Cervix",
-        "Metastatic Renal Cell Carcinoma",
-        "Metastasis From Malignant Melanoma of Skin (Disorder)",
-        "Metastatic Triple-Negative Breast Carcinoma",
-        "Metastatic NSCLC"
-      ],
-      "lead_sponsor": "Nanobiotix",
-      "collaborators": [],
       "interventions": [
         "NBTXR3",
-        "SABR",
-        "Nivolumab",
-        "Pembrolizumab"
+        "Radiation therapy"
       ],
-      "last_update": "2025-10-24",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03589339"
+      "last_update": "2021-04-06",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02379845"
     },
     {
-      "nct_id": "NCT02721056",
-      "title": "A Phase I-II Study of NBTXR3 Activated by Sterostatic Body Radiation Therapy (SBRT) In the Treatment of Liver Cancers",
-      "overall_status": "TERMINATED",
-      "phase": "Phase 2",
+      "nct_id": "NCT04615013",
+      "title": "A Phase 1 Study of NBTXR3 Activated by Radiotherapy With Concurrent Chemotherapy for Adenocarcinoma of the Esophagus",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
       "conditions": [
-        "Liver Cancer"
+        "Cervical Esophagus Adenocarcinoma",
+        "Clinical Stage II Esophageal Adenocarcinoma AJCC v8",
+        "Clinical Stage IIA Esophageal Adenocarcinoma AJCC v8",
+        "Clinical Stage IIB Esophageal Adenocarcinoma AJCC v8",
+        "Clinical Stage III Esophageal Adenocarcinoma AJCC v8",
+        "Gastroesophageal Junction Adenocarcinoma",
+        "Pathologic Stage II Esophageal Adenocarcinoma AJCC v8",
+        "Pathologic Stage IIA Esophageal Adenocarcinoma AJCC v8",
+        "Pathologic Stage IIB Esophageal Adenocarcinoma AJCC v8",
+        "Pathologic Stage III Esophageal Adenocarcinoma AJCC v8"
+      ],
+      "lead_sponsor": "M.D. Anderson Cancer Center",
+      "collaborators": [
+        "National Cancer Institute (NCI)"
+      ],
+      "interventions": [
+        "Capecitabine",
+        "Carboplatin",
+        "Docetaxel",
+        "Fluorouracil",
+        "Hafnium Oxide-containing Nanoparticles NBTXR3",
+        "Intensity-Modulated Radiation Therapy",
+        "Leucovorin",
+        "Oxaliplatin",
+        "Paclitaxel"
+      ],
+      "last_update": "2025-10-30",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04615013"
+    },
+    {
+      "nct_id": "NCT04484909",
+      "title": "Phase I Study of NBTXR3 Activated by Radiotherapy for Locally Advanced or Borderline Resectable Pancreatic Ductal Adenocarcinoma",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Borderline Resectable Pancreatic Adenocarcinoma",
+        "Locally Advanced Pancreatic Ductal Adenocarcinoma",
+        "Resectable Pancreatic Ductal Adenocarcinoma",
+        "Stage III Pancreatic Cancer AJCC v8"
+      ],
+      "lead_sponsor": "M.D. Anderson Cancer Center",
+      "collaborators": [
+        "National Cancer Institute (NCI)"
+      ],
+      "interventions": [
+        "Hafnium Oxide-containing Nanoparticles NBTXR3",
+        "Radiation Therapy"
+      ],
+      "last_update": "2025-10-27",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04484909"
+    },
+    {
+      "nct_id": "NCT01433068",
+      "title": "An Open-Label, Single Arm, Feasibility And Safety Phase I Study With NBTXR3 Intratumor Implantation (By Injection) And Activated By External Beam Radiation Therapy In Patients With Soft Tissue Sarcoma Of The Extremity And Trunk Wall",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Adult Soft Tissue Sarcoma"
       ],
       "lead_sponsor": "Nanobiotix",
       "collaborators": [],
       "interventions": [
-        "NBTXR3, IL or IA injection + SBRT"
+        "NBTXR3"
       ],
-      "last_update": "2021-05-10",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02721056"
+      "last_update": "2020-10-06",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT01433068"
+    },
+    {
+      "nct_id": "NCT04834349",
+      "title": "A Phase II Study of Reirradiation With NBTXR3 in Patients With Inoperable Locoregional Recurrent Head and Neck Squamous Cell Carcinoma",
+      "overall_status": "WITHDRAWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "Recurrent Head and Neck Squamous Cell Carcinoma",
+        "Unresectable Head and Neck Squamous Cell Carcinoma"
+      ],
+      "lead_sponsor": "M.D. Anderson Cancer Center",
+      "collaborators": [],
+      "interventions": [
+        "Hafnium Oxide-containing Nanoparticles NBTXR3",
+        "Intensity-Modulated Proton Therapy",
+        "Intensity-Modulated Radiation Therapy",
+        "Pembrolizumab",
+        "Quality-of-Life Assessment",
+        "Questionnaire Administration",
+        "Stereotactic Body Radiation Therapy"
+      ],
+      "last_update": "2023-09-13",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04834349"
     }
   ]
 }

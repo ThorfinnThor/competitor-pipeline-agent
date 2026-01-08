@@ -9,22 +9,6 @@
   "kept": 10,
   "studies": [
     {
-      "nct_id": "NCT04829604",
-      "title": "A Global, Phase 2 Study of ARX788 in HER2-positive Metastatic Breast Cancer Patients Who Were Previously Treated With T-DXd",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "HER2 Positive Metastatic Breast Cancer"
-      ],
-      "lead_sponsor": "Ambrx, Inc.",
-      "collaborators": [],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2025-11-14",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04829604"
-    },
-    {
       "nct_id": "NCT06224673",
       "title": "Phase II Open-label Study of ARX788 (Anti-HER2 Antibody Drug Conjugate (ADC)) for Patients With HER2-low Locally Advanced Unresectable or Metastatic Breast Cancer",
       "overall_status": "NOT_YET_RECRUITING",
@@ -49,122 +33,20 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06224673"
     },
     {
-      "nct_id": "NCT06663748",
-      "title": "Evaluate the Efficacy and Safety of ARX788 Given Every 6 Weeks in Patients with HER2-positive Advanced Breast Cancer",
-      "overall_status": "NOT_YET_RECRUITING",
+      "nct_id": "NCT04829604",
+      "title": "A Global, Phase 2 Study of ARX788 in HER2-positive Metastatic Breast Cancer Patients Who Were Previously Treated With T-DXd",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
       "phase": "Phase 2",
       "conditions": [
-        "HER2-positive, Metastatic Breast Cancer"
-      ],
-      "lead_sponsor": "Henan Cancer Hospital",
-      "collaborators": [],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2024-10-29",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06663748"
-    },
-    {
-      "nct_id": "NCT06578286",
-      "title": "Evaluate the Efficacy and Safety of ARX788 in Patients With HER2-positive Advanced Breast Cancer Whose Disease Has Progressed Following T-DXd Therapy",
-      "overall_status": "NOT_YET_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Breast Cancer"
-      ],
-      "lead_sponsor": "Fudan University",
-      "collaborators": [],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2024-08-29",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06578286"
-    },
-    {
-      "nct_id": "NCT05018676",
-      "title": "A Single-arm, Single-center Phase II Clinical Study of Recombinant Humanized Anti-HER2 Monoclonal Antibody-AS269 Conjugate (ARX788) in the Treatment of Unresectable and/or Metastatic Breast Cancer With Low Expression of HER2",
-      "overall_status": "UNKNOWN",
-      "phase": "Phase 2",
-      "conditions": [
-        "Breast Cancer With Low Expression of HER2"
-      ],
-      "lead_sponsor": "Fudan University",
-      "collaborators": [],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2022-04-25",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05018676"
-    },
-    {
-      "nct_id": "NCT05041972",
-      "title": "A Global Phase 2 Study to Evaluate the Efficacy and Safety of ARX788 for Selected HER2-mutated or HER2-amplified/Overexpressed Solid Tumors",
-      "overall_status": "WITHDRAWN",
-      "phase": "Phase 2",
-      "conditions": [
-        "HER2 Mutation-Related Tumors",
-        "HER2 Amplified Solid Tumors"
+        "HER2 Positive Metastatic Breast Cancer"
       ],
       "lead_sponsor": "Ambrx, Inc.",
       "collaborators": [],
       "interventions": [
         "ARX788"
       ],
-      "last_update": "2022-09-13",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05041972"
-    },
-    {
-      "nct_id": "NCT05018702",
-      "title": "A Prospective, Single-arm, Single-center Phase II Clinical Study of Recombinant Humanized Anti-HER2 Monoclonal Antibody-AS269 Conjugate (ARX788) in the Treatment of HER2-positive Breast Cancer Patients With Brain Metastases",
-      "overall_status": "UNKNOWN",
-      "phase": "Phase 2",
-      "conditions": [
-        "HER2-positive, Metastatic Breast Cancer"
-      ],
-      "lead_sponsor": "Fudan University",
-      "collaborators": [],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2022-06-01",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05018702"
-    },
-    {
-      "nct_id": "NCT02512237",
-      "title": "A Phase 1, Multicenter, Open-label, Multiple Dose-escalation Study of ARX788, Intravenously Administered as a Single Agent in Subjects With Advanced Cancers With HER2 Expression",
-      "overall_status": "TERMINATED",
-      "phase": "Phase 1",
-      "conditions": [
-        "Breast Neoplasms",
-        "Stomach Neoplasms"
-      ],
-      "lead_sponsor": "Zhejiang Medicine Co., Ltd.",
-      "collaborators": [
-        "Ambrx, Inc."
-      ],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2020-06-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02512237"
-    },
-    {
-      "nct_id": "NCT03255070",
-      "title": "A Phase 1, Multicenter, Open-label, Multiple Dose-escalation and Expansion Study of ARX788, as Monotherapy in Advanced Solid Tumors With HER2 Expression",
-      "overall_status": "COMPLETED",
-      "phase": "Phase 1",
-      "conditions": [
-        "Breast Neoplasms",
-        "Gastric Neoplasm",
-        "Solid Tumors"
-      ],
-      "lead_sponsor": "Ambrx, Inc.",
-      "collaborators": [],
-      "interventions": [
-        "ARX788"
-      ],
-      "last_update": "2024-02-01",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03255070"
+      "last_update": "2025-11-14",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04829604"
     },
     {
       "nct_id": "NCT05426486",
@@ -186,6 +68,124 @@
       ],
       "last_update": "2024-10-30",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT05426486"
+    },
+    {
+      "nct_id": "NCT03255070",
+      "title": "A Phase 1, Multicenter, Open-label, Multiple Dose-escalation and Expansion Study of ARX788, as Monotherapy in Advanced Solid Tumors With HER2 Expression",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Breast Neoplasms",
+        "Gastric Neoplasm",
+        "Solid Tumors"
+      ],
+      "lead_sponsor": "Ambrx, Inc.",
+      "collaborators": [],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2024-02-01",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03255070"
+    },
+    {
+      "nct_id": "NCT06578286",
+      "title": "Evaluate the Efficacy and Safety of ARX788 in Patients With HER2-positive Advanced Breast Cancer Whose Disease Has Progressed Following T-DXd Therapy",
+      "overall_status": "NOT_YET_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Breast Cancer"
+      ],
+      "lead_sponsor": "Fudan University",
+      "collaborators": [],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2024-08-29",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06578286"
+    },
+    {
+      "nct_id": "NCT05041972",
+      "title": "A Global Phase 2 Study to Evaluate the Efficacy and Safety of ARX788 for Selected HER2-mutated or HER2-amplified/Overexpressed Solid Tumors",
+      "overall_status": "WITHDRAWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "HER2 Mutation-Related Tumors",
+        "HER2 Amplified Solid Tumors"
+      ],
+      "lead_sponsor": "Ambrx, Inc.",
+      "collaborators": [],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2022-09-13",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05041972"
+    },
+    {
+      "nct_id": "NCT05018676",
+      "title": "A Single-arm, Single-center Phase II Clinical Study of Recombinant Humanized Anti-HER2 Monoclonal Antibody-AS269 Conjugate (ARX788) in the Treatment of Unresectable and/or Metastatic Breast Cancer With Low Expression of HER2",
+      "overall_status": "UNKNOWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "Breast Cancer With Low Expression of HER2"
+      ],
+      "lead_sponsor": "Fudan University",
+      "collaborators": [],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2022-04-25",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05018676"
+    },
+    {
+      "nct_id": "NCT05018702",
+      "title": "A Prospective, Single-arm, Single-center Phase II Clinical Study of Recombinant Humanized Anti-HER2 Monoclonal Antibody-AS269 Conjugate (ARX788) in the Treatment of HER2-positive Breast Cancer Patients With Brain Metastases",
+      "overall_status": "UNKNOWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "HER2-positive, Metastatic Breast Cancer"
+      ],
+      "lead_sponsor": "Fudan University",
+      "collaborators": [],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2022-06-01",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05018702"
+    },
+    {
+      "nct_id": "NCT06663748",
+      "title": "Evaluate the Efficacy and Safety of ARX788 Given Every 6 Weeks in Patients with HER2-positive Advanced Breast Cancer",
+      "overall_status": "NOT_YET_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "HER2-positive, Metastatic Breast Cancer"
+      ],
+      "lead_sponsor": "Henan Cancer Hospital",
+      "collaborators": [],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2024-10-29",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06663748"
+    },
+    {
+      "nct_id": "NCT02512237",
+      "title": "A Phase 1, Multicenter, Open-label, Multiple Dose-escalation Study of ARX788, Intravenously Administered as a Single Agent in Subjects With Advanced Cancers With HER2 Expression",
+      "overall_status": "TERMINATED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Breast Neoplasms",
+        "Stomach Neoplasms"
+      ],
+      "lead_sponsor": "Zhejiang Medicine Co., Ltd.",
+      "collaborators": [
+        "Ambrx, Inc."
+      ],
+      "interventions": [
+        "ARX788"
+      ],
+      "last_update": "2020-06-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02512237"
     }
   ]
 }

@@ -9,213 +9,207 @@
   "kept": 10,
   "studies": [
     {
-      "nct_id": "NCT03500445",
-      "title": "Open-label, Single-arm, Phase 2 Study of Initial Treatment With Daratumumab (Darzalex), Carfilzomib (Kyprolis), Lenalidomide (Revlimid) and Low Dose Dexamethasone (DKRd) in Newly Diagnosed, Multiple Myeloma Requiring Systemic Chemotherapy",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Myeloma",
-        "Multiple Myeloma"
-      ],
-      "lead_sponsor": "University of Chicago",
-      "collaborators": [
-        "Janssen Scientific Affairs, LLC",
-        "Amgen"
-      ],
-      "interventions": [
-        "Daratumumab",
-        "Carfilzomib",
-        "Lenalidomide",
-        "Dexamethasone"
-      ],
-      "last_update": "2025-10-03",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03500445"
-    },
-    {
-      "nct_id": "NCT03289299",
-      "title": "Aggressive Smoldering Curative Approach Evaluating Novel Therapies (ASCENT): A Phase 2 Trial of Induction, Consolidation, and Maintenance in Subjects With High Risk Smoldering Multiple Myeloma (SMM)",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Smoldering Multiple Myeloma"
-      ],
-      "lead_sponsor": "International Myeloma Foundation",
-      "collaborators": [
-        "Amgen",
-        "Janssen Scientific Affairs, LLC",
-        "Celgene",
-        "Trevie, Inc."
-      ],
-      "interventions": [
-        "Carfilzomib",
-        "Lenalidomide",
-        "Daratumumab",
-        "Dexamethasone"
-      ],
-      "last_update": "2023-12-12",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03289299"
-    },
-    {
-      "nct_id": "NCT04396496",
-      "title": "A Phase II Trial for the Treatment of POEMS Syndrome With Daratumumab",
+      "nct_id": "NCT02874742",
+      "title": "Phase 2, Randomized, Open-Label Study Comparing Daratumumab, Lenalidomide, Bortezomib, and Dexamethasone (D-RVd) Versus Lenalidomide, Bortezomib, and Dexamethasone (RVd) in Subjects With Newly Diagnosed Multiple Myeloma Eligible for High-Dose Chemotherapy and Autologous Stem Cell Transplantation",
       "overall_status": "COMPLETED",
       "phase": "Phase 2",
       "conditions": [
-        "POEMS Syndrome"
+        "Multiple Myeloma"
       ],
-      "lead_sponsor": "University of Arkansas",
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Lenalidomide",
+        "Bortezomib",
+        "Dexamethasone",
+        "Daratumumab"
+      ],
+      "last_update": "2025-02-04",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02874742"
+    },
+    {
+      "nct_id": "NCT05408026",
+      "title": "A Phase II, Multicenter, Open-Label Study of the Combination of Pomalidomide, Bortezomib, Low-Dose Dexamethasone, and Daratumumab in Patients With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "WITHDRAWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "Relapsed or Refractory Multiple Myeloma"
+      ],
+      "lead_sponsor": "Alliance Foundation Trials, LLC.",
+      "collaborators": [
+        "Janssen, LP",
+        "Celgene"
+      ],
+      "interventions": [
+        "Daratumumab",
+        "Pomalidomide"
+      ],
+      "last_update": "2023-01-27",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05408026"
+    },
+    {
+      "nct_id": "NCT04497961",
+      "title": "Daratumumab Versus Lenalidomide Maintenance Therapy for Multiple Myeloma: A Randomized Pilot Study Comparing Patient-Reported Health Related Quality of Life Measures With a Plant Based Nutrition Intervention Sub Study (NUTRIVENTION-4)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
       "collaborators": [
         "Janssen Scientific Affairs, LLC"
       ],
       "interventions": [
-        "Daratumumab Injection"
+        "Lenalidomide",
+        "Daratumumab",
+        "Questionnaires",
+        "Dietary Intervention"
       ],
-      "last_update": "2023-11-13",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04396496"
+      "last_update": "2025-09-11",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04497961"
     },
     {
-      "nct_id": "NCT03384654",
-      "title": "An Open-label, Multicenter, Phase 2 Study Evaluating the Efficacy and Safety of Daratumumab in Pediatric and Young Adult Subjects >=1 and <=30 Years of Age With Relapsed/Refractory Precursor B-cell or T-cell Acute Lymphoblastic Leukemia or Lymphoblastic Lymphoma",
+      "nct_id": "NCT02076009",
+      "title": "Phase 3 Study Comparing Daratumumab, Lenalidomide, and Dexamethasone (DRd) vs Lenalidomide and Dexamethasone (Rd) in Subjects With Relapsed or Refractory Multiple Myeloma",
       "overall_status": "COMPLETED",
-      "phase": "Phase 2",
+      "phase": "Phase 3",
       "conditions": [
-        "Precursor Cell Lymphoblastic Leukemia-Lymphoma"
+        "Multiple Myeloma"
       ],
       "lead_sponsor": "Janssen Research & Development, LLC",
       "collaborators": [],
       "interventions": [
         "Daratumumab",
-        "Vincristine",
-        "Prednisone",
-        "Doxorubicin",
-        "Peg-asparaginase",
-        "Cyclophosphamide",
-        "Cytarabine",
-        "6-mercaptopurine",
-        "Methotrexate"
+        "Lenalidomide",
+        "Dexamethasone"
       ],
-      "last_update": "2025-05-25",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03384654"
+      "last_update": "2025-05-01",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02076009"
     },
     {
-      "nct_id": "NCT07075510",
-      "title": "A Phase I/II Study of Subcutaneous Daratumumab Administration in the Anterior Upper Thigh Vs Abdomen in Patients With Plasma Cell Disorders",
+      "nct_id": "NCT05300451",
+      "title": "A Phase II Prospective Study Evaluating the Role of Daratumumab in HLA Desensitization Prior to Transplantation",
+      "overall_status": "ENROLLING_BY_INVITATION",
+      "phase": "Phase 2",
+      "conditions": [
+        "Cardiac Transplant"
+      ],
+      "lead_sponsor": "Barry A. Boilson",
+      "collaborators": [
+        "Janssen Biotech, Inc."
+      ],
+      "interventions": [
+        "Daratumumab and hyaluronidase-fihj"
+      ],
+      "last_update": "2025-10-30",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05300451"
+    },
+    {
+      "nct_id": "NCT06918002",
+      "title": "A Phase 3, Open-label, Controlled, Randomized Study of Newly Diagnosed Multiple Myeloma Treatment, Designed to Evaluate the Efficacy and Safety of the Elranatamab-lenalidomide Combination as a Replacement for Chemotherapy Followed by Autologous Stem Cell Transplant in the Consolidation Phase, and to Compare Elranatamab With Standard of Care in the Maintenance Phase",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Multiple Myeloma, Newly Diagnosed"
+      ],
+      "lead_sponsor": "Intergroupe Francophone du Myelome",
+      "collaborators": [
+        "Pfizer"
+      ],
+      "interventions": [
+        "Elranatamab",
+        "Lenalidomide (Revlimid®)",
+        "Daratumumab SC (Darzalex)",
+        "Autologous Stem Cell Transplantation",
+        "Bortezomib (Velcade®)",
+        "Dexamethasone"
+      ],
+      "last_update": "2025-07-16",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06918002"
+    },
+    {
+      "nct_id": "NCT07297563",
+      "title": "A Randomized, Open-label Study To Compare The Efficacy And Safety Of Anti-CD38 Monoclonal Antibody Versus Rituximab in ITP Patients Who Failed or Relapsed After Glucocorticoid Therapy",
       "overall_status": "RECRUITING",
       "phase": "Phase 2",
       "conditions": [
-        "Plasma Cell Disorder"
+        "Immune Thrombocytopenia",
+        "Treatment"
       ],
-      "lead_sponsor": "University of Maryland, Baltimore",
-      "collaborators": [
-        "Johnson & Johnson"
-      ],
+      "lead_sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
+      "collaborators": [],
       "interventions": [
-        "Daratumumab Injection"
+        "Rituximab",
+        "Daratumumab"
       ],
-      "last_update": "2025-10-29",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT07075510"
+      "last_update": "2025-12-22",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07297563"
     },
     {
-      "nct_id": "NCT04140162",
-      "title": "Phase 2 Study With Minimal Residual Disease (MRD) Driven Adaptive Strategy in Treatment for Newly Diagnosed Multiple Myeloma (MM) With Upfront Daratumumab-based Therapy",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
+      "nct_id": "NCT07285239",
+      "title": "Randomized Phase 3 Trial of Belantamab Mafodotin or Daratumumab in Combination With Bortezomib, Lenalidomide and Dexamethasone for Newly Diagnosed Multiple Myeloma",
+      "overall_status": "NOT_YET_RECRUITING",
+      "phase": "Phase 3",
       "conditions": [
         "Multiple Myeloma"
       ],
-      "lead_sponsor": "University of Michigan Rogel Cancer Center",
+      "lead_sponsor": "PrECOG, LLC.",
       "collaborators": [
-        "Janssen Scientific Affairs, LLC"
+        "GlaxoSmithKline"
       ],
       "interventions": [
-        "Daratumumab",
-        "Lenalidomide",
+        "Arm A: Belantamab Mafodotin",
+        "Arm B: Daratumumab Hyaluronidase",
         "Bortezomib",
+        "Lenalidomide",
         "Dexamethasone"
       ],
-      "last_update": "2024-10-09",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04140162"
+      "last_update": "2025-12-16",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07285239"
     },
     {
-      "nct_id": "NCT05849610",
-      "title": "An Open Label, Multicenter, Phase 2, Pilot Study, Evaluating Early Treatment With Bispecific T-cell Redirectors (Teclistamab and Talquetamab) in the Frontline Therapy of Newly Diagnosed High-risk Multiple Myeloma",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
+      "nct_id": "NCT06192979",
+      "title": "Optimize First-line Treatment for Systemic Light Chain Amyloidosis With t (11; 14)",
+      "overall_status": "RECRUITING",
+      "phase": null,
       "conditions": [
-        "High-Risk de Novo Multiple Myeloma"
+        "Amyloidosis; Systemic",
+        "AL Amyloidosis"
       ],
-      "lead_sponsor": "PETHEMA Foundation",
-      "collaborators": [
-        "Janssen Pharmaceutica N.V., Belgium"
-      ],
-      "interventions": [
-        "Daratumumab",
-        "Bortezomib",
-        "Lenalidomide",
-        "Teclistamab",
-        "Talquetamab"
-      ],
-      "last_update": "2025-03-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05849610"
-    },
-    {
-      "nct_id": "NCT03187262",
-      "title": "A Phase 2 Study of Daratumumab in Patients With Relapsed or Refractory Waldenström Macroglobulinemia",
-      "overall_status": "COMPLETED",
-      "phase": "Phase 2",
-      "conditions": [
-        "Waldenström Macroglobulinemia"
-      ],
-      "lead_sponsor": "Dana-Farber Cancer Institute",
-      "collaborators": [
-        "Janssen, LP"
-      ],
-      "interventions": [
-        "Daratumumab"
-      ],
-      "last_update": "2022-11-23",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03187262"
-    },
-    {
-      "nct_id": "NCT03447808",
-      "title": "Daratumumab and Ibrutinib for Symptomatic, Treatment-Naive CLL: A Phase 1b Proof-of-Concept Study",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 1",
-      "conditions": [
-        "Chronic Lymphocytic Leukemia"
-      ],
-      "lead_sponsor": "Jennifer Woyach",
+      "lead_sponsor": "Jin Lu, MD",
       "collaborators": [],
       "interventions": [
         "Daratumumab",
-        "Ibrutinib",
-        "Laboratory Biomarker Analysis",
-        "Pharmacological Study"
+        "Bortezomib",
+        "Dexamethasone",
+        "Venetoclax"
       ],
-      "last_update": "2026-01-07",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03447808"
+      "last_update": "2024-02-06",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06192979"
     },
     {
-      "nct_id": "NCT04910568",
-      "title": "An Open-Label, Multicenter, Phase Ib Trial Evaluating the Safety, Pharmacokinetics, and Activity of Cevostamab as Monotherapy and Cevostamab Plus Pomalidomide and Dexamethasone or Cevostamab Plus Daratumumab and Dexamethasone in Patients With Relapsed or Refractory Multiple Myeloma",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 1",
+      "nct_id": "NCT04661137",
+      "title": "A Phase 2B Study of Selinexor (KPT-330), in Combination With Carfilzomib, Daratumumab or Pomalidomide in Patients With Multiple Myeloma Relapsing on Current Therapy",
+      "overall_status": "SUSPENDED",
+      "phase": "Phase 2",
       "conditions": [
         "Multiple Myeloma"
       ],
-      "lead_sponsor": "Genentech, Inc.",
+      "lead_sponsor": "Hackensack Meridian Health",
       "collaborators": [
-        "Hoffmann-La Roche"
+        "Karyopharm Therapeutics Inc"
       ],
       "interventions": [
-        "Cevostamab",
-        "Tocilizumab",
+        "Selinexor 60 MG",
+        "Selinexor 80 MG",
+        "Selinexor 100 MG",
+        "Carfilzomib",
         "Pomalidomide",
         "Daratumumab",
         "Dexamethasone"
       ],
-      "last_update": "2025-12-24",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04910568"
+      "last_update": "2025-02-25",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04661137"
     }
   ]
 }

@@ -9,226 +9,209 @@
   "kept": 10,
   "studies": [
     {
-      "nct_id": "NCT04010968",
-      "title": "Evaluation of Risk-Adapted and MRD-Driven Strategy for Untreated Fit Patients With Intermediate Risk Chronic Lymphocytic Leukemia: a Randomized Phase II Trial Comparing FCR and a Chemo-free Combination of Venetoclax and Ibrutinib. A FILO Study",
-      "overall_status": "COMPLETED",
-      "phase": "Phase 2",
-      "conditions": [
-        "Intermediate Risk Chronic Lymphocytic Leukemia",
-        "Fit Patients",
-        "Risk-Adapted and MRD-Driven Strategy"
-      ],
-      "lead_sponsor": "French Innovative Leukemia Organisation",
-      "collaborators": [
-        "AbbVie",
-        "Janssen-Cilag Ltd."
-      ],
-      "interventions": [
-        "venetoclax and ibrutinib (I+VEN)",
-        "FCR"
-      ],
-      "last_update": "2025-11-26",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04010968"
-    },
-    {
-      "nct_id": "NCT02315326",
-      "title": "A Phase I/II Trial of the Bruton's Tyrosine Kinase (BTK) Inhibitor, Ibrutinib, in Patients With Newly Diagnosed or Refractory/Recurrent Primary Central Nervous System Lymphoma (PCNSL) and Refractory/Recurrent Secondary Central Nervous System Lymphoma (SCNSL)",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Adult Patients With Newly Diagnosed or Relapsed or Refractory Primary Central Nervous System Lymphoma (PCNSL)",
-        "Or Relapsed or Refractory Secondary Central Nervous System Lymphoma (SCNSL)"
-      ],
-      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
-      "collaborators": [
-        "Pharmacyclics LLC.",
-        "Janssen Biotech, Inc."
-      ],
-      "interventions": [
-        "Ibrutinib",
-        "HD- Methotrexate (MTX)",
-        "Rituximab + HD- Methotrexate (MTX)",
-        "procarbazine"
-      ],
-      "last_update": "2025-07-01",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02315326"
-    },
-    {
-      "nct_id": "NCT02824159",
-      "title": "Real Life Assessment of the Association and Its Determinants Between Side Effects and Plasmatic Concentrations of Two Protein Kinase Inhibitors: Ibrutinib (IMBRUVICA®) and Idelalisib (ZYDELIG®) in Hematological Malignancies Treatment.",
+      "nct_id": "NCT04016636",
+      "title": "\"Impact of Ibrutinib on the Quality of Life (QOL) in Patients With Chronic Lymphocytic Leukemia (CLL): Argentinian Experience\"",
       "overall_status": "COMPLETED",
       "phase": null,
       "conditions": [
-        "Hematological Malignancies"
+        "CLL"
       ],
-      "lead_sponsor": "University Hospital, Toulouse",
-      "collaborators": [],
+      "lead_sponsor": "Mela Osorio Maria Jose",
+      "collaborators": [
+        "Janssen-Cilag Ltd."
+      ],
       "interventions": [
-        "Blood samples for pharmacokinetics exploration",
-        "Imagery",
-        "Quality of life scale",
-        "Detection of adverse events",
-        "Saliva samples",
-        "Blood sample",
-        "Biological statement",
-        "Clinical examination"
+        "Standard of Care"
       ],
-      "last_update": "2020-12-28",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02824159"
+      "last_update": "2023-02-16",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04016636"
     },
     {
-      "nct_id": "NCT03447808",
-      "title": "Daratumumab and Ibrutinib for Symptomatic, Treatment-Naive CLL: A Phase 1b Proof-of-Concept Study",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "nct_id": "NCT02556892",
+      "title": "Phase 1 Study of the Bruton's Tyrosine Kinase (BTK) Inhibitor Ibrutinib in Subjects With Treatment-naive Chronic Lymphocytic Leukemia/Small Lymphocytic Lymphoma",
+      "overall_status": "COMPLETED",
       "phase": "Phase 1",
+      "conditions": [
+        "Lymphocytic Leukemia"
+      ],
+      "lead_sponsor": "Janssen Pharmaceutical K.K.",
+      "collaborators": [],
+      "interventions": [
+        "Ibrutinib"
+      ],
+      "last_update": "2019-08-14",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02556892"
+    },
+    {
+      "nct_id": "NCT02959944",
+      "title": "A Randomized, Double-Blind Phase 3 Study of Ibrutinib in Combination With Corticosteroids Versus Placebo in Combination With Corticosteroids in Subjects With New Onset Chronic Graft Versus Host Disease (cGVHD)",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 3",
+      "conditions": [
+        "Chronic Graft Versus Host Disease"
+      ],
+      "lead_sponsor": "Pharmacyclics LLC.",
+      "collaborators": [
+        "Janssen Research & Development, LLC"
+      ],
+      "interventions": [
+        "ibrutinib",
+        "Placebo",
+        "Prednisone"
+      ],
+      "last_update": "2023-03-30",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02959944"
+    },
+    {
+      "nct_id": "NCT02758665",
+      "title": "A Prospective, Open-label, Multicentre Phase-II Trial of Ibrutinib Plus Venetoclax Plus Obinutuzumab in Physically Fit or Unfit Patients With Previously Untreated Chronic Lymphocytic Leukemia (Cll) With tp53 Deletion (17p-) and/or Mutation",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Leukemia, Lymphocytic, Chronic"
+      ],
+      "lead_sponsor": "University of Ulm",
+      "collaborators": [
+        "German CLL Study Group",
+        "Roche Pharma AG",
+        "Janssen-Cilag Ltd.",
+        "AbbVie"
+      ],
+      "interventions": [
+        "ibrutinib",
+        "obinutuzumab",
+        "venetoclax"
+      ],
+      "last_update": "2023-01-17",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02758665"
+    },
+    {
+      "nct_id": "NCT02532257",
+      "title": "An Open Label, Phase 2 Study of Ibrutinib in Combination With Rituximab and Lenalidomide in Previously Untreated Subjects With Follicular Lymphoma and Marginal Zone Lymphoma",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Ann Arbor Stage II Follicular Lymphoma",
+        "Ann Arbor Stage II Marginal Zone Lymphoma",
+        "Ann Arbor Stage III Follicular Lymphoma",
+        "Ann Arbor Stage III Marginal Zone Lymphoma",
+        "Ann Arbor Stage IV Follicular Lymphoma",
+        "Ann Arbor Stage IV Marginal Zone Lymphoma",
+        "CD20 Positive",
+        "Grade 1 Follicular Lymphoma",
+        "Grade 2 Follicular Lymphoma",
+        "Grade 3a Follicular Lymphoma"
+      ],
+      "lead_sponsor": "M.D. Anderson Cancer Center",
+      "collaborators": [
+        "National Cancer Institute (NCI)",
+        "Janssen, LP"
+      ],
+      "interventions": [
+        "Ibrutinib",
+        "Laboratory Biomarker Analysis",
+        "Lenalidomide",
+        "Rituximab"
+      ],
+      "last_update": "2024-09-24",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02532257"
+    },
+    {
+      "nct_id": "NCT02717611",
+      "title": "A Phase 2 Study of the Efficacy and Safety of ACP-196 in Subjects With Relapsed/Refractory CLL and Intolerant of Ibrutinib Therapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
       "conditions": [
         "Chronic Lymphocytic Leukemia"
       ],
-      "lead_sponsor": "Jennifer Woyach",
+      "lead_sponsor": "Acerta Pharma BV",
       "collaborators": [],
       "interventions": [
-        "Daratumumab",
-        "Ibrutinib",
-        "Laboratory Biomarker Analysis",
-        "Pharmacological Study"
+        "ACP-196 (acalabrutinib)"
       ],
-      "last_update": "2026-01-07",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03447808"
+      "last_update": "2026-01-08",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02717611"
     },
     {
-      "nct_id": "NCT06649812",
-      "title": "A Phase 2 Study of Venetoclax, Ibrutinib, Prednisone, Obinutuzumab, and Revlimid (ViPOR) in Relapsed or Refractory CD10-Negative Diffuse-Large B-Cell Lymphoma (DLBCL) and High-Grade B-Cell Lymphoma With MYC and BCL2 Rearrangements (HGBCL-DH-BCL2)",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 2",
+      "nct_id": "NCT01886872",
+      "title": "A Randomized Phase III Study of Bendamustine Plus Rituximab Versus Ibrutinib Plus Rituximab Versus Ibrutinib Alone in Untreated Older Patients (≥ 65 Years of Age) With Chronic Lymphocytic Leukemia (CLL)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
       "conditions": [
-        "High Grade B-Cell Lymphoma With MYC and BCL6 Rearrangements",
-        "Recurrent Diffuse Large B-Cell Lymphoma",
-        "Recurrent Diffuse Large B-Cell Lymphoma Germinal Center B-Cell Type",
-        "Recurrent Diffuse Large B-Cell Lymphoma, Not Otherwise Specified",
-        "Recurrent High Grade B-Cell Lymphoma With MYC and BCL2 or BCL6 Rearrangements",
-        "Recurrent High Grade B-Cell Lymphoma With MYC, BCL2, and BCL6 Rearrangements",
-        "Recurrent High Grade B-Cell Lymphoma, Not Otherwise Specified",
-        "Recurrent T-Cell/Histiocyte-Rich Large B-Cell Lymphoma",
-        "Refractory Diffuse Large B-Cell Lymphoma",
-        "Refractory Diffuse Large B-Cell Lymphoma Germinal Center B-Cell Type"
+        "Stage I Chronic Lymphocytic Leukemia",
+        "Stage II Chronic Lymphocytic Leukemia",
+        "Stage III Chronic Lymphocytic Leukemia",
+        "Stage IV Chronic Lymphocytic Leukemia"
       ],
       "lead_sponsor": "National Cancer Institute (NCI)",
       "collaborators": [],
       "interventions": [
-        "Biopsy Procedure",
+        "Bendamustine Hydrochloride",
         "Biospecimen Collection",
         "Bone Marrow Aspiration",
         "Bone Marrow Biopsy",
         "Computed Tomography",
         "Ibrutinib",
-        "Lenalidomide",
-        "Magnetic Resonance Imaging",
-        "Obinutuzumab",
-        "Positron Emission Tomography"
+        "Laboratory Biomarker Analysis",
+        "Quality-of-Life Assessment",
+        "Rituximab"
       ],
-      "last_update": "2025-12-30",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06649812"
+      "last_update": "2025-11-28",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT01886872"
     },
     {
-      "nct_id": "NCT03478514",
-      "title": "A Phase II Study of Palbociclib (PD-0332991) in Combination With Ibrutinib in Patients With Previously Treated Mantle Cell Lymphoma",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "nct_id": "NCT04908228",
+      "title": "Fixed-duration Therapy With Ibrutinib and Obinutuzumab (GA-101) in Treatment-naïve Patients With CLL",
+      "overall_status": "RECRUITING",
       "phase": "Phase 2",
-      "conditions": [
-        "Mantle Cell Lymphoma",
-        "B Cell Lymphoma"
-      ],
-      "lead_sponsor": "Alliance Foundation Trials, LLC.",
-      "collaborators": [
-        "Pfizer"
-      ],
-      "interventions": [
-        "Palbociclib",
-        "Ibrutinib"
-      ],
-      "last_update": "2025-12-18",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03478514"
-    },
-    {
-      "nct_id": "NCT02827617",
-      "title": "Prospective, Observational, Multi-centred, Non-interventional Study on the Identification of Biomarkers That Are Predictive of Early Ibrutinib Treatment Failure in High Risk TP53 Mutated Chronic Lymphocytic Leukemia",
-      "overall_status": "COMPLETED",
-      "phase": null,
       "conditions": [
         "Chronic Lymphocytic Leukemia"
       ],
-      "lead_sponsor": "Oncology Institute of Southern Switzerland",
+      "lead_sponsor": "Paolo Ghia",
       "collaborators": [],
       "interventions": [
+        "Ibrutinib and obinutuzumab"
+      ],
+      "last_update": "2023-10-03",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04908228"
+    },
+    {
+      "nct_id": "NCT02268851",
+      "title": "A Multi-center Phase I/Ib Study Evaluating the Efficacy and Safety of the Novel PI3k Delta Inhibitor TGR-1202 in Combination With Ibrutinib in Patients With Select B-Cell Malignancies",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Chronic Lymphocytic Leukemia/Small Lymphocytic Lymphoma",
+        "Mantle Cell Lymphoma"
+      ],
+      "lead_sponsor": "Dana-Farber Cancer Institute",
+      "collaborators": [
+        "TG Therapeutics, Inc.",
+        "The Leukemia and Lymphoma Society",
+        "Blood Cancer Research Partnership"
+      ],
+      "interventions": [
+        "TGR-1202",
         "Ibrutinib"
       ],
-      "last_update": "2025-11-18",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02827617"
+      "last_update": "2024-11-15",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02268851"
     },
     {
-      "nct_id": "NCT02420912",
-      "title": "Nivolumab Combined With Ibrutinib for Relapsed, Refractory or High-Risk Untreated Patients With Chronic Lymphocytic Leukemia (CLL)",
-      "overall_status": "COMPLETED",
+      "nct_id": "NCT02455297",
+      "title": "A Single-arm, Open-label Phase IIa Study to Evaluate the Efficacy and Safety of Copanlisib Monotherapy in Patients With Relapsed or Refractory Mantle Cell Lymphoma (MCL), Who Failed Ibrutinib Treatment or Were Unable to Tolerate Ibrutinib",
+      "overall_status": "TERMINATED",
       "phase": "Phase 2",
       "conditions": [
-        "Loss of Chromosome 17p",
-        "Recurrent Chronic Lymphocytic Leukemia",
-        "Recurrent Small Lymphocytic Lymphoma",
-        "Refractory Chronic Lymphocytic Leukemia",
-        "Refractory Small Lymphocytic Lymphoma",
-        "Richter Syndrome"
+        "Lymphoma, Mantle-Cell"
       ],
-      "lead_sponsor": "M.D. Anderson Cancer Center",
-      "collaborators": [
-        "National Cancer Institute (NCI)"
-      ],
-      "interventions": [
-        "Ibrutinib",
-        "Laboratory Biomarker Analysis",
-        "Nivolumab"
-      ],
-      "last_update": "2024-03-20",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02420912"
-    },
-    {
-      "nct_id": "NCT02824029",
-      "title": "A Phase II Multicenter Single Arm Study to Evaluate the Efficacy and Safety of Single Agent Bruton's Tyrosine Kinase Inhibitor, Ibrutinib, in Patients With Relapsed Refractory Classical Hodgkin's Lymphoma",
-      "overall_status": "COMPLETED",
-      "phase": "Phase 2",
-      "conditions": [
-        "Classical Hodgkin Lymphoma",
-        "Recurrent Hodgkin Lymphoma",
-        "Refractory Hodgkin Lymphoma"
-      ],
-      "lead_sponsor": "Barbara Ann Karmanos Cancer Institute",
-      "collaborators": [
-        "National Cancer Institute (NCI)"
-      ],
-      "interventions": [
-        "Ibrutinib",
-        "Laboratory Biomarker Analysis",
-        "Pharmacological Study"
-      ],
-      "last_update": "2025-02-17",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02824029"
-    },
-    {
-      "nct_id": "NCT02514083",
-      "title": "A Pilot Phase II Study Using Ibrutinib and Short-Course Fludarabine in Previously Untreated Patients With Chronic Lymphocytic Leukemia/Small Lymphocytic Lymphoma (CLL/SLL)",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Chronic Lymphocytic Leukemia",
-        "Small Lymphocytic Lymphoma"
-      ],
-      "lead_sponsor": "National Heart, Lung, and Blood Institute (NHLBI)",
+      "lead_sponsor": "Bayer",
       "collaborators": [],
       "interventions": [
-        "Ibrutinib",
-        "Fludarabine"
+        "Copanlisib (BAY80-6946)"
       ],
-      "last_update": "2024-09-19",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT02514083"
+      "last_update": "2017-10-02",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02455297"
     }
   ]
 }

@@ -5,7 +5,7 @@
     "Ciltacabtagene autoleucel",
     "CARVYKTI"
   ],
-  "returned_unique": 21,
+  "returned_unique": 20,
   "kept": 10,
   "studies": [
     {
@@ -30,6 +30,22 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06623630"
     },
     {
+      "nct_id": "NCT05201781",
+      "title": "Long-term Follow-up Study for Participants Previously Treated With Ciltacabtagene Autoleucel",
+      "overall_status": "RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Cilta-cel"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05201781"
+    },
+    {
       "nct_id": "NCT07149857",
       "title": "A Phase 2 Multicohort Trial to Further Characterize the Efficacy and Safety of Ciltacabtagene Autoleucel",
       "overall_status": "RECRUITING",
@@ -47,51 +63,6 @@
       ],
       "last_update": "2025-12-05",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07149857"
-    },
-    {
-      "nct_id": "NCT05257083",
-      "title": "A Phase 3 Randomized Study Comparing Daratumumab, Bortezomib, Lenalidomide and Dexamethasone (DVRd) Followed by Ciltacabtagene Autoleucel Versus Daratumumab, Bortezomib, Lenalidomide and Dexamethasone (DVRd) Followed by Autologous Stem Cell Transplant (ASCT) in Participants With Newly Diagnosed Multiple Myeloma Who Are Transplant Eligible",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 3",
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "lead_sponsor": "Stichting European Myeloma Network",
-      "collaborators": [
-        "Janssen Research & Development, LLC"
-      ],
-      "interventions": [
-        "Daratumumab",
-        "Bortezomib",
-        "Lenalidomide",
-        "Dexamethasone",
-        "Cilta-cel",
-        "Cyclophosphamide",
-        "Fludarabine"
-      ],
-      "last_update": "2025-12-18",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05257083"
-    },
-    {
-      "nct_id": "NCT04923893",
-      "title": "A Phase 3 Randomized Study Comparing Bortezomib, Lenalidomide and Dexamethasone (VRd) Followed by Ciltacabtagene Autoleucel, a Chimeric Antigen Receptor T Cell (CAR-T) Therapy Directed Against BCMA Versus Bortezomib, Lenalidomide, and Dexamethasone (VRd) Followed by Lenalidomide and Dexamethasone (Rd) Therapy in Participants With Newly Diagnosed Multiple Myeloma for Whom Hematopoietic Stem Cell Transplant is Not Planned as Initial Therapy",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 3",
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Bortezomib",
-        "Dexamethasone",
-        "Lenalidomide",
-        "Cilta-cel",
-        "Cyclophosphamide",
-        "Fludarabine"
-      ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04923893"
     },
     {
       "nct_id": "NCT06577025",
@@ -118,20 +89,25 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06577025"
     },
     {
-      "nct_id": "NCT05201781",
-      "title": "Long-term Follow-up Study for Participants Previously Treated With Ciltacabtagene Autoleucel",
-      "overall_status": "RECRUITING",
-      "phase": null,
+      "nct_id": "NCT04923893",
+      "title": "A Phase 3 Randomized Study Comparing Bortezomib, Lenalidomide and Dexamethasone (VRd) Followed by Ciltacabtagene Autoleucel, a Chimeric Antigen Receptor T Cell (CAR-T) Therapy Directed Against BCMA Versus Bortezomib, Lenalidomide, and Dexamethasone (VRd) Followed by Lenalidomide and Dexamethasone (Rd) Therapy in Participants With Newly Diagnosed Multiple Myeloma for Whom Hematopoietic Stem Cell Transplant is Not Planned as Initial Therapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
       "conditions": [
         "Multiple Myeloma"
       ],
       "lead_sponsor": "Janssen Research & Development, LLC",
       "collaborators": [],
       "interventions": [
-        "Cilta-cel"
+        "Bortezomib",
+        "Dexamethasone",
+        "Lenalidomide",
+        "Cilta-cel",
+        "Cyclophosphamide",
+        "Fludarabine"
       ],
       "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05201781"
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04923893"
     },
     {
       "nct_id": "NCT05346835",
@@ -204,6 +180,24 @@
       ],
       "last_update": "2026-01-05",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07093554"
+    },
+    {
+      "nct_id": "NCT03758417",
+      "title": "A Phase 2, Open-Label Study of LCAR-B38M CAR-T Cells, a Chimeric Antigen Receptor T-cell (CAR-T) Therapy Directed Against BCMA in Chinese Subjects With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "TERMINATED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Nanjing Legend Biotech Co.",
+      "collaborators": [
+        "Janssen Research & Development, LLC"
+      ],
+      "interventions": [
+        "LCAR-B38M CAR-T Cell"
+      ],
+      "last_update": "2025-12-17",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03758417"
     }
   ]
 }
