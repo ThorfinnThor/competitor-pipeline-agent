@@ -611,7 +611,7 @@ def main() -> None:
     with open("config.yml", "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
 
-    model = cfg.get("llm_model", "gemini-2.5-flash")
+    models = cfg.get("llm_models") or [cfg.get("llm_model", "gemini-2.5-flash")]
     company = cfg["company"]
 
     company_name = company["name"]
@@ -666,7 +666,7 @@ def main() -> None:
     safe_text_dump(os.path.join(raw_dir, f"{run_date}.extracted_text_preview.txt"), combined_text[:25000])
 
     # 3) LLM extraction → snapshot JSON
-    snapshot = llm_extract_pipeline(company_name, combined_text[:160000], model)
+    snapshot = llm_extract_pipeline(company_name, combined_text[:160000], models)
     snapshot["_meta"] = {
         "run_date_utc": run_date,
         "source_url": source_url,
@@ -681,7 +681,7 @@ def main() -> None:
 
     # 4) Diff vs previous + narrative
     d = diff_programs(prev or {}, snapshot)
-    brief = llm_write_executive_brief(company_name, d, model)
+    brief = llm_write_executive_brief(company_name, d, models[0] if models else "gemini-2.5-flash")
 
     # 5) Write Markdown report
     md = render_markdown_report(
