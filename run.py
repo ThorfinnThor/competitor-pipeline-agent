@@ -9,10 +9,11 @@ import hashlib
 import datetime
 from typing import Optional, List, Dict, Any, Tuple
 from urllib.parse import urljoin, urlparse
+import xml.etree.ElementTree as ET
 
 import yaml
 import requests
-import xml.etree.ElementTree as ET
+
 import fitz  # PyMuPDF
 from PIL import Image, ImageOps, ImageEnhance
 import pytesseract
@@ -29,13 +30,24 @@ from xml.sax.saxutils import escape as xml_escape
 from html.parser import HTMLParser
 
 
-# -------------------------
+# ============================================================
 # Utilities
-# -------------------------
+# ============================================================
 
 DATE_JSON_RE = re.compile(r"^\d{4}-\d{2}-\d{2}\.json$")
 DATE_PDF_RE = re.compile(r"^\d{4}-\d{2}-\d{2}\.pdf$")
 ACCESSION_RE = re.compile(r"^\d{10}-\d{2}-\d{6}$", re.ASCII)
+
+DEFAULT_WEB_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+}
 
 def utc_today_str() -> str:
     return datetime.datetime.utcnow().date().isoformat()
@@ -89,11 +101,11 @@ def program_count(snapshot: Optional[dict]) -> int:
     return len(snapshot.get("programs", []) or [])
 
 def http_get(url: str, headers: Optional[dict] = None, timeout: int = 60) -> requests.Response:
-    return requests.get(url, headers=headers or {}, timeout=timeout)
+    return requests.get(url, headers=headers or DEFAULT_WEB_HEADERS, timeout=timeout)
 
 def http_head_ok(url: str, timeout: int = 30) -> bool:
     try:
-        r = requests.head(url, allow_redirects=True, timeout=timeout)
+        r = requests.head(url, allow_redirects=True, headers=DEFAULT_WEB_HEADERS, timeout=timeout)
         return r.status_code == 200
     except Exception:
         return False
@@ -110,7 +122,7 @@ def find_latest_valid_snapshot(snap_dir: str) -> Tuple[Optional[dict], Optional[
             return s, p
     return None, None
 
-def best_prev_pdf_hash(prev_snapshot: Optional[dict], sources_dir: str, snap_dir: str) -> Optional[str]:
+def best_prev_pdf_hash(prev_snapshot: Optional[dict], sources_dir: str) -> Optional[str]:
     meta = (prev_snapshot or {}).get("_meta", {}) or {}
     if meta.get("source_sha256"):
         return meta["source_sha256"]
@@ -135,9 +147,9 @@ def best_prev_pdf_hash(prev_snapshot: Optional[dict], sources_dir: str, snap_dir
     return None
 
 
-# -------------------------
-# J&J Q4 CDN auto-discovery
-# -------------------------
+# ============================================================
+# J&J pipeline PDF auto-discovery (Q4 CDN)
+# ============================================================
 
 def quarter_of_date(d: datetime.date) -> int:
     return (d.month - 1) // 3 + 1
@@ -162,9 +174,10 @@ def discover_latest_jnj_pipeline_pdf(q4cdn_base: str, filename_prefix: str, look
         if http_head_ok(url):
             return url
 
+    # last-ditch GET probes
     for url in candidates:
         try:
-            r = requests.get(url, stream=True, timeout=30)
+            r = requests.get(url, headers=DEFAULT_WEB_HEADERS, stream=True, timeout=30)
             if r.status_code == 200:
                 return url
         except Exception:
@@ -173,16 +186,19 @@ def discover_latest_jnj_pipeline_pdf(q4cdn_base: str, filename_prefix: str, look
     raise RuntimeError("Could not auto-discover a valid J&J pipeline PDF in the lookback window.")
 
 
-# -------------------------
-# PDF extraction + OCR fallback
-# -------------------------
+# ============================================================
+# PDF extraction + OCR
+# ============================================================
+
+def pdf_to_text_per_page(pdf_bytes: bytes) -> List[str]:
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    out = []
+    for i in range(doc.page_count):
+        out.append(doc.load_page(i).get_text("text") or "")
+    return out
 
 def pdf_to_text(pdf_bytes: bytes) -> str:
-    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
-    parts: List[str] = []
-    for i in range(doc.page_count):
-        parts.append(doc.load_page(i).get_text("text"))
-    return "\n".join(parts)
+    return "\n".join(pdf_to_text_per_page(pdf_bytes))
 
 def preprocess_for_ocr(pil_img: Image.Image) -> Image.Image:
     img = pil_img.convert("L")
@@ -190,11 +206,12 @@ def preprocess_for_ocr(pil_img: Image.Image) -> Image.Image:
     img = ImageEnhance.Contrast(img).enhance(1.8)
     return img
 
-def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 8, dpi: int = 220) -> str:
+def ocr_pdf_pages(pdf_bytes: bytes, pages: List[int], dpi: int = 220) -> str:
     doc = fitz.open(stream=pdf_bytes, filetype="pdf")
-    n_pages = min(doc.page_count, max_pages)
     texts: List[str] = []
-    for i in range(n_pages):
+    for i in pages:
+        if i < 0 or i >= doc.page_count:
+            continue
         page = doc.load_page(i)
         pix = page.get_pixmap(dpi=dpi)
         mode = "RGB" if pix.alpha == 0 else "RGBA"
@@ -205,15 +222,47 @@ def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 8, dpi: int = 220) -> str:
             texts.append(f"\n\n===== OCR PAGE {i+1} =====\n{t}")
     return "\n".join(texts)
 
-def maybe_add_ocr(pdf_bytes: bytes, text_extracted: str, ocr_max_pages: int, ocr_dpi: int) -> str:
-    if len((text_extracted or "").strip()) >= 5000:
-        return text_extracted
-    return (text_extracted or "") + "\n\n" + ocr_pdf_pages(pdf_bytes, max_pages=ocr_max_pages, dpi=ocr_dpi)
+def pick_candidate_pipeline_pages(page_texts: List[str], max_pages: int) -> List[int]:
+    """
+    Cheap heuristic to reduce LLM vision calls:
+    score pages by presence of pipeline-like terms and JNJ asset codes.
+    """
+    keywords = [
+        "Selected Innovative Medicines",
+        "Oncology",
+        "Immunology",
+        "Neuroscience",
+        "Cardiovascular",
+        "Pulmonary",
+        "Infectious",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Registration",
+        "Pipeline",
+        "Innovative Medicines",
+    ]
+    scores = []
+    for i, t in enumerate(page_texts):
+        tl = (t or "").lower()
+        s = 0
+        for kw in keywords:
+            if kw.lower() in tl:
+                s += 1
+        s += len(re.findall(r"\bjnj-\d{3,5}\b", tl))
+        scores.append((s, i))
+
+    scores.sort(key=lambda x: x[0], reverse=True)
+    chosen = [i for s, i in scores if s > 0][:max_pages]
+    if not chosen:
+        chosen = list(range(min(len(page_texts), max_pages)))
+    chosen.sort()
+    return chosen
 
 
-# -------------------------
-# Gemini helpers
-# -------------------------
+# ============================================================
+# Gemini helpers (LLM optional)
+# ============================================================
 
 def gemini_client() -> genai.Client:
     key = os.environ.get("GEMINI_API_KEY", "").strip()
@@ -293,9 +342,9 @@ def gemini_generate_vision(models: List[str], prompt: str, image_bytes: bytes, m
     raise RuntimeError(f"All Gemini vision attempts failed. Last error: {last_err}")
 
 
-# -------------------------
-# Vision pipeline extraction
-# -------------------------
+# ============================================================
+# Vision pipeline extraction (phase colors supported via vision)
+# ============================================================
 
 def render_page_png(pdf_doc: fitz.Document, page_index: int, dpi: int) -> bytes:
     page = pdf_doc.load_page(page_index)
@@ -340,21 +389,19 @@ Phase must be one of:
         p["source_page"] = page_no_1based
     return parsed
 
-def llm_extract_pipeline_vision(company_name: str, pdf_bytes: bytes, models: List[str], max_pages: int, dpi: int) -> dict:
+def llm_extract_pipeline_vision(company_name: str, pdf_bytes: bytes, models: List[str],
+                                page_indices: List[int], dpi: int) -> dict:
     doc = fitz.open(stream=pdf_bytes, filetype="pdf")
-    n = min(doc.page_count, max_pages)
-
     all_programs: List[dict] = []
     as_of: Optional[str] = None
 
-    for i in range(n):
+    for i in page_indices:
         png = render_page_png(doc, i, dpi=dpi)
         page_res = llm_extract_pipeline_from_page_image(company_name, i + 1, png, models)
         if not as_of and page_res.get("as_of_date"):
             as_of = page_res.get("as_of_date")
         all_programs.extend(page_res.get("programs", []) or [])
 
-    # de-dup by asset+indication
     def key(p: dict) -> str:
         return canon(p.get("asset")) + "||" + canon(p.get("indication"))
 
@@ -408,9 +455,9 @@ RAW TEXT:
     return parsed
 
 
-# -------------------------
+# ============================================================
 # Diff logic
-# -------------------------
+# ============================================================
 
 def diff_programs(prev: dict, curr: dict) -> dict:
     prev_programs = prev.get("programs", []) if prev else []
@@ -453,9 +500,9 @@ def phase_counts(programs: List[dict]) -> Dict[str, int]:
     return out
 
 
-# -------------------------
-# ClinicalTrials.gov corroboration (improved matching)
-# -------------------------
+# ============================================================
+# ClinicalTrials.gov corroboration (kept as-is from your working version)
+# ============================================================
 
 CTG_BASE = "https://clinicaltrials.gov/api/v2"
 
@@ -539,9 +586,29 @@ def ctgov_extract_study_min(study: dict) -> dict:
         "ctgov_url": f"https://clinicaltrials.gov/study/{nct}" if nct else None,
     }
 
-def ctgov_matches_for_term(term: str, page_size: int) -> dict:
-    params = {"query.term": term, "pageSize": page_size, "countTotal": "true"}
-    return ctgov_get_json(params)
+def extract_query_terms_from_asset(asset: str) -> List[str]:
+    asset = norm_ws(asset)
+    out = []
+    if asset:
+        out.append(asset)
+    aliases = re.findall(r"\(([^)]+)\)", asset)
+    for a in aliases:
+        a = norm_ws(a)
+        if a:
+            out.append(a)
+    pieces = re.split(r"[\/,;]| - ", asset)
+    for p in pieces:
+        p = norm_ws(re.sub(r"\([^)]*\)", "", p))
+        if p and p.lower() not in ("jnj", "janssen"):
+            out.append(p)
+    seen = set()
+    uniq = []
+    for t in out:
+        ct = canon(t)
+        if ct and ct not in seen:
+            seen.add(ct)
+            uniq.append(t)
+    return uniq[:5]
 
 def sponsor_match_text(study_min: dict) -> str:
     return " ".join([
@@ -554,15 +621,11 @@ def score_study_for_terms(study_min: dict, terms: List[str], sponsor_keywords: L
     title = (study_min.get("title") or "")
     interventions = " ".join(study_min.get("interventions") or [])
     spons = sponsor_match_text(study_min)
-
-    # sponsor boosts
     spons_l = spons.lower()
     for kw in sponsor_keywords or []:
         if kw.lower() in spons_l:
             score += 2.0
             break
-
-    # term hits
     hay = f"{title} {interventions}".lower()
     for t in terms:
         tl = t.lower()
@@ -570,10 +633,6 @@ def score_study_for_terms(study_min: dict, terms: List[str], sponsor_keywords: L
             continue
         if tl in hay:
             score += 2.0
-        elif tl in title.lower():
-            score += 1.0
-
-    # recency mild boost (if last_update exists)
     lu = study_min.get("last_update") or ""
     if isinstance(lu, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", lu):
         try:
@@ -585,44 +644,11 @@ def score_study_for_terms(study_min: dict, terms: List[str], sponsor_keywords: L
                 score += 0.5
         except Exception:
             pass
-
     return score
 
-def extract_query_terms_from_asset(asset: str) -> List[str]:
-    """
-    Build multiple query terms:
-    - full asset string
-    - pieces inside parentheses
-    - split on '/' and ',' and ' - '
-    """
-    asset = norm_ws(asset)
-    out = []
-    if asset:
-        out.append(asset)
-
-    # parentheses aliases
-    aliases = re.findall(r"\(([^)]+)\)", asset)
-    for a in aliases:
-        a = norm_ws(a)
-        if a:
-            out.append(a)
-
-    # split on separators
-    pieces = re.split(r"[\/,;]| - ", asset)
-    for p in pieces:
-        p = norm_ws(re.sub(r"\([^)]*\)", "", p))
-        if p and p.lower() not in ("jnj", "janssen"):
-            out.append(p)
-
-    # keep unique by canon
-    seen = set()
-    uniq = []
-    for t in out:
-        ct = canon(t)
-        if ct and ct not in seen:
-            seen.add(ct)
-            uniq.append(t)
-    return uniq[:5]  # cap to control API usage
+def ctgov_matches_for_term(term: str, page_size: int) -> dict:
+    params = {"query.term": term, "pageSize": page_size, "countTotal": "true"}
+    return ctgov_get_json(params)
 
 def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: str, sources_dir: str) -> dict:
     if not cfg_company.get("ctgov_enabled", True):
@@ -632,7 +658,6 @@ def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: s
     max_assets = int(cfg_company.get("ctgov_max_assets_per_run", 40))
     sponsor_keywords = cfg_company.get("ctgov_sponsor_keywords") or []
 
-    # prioritize changed assets
     priority_assets: List[str] = []
     for it in (diff.get("added") or []):
         if it.get("asset"):
@@ -641,13 +666,11 @@ def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: s
         if it.get("asset"):
             priority_assets.append(it["asset"])
 
-    # if no changes, sample top N
     if not priority_assets:
         for p in (snapshot.get("programs") or [])[:max_assets]:
             if p.get("asset"):
                 priority_assets.append(p["asset"])
 
-    # dedupe
     seen = set()
     assets = []
     for a in priority_assets:
@@ -666,7 +689,7 @@ def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: s
 
     for asset in assets:
         terms = extract_query_terms_from_asset(asset)
-        combined: Dict[str, dict] = {}  # by nct_id
+        combined: Dict[str, dict] = {}
         queries = []
 
         for term in terms:
@@ -684,7 +707,6 @@ def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: s
                 continue
             time.sleep(0.15)
 
-        # score & select
         scored = []
         for smin in combined.values():
             sc = score_study_for_terms(smin, terms, sponsor_keywords)
@@ -704,7 +726,6 @@ def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: s
         safe_json_dump(os.path.join(run_dir, f"{safe_fn}.json"), store_obj)
         results_by_asset[asset] = store_obj
 
-    # attach to programs
     prog_list = snapshot.get("programs") or []
     by_asset_canon: Dict[str, List[dict]] = {}
     for asset, res in results_by_asset.items():
@@ -756,9 +777,9 @@ def ctgov_corroborate(snapshot: dict, diff: dict, cfg_company: dict, run_date: s
     return summary
 
 
-# -------------------------
-# SEC EDGAR corroboration (improved lookback + dedupe)
-# -------------------------
+# ============================================================
+# SEC EDGAR corroboration (lookback + dedupe)
+# ============================================================
 
 def sec_headers() -> dict:
     ua = os.environ.get("SEC_USER_AGENT", "").strip()
@@ -833,7 +854,6 @@ def load_processed_accessions(sec_sources_dir: str) -> set:
     processed = set()
     if not os.path.isdir(sec_sources_dir):
         return processed
-    # Expected: sources/jnj/sec/<run_date>/<accession>.events.json
     for root, _, files in os.walk(sec_sources_dir):
         for fn in files:
             if fn.endswith(".events.json"):
@@ -867,11 +887,6 @@ Return ONLY valid JSON:
     }}
   ]
 }}
-
-Rules:
-- Do not invent assets.
-- Confidence in [0,1].
-- If there are no clear pipeline-relevant signals, return an empty events array.
 """.strip()
 
     try:
@@ -879,8 +894,8 @@ Rules:
             models=models,
             prompt=prompt
             + "\n\nFILING_META:\n" + json.dumps(filing_meta, ensure_ascii=False)
-            + "\n\nFILING_TEXT:\n" + filing_text[:120000],
-            max_attempts_per_model=2
+            + "\n\nFILING_TEXT:\n" + filing_text[:90000],
+            max_attempts_per_model=2,
         )
         parsed = _try_parse_json(out)
         if parsed:
@@ -904,7 +919,6 @@ def edgar_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
     processed = load_processed_accessions(sec_root)
 
     filings = sec_recent_filings(cik10=cik10, since_date=since_date, forms=forms, max_filings=max_filings * 2)
-    # filter already processed
     filings = [f for f in filings if f.get("accession") not in processed][:max_filings]
 
     run_dir = os.path.join(sec_root, run_date)
@@ -932,7 +946,7 @@ def edgar_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
                 fh.write(excerpt)
 
             filing_text = strip_html_to_text(b)
-            safe_text_dump(os.path.join(run_dir, f"{acc}.text.txt"), filing_text[:250000])
+            safe_text_dump(os.path.join(run_dir, f"{acc}.text.txt"), filing_text[:200000])
 
             ev = llm_extract_edgar_events(cfg_company.get("name", "Company"), fmeta, filing_text, models=models)
             safe_json_dump(os.path.join(run_dir, f"{acc}.events.json"), ev)
@@ -958,32 +972,9 @@ def edgar_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
     return {"summary": summary, "filing_events": extracted_events}
 
 
-# -------------------------
-# Press release ingestion (RSS-first, 403-safe)
-# -------------------------
-
-import xml.etree.ElementTree as ET
-
-DEFAULT_WEB_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "no-cache",
-    "Pragma": "no-cache",
-}
-
-def press_fetch_index(feed_url: str) -> str:
-    """
-    Fetch a press feed index safely.
-    - Uses browser-like headers.
-    - If the IR site blocks (403), we will let the caller handle fallback/disable.
-    """
-    r = requests.get(feed_url, headers=DEFAULT_WEB_HEADERS, timeout=60)
-    r.raise_for_status()
-    return r.text
+# ============================================================
+# Press ingestion (RSS) + LOW-NOISE heuristic
+# ============================================================
 
 def _looks_like_rss(text: str) -> bool:
     t = (text or "").lstrip().lower()
@@ -993,8 +984,6 @@ def _normalize_pubdate_to_yyyy_mm_dd(pub: str) -> Optional[str]:
     pub = (pub or "").strip()
     if not pub:
         return None
-
-    # Common RSS pubDate: "Mon, 26 Dec 2025 14:00:00 -0500"
     fmts = [
         "%a, %d %b %Y %H:%M:%S %z",
         "%a, %d %b %Y %H:%M:%S %Z",
@@ -1008,20 +997,22 @@ def _normalize_pubdate_to_yyyy_mm_dd(pub: str) -> Optional[str]:
             return dt.date().isoformat()
         except Exception:
             continue
-    return None
+    # sometimes Atom uses YYYY-MM-DDTHH:MM:SSZ
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})", pub)
+    return m.group(1) if m else None
+
+def press_fetch_index(feed_url: str) -> str:
+    r = requests.get(feed_url, headers=DEFAULT_WEB_HEADERS, timeout=60)
+    r.raise_for_status()
+    return r.text
 
 def press_parse_rss_items(feed_url: str, xml_text: str, max_items: int = 10) -> List[dict]:
-    """
-    Parse RSS or Atom feed. Return list of dicts:
-      { "url": ..., "title": ..., "date": ... }
-    """
     items: List[dict] = []
     try:
         root = ET.fromstring(xml_text.encode("utf-8", errors="ignore"))
     except Exception:
         return items
 
-    # RSS: <rss><channel><item>...
     for it in root.findall(".//item"):
         title = (it.findtext("title") or "").strip()
         link = (it.findtext("link") or "").strip()
@@ -1032,12 +1023,12 @@ def press_parse_rss_items(feed_url: str, xml_text: str, max_items: int = 10) -> 
         if len(items) >= max_items:
             return items
 
-    # Atom: <feed><entry>...
+    # Atom fallback
     ns = {"a": "http://www.w3.org/2005/Atom"}
     for ent in root.findall(".//a:entry", ns):
         title = (ent.findtext("a:title", default="", namespaces=ns) or "").strip()
         pub = (ent.findtext("a:updated", default="", namespaces=ns) or "").strip()
-        date_norm = _normalize_pubdate_to_yyyy_mm_dd(pub[:10]) or _normalize_pubdate_to_yyyy_mm_dd(pub)
+        date_norm = _normalize_pubdate_to_yyyy_mm_dd(pub)
 
         link = None
         for l in ent.findall("a:link", ns):
@@ -1067,28 +1058,96 @@ def press_url_to_safe_name(url: str) -> str:
 def press_html_to_text(html_bytes: bytes) -> str:
     return strip_html_to_text(html_bytes)
 
-def press_keyword_events(text: str) -> List[dict]:
-    """Deterministic fallback if LLM is unavailable/quota-limited."""
-    t = (text or "").lower()
-    events = []
-    keywords = [
-        ("partnership", ["collaboration", "partnership", "agreement", "license", "acquire", "acquisition"]),
-        ("discontinuation", ["discontinue", "terminated", "termination", "stop development", "halt"]),
-        ("regulatory", ["fda", "ema", "approval", "submission", "nda", "bla", "marketing authorization"]),
-        ("phase_progression", ["phase 3", "phase 2", "phase 1", "registrational", "pivotal", "topline"]),
+def strip_html_to_text(b: bytes) -> str:
+    s = b.decode("utf-8", errors="ignore")
+    s = re.sub(r"(?is)<script.*?>.*?</script>", " ", s)
+    s = re.sub(r"(?is)<style.*?>.*?</style>", " ", s)
+    s = re.sub(r"(?is)<br\s*/?>", "\n", s)
+    s = re.sub(r"(?is)</p\s*>", "\n\n", s)
+    s = re.sub(r"(?is)<[^>]+>", " ", s)
+    s = html.unescape(s)
+    s = re.sub(r"[ \t]+", " ", s)
+    s = re.sub(r"\n{3,}", "\n\n", s)
+    return s.strip()
+
+def build_known_asset_terms(snapshot: dict) -> List[str]:
+    terms = []
+    for p in (snapshot.get("programs") or []):
+        a = p.get("asset") or ""
+        if not a:
+            continue
+        terms.append(a)
+        for m in re.findall(r"\bJNJ-\d{3,5}\b", a, flags=re.I):
+            terms.append(m)
+        # aliases in parentheses
+        for alias in re.findall(r"\(([^)]+)\)", a):
+            terms.append(alias)
+        # first token before parentheses
+        core = norm_ws(re.sub(r"\([^)]*\)", "", a))
+        if core:
+            terms.append(core)
+    # unique by canon, cap size
+    out, seen = [], set()
+    for t in terms:
+        ct = canon(t)
+        if ct and ct not in seen and len(ct) >= 3:
+            seen.add(ct)
+            out.append(t)
+    return out[:250]
+
+def heuristic_press_events(text: str, known_terms: List[str]) -> Tuple[List[dict], List[str]]:
+    """
+    Lower-noise fallback:
+    - Only fire if (clinical/regulatory trigger) OR (asset mention)
+    - Extract JNJ-#### and known pipeline asset terms
+    """
+    t = (text or "")
+    tl = t.lower()
+
+    triggers = [
+        "phase 1", "phase 2", "phase 3", "clinical trial", "trial", "study",
+        "fda", "ema", "submission", "approved", "approval", "nda", "bla",
+        "topline", "pivotal", "registrational", "label expansion"
     ]
-    for etype, kws in keywords:
-        for kw in kws:
-            if kw in t:
-                events.append({
-                    "event_type": etype,
-                    "asset": None,
-                    "indication": None,
-                    "summary": f"Keyword signal detected in press release text: '{kw}'. Review stored press release for details.",
-                    "confidence": 0.25,
-                })
-                break
-    return events[:6]
+    trigger_hit = any(x in tl for x in triggers)
+
+    detected_assets = set(re.findall(r"\bJNJ-\d{3,5}\b", t, flags=re.I))
+    for term in known_terms:
+        if len(term) < 4:
+            continue
+        if canon(term) and canon(term) in canon(t):
+            # avoid overly generic term explosions
+            if len(canon(term)) >= 6:
+                detected_assets.add(term)
+
+    if not trigger_hit and not detected_assets:
+        return [], []
+
+    # classify event types
+    events = []
+    def add_evt(event_type: str, summary: str):
+        events.append({
+            "event_type": event_type,
+            "asset": sorted(list(detected_assets))[0] if detected_assets else None,
+            "indication": None,
+            "summary": summary,
+            "confidence": 0.35 if detected_assets else 0.25,
+        })
+
+    if any(x in tl for x in ["submission", "fda", "ema", "approved", "approval", "nda", "bla"]):
+        add_evt("regulatory", "Regulatory/filing language detected in press release. Review stored evidence for details.")
+    if any(x in tl for x in ["phase 3", "phase 2", "phase 1", "clinical trial", "topline", "pivotal", "registrational"]):
+        add_evt("phase_progression", "Clinical development language detected (phase/study/topline). Review stored evidence for details.")
+    if any(x in tl for x in ["collaboration", "partnership", "agreement", "license"]):
+        add_evt("partnership", "Partnership/collaboration language detected. Review stored evidence for details.")
+    if any(x in tl for x in ["discontinue", "terminated", "halt", "stop development"]):
+        add_evt("discontinuation", "Potential discontinuation language detected. Review stored evidence for details.")
+
+    # If we have trigger hit but none matched buckets, keep a generic signal
+    if not events:
+        add_evt("other", "Pipeline-relevant trigger detected. Review stored evidence for details.")
+
+    return events[:4], sorted(list(detected_assets))[:10]
 
 def llm_extract_press_events(company_name: str, url: str, title: str, date_guess: str, text: str, models: List[str]) -> dict:
     prompt = f"""
@@ -1114,11 +1173,6 @@ Return ONLY valid JSON:
     }}
   ]
 }}
-
-Rules:
-- Do not invent assets.
-- Confidence in [0,1].
-- If nothing relevant, return empty events array.
 """.strip()
 
     meta = {"url": url, "title": title, "date": date_guess or None}
@@ -1126,7 +1180,7 @@ Rules:
     try:
         out = gemini_generate_text(
             models=models,
-            prompt=prompt + "\n\nMETA:\n" + json.dumps(meta, ensure_ascii=False) + "\n\nTEXT:\n" + (text or "")[:120000],
+            prompt=prompt + "\n\nMETA:\n" + json.dumps(meta, ensure_ascii=False) + "\n\nTEXT:\n" + (text or "")[:90000],
             max_attempts_per_model=2
         )
         parsed = _try_parse_json(out)
@@ -1136,8 +1190,7 @@ Rules:
             return parsed
         return {"press_release": meta, "events": [], "_llm_parse_error": True, "_llm_raw": (out or "")[:2000]}
     except Exception as e:
-        # Never crash the run because press is auxiliary
-        return {"press_release": meta, "events": press_keyword_events(text or ""), "_llm_error": str(e)}
+        return {"press_release": meta, "events": [], "_llm_error": str(e)}
 
 def load_processed_press_urls(press_root: str) -> set:
     processed = set()
@@ -1154,10 +1207,6 @@ def load_processed_press_urls(press_root: str) -> set:
     return processed
 
 def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_date: str, sources_dir: str) -> dict:
-    """
-    RSS-first press ingestion.
-    - Will NOT raise if blocked (403); returns a summary with error instead.
-    """
     if not cfg_company.get("press_enabled", False):
         return {"summary": {"enabled": False}, "press_events": []}
 
@@ -1166,18 +1215,18 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
 
     press_root = os.path.join(sources_dir, "press")
     ensure_dir(press_root)
-
     processed = load_processed_press_urls(press_root)
 
     run_dir = os.path.join(press_root, run_date)
     ensure_dir(run_dir)
+
+    known_terms = build_known_asset_terms(snapshot)
 
     try:
         idx_text = press_fetch_index(feed_url)
         safe_text_dump(os.path.join(run_dir, "feed.url.txt"), feed_url)
         safe_text_dump(os.path.join(run_dir, "feed.body.txt"), idx_text[:250000])
     except Exception as e:
-        # Do not crash the pipeline run
         summary = {
             "enabled": True,
             "feed_url": feed_url,
@@ -1191,11 +1240,7 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
         snapshot["_meta"]["press"] = summary
         return {"summary": summary, "press_events": []}
 
-    # Parse RSS/Atom; if not RSS, bail safely (you can extend later)
-    items = []
-    if _looks_like_rss(idx_text):
-        items = press_parse_rss_items(feed_url, idx_text, max_items=max_items)
-    else:
+    if not _looks_like_rss(idx_text):
         summary = {
             "enabled": True,
             "feed_url": feed_url,
@@ -1203,11 +1248,13 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
             "new_releases_processed": 0,
             "releases_with_events": 0,
             "sources_path": run_dir,
-            "error": "Press feed did not look like RSS/Atom. Use an RSS feed URL (recommended: https://www.jnj.com/rss-feed/all).",
+            "error": "Press feed did not look like RSS/Atom. Use an RSS feed URL.",
         }
         snapshot.setdefault("_meta", {})
         snapshot["_meta"]["press"] = summary
         return {"summary": summary, "press_events": []}
+
+    items = press_parse_rss_items(feed_url, idx_text, max_items=max_items)
 
     considered = 0
     new_items = 0
@@ -1230,21 +1277,27 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
 
             safe_name = press_url_to_safe_name(url)
 
-            # store provenance
             safe_text_dump(os.path.join(run_dir, f"{safe_name}.url.txt"), url)
             safe_text_dump(os.path.join(run_dir, f"{safe_name}.sha256.txt"), sha256_bytes(b))
             safe_text_dump(os.path.join(run_dir, f"{safe_name}.text.txt"), text[:250000])
 
-            meta = {
-                "url": url,
-                "title": it.get("title") or safe_name,
-                "date": it.get("date"),
-            }
+            meta = {"url": url, "title": it.get("title") or safe_name, "date": it.get("date")}
             safe_json_dump(os.path.join(run_dir, f"{safe_name}.meta.json"), meta)
 
-            ev = llm_extract_press_events(cfg_company.get("name", "Company"), url, meta["title"], meta.get("date") or "", text, models=models)
-            safe_json_dump(os.path.join(run_dir, f"{safe_name}.events.json"), ev)
-            extracted.append(ev)
+            # Try LLM; if LLM fails or returns empty, fall back to low-noise heuristic
+            block = llm_extract_press_events(cfg_company.get("name", "Company"), url, meta["title"], meta.get("date") or "", text, models=models)
+            events = block.get("events") or []
+            if not events:
+                evs, detected_assets = heuristic_press_events(text, known_terms)
+                if evs:
+                    block["events"] = evs
+                    block["_heuristic_assets"] = detected_assets
+                    block["_heuristic_used"] = True
+
+            # Only keep if there is at least one event
+            if block.get("events"):
+                safe_json_dump(os.path.join(run_dir, f"{safe_name}.events.json"), block)
+                extracted.append(block)
 
         except Exception as e:
             safe_json_dump(os.path.join(run_dir, f"{press_url_to_safe_name(url)}.error.json"), {"url": url, "error": str(e)})
@@ -1256,7 +1309,7 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
         "feed_url": feed_url,
         "links_scanned": considered,
         "new_releases_processed": new_items,
-        "releases_with_events": sum(1 for e in extracted if (e.get("events") or [])),
+        "releases_with_events": len(extracted),
         "sources_path": run_dir,
     }
 
@@ -1265,54 +1318,188 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
     return {"summary": summary, "press_events": extracted}
 
 
+# ============================================================
+# Deterministic narrative (ALWAYS available, even if LLM quota = 0)
+# ============================================================
 
-# -------------------------
-# Narrative synthesis (uses diff + CT.gov + EDGAR + press)
-# -------------------------
+def _confidence_base(change_type: str) -> float:
+    if change_type == "phase_change":
+        return 0.65
+    if change_type == "new_asset":
+        return 0.60
+    if change_type == "removed_asset":
+        return 0.55
+    if change_type in ("regulatory", "deal", "discontinuation"):
+        return 0.55
+    return 0.45
 
-def llm_final_brief(company_name: str, diff: dict, ctgov_summary: dict, edgar_pack: dict, press_pack: dict, models: List[str]) -> dict:
-    no_changes = not (diff.get("added") or diff.get("removed") or diff.get("phase_changes"))
-    ed_events = (edgar_pack or {}).get("filing_events") or []
-    pr_events = (press_pack or {}).get("press_events") or []
+def deterministic_final_brief(company_name: str, snapshot: dict, diff: dict, ctgov_summary: dict, edgar_pack: dict, press_pack: dict) -> dict:
+    programs = snapshot.get("programs") or []
+    by_asset = {canon(p.get("asset")): p for p in programs if p.get("asset")}
 
-    has_edgar_events = any((b.get("events") or []) for b in ed_events)
-    has_press_events = any((b.get("events") or []) for b in pr_events)
+    def evidence_for_program(p: dict) -> List[str]:
+        ev = []
+        meta = snapshot.get("_meta", {}) or {}
+        url = meta.get("source_url")
+        pg = p.get("source_page")
+        if url:
+            ev.append(f"Pipeline deck (page {pg}): {url}")
+        # CT.gov evidence
+        matches = p.get("_ctgov_matches") or []
+        if matches:
+            m0 = matches[0]
+            if m0.get("ctgov_url"):
+                ev.append(f"ClinicalTrials.gov: {m0.get('ctgov_url')}")
+        return ev[:4]
 
-    if no_changes and not has_edgar_events and not has_press_events:
-        return {
-            "headline": "No pipeline update detected",
-            "executive_summary": (
-                "The pipeline deck appears unchanged versus the last valid snapshot, and no new pipeline-relevant signals "
-                "were extracted from SEC filings or press releases in this run. Review corroboration sections and watchlist."
-            ),
-            "top_changes": [],
-            "watchlist": [
-                "Monitor ClinicalTrials.gov for phase/status updates on priority assets (registry updates can precede deck refresh).",
-                "Monitor upcoming earnings materials for strategic reprioritization and portfolio actions.",
-                "Monitor new SEC filings and press releases for deal activity or development discontinuations.",
-            ],
-        }
+    top_changes = []
 
+    # From pipeline diff
+    for p in (diff.get("phase_changes") or []):
+        asset = p.get("asset")
+        ind = p.get("indication")
+        from_ph = p.get("from_phase")
+        to_ph = p.get("to_phase")
+        base = _confidence_base("phase_change")
+        # corroboration boosts
+        prog = by_asset.get(canon(asset), {})
+        if prog.get("_ctgov_matches"):
+            base += 0.10
+        if (prog.get("_ctgov_phase_flag") == "mismatch"):
+            base -= 0.10
+        base = max(0.20, min(0.90, base))
+        top_changes.append({
+            "change_type": "phase_change",
+            "asset": asset,
+            "indication": ind,
+            "why_it_matters": f"Pipeline phase changed from {from_ph} to {to_ph}. This may indicate meaningful development progress, reprioritization, or reclassification; confirm via registry and disclosures.",
+            "confidence": round(base, 2),
+            "evidence": evidence_for_program(prog) if prog else [],
+        })
+
+    for p in (diff.get("added") or []):
+        asset = p.get("asset")
+        ind = p.get("indication")
+        base = _confidence_base("new_asset")
+        if p.get("_ctgov_matches"):
+            base += 0.10
+        base = max(0.20, min(0.90, base))
+        top_changes.append({
+            "change_type": "new_asset",
+            "asset": asset,
+            "indication": ind,
+            "why_it_matters": "Newly disclosed program in the company pipeline. This can signal portfolio expansion, milestone achievement, or refreshed disclosure taxonomy; assess competitive adjacency and timing risk.",
+            "confidence": round(base, 2),
+            "evidence": evidence_for_program(p),
+        })
+
+    for p in (diff.get("removed") or []):
+        asset = p.get("asset")
+        ind = p.get("indication")
+        base = _confidence_base("removed_asset")
+        base = max(0.20, min(0.85, base))
+        top_changes.append({
+            "change_type": "removed_asset",
+            "asset": asset,
+            "indication": ind,
+            "why_it_matters": "Program no longer appears on the pipeline deck. This may indicate deprioritization, discontinuation, or disclosure reformatting. Confirm via filings, press, and registry updates.",
+            "confidence": round(base, 2),
+            "evidence": evidence_for_program(p),
+        })
+
+    # EDGAR signals (if any)
+    for block in (edgar_pack or {}).get("filing_events", []) or []:
+        for ev in (block.get("events") or [])[:10]:
+            top_changes.append({
+                "change_type": ev.get("event_type") or "other",
+                "asset": ev.get("asset"),
+                "indication": ev.get("indication"),
+                "why_it_matters": ev.get("summary") or "",
+                "confidence": round(float(ev.get("confidence", 0.45)), 2),
+                "evidence": [f"SEC filing: {((block.get('filing') or {}).get('url') or '')}"],
+            })
+
+    # Press signals (if any)
+    for block in (press_pack or {}).get("press_events", []) or []:
+        meta = block.get("press_release") or {}
+        for ev in (block.get("events") or [])[:6]:
+            top_changes.append({
+                "change_type": ev.get("event_type") or "other",
+                "asset": ev.get("asset"),
+                "indication": ev.get("indication"),
+                "why_it_matters": ev.get("summary") or "",
+                "confidence": round(float(ev.get("confidence", 0.35)), 2),
+                "evidence": [f"Press release: {meta.get('url')}"],
+            })
+
+    # rank (simple: higher confidence first, then phase_change/new_asset ahead)
+    type_rank = {
+        "phase_change": 0,
+        "new_asset": 1,
+        "removed_asset": 2,
+        "regulatory": 3,
+        "phase_progression": 4,
+        "partnership": 5,
+        "discontinuation": 6,
+        "other": 7,
+    }
+    top_changes.sort(key=lambda x: (type_rank.get(x["change_type"], 99), -float(x.get("confidence", 0))), reverse=False)
+
+    # executive summary
+    if not (diff.get("added") or diff.get("removed") or diff.get("phase_changes")):
+        headline = "No pipeline deck change detected"
+        exec_sum = (
+            "The pipeline source document appears unchanged versus the last valid snapshot. "
+            "This report therefore focuses on corroboration channels (ClinicalTrials.gov, EDGAR, and press signals)."
+        )
+    else:
+        headline = "Pipeline update detected"
+        exec_sum = (
+            f"Detected {len(diff.get('added') or [])} additions, {len(diff.get('removed') or [])} removals, and "
+            f"{len(diff.get('phase_changes') or [])} phase changes versus the prior snapshot. "
+            "Use evidence links to validate the highest-impact items."
+        )
+
+    watchlist = []
+    # prioritize mismatches and late-stage assets
+    for p in programs:
+        if p.get("_ctgov_phase_flag") == "mismatch":
+            watchlist.append(f"Resolve phase mismatch for {p.get('asset')} (deck vs ClinicalTrials.gov).")
+    for p in programs:
+        ph = canon(p.get("phase"))
+        if ph in ("phase 3", "registration", "approved"):
+            watchlist.append(f"Monitor regulatory/label milestones for {p.get('asset')} ({p.get('phase')}).")
+    watchlist = watchlist[:10]
+
+    return {
+        "headline": headline,
+        "executive_summary": exec_sum,
+        "top_changes": top_changes[:15],
+        "watchlist": watchlist,
+        "_deterministic": True,
+    }
+
+
+def llm_final_brief_or_fallback(company_name: str, snapshot: dict, diff: dict,
+                               ctgov_summary: dict, edgar_pack: dict, press_pack: dict,
+                               models: List[str]) -> dict:
+    """
+    Try LLM; if it fails (quota/rate/overload), return deterministic narrative.
+    """
     payload = {
         "company": company_name,
         "diff": diff,
         "ctgov": ctgov_summary,
         "sec_edgar": (edgar_pack or {}).get("summary") or {},
-        "edgar_events": ed_events,
+        "edgar_events": (edgar_pack or {}).get("filing_events") or [],
         "press": (press_pack or {}).get("summary") or {},
-        "press_events": pr_events,
+        "press_events": (press_pack or {}).get("press_events") or [],
     }
 
     prompt = f"""
 You are a senior pharma competitive intelligence analyst.
 
 Write a decision-oriented monthly competitor pipeline update for {company_name}.
-
-Use:
-- The pipeline diff as the anchor (new assets, removals, phase changes),
-- ClinicalTrials.gov corroboration (support/contradiction, freshness),
-- SEC EDGAR signals (disclosures),
-- IR press release signals (deals, discontinuations, milestones).
 
 Return ONLY valid JSON:
 {{
@@ -1330,49 +1517,30 @@ Return ONLY valid JSON:
   ],
   "watchlist": [string]
 }}
-
-Rules:
-- Confidence in [0,1], higher if corroborated by CT.gov and/or EDGAR/press.
-- If no pipeline changes, focus on EDGAR/press signals + watchlist.
 INPUT_JSON:
 {json.dumps(payload, ensure_ascii=False)}
 """.strip()
 
     try:
-        out = gemini_generate_text(models=models, prompt=prompt, max_attempts_per_model=2)
+        out = gemini_generate_text(models=models, prompt=prompt, max_attempts_per_model=1)
         parsed = _try_parse_json(out)
-        if parsed:
+        if parsed and isinstance(parsed, dict):
             parsed.setdefault("headline", "Pipeline monitoring update")
             parsed.setdefault("executive_summary", "")
             parsed.setdefault("top_changes", [])
             parsed.setdefault("watchlist", [])
+            parsed["_llm_used"] = True
             return parsed
-    except Exception as e:
-        return {
-            "headline": "Pipeline monitoring update (LLM unavailable)",
-            "executive_summary": (
-                "The run completed, but narrative synthesis failed due to model quota/rate limits. "
-                "Use the change log, inventory CSV, and evidence pack for decisions."
-            ),
-            "top_changes": [],
-            "watchlist": [
-                "Re-run when quota is available to generate a ranked narrative summary.",
-                "Use evidence JSON + stored sources to validate any key asset changes.",
-            ],
-            "_error": str(e),
-        }
+    except Exception:
+        pass
 
-    return {
-        "headline": "Pipeline monitoring update (LLM output parse failed)",
-        "executive_summary": "The run completed but narrative output could not be parsed as JSON. Refer to change log and evidence.",
-        "top_changes": [],
-        "watchlist": [],
-    }
+    # fallback
+    return deterministic_final_brief(company_name, snapshot, diff, ctgov_summary, edgar_pack, press_pack)
 
 
-# -------------------------
+# ============================================================
 # Reporting (MD + PDF)
-# -------------------------
+# ============================================================
 
 def export_programs_csv(path: str, programs: List[dict]) -> None:
     ensure_dir(os.path.dirname(path))
@@ -1419,8 +1587,9 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
     lines.append(f"**{final_brief.get('headline','Pipeline monitoring update')}**\n")
     if final_brief.get("executive_summary"):
         lines.append(final_brief["executive_summary"] + "\n")
+    if final_brief.get("_deterministic"):
+        lines.append("_Narrative generated via deterministic fallback (LLM not required)._ \n")
 
-    # Top changes
     lines.append("## Top changes (ranked)")
     tc = final_brief.get("top_changes") or []
     if not tc:
@@ -1432,7 +1601,7 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
             ev = c.get("evidence") or []
             if ev:
                 lines.append("  - Evidence:")
-                for e in ev[:8]:
+                for e in ev[:6]:
                     lines.append(f"    - {e}")
         lines.append("")
 
@@ -1471,10 +1640,6 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
         lines.append(f"- API base: {ctgov_summary.get('api_base')}")
         lines.append(f"- Programs with matches: {ctgov_summary.get('programs_with_matches')}/{ctgov_summary.get('programs_total')}")
         lines.append(f"- Phase mismatches (pipeline vs registry): {ctgov_summary.get('phase_mismatches')}")
-        if ctgov_summary.get("phase_mismatch_examples"):
-            lines.append("- Example mismatches:")
-            for m in ctgov_summary["phase_mismatch_examples"][:10]:
-                lines.append(f"  - {m.get('asset')} — pipeline: {m.get('pipeline_phase')} vs CT.gov: {m.get('ctgov_phase')}")
         lines.append(f"- Stored CT.gov evidence: `{ctgov_summary.get('sources_path')}`\n")
 
     # EDGAR
@@ -1487,17 +1652,6 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
         lines.append(f"- Filings considered (new): {ed_sum.get('filings_considered')}")
         lines.append(f"- Filings with extracted events: {ed_sum.get('filings_with_events')}")
         lines.append(f"- Stored EDGAR evidence: `{ed_sum.get('sources_path')}`\n")
-        fe = (edgar_pack or {}).get("filing_events") or []
-        for block in fe:
-            filing = block.get("filing") or {}
-            events = block.get("events") or []
-            if not events:
-                continue
-            lines.append(f"### {filing.get('form')} — {filing.get('filing_date')} — {filing.get('accession')}")
-            lines.append(f"- URL: {filing.get('url')}")
-            for ev in events[:10]:
-                lines.append(f"- **{ev.get('event_type')}** (conf {float(ev.get('confidence',0)):.2f}): {ev.get('summary','')}")
-            lines.append("")
 
     # Press
     lines.append("## IR press release signals")
@@ -1511,14 +1665,14 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
         lines.append(f"- Releases with extracted events: {pr_sum.get('releases_with_events')}")
         lines.append(f"- Stored press evidence: `{pr_sum.get('sources_path')}`\n")
         pe = (press_pack or {}).get("press_events") or []
-        for block in pe:
+        for block in pe[:10]:
             meta = block.get("press_release") or {}
             events = block.get("events") or []
             if not events:
                 continue
             lines.append(f"### {meta.get('date') or ''} — {meta.get('title') or ''}")
             lines.append(f"- URL: {meta.get('url')}")
-            for ev in events[:8]:
+            for ev in events[:4]:
                 lines.append(f"- **{ev.get('event_type')}** (conf {float(ev.get('confidence',0)):.2f}): {ev.get('summary','')}")
             lines.append("")
 
@@ -1529,17 +1683,6 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
     for p in sorted(snapshot.get("programs") or [], key=lambda x: (x.get("phase") or "ZZZ", x.get("asset") or "")):
         lines.append(f"| {p.get('asset','')} | {p.get('indication','') or ''} | {p.get('phase') or ''} | {p.get('source_page') or ''} | {p.get('_ctgov_best_phase') or ''} | {p.get('_ctgov_phase_flag') or ''} |")
     lines.append("")
-
-    lines.append("## Citations / provenance")
-    lines.append(f"- Pipeline source: {source_url}")
-    lines.append(f"- Stored pipeline PDF: `{source_pdf_path}`")
-    lines.append(f"- SHA256: `{source_sha256}`")
-    if ctgov_summary.get("enabled"):
-        lines.append(f"- CT.gov evidence folder: `{ctgov_summary.get('sources_path')}`")
-    if (edgar_pack or {}).get("summary", {}).get("enabled"):
-        lines.append(f"- EDGAR evidence folder: `{(edgar_pack or {}).get('summary', {}).get('sources_path')}`")
-    if (press_pack or {}).get("summary", {}).get("enabled"):
-        lines.append(f"- Press evidence folder: `{(press_pack or {}).get('summary', {}).get('sources_path')}`")
 
     return "\n".join(lines)
 
@@ -1600,10 +1743,11 @@ def build_pdf(pdf_path: str, company: dict, run_date: str, snapshot: dict, diff:
 
     story.append(P(final_brief.get("headline", "Pipeline monitoring update"), "H2x"))
     story.append(P(final_brief.get("executive_summary", ""), "Bodyx"))
+    if final_brief.get("_deterministic"):
+        story.append(P("Narrative generated via deterministic fallback (LLM not required).", "Smallx"))
 
-    # Top changes table
-    tc = final_brief.get("top_changes") or []
     story.append(P("Top changes (ranked)", "H2x"))
+    tc = final_brief.get("top_changes") or []
     if not tc:
         story.append(P("No ranked changes generated.", "Bodyx"))
     else:
@@ -1625,8 +1769,6 @@ def build_pdf(pdf_path: str, company: dict, run_date: str, snapshot: dict, diff:
         story.append(t)
 
     story.append(Spacer(1, 10))
-
-    # Snapshot counts
     story.append(P("Pipeline snapshot (counts by phase)", "H2x"))
     rows = [["Phase", "Count"]] + [[k, str(v)] for k, v in sorted(counts.items(), key=lambda x: x[0])]
     rows.append(["Total", str(sum(counts.values()))])
@@ -1637,41 +1779,8 @@ def build_pdf(pdf_path: str, company: dict, run_date: str, snapshot: dict, diff:
         ("FONTSIZE",(0,0),(-1,-1),9),
     ]))
     story.append(t2)
-    story.append(Spacer(1, 10))
-
-    # Corroboration summary
-    story.append(P("Corroboration summary", "H2x"))
-    if ctgov_summary.get("enabled"):
-        story.append(P(
-            f"ClinicalTrials.gov: matches for {ctgov_summary.get('programs_with_matches')}/{ctgov_summary.get('programs_total')} programs; "
-            f"phase mismatches: {ctgov_summary.get('phase_mismatches')}.",
-            "Bodyx"
-        ))
-    else:
-        story.append(P("ClinicalTrials.gov: disabled.", "Bodyx"))
-
-    ed_sum = (edgar_pack or {}).get("summary") or {}
-    if ed_sum.get("enabled"):
-        story.append(P(
-            f"SEC EDGAR: {ed_sum.get('filings_with_events')} filings with pipeline-related signals since {ed_sum.get('since_date')} "
-            f"(new filings considered: {ed_sum.get('filings_considered')}).",
-            "Bodyx"
-        ))
-    else:
-        story.append(P("SEC EDGAR: disabled.", "Bodyx"))
-
-    pr_sum = (press_pack or {}).get("summary") or {}
-    if pr_sum.get("enabled"):
-        story.append(P(
-            f"Press releases: {pr_sum.get('releases_with_events')} releases with pipeline-relevant signals (new releases processed: {pr_sum.get('new_releases_processed')}).",
-            "Bodyx"
-        ))
-    else:
-        story.append(P("Press releases: disabled.", "Bodyx"))
 
     story.append(PageBreak())
-
-    # Appendix inventory
     story.append(P("Appendix — Full pipeline inventory", "H2x"))
     story.append(P("Includes source page for manual verification and CT.gov phase flag when available.", "Smallx"))
 
@@ -1693,13 +1802,12 @@ def build_pdf(pdf_path: str, company: dict, run_date: str, snapshot: dict, diff:
         ("VALIGN",(0,0),(-1,-1),"TOP"),
     ]))
     story.append(inv)
-
     doc.build(story)
 
 
-# -------------------------
+# ============================================================
 # Main
-# -------------------------
+# ============================================================
 
 def main() -> None:
     with open("config.yml", "r", encoding="utf-8") as f:
@@ -1733,11 +1841,9 @@ def main() -> None:
 
     prev_exists = prev_snapshot is not None and program_count(prev_snapshot) > 0
 
-    # EDGAR lookback window (fixes “since today” issue)
     lookback_days = int(company.get("sec_lookback_days", 90))
     since_date = (datetime.datetime.utcnow().date() - datetime.timedelta(days=lookback_days)).isoformat()
 
-    # 1) source URL
     source_type = company.get("source_type") or "jnj_q4cdn_auto"
     if source_type == "jnj_q4cdn_auto":
         source_url = discover_latest_jnj_pipeline_pdf(
@@ -1750,7 +1856,6 @@ def main() -> None:
     else:
         raise RuntimeError("Unsupported source_type for this repo.")
 
-    # 2) download PDF + audit store
     pdf_resp = http_get(source_url)
     pdf_resp.raise_for_status()
     pdf_bytes = pdf_resp.content
@@ -1763,8 +1868,7 @@ def main() -> None:
     safe_text_dump(os.path.join(raw_dir, f"{run_date}.source.txt"),
                    f"Source URL: {source_url}\nStored PDF: {source_pdf_path}\nSHA256: {pdf_hash}\n")
 
-    # 3) reuse if unchanged
-    prev_pdf_hash = best_prev_pdf_hash(prev_snapshot, sources_dir=sources_dir, snap_dir=snap_dir)
+    prev_pdf_hash = best_prev_pdf_hash(prev_snapshot, sources_dir=sources_dir)
     reused_snapshot = False
 
     if prev_exists and prev_pdf_hash and prev_pdf_hash == pdf_hash:
@@ -1783,18 +1887,22 @@ def main() -> None:
         safe_text_dump(os.path.join(raw_dir, f"{run_date}.extracted_text_preview.txt"),
                        "Reused prior snapshot (PDF unchanged). No extraction performed.\n")
     else:
-        use_vision = bool(company.get("use_vision", True))
-        vision_max_pages = int(company.get("vision_max_pages", 10))
-        vision_dpi = int(company.get("vision_dpi", 190))
-
         snapshot = {"as_of_date": None, "programs": []}
         extraction_mode = "none"
         errors: List[str] = []
 
+        # Candidate page selection reduces LLM calls substantially
+        page_texts = pdf_to_text_per_page(pdf_bytes)
+        candidate_pages = pick_candidate_pipeline_pages(page_texts, max_pages=int(company.get("vision_max_pages", 6)))
+        safe_json_dump(os.path.join(raw_dir, f"{run_date}.candidate_pages.json"), {"candidate_pages_0based": candidate_pages})
+
+        use_vision = bool(company.get("use_vision", True))
+        vision_dpi = int(company.get("vision_dpi", 170))
+
         if use_vision:
             try:
                 extraction_mode = "vision"
-                snapshot = llm_extract_pipeline_vision(name, pdf_bytes, llm_models, max_pages=vision_max_pages, dpi=vision_dpi)
+                snapshot = llm_extract_pipeline_vision(name, pdf_bytes, llm_models, page_indices=candidate_pages, dpi=vision_dpi)
             except Exception as e:
                 errors.append(f"vision_error: {e}")
                 snapshot = {"as_of_date": None, "programs": []}
@@ -1802,10 +1910,12 @@ def main() -> None:
         if program_count(snapshot) == 0:
             try:
                 extraction_mode = "text+ocr"
-                extracted_text = pdf_to_text(pdf_bytes)
-                combined_text = maybe_add_ocr(pdf_bytes, extracted_text, ocr_max_pages=8, ocr_dpi=220)
+                extracted_text = "\n".join(page_texts)
+                # OCR only candidate pages (faster)
+                ocr_text = ocr_pdf_pages(pdf_bytes, pages=candidate_pages, dpi=220)
+                combined_text = extracted_text + "\n\n" + ocr_text
                 safe_text_dump(os.path.join(raw_dir, f"{run_date}.extracted_text_preview.txt"), combined_text[:25000])
-                snapshot = llm_extract_pipeline_text(name, combined_text[:160000], llm_models)
+                snapshot = llm_extract_pipeline_text(name, combined_text[:120000], llm_models)
             except Exception as e:
                 errors.append(f"text_ocr_error: {e}")
 
@@ -1816,50 +1926,33 @@ def main() -> None:
             "stored_pdf_path": source_pdf_path,
             "source_sha256": pdf_hash,
             "extraction_mode": extraction_mode,
+            "candidate_pages_0based": candidate_pages,
             "errors": errors,
             "extraction_ok": program_count(snapshot) > 0,
         })
 
         diff = diff_programs(prev_snapshot or {}, snapshot)
 
-    # 4) CT.gov corroboration
     ctgov_summary = ctgov_corroborate(snapshot, diff, company, run_date, sources_dir=sources_dir)
 
-    # 5) EDGAR corroboration (improved)
     edgar_pack = {"summary": {"enabled": False}, "filing_events": []}
     if company.get("sec_enabled", True):
-        edgar_pack = edgar_corroborate(
-            snapshot=snapshot,
-            cfg_company=company,
-            models=llm_models,
-            run_date=run_date,
-            sources_dir=sources_dir,
-            since_date=since_date,
-        )
+        edgar_pack = edgar_corroborate(snapshot, company, llm_models, run_date, sources_dir=sources_dir, since_date=since_date)
 
-    # 6) Press release corroboration (new)
     press_pack = {"summary": {"enabled": False}, "press_events": []}
     if company.get("press_enabled", False):
-        press_pack = press_corroborate(
-            snapshot=snapshot,
-            cfg_company=company,
-            models=llm_models,
-            run_date=run_date,
-            sources_dir=sources_dir,
-        )
+        press_pack = press_corroborate(snapshot, company, llm_models, run_date, sources_dir=sources_dir)
 
-    # 7) Final narrative synthesis
-    final_brief = llm_final_brief(name, diff, ctgov_summary, edgar_pack, press_pack, models=llm_models)
+    # IMPORTANT: always returns a narrative (LLM if possible, otherwise deterministic)
+    final_brief = llm_final_brief_or_fallback(name, snapshot, diff, ctgov_summary, edgar_pack, press_pack, models=llm_models)
 
-    # 8) persist snapshots
     dated_snapshot_path = os.path.join(snap_dir, f"{run_date}.json")
     safe_json_dump(dated_snapshot_path, snapshot)
 
     latest_ok = bool((snapshot.get("_meta", {}) or {}).get("extraction_ok", False))
     if reused_snapshot or latest_ok:
-        safe_json_dump(prev_path, snapshot)
+        safe_json_dump(os.path.join(snap_dir, "latest.json"), snapshot)
 
-    # 9) outputs
     programs_csv_path = os.path.join(rep_dir, f"{run_date}.programs.csv")
     export_programs_csv(programs_csv_path, snapshot.get("programs") or [])
 
@@ -1923,7 +2016,6 @@ def main() -> None:
     print("PDF report:", pdf_path)
     print("Evidence:", evidence_json_path)
     print("CSV:", programs_csv_path)
-
 
 if __name__ == "__main__":
     main()
