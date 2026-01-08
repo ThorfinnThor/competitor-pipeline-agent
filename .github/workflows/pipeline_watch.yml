@@ -3,8 +3,8 @@ name: Pipeline Change Detection
 on:
   workflow_dispatch:
   schedule:
-    # Every Monday at 06:15 UTC (adjust later to your preference)
-    - cron: "15 6 * * 1"
+    - cron: "0 7 1 * *"   # 07:00 UTC on the 1st of every month
+
 
 permissions:
   contents: write
@@ -39,14 +39,12 @@ jobs:
         run: |
           python run.py
 
-      - name: Commit results (if changed)
+      - name: Commit outputs
         run: |
           git config user.name "pipeline-bot"
+          git config user.name "pipeline-bot"
           git config user.email "pipeline-bot@users.noreply.github.com"
-          if [ -n "$(git status --porcelain)" ]; then
-            git add raw snapshots reports sources
-            git commit -m "Update pipeline snapshots and reports"
-            git push
-          else
-            echo "No changes to commit."
+          git add raw snapshots reports sources
+          git commit -m "Update pipeline snapshots and reports" || echo "No changes"
+          git push
           fi
