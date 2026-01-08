@@ -7029,17 +7029,17 @@
         "6-K",
         "20-F"
       ],
-      "filings_considered": 2,
+      "filings_considered": 0,
       "filings_with_events": 0,
       "sources_path": "sources/jnj/sec/2026-01-08",
-      "deduped_accessions_count": 0
+      "deduped_accessions_count": 2
     },
     "press": {
       "enabled": true,
       "feed_url": "https://www.jnj.com/rss-feed/all",
       "links_scanned": 10,
-      "new_releases_processed": 10,
-      "releases_with_events": 10,
+      "new_releases_processed": 0,
+      "releases_with_events": 0,
       "sources_path": "sources/jnj/press/2026-01-08"
     }
   }
