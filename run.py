@@ -1208,7 +1208,7 @@ def load_processed_press_urls(press_root: str) -> set:
 
 def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_date: str, sources_dir: str) -> dict:
     if not cfg_company.get("press_enabled", False):
-        return {"summary": {"enabled": False}, "press_events": []}
+        return {"summary": {"enabled": False}, "press_events": [], "feed_items": []}
 
     feed_url = cfg_company.get("press_feed_url") or "https://www.jnj.com/rss-feed/all"
     max_items = int(cfg_company.get("press_max_items_per_run", 10))
@@ -1232,13 +1232,14 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
             "feed_url": feed_url,
             "links_scanned": 0,
             "new_releases_processed": 0,
-            "releases_with_events": 0,
+            "releases_with_extracted_events": 0,
+            "processed_skipped": 0,
             "sources_path": run_dir,
             "error": f"Failed to fetch press feed: {e}",
         }
         snapshot.setdefault("_meta", {})
         snapshot["_meta"]["press"] = summary
-        return {"summary": summary, "press_events": []}
+        return {"summary": summary, "press_events": [], "feed_items": []}
 
     if not _looks_like_rss(idx_text):
         summary = {
@@ -1246,29 +1247,44 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
             "feed_url": feed_url,
             "links_scanned": 0,
             "new_releases_processed": 0,
-            "releases_with_events": 0,
+            "releases_with_extracted_events": 0,
+            "processed_skipped": 0,
             "sources_path": run_dir,
             "error": "Press feed did not look like RSS/Atom. Use an RSS feed URL.",
         }
         snapshot.setdefault("_meta", {})
         snapshot["_meta"]["press"] = summary
-        return {"summary": summary, "press_events": []}
+        return {"summary": summary, "press_events": [], "feed_items": []}
 
     items = press_parse_rss_items(feed_url, idx_text, max_items=max_items)
 
-    considered = 0
-    new_items = 0
-    extracted = []
-
+    # ALWAYS store the latest headlines list, even if nothing is new
+    feed_items = []
     for it in items:
-        url = it.get("url")
-        if not url:
+        u = it.get("url")
+        if not u:
             continue
-        considered += 1
-        if url in processed:
+        feed_items.append({
+            "date": it.get("date"),
+            "title": it.get("title"),
+            "url": u,
+            "already_processed": (u in processed),
+        })
+    safe_json_dump(os.path.join(run_dir, "feed.items.json"), {"items": feed_items})
+
+    considered = len(feed_items)
+    processed_skipped = sum(1 for x in feed_items if x["already_processed"])
+
+    extracted = []
+    new_items = 0
+
+    # Only download + extract events for NEW items
+    for it in feed_items:
+        if it["already_processed"]:
             continue
         new_items += 1
 
+        url = it["url"]
         try:
             r = requests.get(url, headers=DEFAULT_WEB_HEADERS, timeout=60)
             r.raise_for_status()
@@ -1284,7 +1300,7 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
             meta = {"url": url, "title": it.get("title") or safe_name, "date": it.get("date")}
             safe_json_dump(os.path.join(run_dir, f"{safe_name}.meta.json"), meta)
 
-            # Try LLM; if LLM fails or returns empty, fall back to low-noise heuristic
+            # Try LLM; if empty or fails, low-noise heuristic fallback
             block = llm_extract_press_events(cfg_company.get("name", "Company"), url, meta["title"], meta.get("date") or "", text, models=models)
             events = block.get("events") or []
             if not events:
@@ -1294,7 +1310,7 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
                     block["_heuristic_assets"] = detected_assets
                     block["_heuristic_used"] = True
 
-            # Only keep if there is at least one event
+            # Store only if there are events
             if block.get("events"):
                 safe_json_dump(os.path.join(run_dir, f"{safe_name}.events.json"), block)
                 extracted.append(block)
@@ -1309,14 +1325,14 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
         "feed_url": feed_url,
         "links_scanned": considered,
         "new_releases_processed": new_items,
-        "releases_with_events": len(extracted),
+        "releases_with_extracted_events": len(extracted),
+        "processed_skipped": processed_skipped,
         "sources_path": run_dir,
     }
 
     snapshot.setdefault("_meta", {})
     snapshot["_meta"]["press"] = summary
-    return {"summary": summary, "press_events": extracted}
-
+    return {"summary": summary, "press_events": extracted, "feed_items": feed_items}
 
 # ============================================================
 # Deterministic narrative (ALWAYS available, even if LLM quota = 0)
