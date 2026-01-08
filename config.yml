@@ -1,4 +1,8 @@
-llm_model: "gemini-2.5-flash"
+llm_models:
+  - "gemini-2.5-flash"
+  - "gemini-2.5-pro"
+  - "gemini-1.5-flash"
+  - "gemini-1.5-pro"
 
 company:
   name: "Johnson & Johnson"
