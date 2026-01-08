@@ -138,16 +138,10 @@
     ]
   },
   "final_brief": {
-    "headline": "Quiet Month: No Major Competitor Pipeline Shifts Detected",
-    "executive_summary": "This month's competitive intelligence update reflects a period of low reported activity among key competitors. Our automated monitoring systems, covering clinical trial registries, regulatory filings (SEC), and corporate press releases, did not detect any significant new pipeline assets, major phase advancements, strategic deals, or unexpected discontinuations within the reporting period. While our internal CT.gov monitoring for J&J's own assets remains active, external competitive signals were minimal. We maintain vigilance on high-priority areas and specific competitor programs.",
+    "headline": "No pipeline deck change detected",
+    "executive_summary": "The pipeline source document appears unchanged versus the last valid snapshot. This report therefore focuses on corroboration channels (ClinicalTrials.gov, EDGAR, and press signals).",
     "top_changes": [],
-    "watchlist": [
-      "Oncology: Next-generation ADCs, T-cell engagers, and novel IO combinations from Merck, Pfizer, BMS, AstraZeneca.",
-      "Immunology: Pipeline assets targeting IL-23, JAK inhibitors, and novel inflammatory pathways from AbbVie, Novartis, Sanofi, Lilly.",
-      "Neuroscience: Alzheimer's, Parkinson's, and Mood Disorder assets in mid-to-late stage development from Biogen, Eli Lilly, Eisai.",
-      "Cardiovascular & Metabolism: Emerging therapies for heart failure and metabolic dysfunction from Novartis, Amgen, Novo Nordisk.",
-      "Gene Therapy & Cell Therapy: Novel platforms and clinical progress from CRISPR Therapeutics, Vertex Pharmaceuticals, Gilead/Kite."
-    ],
-    "_llm_used": true
+    "watchlist": [],
+    "_deterministic": true
   }
 }
