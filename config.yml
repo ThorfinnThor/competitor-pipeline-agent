@@ -1,15 +1,15 @@
 llm_model: "gemini-2.5-flash"
 
-companies:
-  - name: "Johnson & Johnson"
-    slug: "jnj"
-    type: "jnj_q4cdn_auto"
-    q4cdn_base: "https://s203.q4cdn.com/636242992/files/doc_financials"
-    filename_prefix: "JNJ-Pipeline"
-    lookback_quarters: 8
-    ocr_max_pages: 12
+company:
+  name: "Johnson & Johnson"
+  slug: "jnj"
 
-  - name: "BioNTech"
-    slug: "biontech"
-    type: "sec_latest_presentation"
-    cik: "0001776985"
+  # Auto-discover the newest pipeline PDF from J&J’s Q4 CDN pattern
+  source_type: "jnj_q4cdn_auto"
+  q4cdn_base: "https://s203.q4cdn.com/636242992/files/doc_financials"
+  filename_prefix: "JNJ-Pipeline"
+  lookback_quarters: 10
+
+  # OCR settings (pipeline PDFs are often image/table heavy)
+  ocr_max_pages: 12
+  ocr_dpi: 220
