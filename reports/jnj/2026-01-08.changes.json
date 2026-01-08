@@ -19,10 +19,10 @@
   },
   "brief": {
     "headline": "No pipeline update detected",
-    "executive_summary": "The source pipeline PDF is unchanged since the last valid snapshot (same SHA256). This report reuses the prior extracted snapshot to avoid false differences caused by OCR/LLM variability.",
+    "executive_summary": "The source pipeline PDF is unchanged since the last valid snapshot (same SHA256). This report reuses the prior extracted snapshot to avoid false differences caused by extraction variability.",
     "why_it_matters": [],
     "watchlist": []
   },
   "reused_snapshot": true,
-  "recovered_baseline": true
+  "recovered_baseline": false
 }
