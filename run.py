@@ -2067,6 +2067,7 @@ def main() -> None:
         # Always produce two reports:
     # 1) Snapshot (state of the moment)
     # 2) Delta (changes vs last valid snapshot)
+    company_slug = company.get("slug") or "jnj"
     reports_dir = os.path.join("reports", company_slug)
     ensure_dir(reports_dir)
     report_paths = write_snapshot_and_delta_reports(
