@@ -1,32 +1,24 @@
 {
+  "meta": {
+    "run_date_utc": "2026-01-08",
+    "source_url": "https://s203.q4cdn.com/636242992/files/doc_financials/2025/q3/JNJ-Pipeline-3Q25.pdf",
+    "stored_pdf_path": "sources/jnj/2026-01-08.pdf",
+    "source_sha256": "7be7a71814f547e8772f826b14552f40244c9d6a9dd0548d8b79a85c3f1a9e04",
+    "input_text_sha256": "c8346bd17a91794d9b776b0953bb625a6580b4ee8d53710ed2d456500a7a481d",
+    "doc_unchanged": false,
+    "extraction_ok": false,
+    "extraction_note": "0 programs extracted (likely OCR/LLM issue). Baseline not overwritten."
+  },
   "diff": {
     "added": [],
     "removed": [],
     "phase_changes": []
   },
   "brief": {
-    "headline": "Johnson & Johnson Pipeline Update: No Significant Changes Observed, Baseline Established",
-    "executive_summary": "This competitive intelligence brief provides an analysis of recent changes within Johnson & Johnson's pharmaceutical pipeline. Our latest review indicates no significant additions, removals, or phase advancements across the reported portfolio. This absence of change suggests a period of pipeline stability, potentially establishing a baseline for future comparisons. While no immediate strategic shifts are indicated from these specific changes, it underscores the importance of continuous, vigilant monitoring to detect emerging trends or unexpected developments. J&J's previously communicated strategic priorities appear to remain consistent based on this snapshot, reinforcing current R&D directions.",
-    "why_it_matters": [
-      "Confirm that current strategic trajectory and resource allocation are likely stable in the short term.",
-      "Establishes a clear baseline for future pipeline comparisons, enabling easier identification of emerging trends or shifts.",
-      "Allows for a continued focus on operational execution and data generation for current pipeline assets.",
-      "Reinforces the need to proactively monitor competitor pipelines for changes that could impact J&J's market position.",
-      "Provides an opportunity to deep dive into clinical trial progress and upcoming data readouts for existing programs."
-    ],
-    "watchlist": [
-      "Monitor next scheduled pipeline updates for J&J and key competitors for any emerging changes or undisclosed advancements.",
-      "Track upcoming clinical trial readouts for J&J's lead assets, particularly those in late-stage development.",
-      "Observe competitor pipeline advancements, especially in therapeutic areas of strategic interest to J&J.",
-      "Scrutinize medical conferences and investor events for any unannounced pipeline insights or strategy shifts.",
-      "Keep an eye on regulatory milestones and submissions for existing J&J pipeline candidates."
-    ]
+    "headline": "Extraction issue detected",
+    "executive_summary": "The source PDF was downloaded successfully, but extraction returned 0 programs. This run is treated as unreliable and will not overwrite the last good baseline.",
+    "why_it_matters": [],
+    "watchlist": []
   },
-  "meta": {
-    "run_date_utc": "2026-01-08",
-    "source_url": "https://s203.q4cdn.com/636242992/files/doc_financials/2025/q3/JNJ-Pipeline-3Q25.pdf",
-    "stored_pdf_path": "sources/jnj/2026-01-08.pdf",
-    "source_sha256": "7be7a71814f547e8772f826b14552f40244c9d6a9dd0548d8b79a85c3f1a9e04",
-    "input_text_sha256": "c8346bd17a91794d9b776b0953bb625a6580b4ee8d53710ed2d456500a7a481d"
-  }
+  "reused_snapshot": false
 }
