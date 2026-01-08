@@ -2061,17 +2061,15 @@ def main() -> None:
         "final_brief": final_brief,
     })
 
-    md_path = os.path.join(rep_dir, f"{run_date}.md")
-    pdf_path = os.path.join(rep_dir, f"{run_date}.pdf")
+    # NOTE: reporting.py writes snapshot/delta PDFs + legacy {run_date}.pdf.
+    # To avoid collisions, the ReportLab "combined" PDF is written with a distinct suffix.
+    combined_pdf_path = os.path.join(rep_dir, f"{run_date}.combined.pdf")
 
-        # Always produce two reports:
+    # Always produce two reports:
     # 1) Snapshot (state of the moment)
     # 2) Delta (changes vs last valid snapshot)
-    company_slug = company.get("slug") or "jnj"
-    reports_dir = os.path.join("reports", company_slug)
-    ensure_dir(reports_dir)
     report_paths = write_snapshot_and_delta_reports(
-        report_dir=reports_dir,                 # you already have this per-company directory
+        report_dir=rep_dir,                     # per-company report directory
         company_name=name,                      # company display name
         run_date=run_date,
         snapshot=snapshot,
@@ -2089,11 +2087,8 @@ def main() -> None:
         recovered_baseline=recovered_baseline,
     )
 
-    print("Wrote reports:", report_paths)
-
-
     build_pdf(
-        pdf_path=pdf_path,
+        pdf_path=combined_pdf_path,
         company=company,
         run_date=run_date,
         snapshot=snapshot,
@@ -2115,8 +2110,9 @@ def main() -> None:
     print("Source:", source_url)
     print("Stored PDF:", source_pdf_path)
     print("Snapshot:", dated_snapshot_path)
-    print("MD report:", md_path)
-    print("PDF report:", pdf_path)
+    # Snapshot/delta + legacy paths are returned by write_snapshot_and_delta_reports
+    print("Reports:", report_paths)
+    print("Combined PDF:", combined_pdf_path)
     print("Evidence:", evidence_json_path)
     print("CSV:", programs_csv_path)
 
