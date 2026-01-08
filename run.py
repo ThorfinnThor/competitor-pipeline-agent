@@ -2067,6 +2067,8 @@ def main() -> None:
         # Always produce two reports:
     # 1) Snapshot (state of the moment)
     # 2) Delta (changes vs last valid snapshot)
+    reports_dir = os.path.join("reports", company_slug)
+    ensure_dir(reports_dir)
     report_paths = write_snapshot_and_delta_reports(
         report_dir=reports_dir,                 # you already have this per-company directory
         company_name=name,                      # company display name
