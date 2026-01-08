@@ -629,6 +629,7 @@ def main() -> None:
     prev_path = os.path.join(snap_dir, "latest.json")
     prev = safe_json_load(prev_path)
     prev_exists = prev is not None
+    reused_snapshot = False
 
     # 1) Discover + download source PDF
     if company["source_type"] != "jnj_q4cdn_auto":
@@ -649,6 +650,38 @@ def main() -> None:
     ensure_dir(sources_dir)
 
     pdf_hash = sha256_bytes(pdf_bytes)
+
+    # If the source PDF did not change, reuse the last successful snapshot.
+    prev_snapshot = safe_json_load(prev_path)
+    if prev_snapshot:
+        prev_meta = prev_snapshot.get("_meta", {}) or {}
+        prev_hash = prev_meta.get("source_sha256")
+        prev_count = len(prev_snapshot.get("programs", []) or [])
+
+        if prev_hash == pdf_hash and prev_count > 0:
+            # Source identical -> pipeline should be identical. Avoid re-extraction noise.
+            snapshot = prev_snapshot
+            snapshot.setdefault("_meta", {})
+            snapshot["_meta"]["doc_unchanged"] = True
+            snapshot["_meta"]["doc_unchanged_note"] = "Source PDF SHA256 unchanged; reused prior snapshot."
+
+            # No changes if the document is identical
+            d = {"added": [], "removed": [], "phase_changes": []}
+
+            # Write a simple brief (no LLM needed)
+            brief = {
+                "headline": "No pipeline update detected",
+                "executive_summary": (
+                    "The source pipeline PDF is unchanged since the last run (same SHA256). "
+                    "This report reuses the prior extracted snapshot to avoid false differences caused by extraction variability."
+                ),
+                "why_it_matters": [],
+                "watchlist": [],
+            }
+
+            # Continue directly to report writing (skip OCR + LLM extraction)
+            # (Make sure your code below uses snapshot, d, brief)
+
     
     source_pdf_path = os.path.join(sources_dir, f"{run_date}.pdf")
     with open(source_pdf_path, "wb") as f:
@@ -662,7 +695,36 @@ def main() -> None:
    
 
     
+# 2) If the source PDF did not change, reuse the last good snapshot to avoid extraction noise
+if prev_snapshot:
+    prev_meta = prev_snapshot.get("_meta", {}) or {}
+    prev_hash = prev_meta.get("source_sha256")
+    prev_count = len(prev_snapshot.get("programs", []) or [])
 
+    if prev_hash == pdf_hash and prev_count > 0:
+        reused_snapshot = True
+
+        # Deep copy so we don’t mutate the previous object
+        snapshot = json.loads(json.dumps(prev_snapshot))
+
+        # Update metadata for this run (audit trail)
+        snapshot.setdefault("_meta", {})
+        snapshot["_meta"]["run_date_utc"] = run_date
+        snapshot["_meta"]["source_url"] = source_url
+        snapshot["_meta"]["stored_pdf_path"] = source_pdf_path
+        snapshot["_meta"]["source_sha256"] = pdf_hash
+        snapshot["_meta"]["doc_unchanged"] = True
+        snapshot["_meta"]["doc_unchanged_note"] = (
+            "Source PDF SHA256 unchanged; reused prior snapshot to avoid extraction variability."
+        )
+
+        # Optional: write a small note instead of OCR text preview
+        safe_text_dump(
+            os.path.join(raw_dir, f"{run_date}.extracted_text_preview.txt"),
+            "Reused previous snapshot (PDF unchanged). No new extraction performed.\n",
+        )
+
+# If we did NOT reuse, do the normal OCR + LLM extractionif not reused_snapshot:
     # 2) Extract text + OCR fallback
     extracted_text = pdf_to_text(pdf_bytes)
     combined_text = maybe_add_ocr(
@@ -681,6 +743,7 @@ def main() -> None:
         "stored_pdf_path": source_pdf_path,
         "source_sha256": pdf_hash,
         "input_text_sha256": sha256_bytes(combined_text.encode("utf-8", errors="ignore")),
+        "doc_unchanged": False,
     }
 
     dated_snapshot_path = os.path.join(snap_dir, f"{run_date}.json")
