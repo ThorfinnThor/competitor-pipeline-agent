@@ -1,15 +1,826 @@
 {
-  "as_of_date": null,
-  "programs": [],
-  "_llm_error": "All Gemini model attempts failed. Last error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+  "as_of_date": "October 14, 2025",
+  "programs": [
+    {
+      "asset": "AKEEGA (niraparib/abiraterone)",
+      "indication": "M1 Metastatic Castration-Sensitive Prostate Cancer",
+      "phase": null,
+      "trial_or_program": "AMPLITUDE",
+      "partner": "TESARO, an oncology-focused business within GSK",
+      "notes": null
+    },
+    {
+      "asset": "DARZALEX (daratumumab)",
+      "indication": "Smoldering Multiple Myeloma",
+      "phase": null,
+      "trial_or_program": "AQUILA",
+      "partner": "Genmab A/S",
+      "notes": null
+    },
+    {
+      "asset": "DARZALEX (daratumumab)",
+      "indication": "Frontline multiple myeloma transplant ineligible",
+      "phase": null,
+      "trial_or_program": "CEPHEUS",
+      "partner": "Genmab A/S",
+      "notes": null
+    },
+    {
+      "asset": "IMBRUVICA (ibrutinib)",
+      "indication": "Frontline Chronic Lymphocytic Leukemia (I + V fixed duration)",
+      "phase": null,
+      "trial_or_program": "GLOW",
+      "partner": "Pharmacyclics, LLC, an AbbVie company",
+      "notes": null
+    },
+    {
+      "asset": "IMBRUVICA (ibrutinib)",
+      "indication": "Frontline Mantle Cell Lymphoma",
+      "phase": null,
+      "trial_or_program": "Triangle",
+      "partner": "Pharmacyclics, LLC, an AbbVie company",
+      "notes": null
+    },
+    {
+      "asset": "INLEXZO (gemcitabine intravesical system)",
+      "indication": "Non Muscle Invasive Bladder Cancer",
+      "phase": null,
+      "trial_or_program": "SunRISe-1",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "RYBREVANT (amivantamab)",
+      "indication": "Frontline Non Small Cell Lung Cancer in combination with chemotherapy",
+      "phase": null,
+      "trial_or_program": "PAPILLON",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "RYBREVANT (amivantamab)",
+      "indication": null,
+      "phase": null,
+      "trial_or_program": "PALOMA-3",
+      "partner": null,
+      "notes": "Subcutaneous"
+    },
+    {
+      "asset": "Bleximenib",
+      "indication": "Newly Diagnosed AML, chemo ineligible in combination with Venetoclax and Azacitidine",
+      "phase": null,
+      "trial_or_program": "cAMeLot-2",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "CARVYKTI (Ciltacabtagene autoleucel)",
+      "indication": "Frontline Multiple Myeloma TNI",
+      "phase": null,
+      "trial_or_program": "CARTITUDE-5",
+      "partner": "Legend Biotech",
+      "notes": null
+    },
+    {
+      "asset": "CARVYKTI (Ciltacabtagene autoleucel)",
+      "indication": "Frontline Multiple Myeloma Transplant Eligible vs ASCT",
+      "phase": null,
+      "trial_or_program": "CARTITUDE-6",
+      "partner": "Legend Biotech",
+      "notes": null
+    },
+    {
+      "asset": "ERLEADA (apalutamide)",
+      "indication": "Localized Prostate Cancer",
+      "phase": null,
+      "trial_or_program": "ATLAS",
+      "partner": "Regents of California and Memorial Sload Kettering",
+      "notes": null
+    },
+    {
+      "asset": "ERLEADA (apalutamide)",
+      "indication": "High Risk Prostate Cancer",
+      "phase": null,
+      "trial_or_program": "PROTEUS",
+      "partner": "Regents of California and Memorial Sload Kettering",
+      "notes": null
+    },
+    {
+      "asset": "INLEXZO (gemcitabine intravesical system)",
+      "indication": "Non Muscle Invasive Bladder Cancer BCG-naïve High Risk",
+      "phase": null,
+      "trial_or_program": "SunRISe-3",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "INLEXZO (gemcitabine intravesical system)",
+      "indication": "High Risk Non Muscle Invasive Bladder Cancer BGC Experienced",
+      "phase": null,
+      "trial_or_program": "SunRISe-5",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-1900 (NBTXR3)",
+      "indication": "Head and Neck Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "Nanobiotix",
+      "notes": null
+    },
+    {
+      "asset": "pasritamig",
+      "indication": "Prostate Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "RYBREVANT (amivantamab)",
+      "indication": "Colorectal Cancer",
+      "phase": null,
+      "trial_or_program": "ORIGAMI-2",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "RYBREVANT (amivantamab)",
+      "indication": "Colorectal Cancer 2L",
+      "phase": null,
+      "trial_or_program": "ORIGAMI-3",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TALVEY + TECVAYLI",
+      "indication": "Relapsed Refractory Multiple Myeloma CD38 exposed",
+      "phase": null,
+      "trial_or_program": "MonumenTAL-6",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TALVEY (talquetamab)",
+      "indication": "Relapsed Refractory Multiple Myeloma CD38 exposed",
+      "phase": null,
+      "trial_or_program": "MonumenTAL-6",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TALVEY (talquetamab)",
+      "indication": "Relapsed Refractory Multiple Myeloma A-CD38 Naïve",
+      "phase": null,
+      "trial_or_program": "MonumenTAL-3",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TAR-210 (RIS/erdafitinib)",
+      "indication": "Intravesical Delivery System for Localized Bladder Cancer",
+      "phase": null,
+      "trial_or_program": "MoonRISe-1",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TECVAYLI (teclistamab)",
+      "indication": "Multiple Myeloma 1-3PLs",
+      "phase": null,
+      "trial_or_program": "MajesTEC-3",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TECVAYLI (teclistamab)",
+      "indication": "TE NDMM maintenance",
+      "phase": null,
+      "trial_or_program": "MajesTEC-4",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TECVAYLI (teclistamab)",
+      "indication": "TIE NDMM in combination with DR",
+      "phase": null,
+      "trial_or_program": "MajesTEC-7",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TALVEY + TECVAYLI",
+      "indication": "TIE NDMM in combination with DR",
+      "phase": null,
+      "trial_or_program": "MajesTEC-7",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TECVAYLI (teclistamab)",
+      "indication": "Relapsed Refractory Multiple Myeloma CD38 exposed",
+      "phase": null,
+      "trial_or_program": "MajesTEC-9",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "Bleximenib",
+      "indication": "Relapsed Refractory Acute Myeloid Leukemia",
+      "phase": null,
+      "trial_or_program": "ALE1001",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-0683 (ARX788)",
+      "indication": "Breast Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-1900 (NBTXR3)",
+      "indication": "Lung Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "Nanobiotix",
+      "notes": null
+    },
+    {
+      "asset": "TALVEY + TECVAYLI",
+      "indication": "Relapsed Refractory Multiple Myeloma",
+      "phase": null,
+      "trial_or_program": "RedirecTT-1",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-0387",
+      "indication": "Solid Tumors",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-0631 (ARX305)",
+      "indication": "Renal Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-1493",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-2638",
+      "indication": "Gastrointestinal Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-2761",
+      "indication": "Multiple Myeloma",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-3413",
+      "indication": "Lymphoma",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4496",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4680",
+      "indication": "Lung Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4681",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4916",
+      "indication": "Lung Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-5322",
+      "indication": "Multiple Myeloma",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-6420",
+      "indication": "Prostate Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-7446",
+      "indication": "Lung Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-8177 (ARX517)",
+      "indication": "Prostate Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-8377",
+      "indication": "Lymphoma",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-8543",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-9401",
+      "indication": "Prostate Cancer",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-9530",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-9892",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-9968",
+      "indication": "Hematological Malignancies",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "icotrokinra",
+      "indication": "Psoriasis",
+      "phase": null,
+      "trial_or_program": "ICONIC",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "SIMPONI (golimumab)",
+      "indication": "Pediatric Ulcerative Colitis",
+      "phase": null,
+      "trial_or_program": "PURSUIT 2",
+      "partner": "Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",
+      "notes": null
+    },
+    {
+      "asset": "STELARA (ustekinumab)",
+      "indication": "Pediatric Crohn's Disease",
+      "phase": null,
+      "trial_or_program": "UNITI JR",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "STELARA (ustekinumab)",
+      "indication": "Pediatric Ulcerative Colitis",
+      "phase": null,
+      "trial_or_program": "UNIFI JR",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Juvenile Psoriatic Arthritis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "MorphoSys AG",
+      "notes": null
+    },
+    {
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Psoriasis",
+      "phase": null,
+      "trial_or_program": "PROTOSTAR",
+      "partner": "MorphoSys AG",
+      "notes": null
+    },
+    {
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Psoriatic Arthritis Structural Damage",
+      "phase": null,
+      "trial_or_program": "APEX",
+      "partner": "MorphoSys AG",
+      "notes": null
+    },
+    {
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Ulcerative Colitis Subcutaneous Induction",
+      "phase": null,
+      "trial_or_program": "ASTRO",
+      "partner": "MorphoSys AG",
+      "notes": null
+    },
+    {
+      "asset": "icotrokinra",
+      "indication": "Psoriatic Arthritis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Warm Autoimmune Hemolytic Anemia",
+      "phase": null,
+      "trial_or_program": "ENERGY",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Sjogren's Disease",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Hemolytic Disease of the Fetus and Newborn",
+      "phase": null,
+      "trial_or_program": "AZALEA",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Fetal and Neonatal Alloimmune Thrombocytopenia",
+      "phase": null,
+      "trial_or_program": "FREESIA",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "TREMFYA (guselkumab)",
+      "indication": "Pediatric Ulcerative Colitis",
+      "phase": null,
+      "trial_or_program": "QUASAR JR",
+      "partner": "MorphoSys AG",
+      "notes": null
+    },
+    {
+      "asset": "icotrokinra",
+      "indication": "Ulcerative Colitis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4804 Co-antibody Therapy",
+      "indication": "Ulcerative Colitis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4804 Co-antibody Therapy",
+      "indication": "Psoriatic Arthritis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-4804 Co-antibody Therapy",
+      "indication": "Crohn's Disease",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-5939",
+      "indication": "Atopic Dermatitis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Systemic Lupus Erythematosus",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Idiopathic Inflammatory Myopathy",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-5108",
+      "indication": "Immunological Diseases",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-6848",
+      "indication": "Immunological Diseases",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-7528",
+      "indication": "Atopic Dermatitis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "CAPLYTA (lumateperone)",
+      "indication": "Adjunctive Treatment for Major Depressive Disorder",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "IMAAVY (nipocalimab)",
+      "indication": "Generalized Myasthenia Gravis",
+      "phase": null,
+      "trial_or_program": "Vivacity MG3",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "IMAAVY (nipocalimab)",
+      "indication": "Generalized Myasthenia Gravis Pediatrics",
+      "phase": null,
+      "trial_or_program": "VIBRANCE MG",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "SPRAVATO (esketamine)",
+      "indication": "Treatment Resistant Depression monotherapy",
+      "phase": null,
+      "trial_or_program": "TRD4005",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "CAPLYTA (lumateperone)",
+      "indication": "Bipolar Mania",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "CAPLYTA (lumateperone)",
+      "indication": "Pediatric Psychiatric Indications",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "nipocalimab",
+      "indication": "Chronic Inflammatory Demyelinating Polyneuropathy",
+      "phase": null,
+      "trial_or_program": "ARISE",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "RPGR Gene Therapy",
+      "indication": "Retinitis Pigmentosa",
+      "phase": null,
+      "trial_or_program": "LUMEOS",
+      "partner": "UCL Business Plc",
+      "notes": "AAV-RPGR"
+    },
+    {
+      "asset": "seltorexant",
+      "indication": "Adjunctive Treatment for Major Depressive Disorder with Insomnia Symptoms",
+      "phase": null,
+      "trial_or_program": "OARS",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "ITI-1284",
+      "indication": "Generalized Anxiety Disorder",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "ITI-1284",
+      "indication": "Alzheimer's Disease-Related Psychosis",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "ITI-1284",
+      "indication": "Alzheimer's Disease-Related Agitation",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "JNJ-1887 sCD59",
+      "indication": "Geographic Atrophy",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "Hemera Biosciences",
+      "notes": null
+    },
+    {
+      "asset": "JNJ-2056 (tau active immunotherapy)",
+      "indication": "Alzheimer's Disease",
+      "phase": null,
+      "trial_or_program": "RETAIN",
+      "partner": "AC Immune SA",
+      "notes": "AC Immune ACI-35.030"
+    },
+    {
+      "asset": "JNJ-5120",
+      "indication": "Major Depressive Disorder",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "posdinemab",
+      "indication": "Alzheimer's Disease",
+      "phase": null,
+      "trial_or_program": "AUTONOMY",
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "SPRAVATO (esketamine)",
+      "indication": "Major Depressive Disorder with Suicidal Ideation Pediatrics",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "CABENUVA",
+      "indication": "HIV Adolescents",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "ViiV Healthcare",
+      "notes": null
+    },
+    {
+      "asset": "UPTRAVI (selexipag)",
+      "indication": "Pediatric Pulmonary Arterial Hypertension",
+      "phase": null,
+      "trial_or_program": "SALTO",
+      "partner": "Nippon Shinyaku",
+      "notes": null
+    },
+    {
+      "asset": "macitentan",
+      "indication": "Pulmonary Arterial Hypertension 75mg",
+      "phase": null,
+      "trial_or_program": "UNISUS",
+      "partner": "Nippon Shinyaku",
+      "notes": null
+    },
+    {
+      "asset": "milvexian (Factor Xla)",
+      "indication": "Secondary Stroke Prevention",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "Bristol Myers Squibb",
+      "notes": null
+    },
+    {
+      "asset": "milvexian (Factor Xla)",
+      "indication": "Acute Coronary Syndrome",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "Bristol Myers Squibb",
+      "notes": null
+    },
+    {
+      "asset": "milvexian (Factor Xla)",
+      "indication": "Atrial Fibrillation",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": "Bristol Myers Squibb",
+      "notes": null
+    },
+    {
+      "asset": "SIRTURO",
+      "indication": "Leprosy",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    },
+    {
+      "asset": "SIRTURO",
+      "indication": "Tuberculosis Long Acting",
+      "phase": null,
+      "trial_or_program": null,
+      "partner": null,
+      "notes": null
+    }
+  ],
   "_meta": {
     "run_date_utc": "2026-01-08",
     "source_url": "https://s203.q4cdn.com/636242992/files/doc_financials/2025/q3/JNJ-Pipeline-3Q25.pdf",
+    "input_text_sha256": "c8346bd17a91794d9b776b0953bb625a6580b4ee8d53710ed2d456500a7a481d",
+    "ocr_max_pages": 12,
+    "ocr_dpi": 220,
+    "source_type": "jnj_q4cdn_auto",
     "stored_pdf_path": "sources/jnj/2026-01-08.pdf",
     "source_sha256": "7be7a71814f547e8772f826b14552f40244c9d6a9dd0548d8b79a85c3f1a9e04",
-    "input_text_sha256": "c8346bd17a91794d9b776b0953bb625a6580b4ee8d53710ed2d456500a7a481d",
-    "doc_unchanged": false,
-    "extraction_ok": false,
-    "extraction_note": "0 programs extracted (likely OCR/LLM issue). Baseline not overwritten."
+    "doc_unchanged": true,
+    "doc_unchanged_note": "Source PDF SHA256 unchanged; reused prior snapshot to avoid extraction variability.",
+    "extraction_ok": true
   }
 }
