@@ -257,9 +257,24 @@ def _try_parse_json(text: str) -> Optional[dict]:
     return None
 
 
+def _is_quota_or_rate_error(e: Exception) -> bool:
+    s = str(e)
+    return (
+        "RESOURCE_EXHAUSTED" in s
+        or "Quota exceeded" in s
+        or "free_tier_requests" in s
+        or "free_tier_input_token_count" in s
+        or "429" in s
+    )
+
+def _is_overloaded_error(e: Exception) -> bool:
+    s = str(e)
+    return ("503" in s and "UNAVAILABLE" in s) or "The model is overloaded" in s
+
 def gemini_generate_text(models: List[str], prompt: str, max_attempts_per_model: int = 2) -> str:
     client = gemini_client()
     last_err: Optional[Exception] = None
+
     for m in models:
         for attempt in range(1, max_attempts_per_model + 1):
             try:
@@ -267,13 +282,26 @@ def gemini_generate_text(models: List[str], prompt: str, max_attempts_per_model:
                 return (resp.text or "").strip()
             except Exception as e:
                 last_err = e
-                time.sleep(2 * attempt)
+
+                # If quota/rate-limited, do NOT keep retrying this model; fall through to next model
+                if _is_quota_or_rate_error(e):
+                    break
+
+                # If overloaded, small backoff then retry same model
+                if _is_overloaded_error(e):
+                    time.sleep(2 * attempt)
+                    continue
+
+                # Other errors: small backoff then retry
+                time.sleep(1 * attempt)
+
     raise RuntimeError(f"All Gemini attempts failed. Last error: {last_err}")
 
 
 def gemini_generate_vision(models: List[str], prompt: str, image_bytes: bytes, max_attempts_per_model: int = 2) -> str:
     client = gemini_client()
     last_err: Optional[Exception] = None
+
     for m in models:
         for attempt in range(1, max_attempts_per_model + 1):
             try:
@@ -282,9 +310,17 @@ def gemini_generate_vision(models: List[str], prompt: str, image_bytes: bytes, m
                 return (resp.text or "").strip()
             except Exception as e:
                 last_err = e
-                time.sleep(2 * attempt)
-    raise RuntimeError(f"All Gemini vision attempts failed. Last error: {last_err}")
 
+                if _is_quota_or_rate_error(e):
+                    break
+
+                if _is_overloaded_error(e):
+                    time.sleep(2 * attempt)
+                    continue
+
+                time.sleep(1 * attempt)
+
+    raise RuntimeError(f"All Gemini vision attempts failed. Last error: {last_err}")
 
 # -------------------------
 # Vision pipeline extraction
@@ -782,21 +818,21 @@ Rules:
 - Do not invent assets.
 - Confidence in [0,1].
 - If there are no clear pipeline-relevant signals, return an empty events array.
-
-FILING_META:
-{json.dumps(filing_meta, ensure_ascii=False)}
-
-FILING_TEXT:
-{filing_text[:160000]}
 """.strip()
 
-    out = gemini_generate_text(models=models, prompt=prompt, max_attempts_per_model=2)
-    parsed = _try_parse_json(out)
-    if not parsed:
-        return {"filing": filing_meta, "events": [], "_llm_parse_error": True, "_llm_raw": out[:2000]}
-    parsed.setdefault("filing", filing_meta)
-    parsed.setdefault("events", [])
-    return parsed
+    try:
+        out = gemini_generate_text(models=models, prompt=prompt + "\n\nFILING_META:\n" + json.dumps(filing_meta, ensure_ascii=False) +
+                                   "\n\nFILING_TEXT:\n" + (filing_text[:120000]), max_attempts_per_model=2)
+        parsed = _try_parse_json(out)
+        if parsed:
+            parsed.setdefault("filing", filing_meta)
+            parsed.setdefault("events", [])
+            return parsed
+        return {"filing": filing_meta, "events": [], "_llm_parse_error": True, "_llm_raw": (out or "")[:2000]}
+    except Exception as e:
+        # Do not fail the run due to LLM limitations
+        return {"filing": filing_meta, "events": [], "_llm_error": str(e)}
+
 
 
 def edgar_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_date: str, sources_dir: str, since_date: str) -> dict:
@@ -861,6 +897,24 @@ def edgar_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
 # -------------------------
 
 def llm_final_brief(company_name: str, diff: dict, ctgov_summary: dict, edgar_summary: dict, edgar_events: List[dict], models: List[str]) -> dict:
+    # Optimization: if there are no pipeline changes AND no EDGAR events, don't spend LLM calls.
+    no_changes = not (diff.get("added") or diff.get("removed") or diff.get("phase_changes"))
+    has_edgar_events = any((b.get("events") or []) for b in (edgar_events or []))
+
+    if no_changes and not has_edgar_events:
+        return {
+            "headline": "No pipeline update detected",
+            "executive_summary": (
+                "The pipeline deck appears unchanged versus the last valid snapshot and no pipeline-relevant EDGAR signals "
+                "were extracted in this run. See corroboration sections for ClinicalTrials.gov and filing coverage."
+            ),
+            "top_changes": [],
+            "watchlist": [
+                "Monitor ClinicalTrials.gov for phase/status updates on priority assets.",
+                "Monitor new SEC filings and earnings commentary for reprioritization or portfolio actions.",
+            ],
+        }
+
     payload = {
         "company": company_name,
         "diff": diff,
@@ -900,20 +954,37 @@ INPUT_JSON:
 {json.dumps(payload, ensure_ascii=False)}
 """.strip()
 
-    out = gemini_generate_text(models=models, prompt=prompt, max_attempts_per_model=2)
-    parsed = _try_parse_json(out)
-    if not parsed:
+    try:
+        out = gemini_generate_text(models=models, prompt=prompt, max_attempts_per_model=2)
+        parsed = _try_parse_json(out)
+        if parsed:
+            parsed.setdefault("headline", "Pipeline monitoring update")
+            parsed.setdefault("executive_summary", "")
+            parsed.setdefault("top_changes", [])
+            parsed.setdefault("watchlist", [])
+            return parsed
+    except Exception as e:
+        # Hard fallback: never crash the pipeline run due to LLM quota/rate limits
         return {
-            "headline": "Pipeline monitoring update",
-            "executive_summary": "Narrative generation unavailable; refer to change log and evidence sections.",
+            "headline": "Pipeline monitoring update (LLM unavailable)",
+            "executive_summary": (
+                "The run completed, but the narrative synthesis step failed due to model quota/rate limits. "
+                "Use the change log, inventory, and evidence pack for decisions; narrative can be regenerated later."
+            ),
             "top_changes": [],
-            "watchlist": [],
+            "watchlist": [
+                "Re-run when quota is available to generate a ranked narrative summary.",
+                "Use the evidence JSON and inventory CSV to review changes manually.",
+            ],
+            "_error": str(e),
         }
-    parsed.setdefault("headline", "Pipeline monitoring update")
-    parsed.setdefault("executive_summary", "")
-    parsed.setdefault("top_changes", [])
-    parsed.setdefault("watchlist", [])
-    return parsed
+
+    return {
+        "headline": "Pipeline monitoring update (LLM output parse failed)",
+        "executive_summary": "The run completed but the narrative output could not be parsed as JSON. Refer to change log and evidence.",
+        "top_changes": [],
+        "watchlist": [],
+    }
 
 
 # -------------------------
