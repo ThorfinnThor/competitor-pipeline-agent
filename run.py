@@ -10,7 +10,7 @@ import datetime
 from typing import Optional, List, Dict, Any, Tuple
 from urllib.parse import urljoin, urlparse
 import xml.etree.ElementTree as ET
-
+x
 import yaml
 import requests
 
@@ -28,6 +28,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from xml.sax.saxutils import escape as xml_escape
 from html.parser import HTMLParser
+from reporting import write_snapshot_and_delta_reports
 
 
 # ============================================================
@@ -2063,24 +2064,30 @@ def main() -> None:
     md_path = os.path.join(rep_dir, f"{run_date}.md")
     pdf_path = os.path.join(rep_dir, f"{run_date}.pdf")
 
-    md = render_markdown(
-        company=company,
+        # Always produce two reports:
+    # 1) Snapshot (state of the moment)
+    # 2) Delta (changes vs last valid snapshot)
+    report_paths = write_snapshot_and_delta_reports(
+        report_dir=reports_dir,                 # you already have this per-company directory
+        company_name=name,                      # company display name
         run_date=run_date,
         snapshot=snapshot,
         diff=diff,
-        final_brief=final_brief,
+        final_brief=final_brief or {},
         source_url=source_url,
         source_pdf_path=source_pdf_path,
         source_sha256=pdf_hash,
-        reused_snapshot=reused_snapshot,
-        recovered_baseline=recovered_baseline,
         programs_csv_path=programs_csv_path,
         evidence_json_path=evidence_json_path,
-        ctgov_summary=ctgov_summary,
-        edgar_pack=edgar_pack,
-        press_pack=press_pack,
+        ctgov_summary=ctgov_summary or {},
+        edgar_pack=edgar_pack or {},
+        press_pack=press_pack or {},
+        reused_snapshot=reused_snapshot,
+        recovered_baseline=recovered_baseline,
     )
-    safe_text_dump(md_path, md)
+
+    print("Wrote reports:", report_paths)
+
 
     build_pdf(
         pdf_path=pdf_path,
