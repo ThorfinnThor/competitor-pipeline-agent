@@ -55,20 +55,12 @@
     "filing_events": []
   },
   "final_brief": {
-    "headline": "J&J Pipeline Update: No Major Changes Detected; Ongoing CT.gov Corroboration and EDGAR Monitoring",
-    "executive_summary": "This month's analysis of Johnson & Johnson's pipeline reveals no detected additions, removals, or phase changes. Our primary pipeline intelligence sources indicate a static period for J&J's R&D portfolio. ClinicalTrials.gov corroboration for queried assets shows consistent phase reporting, with no discrepancies identified, further supporting the stability observed. No pipeline-related disclosures were identified in recent SEC EDGAR filings. We continue to closely monitor key assets and the broader competitive landscape for any emerging developments.",
+    "headline": "No pipeline update detected",
+    "executive_summary": "The pipeline deck appears unchanged versus the last valid snapshot and no pipeline-relevant EDGAR signals were extracted in this run. See corroboration sections for ClinicalTrials.gov and filing coverage.",
     "top_changes": [],
     "watchlist": [
-      "AKEEGA (niraparib/abiraterone)",
-      "CARVYKTI (Ciltacabtagene autoleucel)",
-      "DARZALEX (daratumumab)",
-      "RYBREVANT (amivantamab)",
-      "TALVEY (talquetamab)",
-      "TECVAYLI (teclistamab)",
-      "ERLEADA (apalutamide)",
-      "IMBRUVICA (ibrutinib)",
-      "TAR-210 (RIS/erdafitinib)",
-      "JNJ-1900 (NBTXR3)"
+      "Monitor ClinicalTrials.gov for phase/status updates on priority assets.",
+      "Monitor new SEC filings and earnings commentary for reprioritization or portfolio actions."
     ]
   }
 }
