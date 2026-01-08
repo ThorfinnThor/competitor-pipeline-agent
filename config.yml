@@ -7,6 +7,14 @@ company:
   q4cdn_base: https://s203.q4cdn.com/636242992/files/doc_financials
   filename_prefix: JNJ-Pipeline
   lookback_quarters: 12
+  # --- EDGAR improvements ---
+  sec_lookback_days: 90
+
+  # --- Press release ingestion ---
+  press_enabled: true
+  press_feed_url: "https://www.investor.jnj.com/news/default.aspx"
+  press_max_items_per_run: 10
+
 
   # Vision extraction (phases are colors/layout)
   use_vision: true
