@@ -12,7 +12,7 @@ from urllib.parse import urljoin, urlparse
 
 import yaml
 import requests
-
+import xml.etree.ElementTree as ET
 import fitz  # PyMuPDF
 from PIL import Image, ImageOps, ImageEnhance
 import pytesseract
@@ -959,50 +959,102 @@ def edgar_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
 
 
 # -------------------------
-# Press release ingestion (new)
+# Press release ingestion (RSS-first, 403-safe)
 # -------------------------
 
-class LinkParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.links = []
-    def handle_starttag(self, tag, attrs):
-        if tag.lower() == "a":
-            href = None
-            for k, v in attrs:
-                if k.lower() == "href":
-                    href = v
-                    break
-            if href:
-                self.links.append(href)
+import xml.etree.ElementTree as ET
+
+DEFAULT_WEB_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+}
 
 def press_fetch_index(feed_url: str) -> str:
-    r = requests.get(feed_url, timeout=60)
+    """
+    Fetch a press feed index safely.
+    - Uses browser-like headers.
+    - If the IR site blocks (403), we will let the caller handle fallback/disable.
+    """
+    r = requests.get(feed_url, headers=DEFAULT_WEB_HEADERS, timeout=60)
     r.raise_for_status()
     return r.text
 
-def press_extract_links(feed_url: str, html_text: str) -> List[str]:
-    p = LinkParser()
-    p.feed(html_text)
-    # Keep links that look like news details
-    links = []
-    for href in p.links:
-        if not href:
+def _looks_like_rss(text: str) -> bool:
+    t = (text or "").lstrip().lower()
+    return t.startswith("<?xml") or "<rss" in t[:500] or "<feed" in t[:500]
+
+def _normalize_pubdate_to_yyyy_mm_dd(pub: str) -> Optional[str]:
+    pub = (pub or "").strip()
+    if not pub:
+        return None
+
+    # Common RSS pubDate: "Mon, 26 Dec 2025 14:00:00 -0500"
+    fmts = [
+        "%a, %d %b %Y %H:%M:%S %z",
+        "%a, %d %b %Y %H:%M:%S %Z",
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%Y-%m-%dT%H:%M:%S%Z",
+        "%Y-%m-%d",
+    ]
+    for f in fmts:
+        try:
+            dt = datetime.datetime.strptime(pub, f)
+            return dt.date().isoformat()
+        except Exception:
             continue
-        u = urljoin(feed_url, href)
-        if "news" in u.lower() and "default.aspx" not in u.lower():
-            links.append(u)
-        elif "news-details" in u.lower():
-            links.append(u)
-    # de-dupe preserve order
-    out = []
-    seen = set()
-    for u in links:
-        cu = u.split("#")[0]
-        if cu not in seen:
-            seen.add(cu)
-            out.append(cu)
-    return out
+    return None
+
+def press_parse_rss_items(feed_url: str, xml_text: str, max_items: int = 10) -> List[dict]:
+    """
+    Parse RSS or Atom feed. Return list of dicts:
+      { "url": ..., "title": ..., "date": ... }
+    """
+    items: List[dict] = []
+    try:
+        root = ET.fromstring(xml_text.encode("utf-8", errors="ignore"))
+    except Exception:
+        return items
+
+    # RSS: <rss><channel><item>...
+    for it in root.findall(".//item"):
+        title = (it.findtext("title") or "").strip()
+        link = (it.findtext("link") or "").strip()
+        pub = (it.findtext("pubDate") or "").strip()
+        date_norm = _normalize_pubdate_to_yyyy_mm_dd(pub)
+        if link:
+            items.append({"url": urljoin(feed_url, link), "title": title or None, "date": date_norm})
+        if len(items) >= max_items:
+            return items
+
+    # Atom: <feed><entry>...
+    ns = {"a": "http://www.w3.org/2005/Atom"}
+    for ent in root.findall(".//a:entry", ns):
+        title = (ent.findtext("a:title", default="", namespaces=ns) or "").strip()
+        pub = (ent.findtext("a:updated", default="", namespaces=ns) or "").strip()
+        date_norm = _normalize_pubdate_to_yyyy_mm_dd(pub[:10]) or _normalize_pubdate_to_yyyy_mm_dd(pub)
+
+        link = None
+        for l in ent.findall("a:link", ns):
+            href = l.attrib.get("href")
+            rel = l.attrib.get("rel", "alternate")
+            if href and rel == "alternate":
+                link = href
+                break
+            if href and not link:
+                link = href
+
+        if link:
+            items.append({"url": urljoin(feed_url, link), "title": title or None, "date": date_norm})
+        if len(items) >= max_items:
+            return items
+
+    return items
 
 def press_url_to_safe_name(url: str) -> str:
     p = urlparse(url)
@@ -1016,8 +1068,8 @@ def press_html_to_text(html_bytes: bytes) -> str:
     return strip_html_to_text(html_bytes)
 
 def press_keyword_events(text: str) -> List[dict]:
-    """Deterministic fallback if LLM unavailable."""
-    t = text.lower()
+    """Deterministic fallback if LLM is unavailable/quota-limited."""
+    t = (text or "").lower()
     events = []
     keywords = [
         ("partnership", ["collaboration", "partnership", "agreement", "license", "acquire", "acquisition"]),
@@ -1074,7 +1126,7 @@ Rules:
     try:
         out = gemini_generate_text(
             models=models,
-            prompt=prompt + "\n\nMETA:\n" + json.dumps(meta, ensure_ascii=False) + "\n\nTEXT:\n" + text[:120000],
+            prompt=prompt + "\n\nMETA:\n" + json.dumps(meta, ensure_ascii=False) + "\n\nTEXT:\n" + (text or "")[:120000],
             max_attempts_per_model=2
         )
         parsed = _try_parse_json(out)
@@ -1084,7 +1136,8 @@ Rules:
             return parsed
         return {"press_release": meta, "events": [], "_llm_parse_error": True, "_llm_raw": (out or "")[:2000]}
     except Exception as e:
-        return {"press_release": meta, "events": press_keyword_events(text), "_llm_error": str(e)}
+        # Never crash the run because press is auxiliary
+        return {"press_release": meta, "events": press_keyword_events(text or ""), "_llm_error": str(e)}
 
 def load_processed_press_urls(press_root: str) -> set:
     processed = set()
@@ -1101,10 +1154,14 @@ def load_processed_press_urls(press_root: str) -> set:
     return processed
 
 def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_date: str, sources_dir: str) -> dict:
+    """
+    RSS-first press ingestion.
+    - Will NOT raise if blocked (403); returns a summary with error instead.
+    """
     if not cfg_company.get("press_enabled", False):
         return {"summary": {"enabled": False}, "press_events": []}
 
-    feed_url = cfg_company.get("press_feed_url") or "https://www.investor.jnj.com/news/default.aspx"
+    feed_url = cfg_company.get("press_feed_url") or "https://www.jnj.com/rss-feed/all"
     max_items = int(cfg_company.get("press_max_items_per_run", 10))
 
     press_root = os.path.join(sources_dir, "press")
@@ -1112,27 +1169,65 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
 
     processed = load_processed_press_urls(press_root)
 
-    idx_html = press_fetch_index(feed_url)
-    links = press_extract_links(feed_url, idx_html)[:max_items]
-
     run_dir = os.path.join(press_root, run_date)
     ensure_dir(run_dir)
 
-    extracted = []
+    try:
+        idx_text = press_fetch_index(feed_url)
+        safe_text_dump(os.path.join(run_dir, "feed.url.txt"), feed_url)
+        safe_text_dump(os.path.join(run_dir, "feed.body.txt"), idx_text[:250000])
+    except Exception as e:
+        # Do not crash the pipeline run
+        summary = {
+            "enabled": True,
+            "feed_url": feed_url,
+            "links_scanned": 0,
+            "new_releases_processed": 0,
+            "releases_with_events": 0,
+            "sources_path": run_dir,
+            "error": f"Failed to fetch press feed: {e}",
+        }
+        snapshot.setdefault("_meta", {})
+        snapshot["_meta"]["press"] = summary
+        return {"summary": summary, "press_events": []}
+
+    # Parse RSS/Atom; if not RSS, bail safely (you can extend later)
+    items = []
+    if _looks_like_rss(idx_text):
+        items = press_parse_rss_items(feed_url, idx_text, max_items=max_items)
+    else:
+        summary = {
+            "enabled": True,
+            "feed_url": feed_url,
+            "links_scanned": 0,
+            "new_releases_processed": 0,
+            "releases_with_events": 0,
+            "sources_path": run_dir,
+            "error": "Press feed did not look like RSS/Atom. Use an RSS feed URL (recommended: https://www.jnj.com/rss-feed/all).",
+        }
+        snapshot.setdefault("_meta", {})
+        snapshot["_meta"]["press"] = summary
+        return {"summary": summary, "press_events": []}
+
     considered = 0
     new_items = 0
+    extracted = []
 
-    for url in links:
+    for it in items:
+        url = it.get("url")
+        if not url:
+            continue
         considered += 1
         if url in processed:
             continue
         new_items += 1
 
         try:
-            r = requests.get(url, timeout=60)
+            r = requests.get(url, headers=DEFAULT_WEB_HEADERS, timeout=60)
             r.raise_for_status()
             b = r.content
             text = press_html_to_text(b)
+
             safe_name = press_url_to_safe_name(url)
 
             # store provenance
@@ -1140,20 +1235,14 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
             safe_text_dump(os.path.join(run_dir, f"{safe_name}.sha256.txt"), sha256_bytes(b))
             safe_text_dump(os.path.join(run_dir, f"{safe_name}.text.txt"), text[:250000])
 
-            # naive title/date guess
-            title_guess = None
-            mtitle = re.search(r"(?is)<title>(.*?)</title>", r.text)
-            if mtitle:
-                title_guess = norm_ws(strip_html_to_text(mtitle.group(0).encode("utf-8")))
-            date_guess = None
-            mdate = re.search(r"(?is)datetime=[\"'](\d{4}-\d{2}-\d{2})", r.text)
-            if mdate:
-                date_guess = mdate.group(1)
-
-            meta = {"url": url, "title": title_guess or safe_name, "date": date_guess}
+            meta = {
+                "url": url,
+                "title": it.get("title") or safe_name,
+                "date": it.get("date"),
+            }
             safe_json_dump(os.path.join(run_dir, f"{safe_name}.meta.json"), meta)
 
-            ev = llm_extract_press_events(cfg_company.get("name", "Company"), url, meta["title"], date_guess or "", text, models=models)
+            ev = llm_extract_press_events(cfg_company.get("name", "Company"), url, meta["title"], meta.get("date") or "", text, models=models)
             safe_json_dump(os.path.join(run_dir, f"{safe_name}.events.json"), ev)
             extracted.append(ev)
 
@@ -1174,6 +1263,7 @@ def press_corroborate(snapshot: dict, cfg_company: dict, models: List[str], run_
     snapshot.setdefault("_meta", {})
     snapshot["_meta"]["press"] = summary
     return {"summary": summary, "press_events": extracted}
+
 
 
 # -------------------------
