@@ -1,8 +1,7 @@
 requests
-beautifulsoup4
-PyYAML
-PyMuPDF
+pyyaml
 google-genai
-pytesseract
+pymupdf
 pillow
+pytesseract
 reportlab
