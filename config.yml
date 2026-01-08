@@ -1,15 +1,41 @@
 company:
   name: Johnson & Johnson
   slug: jnj
+
+  # Primary source: auto-discover latest pipeline pdf from q4cdn
   source_type: jnj_q4cdn_auto
   q4cdn_base: https://s203.q4cdn.com/636242992/files/doc_financials
   filename_prefix: JNJ-Pipeline
-  lookback_quarters: 10
+  lookback_quarters: 12
 
-  # NEW: vision extraction for color/visual phases
+  # Vision extraction (phases are colors/layout)
   use_vision: true
-  vision_max_pages: 8
-  vision_dpi: 170
+  vision_max_pages: 10
+  vision_dpi: 190
+
+  # ClinicalTrials.gov corroboration
+  ctgov_enabled: true
+  ctgov_page_size: 20
+  ctgov_max_assets_per_run: 40
+  ctgov_sponsor_keywords:
+    - Janssen
+    - Johnson & Johnson
+    - Johnson and Johnson
+    - J&J
+    - Janssen Research
+    - Janssen Pharmaceutica
+
+  # SEC EDGAR corroboration
+  sec_enabled: true
+  sec_cik_10digit: "0000200406"   # If you’re unsure, you can look it up via SEC CIK Lookup page.
+  sec_forms:
+    - 10-K
+    - 10-Q
+    - 8-K
+    - 6-K
+    - 20-F
+  sec_max_filings_per_run: 6
+  sec_store_max_bytes: 2000000   # store up to ~2MB of filing text excerpt in repo
 
 llm_models:
   - gemini-2.5-flash
