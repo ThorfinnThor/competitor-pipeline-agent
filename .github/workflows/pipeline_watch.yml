@@ -47,4 +47,4 @@ jobs:
           git add raw snapshots reports sources
           git commit -m "Update pipeline snapshots and reports" || echo "No changes"
           git push
-          fi
+        fi
