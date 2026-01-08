@@ -12,7 +12,7 @@ company:
 
   # --- Press release ingestion ---
   press_enabled: true
-  press_feed_url: "https://www.investor.jnj.com/news/default.aspx"
+  press_feed_url: "https://www.jnj.com/rss-feed/all"
   press_max_items_per_run: 10
 
 
