@@ -1,0 +1,84 @@
+{
+  "query_term": "Bleximenib",
+  "total_count": 5,
+  "returned": 5,
+  "kept": 4,
+  "studies": [
+    {
+      "nct_id": "NCT06852222",
+      "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, Study of Bleximenib, Venetoclax and Azacitidine for the Treatment of Participants With Newly Diagnosed Acute Myeloid Leukemia Harboring KMT2A Rearrangements or NPM1 Mutations Who Are Ineligible for Intensive Chemotherapy",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Leukemia, Myeloid, Acute"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Bleximenib",
+        "Venetoclax (VEN)",
+        "Azacitidine (AZA)",
+        "Placebo"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06852222"
+    },
+    {
+      "nct_id": "NCT07295951",
+      "title": "An Open-Label Study to Investigate the Absorption, Metabolism, And Excretion (AME) Of 14C-Bleximenib (JNJ-75276617) in Participants With Acute Leukemia",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Acute Lymphoblastic Leukemia",
+        "Acute Leukemias",
+        "Acute Myeloid Leukemia"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "14C-bleximenib",
+        "bleximenib"
+      ],
+      "last_update": "2025-12-22",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07295951"
+    },
+    {
+      "nct_id": "NCT05453903",
+      "title": "A Phase 1b Study of Bleximenib in Combination With AML-Directed Therapies for Participants With Acute Myeloid Leukemia Harboring KMT2A or NPM1 Alterations",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Leukemia, Myeloid, Acute"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Bleximenib",
+        "Venetoclax (VEN)",
+        "Azacitidine (AZA)",
+        "Cytarabine",
+        "Daunorubicin or Idarubicin"
+      ],
+      "last_update": "2025-12-24",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05453903"
+    },
+    {
+      "nct_id": "NCT04811560",
+      "title": "A Phase 1/2, First-in-Human Study of the Menin-KMT2A (MLL1) Inhibitor Bleximenib in Participants With Acute Leukemia (cAMeLot-1)",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Acute Leukemias",
+        "Acute Myeloid Leukemia",
+        "Acute Lymphoblastic Leukemia"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Bleximenib"
+      ],
+      "last_update": "2025-12-10",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04811560"
+    }
+  ]
+}

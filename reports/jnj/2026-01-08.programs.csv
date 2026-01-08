@@ -1,102 +1,102 @@
-asset,indication,phase,trial_or_program,partner,notes,source_page
-AKEEGA (niraparib/abiraterone),M1 Metastatic Castration-Sensitive Prostate Cancer,,AMPLITUDE,"TESARO, an oncology-focused business within GSK",,
-DARZALEX (daratumumab),Smoldering Multiple Myeloma,,AQUILA,Genmab A/S,,
-DARZALEX (daratumumab),Frontline multiple myeloma transplant ineligible,,CEPHEUS,Genmab A/S,,
-IMBRUVICA (ibrutinib),Frontline Chronic Lymphocytic Leukemia (I + V fixed duration),,GLOW,"Pharmacyclics, LLC, an AbbVie company",,
-IMBRUVICA (ibrutinib),Frontline Mantle Cell Lymphoma,,Triangle,"Pharmacyclics, LLC, an AbbVie company",,
-INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer,,SunRISe-1,,,
-RYBREVANT (amivantamab),Frontline Non Small Cell Lung Cancer in combination with chemotherapy,,PAPILLON,,,
-RYBREVANT (amivantamab),,,PALOMA-3,,Subcutaneous,
-Bleximenib,"Newly Diagnosed AML, chemo ineligible in combination with Venetoclax and Azacitidine",,cAMeLot-2,,,
-CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma TNI,,CARTITUDE-5,Legend Biotech,,
-CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma Transplant Eligible vs ASCT,,CARTITUDE-6,Legend Biotech,,
-ERLEADA (apalutamide),Localized Prostate Cancer,,ATLAS,Regents of California and Memorial Sload Kettering,,
-ERLEADA (apalutamide),High Risk Prostate Cancer,,PROTEUS,Regents of California and Memorial Sload Kettering,,
-INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer BCG-naïve High Risk,,SunRISe-3,,,
-INLEXZO (gemcitabine intravesical system),High Risk Non Muscle Invasive Bladder Cancer BGC Experienced,,SunRISe-5,,,
-JNJ-1900 (NBTXR3),Head and Neck Cancer,,,Nanobiotix,,
-pasritamig,Prostate Cancer,,,,,
-RYBREVANT (amivantamab),Colorectal Cancer,,ORIGAMI-2,,,
-RYBREVANT (amivantamab),Colorectal Cancer 2L,,ORIGAMI-3,,,
-TALVEY + TECVAYLI,Relapsed Refractory Multiple Myeloma CD38 exposed,,MonumenTAL-6,,,
-TALVEY (talquetamab),Relapsed Refractory Multiple Myeloma CD38 exposed,,MonumenTAL-6,,,
-TALVEY (talquetamab),Relapsed Refractory Multiple Myeloma A-CD38 Naïve,,MonumenTAL-3,,,
-TAR-210 (RIS/erdafitinib),Intravesical Delivery System for Localized Bladder Cancer,,MoonRISe-1,,,
-TECVAYLI (teclistamab),Multiple Myeloma 1-3PLs,,MajesTEC-3,,,
-TECVAYLI (teclistamab),TE NDMM maintenance,,MajesTEC-4,,,
-TECVAYLI (teclistamab),TIE NDMM in combination with DR,,MajesTEC-7,,,
-TALVEY + TECVAYLI,TIE NDMM in combination with DR,,MajesTEC-7,,,
-TECVAYLI (teclistamab),Relapsed Refractory Multiple Myeloma CD38 exposed,,MajesTEC-9,,,
-Bleximenib,Relapsed Refractory Acute Myeloid Leukemia,,ALE1001,,,
-JNJ-0683 (ARX788),Breast Cancer,,,,,
-JNJ-1900 (NBTXR3),Lung Cancer,,,Nanobiotix,,
-TALVEY + TECVAYLI,Relapsed Refractory Multiple Myeloma,,RedirecTT-1,,,
-JNJ-0387,Solid Tumors,,,,,
-JNJ-0631 (ARX305),Renal Cancer,,,,,
-JNJ-1493,Hematological Malignancies,,,,,
-JNJ-2638,Gastrointestinal Cancer,,,,,
-JNJ-2761,Multiple Myeloma,,,,,
-JNJ-3413,Lymphoma,,,,,
-JNJ-4496,Hematological Malignancies,,,,,
-JNJ-4680,Lung Cancer,,,,,
-JNJ-4681,Hematological Malignancies,,,,,
-JNJ-4916,Lung Cancer,,,,,
-JNJ-5322,Multiple Myeloma,,,,,
-JNJ-6420,Prostate Cancer,,,,,
-JNJ-7446,Lung Cancer,,,,,
-JNJ-8177 (ARX517),Prostate Cancer,,,,,
-JNJ-8377,Lymphoma,,,,,
-JNJ-8543,Hematological Malignancies,,,,,
-JNJ-9401,Prostate Cancer,,,,,
-JNJ-9530,Hematological Malignancies,,,,,
-JNJ-9892,Hematological Malignancies,,,,,
-JNJ-9968,Hematological Malignancies,,,,,
-icotrokinra,Psoriasis,,ICONIC,,,
-SIMPONI (golimumab),Pediatric Ulcerative Colitis,,PURSUIT 2,"Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",,
-STELARA (ustekinumab),Pediatric Crohn's Disease,,UNITI JR,,,
-STELARA (ustekinumab),Pediatric Ulcerative Colitis,,UNIFI JR,,,
-TREMFYA (guselkumab),Pediatric Juvenile Psoriatic Arthritis,,,MorphoSys AG,,
-TREMFYA (guselkumab),Pediatric Psoriasis,,PROTOSTAR,MorphoSys AG,,
-TREMFYA (guselkumab),Psoriatic Arthritis Structural Damage,,APEX,MorphoSys AG,,
-TREMFYA (guselkumab),Ulcerative Colitis Subcutaneous Induction,,ASTRO,MorphoSys AG,,
-icotrokinra,Psoriatic Arthritis,,,,,
-nipocalimab,Warm Autoimmune Hemolytic Anemia,,ENERGY,,,
-nipocalimab,Sjogren's Disease,,,,,
-nipocalimab,Hemolytic Disease of the Fetus and Newborn,,AZALEA,,,
-nipocalimab,Fetal and Neonatal Alloimmune Thrombocytopenia,,FREESIA,,,
-TREMFYA (guselkumab),Pediatric Ulcerative Colitis,,QUASAR JR,MorphoSys AG,,
-icotrokinra,Ulcerative Colitis,,,,,
-JNJ-4804 Co-antibody Therapy,Ulcerative Colitis,,,,,
-JNJ-4804 Co-antibody Therapy,Psoriatic Arthritis,,,,,
-JNJ-4804 Co-antibody Therapy,Crohn's Disease,,,,,
-JNJ-5939,Atopic Dermatitis,,,,,
-nipocalimab,Systemic Lupus Erythematosus,,,,,
-nipocalimab,Idiopathic Inflammatory Myopathy,,,,,
-JNJ-5108,Immunological Diseases,,,,,
-JNJ-6848,Immunological Diseases,,,,,
-JNJ-7528,Atopic Dermatitis,,,,,
-CAPLYTA (lumateperone),Adjunctive Treatment for Major Depressive Disorder,,,,,
-IMAAVY (nipocalimab),Generalized Myasthenia Gravis,,Vivacity MG3,,,
-IMAAVY (nipocalimab),Generalized Myasthenia Gravis Pediatrics,,VIBRANCE MG,,,
-SPRAVATO (esketamine),Treatment Resistant Depression monotherapy,,TRD4005,,,
-CAPLYTA (lumateperone),Bipolar Mania,,,,,
-CAPLYTA (lumateperone),Pediatric Psychiatric Indications,,,,,
-nipocalimab,Chronic Inflammatory Demyelinating Polyneuropathy,,ARISE,,,
-RPGR Gene Therapy,Retinitis Pigmentosa,,LUMEOS,UCL Business Plc,AAV-RPGR,
-seltorexant,Adjunctive Treatment for Major Depressive Disorder with Insomnia Symptoms,,OARS,,,
-ITI-1284,Generalized Anxiety Disorder,,,,,
-ITI-1284,Alzheimer's Disease-Related Psychosis,,,,,
-ITI-1284,Alzheimer's Disease-Related Agitation,,,,,
-JNJ-1887 sCD59,Geographic Atrophy,,,Hemera Biosciences,,
-JNJ-2056 (tau active immunotherapy),Alzheimer's Disease,,RETAIN,AC Immune SA,AC Immune ACI-35.030,
-JNJ-5120,Major Depressive Disorder,,,,,
-posdinemab,Alzheimer's Disease,,AUTONOMY,,,
-SPRAVATO (esketamine),Major Depressive Disorder with Suicidal Ideation Pediatrics,,,,,
-CABENUVA,HIV Adolescents,,,ViiV Healthcare,,
-UPTRAVI (selexipag),Pediatric Pulmonary Arterial Hypertension,,SALTO,Nippon Shinyaku,,
-macitentan,Pulmonary Arterial Hypertension 75mg,,UNISUS,Nippon Shinyaku,,
-milvexian (Factor Xla),Secondary Stroke Prevention,,,Bristol Myers Squibb,,
-milvexian (Factor Xla),Acute Coronary Syndrome,,,Bristol Myers Squibb,,
-milvexian (Factor Xla),Atrial Fibrillation,,,Bristol Myers Squibb,,
-SIRTURO,Leprosy,,,,,
-SIRTURO,Tuberculosis Long Acting,,,,,
+asset,indication,phase,trial_or_program,partner,notes,source_page,ctgov_best_phase,ctgov_flag
+AKEEGA (niraparib/abiraterone),M1 Metastatic Castration-Sensitive Prostate Cancer,,AMPLITUDE,"TESARO, an oncology-focused business within GSK",,,Phase 3,ok
+DARZALEX (daratumumab),Smoldering Multiple Myeloma,,AQUILA,Genmab A/S,,,Phase 2,ok
+DARZALEX (daratumumab),Frontline multiple myeloma transplant ineligible,,CEPHEUS,Genmab A/S,,,Phase 2,ok
+IMBRUVICA (ibrutinib),Frontline Chronic Lymphocytic Leukemia (I + V fixed duration),,GLOW,"Pharmacyclics, LLC, an AbbVie company",,,Phase 2,ok
+IMBRUVICA (ibrutinib),Frontline Mantle Cell Lymphoma,,Triangle,"Pharmacyclics, LLC, an AbbVie company",,,Phase 2,ok
+INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer,,SunRISe-1,,,,,none
+RYBREVANT (amivantamab),Frontline Non Small Cell Lung Cancer in combination with chemotherapy,,PAPILLON,,,,Phase 3,ok
+RYBREVANT (amivantamab),,,PALOMA-3,,Subcutaneous,,Phase 3,ok
+Bleximenib,"Newly Diagnosed AML, chemo ineligible in combination with Venetoclax and Azacitidine",,cAMeLot-2,,,,Phase 3,ok
+CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma TNI,,CARTITUDE-5,Legend Biotech,,,,ok
+CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma Transplant Eligible vs ASCT,,CARTITUDE-6,Legend Biotech,,,,ok
+ERLEADA (apalutamide),Localized Prostate Cancer,,ATLAS,Regents of California and Memorial Sload Kettering,,,Phase 2,ok
+ERLEADA (apalutamide),High Risk Prostate Cancer,,PROTEUS,Regents of California and Memorial Sload Kettering,,,Phase 2,ok
+INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer BCG-naïve High Risk,,SunRISe-3,,,,,none
+INLEXZO (gemcitabine intravesical system),High Risk Non Muscle Invasive Bladder Cancer BGC Experienced,,SunRISe-5,,,,,none
+JNJ-1900 (NBTXR3),Head and Neck Cancer,,,Nanobiotix,,,,none
+pasritamig,Prostate Cancer,,,,,,Phase 3,ok
+RYBREVANT (amivantamab),Colorectal Cancer,,ORIGAMI-2,,,,Phase 3,ok
+RYBREVANT (amivantamab),Colorectal Cancer 2L,,ORIGAMI-3,,,,Phase 3,ok
+TALVEY + TECVAYLI,Relapsed Refractory Multiple Myeloma CD38 exposed,,MonumenTAL-6,,,,Phase 3,ok
+TALVEY (talquetamab),Relapsed Refractory Multiple Myeloma CD38 exposed,,MonumenTAL-6,,,,Phase 3,ok
+TALVEY (talquetamab),Relapsed Refractory Multiple Myeloma A-CD38 Naïve,,MonumenTAL-3,,,,Phase 3,ok
+TAR-210 (RIS/erdafitinib),Intravesical Delivery System for Localized Bladder Cancer,,MoonRISe-1,,,,,none
+TECVAYLI (teclistamab),Multiple Myeloma 1-3PLs,,MajesTEC-3,,,,Phase 3,ok
+TECVAYLI (teclistamab),TE NDMM maintenance,,MajesTEC-4,,,,Phase 3,ok
+TECVAYLI (teclistamab),TIE NDMM in combination with DR,,MajesTEC-7,,,,Phase 3,ok
+TALVEY + TECVAYLI,TIE NDMM in combination with DR,,MajesTEC-7,,,,Phase 3,ok
+TECVAYLI (teclistamab),Relapsed Refractory Multiple Myeloma CD38 exposed,,MajesTEC-9,,,,Phase 3,ok
+Bleximenib,Relapsed Refractory Acute Myeloid Leukemia,,ALE1001,,,,Phase 3,ok
+JNJ-0683 (ARX788),Breast Cancer,,,,,,,none
+JNJ-1900 (NBTXR3),Lung Cancer,,,Nanobiotix,,,,none
+TALVEY + TECVAYLI,Relapsed Refractory Multiple Myeloma,,RedirecTT-1,,,,Phase 3,ok
+JNJ-0387,Solid Tumors,,,,,,,none
+JNJ-0631 (ARX305),Renal Cancer,,,,,,,none
+JNJ-1493,Hematological Malignancies,,,,,,,none
+JNJ-2638,Gastrointestinal Cancer,,,,,,,none
+JNJ-2761,Multiple Myeloma,,,,,,,none
+JNJ-3413,Lymphoma,,,,,,,none
+JNJ-4496,Hematological Malignancies,,,,,,,none
+JNJ-4680,Lung Cancer,,,,,,,none
+JNJ-4681,Hematological Malignancies,,,,,,,none
+JNJ-4916,Lung Cancer,,,,,,,none
+JNJ-5322,Multiple Myeloma,,,,,,,none
+JNJ-6420,Prostate Cancer,,,,,,,none
+JNJ-7446,Lung Cancer,,,,,,,none
+JNJ-8177 (ARX517),Prostate Cancer,,,,,,,none
+JNJ-8377,Lymphoma,,,,,,,none
+JNJ-8543,Hematological Malignancies,,,,,,,none
+JNJ-9401,Prostate Cancer,,,,,,,none
+JNJ-9530,Hematological Malignancies,,,,,,,none
+JNJ-9892,Hematological Malignancies,,,,,,,none
+JNJ-9968,Hematological Malignancies,,,,,,,none
+icotrokinra,Psoriasis,,ICONIC,,,,,none
+SIMPONI (golimumab),Pediatric Ulcerative Colitis,,PURSUIT 2,"Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",,,,none
+STELARA (ustekinumab),Pediatric Crohn's Disease,,UNITI JR,,,,,none
+STELARA (ustekinumab),Pediatric Ulcerative Colitis,,UNIFI JR,,,,,none
+TREMFYA (guselkumab),Pediatric Juvenile Psoriatic Arthritis,,,MorphoSys AG,,,,none
+TREMFYA (guselkumab),Pediatric Psoriasis,,PROTOSTAR,MorphoSys AG,,,,none
+TREMFYA (guselkumab),Psoriatic Arthritis Structural Damage,,APEX,MorphoSys AG,,,,none
+TREMFYA (guselkumab),Ulcerative Colitis Subcutaneous Induction,,ASTRO,MorphoSys AG,,,,none
+icotrokinra,Psoriatic Arthritis,,,,,,,none
+nipocalimab,Warm Autoimmune Hemolytic Anemia,,ENERGY,,,,,none
+nipocalimab,Sjogren's Disease,,,,,,,none
+nipocalimab,Hemolytic Disease of the Fetus and Newborn,,AZALEA,,,,,none
+nipocalimab,Fetal and Neonatal Alloimmune Thrombocytopenia,,FREESIA,,,,,none
+TREMFYA (guselkumab),Pediatric Ulcerative Colitis,,QUASAR JR,MorphoSys AG,,,,none
+icotrokinra,Ulcerative Colitis,,,,,,,none
+JNJ-4804 Co-antibody Therapy,Ulcerative Colitis,,,,,,,none
+JNJ-4804 Co-antibody Therapy,Psoriatic Arthritis,,,,,,,none
+JNJ-4804 Co-antibody Therapy,Crohn's Disease,,,,,,,none
+JNJ-5939,Atopic Dermatitis,,,,,,,none
+nipocalimab,Systemic Lupus Erythematosus,,,,,,,none
+nipocalimab,Idiopathic Inflammatory Myopathy,,,,,,,none
+JNJ-5108,Immunological Diseases,,,,,,,none
+JNJ-6848,Immunological Diseases,,,,,,,none
+JNJ-7528,Atopic Dermatitis,,,,,,,none
+CAPLYTA (lumateperone),Adjunctive Treatment for Major Depressive Disorder,,,,,,,none
+IMAAVY (nipocalimab),Generalized Myasthenia Gravis,,Vivacity MG3,,,,,none
+IMAAVY (nipocalimab),Generalized Myasthenia Gravis Pediatrics,,VIBRANCE MG,,,,,none
+SPRAVATO (esketamine),Treatment Resistant Depression monotherapy,,TRD4005,,,,,none
+CAPLYTA (lumateperone),Bipolar Mania,,,,,,,none
+CAPLYTA (lumateperone),Pediatric Psychiatric Indications,,,,,,,none
+nipocalimab,Chronic Inflammatory Demyelinating Polyneuropathy,,ARISE,,,,,none
+RPGR Gene Therapy,Retinitis Pigmentosa,,LUMEOS,UCL Business Plc,AAV-RPGR,,,none
+seltorexant,Adjunctive Treatment for Major Depressive Disorder with Insomnia Symptoms,,OARS,,,,,none
+ITI-1284,Generalized Anxiety Disorder,,,,,,,none
+ITI-1284,Alzheimer's Disease-Related Psychosis,,,,,,,none
+ITI-1284,Alzheimer's Disease-Related Agitation,,,,,,,none
+JNJ-1887 sCD59,Geographic Atrophy,,,Hemera Biosciences,,,,none
+JNJ-2056 (tau active immunotherapy),Alzheimer's Disease,,RETAIN,AC Immune SA,AC Immune ACI-35.030,,,none
+JNJ-5120,Major Depressive Disorder,,,,,,,none
+posdinemab,Alzheimer's Disease,,AUTONOMY,,,,,none
+SPRAVATO (esketamine),Major Depressive Disorder with Suicidal Ideation Pediatrics,,,,,,,none
+CABENUVA,HIV Adolescents,,,ViiV Healthcare,,,,none
+UPTRAVI (selexipag),Pediatric Pulmonary Arterial Hypertension,,SALTO,Nippon Shinyaku,,,,none
+macitentan,Pulmonary Arterial Hypertension 75mg,,UNISUS,Nippon Shinyaku,,,,none
+milvexian (Factor Xla),Secondary Stroke Prevention,,,Bristol Myers Squibb,,,,none
+milvexian (Factor Xla),Acute Coronary Syndrome,,,Bristol Myers Squibb,,,,none
+milvexian (Factor Xla),Atrial Fibrillation,,,Bristol Myers Squibb,,,,none
+SIRTURO,Leprosy,,,,,,,none
+SIRTURO,Tuberculosis Long Acting,,,,,,,none

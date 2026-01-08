@@ -1,0 +1,85 @@
+{
+  "query_term": "TALVEY + TECVAYLI",
+  "total_count": 4,
+  "returned": 4,
+  "kept": 4,
+  "studies": [
+    {
+      "nct_id": "NCT05972135",
+      "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "SCRI Development Innovations, LLC",
+      "collaborators": [
+        "Johnson & Johnson"
+      ],
+      "interventions": [
+        "Teclistamab",
+        "Talquetamab",
+        "Tocilizumab"
+      ],
+      "last_update": "2025-10-29",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+    },
+    {
+      "nct_id": "NCT06285318",
+      "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+      "overall_status": "RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Relapsed/Refractory Multiple Myeloma (RRMM)"
+      ],
+      "lead_sponsor": "Janssen-Cilag Ltd.",
+      "collaborators": [],
+      "interventions": [
+        "Teclistamab",
+        "Talquetamab"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+    },
+    {
+      "nct_id": "NCT07029776",
+      "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+      "overall_status": "NOT_YET_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma (MM)"
+      ],
+      "lead_sponsor": "University of Arkansas",
+      "collaborators": [
+        "Janssen Research & Development, LLC"
+      ],
+      "interventions": [
+        "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+        "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+      ],
+      "last_update": "2025-11-06",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+    },
+    {
+      "nct_id": "NCT06208150",
+      "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab",
+        "Pomalidomide",
+        "Teclistamab",
+        "Elotuzumab",
+        "Dexamethasone",
+        "Bortezomib"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+    }
+  ]
+}

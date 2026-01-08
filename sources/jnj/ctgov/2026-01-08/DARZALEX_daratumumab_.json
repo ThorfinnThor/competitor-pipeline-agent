@@ -1,0 +1,195 @@
+{
+  "query_term": "DARZALEX (daratumumab)",
+  "total_count": 433,
+  "returned": 20,
+  "kept": 9,
+  "studies": [
+    {
+      "nct_id": "NCT03289299",
+      "title": "Aggressive Smoldering Curative Approach Evaluating Novel Therapies (ASCENT): A Phase 2 Trial of Induction, Consolidation, and Maintenance in Subjects With High Risk Smoldering Multiple Myeloma (SMM)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Smoldering Multiple Myeloma"
+      ],
+      "lead_sponsor": "International Myeloma Foundation",
+      "collaborators": [
+        "Amgen",
+        "Janssen Scientific Affairs, LLC",
+        "Celgene",
+        "Trevie, Inc."
+      ],
+      "interventions": [
+        "Carfilzomib",
+        "Lenalidomide",
+        "Daratumumab",
+        "Dexamethasone"
+      ],
+      "last_update": "2023-12-12",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03289299"
+    },
+    {
+      "nct_id": "NCT04396496",
+      "title": "A Phase II Trial for the Treatment of POEMS Syndrome With Daratumumab",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "POEMS Syndrome"
+      ],
+      "lead_sponsor": "University of Arkansas",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC"
+      ],
+      "interventions": [
+        "Daratumumab Injection"
+      ],
+      "last_update": "2023-11-13",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04396496"
+    },
+    {
+      "nct_id": "NCT03384654",
+      "title": "An Open-label, Multicenter, Phase 2 Study Evaluating the Efficacy and Safety of Daratumumab in Pediatric and Young Adult Subjects >=1 and <=30 Years of Age With Relapsed/Refractory Precursor B-cell or T-cell Acute Lymphoblastic Leukemia or Lymphoblastic Lymphoma",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Precursor Cell Lymphoblastic Leukemia-Lymphoma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Daratumumab",
+        "Vincristine",
+        "Prednisone",
+        "Doxorubicin",
+        "Peg-asparaginase",
+        "Cyclophosphamide",
+        "Cytarabine",
+        "6-mercaptopurine",
+        "Methotrexate"
+      ],
+      "last_update": "2025-05-25",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03384654"
+    },
+    {
+      "nct_id": "NCT07075510",
+      "title": "A Phase I/II Study of Subcutaneous Daratumumab Administration in the Anterior Upper Thigh Vs Abdomen in Patients With Plasma Cell Disorders",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Plasma Cell Disorder"
+      ],
+      "lead_sponsor": "University of Maryland, Baltimore",
+      "collaborators": [
+        "Johnson & Johnson"
+      ],
+      "interventions": [
+        "Daratumumab Injection"
+      ],
+      "last_update": "2025-10-29",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07075510"
+    },
+    {
+      "nct_id": "NCT04140162",
+      "title": "Phase 2 Study With Minimal Residual Disease (MRD) Driven Adaptive Strategy in Treatment for Newly Diagnosed Multiple Myeloma (MM) With Upfront Daratumumab-based Therapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "University of Michigan Rogel Cancer Center",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC"
+      ],
+      "interventions": [
+        "Daratumumab",
+        "Lenalidomide",
+        "Bortezomib",
+        "Dexamethasone"
+      ],
+      "last_update": "2024-10-09",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04140162"
+    },
+    {
+      "nct_id": "NCT05849610",
+      "title": "An Open Label, Multicenter, Phase 2, Pilot Study, Evaluating Early Treatment With Bispecific T-cell Redirectors (Teclistamab and Talquetamab) in the Frontline Therapy of Newly Diagnosed High-risk Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "High-Risk de Novo Multiple Myeloma"
+      ],
+      "lead_sponsor": "PETHEMA Foundation",
+      "collaborators": [
+        "Janssen Pharmaceutica N.V., Belgium"
+      ],
+      "interventions": [
+        "Daratumumab",
+        "Bortezomib",
+        "Lenalidomide",
+        "Teclistamab",
+        "Talquetamab"
+      ],
+      "last_update": "2025-03-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05849610"
+    },
+    {
+      "nct_id": "NCT07149857",
+      "title": "A Phase 2 Multicohort Trial to Further Characterize the Efficacy and Safety of Ciltacabtagene Autoleucel",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Cilta-cel",
+        "Cyclophosphamide",
+        "Induction therapy",
+        "Fludarabine"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07149857"
+    },
+    {
+      "nct_id": "NCT03187262",
+      "title": "A Phase 2 Study of Daratumumab in Patients With Relapsed or Refractory Waldenström Macroglobulinemia",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Waldenström Macroglobulinemia"
+      ],
+      "lead_sponsor": "Dana-Farber Cancer Institute",
+      "collaborators": [
+        "Janssen, LP"
+      ],
+      "interventions": [
+        "Daratumumab"
+      ],
+      "last_update": "2022-11-23",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03187262"
+    },
+    {
+      "nct_id": "NCT03500445",
+      "title": "Open-label, Single-arm, Phase 2 Study of Initial Treatment With Daratumumab (Darzalex), Carfilzomib (Kyprolis), Lenalidomide (Revlimid) and Low Dose Dexamethasone (DKRd) in Newly Diagnosed, Multiple Myeloma Requiring Systemic Chemotherapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Myeloma",
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "University of Chicago",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC",
+        "Amgen"
+      ],
+      "interventions": [
+        "Daratumumab",
+        "Carfilzomib",
+        "Lenalidomide",
+        "Dexamethasone"
+      ],
+      "last_update": "2025-10-03",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03500445"
+    }
+  ]
+}

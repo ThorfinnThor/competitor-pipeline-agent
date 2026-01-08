@@ -7,7 +7,97 @@
       "phase": null,
       "trial_or_program": "AMPLITUDE",
       "partner": "TESARO, an oncology-focused business within GSK",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT06392841",
+          "title": "Hispanic/Latino and Non-Hispanic BlAck Patients Treated With niRaparib and Abiraterone Acetate Plus Prednisone for Metastatic hOrmone Sensitive Prostate Cancer With Deleterious Homologous recombinatioN Repair Alterations: a Phase II, Open Label studY",
+          "overall_status": "WITHDRAWN",
+          "phase": "Phase 2",
+          "conditions": [
+            "Metastatic Hormone-sensitive Prostate Cancer (mHSPC)",
+            "Deleterious HRR Gene Mutation",
+            "BRCA1 Gene Mutation",
+            "BRCA2 Gene Mutation",
+            "BRIP1 Gene Mutation",
+            "CHEK2 Gene Mutation",
+            "FANCA Gene Mutation",
+            "PALB2 Gene Mutation",
+            "RAD51B Gene Mutation",
+            "RAD54L Gene Mutation"
+          ],
+          "lead_sponsor": "Qian Qin",
+          "collaborators": [
+            "UT Southwestern Comprehensive Cancer Center",
+            "Janssen, LP"
+          ],
+          "interventions": [
+            "Androgen Deprivation Therapy (ADT)",
+            "Niraparib/Abiraterone Acetate DAT",
+            "Abiraterone Acetate",
+            "Prednisone",
+            "Docetaxel"
+          ],
+          "last_update": "2025-10-20",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06392841"
+        },
+        {
+          "nct_id": "NCT06329830",
+          "title": "Safety and Anti-tumor Activity of Lutetium-177 (177Lu)-PSMA-617 Along With Niraparib and Abiraterone Acetate Plus Prednisone in Metastatic Castration Resistant Prostate Cancer - LUNAAR Study",
+          "overall_status": "WITHDRAWN",
+          "phase": "Phase 2",
+          "conditions": [
+            "Metastatic Prostate Cancer",
+            "Castration-resistant Prostate Cancer",
+            "Metastatic Castration-resistant Prostate Cancer"
+          ],
+          "lead_sponsor": "Baptist Health South Florida",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC"
+          ],
+          "interventions": [
+            "177Lu-PSMA-617",
+            "Niraparib abiraterone acetate",
+            "Prednisone"
+          ],
+          "last_update": "2024-09-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06329830"
+        },
+        {
+          "nct_id": "NCT03903835",
+          "title": "ProBio: An Outcome-adaptive and Randomized Multi-arm Biomarker Driven Study in Patients With Metastatic Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Metastatic Castration-resistant Prostate Cancer (mCRPC)",
+            "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+          ],
+          "lead_sponsor": "Karolinska Institutet",
+          "collaborators": [
+            "The Swedish Research Council",
+            "Kom Op Tegen Kanker",
+            "Janssen Pharmaceutica N.V., Belgium",
+            "AstraZeneca",
+            "Cancerfonden"
+          ],
+          "interventions": [
+            "Enzalutamide Oral Capsule",
+            "Abiraterone Oral Tablet",
+            "Carboplatin",
+            "Cabazitaxel 60 mg Solution for Injection",
+            "Docetaxel Injectable Solution",
+            "Radium Chloride Ra-223",
+            "Niraparib plus Abiraterone acetate plus Prednisone",
+            "Capivasertib plus Docetaxel",
+            "Apalutamide",
+            "Darolutamide"
+          ],
+          "last_update": "2025-04-09",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03903835"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "DARZALEX (daratumumab)",
@@ -15,7 +105,198 @@
       "phase": null,
       "trial_or_program": "AQUILA",
       "partner": "Genmab A/S",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT03289299",
+          "title": "Aggressive Smoldering Curative Approach Evaluating Novel Therapies (ASCENT): A Phase 2 Trial of Induction, Consolidation, and Maintenance in Subjects With High Risk Smoldering Multiple Myeloma (SMM)",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Smoldering Multiple Myeloma"
+          ],
+          "lead_sponsor": "International Myeloma Foundation",
+          "collaborators": [
+            "Amgen",
+            "Janssen Scientific Affairs, LLC",
+            "Celgene",
+            "Trevie, Inc."
+          ],
+          "interventions": [
+            "Carfilzomib",
+            "Lenalidomide",
+            "Daratumumab",
+            "Dexamethasone"
+          ],
+          "last_update": "2023-12-12",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03289299"
+        },
+        {
+          "nct_id": "NCT04396496",
+          "title": "A Phase II Trial for the Treatment of POEMS Syndrome With Daratumumab",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "POEMS Syndrome"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC"
+          ],
+          "interventions": [
+            "Daratumumab Injection"
+          ],
+          "last_update": "2023-11-13",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04396496"
+        },
+        {
+          "nct_id": "NCT03384654",
+          "title": "An Open-label, Multicenter, Phase 2 Study Evaluating the Efficacy and Safety of Daratumumab in Pediatric and Young Adult Subjects >=1 and <=30 Years of Age With Relapsed/Refractory Precursor B-cell or T-cell Acute Lymphoblastic Leukemia or Lymphoblastic Lymphoma",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Precursor Cell Lymphoblastic Leukemia-Lymphoma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Daratumumab",
+            "Vincristine",
+            "Prednisone",
+            "Doxorubicin",
+            "Peg-asparaginase",
+            "Cyclophosphamide",
+            "Cytarabine",
+            "6-mercaptopurine",
+            "Methotrexate"
+          ],
+          "last_update": "2025-05-25",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03384654"
+        },
+        {
+          "nct_id": "NCT07075510",
+          "title": "A Phase I/II Study of Subcutaneous Daratumumab Administration in the Anterior Upper Thigh Vs Abdomen in Patients With Plasma Cell Disorders",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Plasma Cell Disorder"
+          ],
+          "lead_sponsor": "University of Maryland, Baltimore",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Daratumumab Injection"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07075510"
+        },
+        {
+          "nct_id": "NCT04140162",
+          "title": "Phase 2 Study With Minimal Residual Disease (MRD) Driven Adaptive Strategy in Treatment for Newly Diagnosed Multiple Myeloma (MM) With Upfront Daratumumab-based Therapy",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "University of Michigan Rogel Cancer Center",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC"
+          ],
+          "interventions": [
+            "Daratumumab",
+            "Lenalidomide",
+            "Bortezomib",
+            "Dexamethasone"
+          ],
+          "last_update": "2024-10-09",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04140162"
+        },
+        {
+          "nct_id": "NCT05849610",
+          "title": "An Open Label, Multicenter, Phase 2, Pilot Study, Evaluating Early Treatment With Bispecific T-cell Redirectors (Teclistamab and Talquetamab) in the Frontline Therapy of Newly Diagnosed High-risk Multiple Myeloma",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "High-Risk de Novo Multiple Myeloma"
+          ],
+          "lead_sponsor": "PETHEMA Foundation",
+          "collaborators": [
+            "Janssen Pharmaceutica N.V., Belgium"
+          ],
+          "interventions": [
+            "Daratumumab",
+            "Bortezomib",
+            "Lenalidomide",
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-03-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05849610"
+        },
+        {
+          "nct_id": "NCT07149857",
+          "title": "A Phase 2 Multicohort Trial to Further Characterize the Efficacy and Safety of Ciltacabtagene Autoleucel",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Cilta-cel",
+            "Cyclophosphamide",
+            "Induction therapy",
+            "Fludarabine"
+          ],
+          "last_update": "2025-12-05",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07149857"
+        },
+        {
+          "nct_id": "NCT03187262",
+          "title": "A Phase 2 Study of Daratumumab in Patients With Relapsed or Refractory Waldenström Macroglobulinemia",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Waldenström Macroglobulinemia"
+          ],
+          "lead_sponsor": "Dana-Farber Cancer Institute",
+          "collaborators": [
+            "Janssen, LP"
+          ],
+          "interventions": [
+            "Daratumumab"
+          ],
+          "last_update": "2022-11-23",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03187262"
+        },
+        {
+          "nct_id": "NCT03500445",
+          "title": "Open-label, Single-arm, Phase 2 Study of Initial Treatment With Daratumumab (Darzalex), Carfilzomib (Kyprolis), Lenalidomide (Revlimid) and Low Dose Dexamethasone (DKRd) in Newly Diagnosed, Multiple Myeloma Requiring Systemic Chemotherapy",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Myeloma",
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "University of Chicago",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC",
+            "Amgen"
+          ],
+          "interventions": [
+            "Daratumumab",
+            "Carfilzomib",
+            "Lenalidomide",
+            "Dexamethasone"
+          ],
+          "last_update": "2025-10-03",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03500445"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 2",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "DARZALEX (daratumumab)",
@@ -23,7 +304,198 @@
       "phase": null,
       "trial_or_program": "CEPHEUS",
       "partner": "Genmab A/S",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT03289299",
+          "title": "Aggressive Smoldering Curative Approach Evaluating Novel Therapies (ASCENT): A Phase 2 Trial of Induction, Consolidation, and Maintenance in Subjects With High Risk Smoldering Multiple Myeloma (SMM)",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Smoldering Multiple Myeloma"
+          ],
+          "lead_sponsor": "International Myeloma Foundation",
+          "collaborators": [
+            "Amgen",
+            "Janssen Scientific Affairs, LLC",
+            "Celgene",
+            "Trevie, Inc."
+          ],
+          "interventions": [
+            "Carfilzomib",
+            "Lenalidomide",
+            "Daratumumab",
+            "Dexamethasone"
+          ],
+          "last_update": "2023-12-12",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03289299"
+        },
+        {
+          "nct_id": "NCT04396496",
+          "title": "A Phase II Trial for the Treatment of POEMS Syndrome With Daratumumab",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "POEMS Syndrome"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC"
+          ],
+          "interventions": [
+            "Daratumumab Injection"
+          ],
+          "last_update": "2023-11-13",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04396496"
+        },
+        {
+          "nct_id": "NCT03384654",
+          "title": "An Open-label, Multicenter, Phase 2 Study Evaluating the Efficacy and Safety of Daratumumab in Pediatric and Young Adult Subjects >=1 and <=30 Years of Age With Relapsed/Refractory Precursor B-cell or T-cell Acute Lymphoblastic Leukemia or Lymphoblastic Lymphoma",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Precursor Cell Lymphoblastic Leukemia-Lymphoma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Daratumumab",
+            "Vincristine",
+            "Prednisone",
+            "Doxorubicin",
+            "Peg-asparaginase",
+            "Cyclophosphamide",
+            "Cytarabine",
+            "6-mercaptopurine",
+            "Methotrexate"
+          ],
+          "last_update": "2025-05-25",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03384654"
+        },
+        {
+          "nct_id": "NCT07075510",
+          "title": "A Phase I/II Study of Subcutaneous Daratumumab Administration in the Anterior Upper Thigh Vs Abdomen in Patients With Plasma Cell Disorders",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Plasma Cell Disorder"
+          ],
+          "lead_sponsor": "University of Maryland, Baltimore",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Daratumumab Injection"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07075510"
+        },
+        {
+          "nct_id": "NCT04140162",
+          "title": "Phase 2 Study With Minimal Residual Disease (MRD) Driven Adaptive Strategy in Treatment for Newly Diagnosed Multiple Myeloma (MM) With Upfront Daratumumab-based Therapy",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "University of Michigan Rogel Cancer Center",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC"
+          ],
+          "interventions": [
+            "Daratumumab",
+            "Lenalidomide",
+            "Bortezomib",
+            "Dexamethasone"
+          ],
+          "last_update": "2024-10-09",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04140162"
+        },
+        {
+          "nct_id": "NCT05849610",
+          "title": "An Open Label, Multicenter, Phase 2, Pilot Study, Evaluating Early Treatment With Bispecific T-cell Redirectors (Teclistamab and Talquetamab) in the Frontline Therapy of Newly Diagnosed High-risk Multiple Myeloma",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "High-Risk de Novo Multiple Myeloma"
+          ],
+          "lead_sponsor": "PETHEMA Foundation",
+          "collaborators": [
+            "Janssen Pharmaceutica N.V., Belgium"
+          ],
+          "interventions": [
+            "Daratumumab",
+            "Bortezomib",
+            "Lenalidomide",
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-03-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05849610"
+        },
+        {
+          "nct_id": "NCT07149857",
+          "title": "A Phase 2 Multicohort Trial to Further Characterize the Efficacy and Safety of Ciltacabtagene Autoleucel",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Cilta-cel",
+            "Cyclophosphamide",
+            "Induction therapy",
+            "Fludarabine"
+          ],
+          "last_update": "2025-12-05",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07149857"
+        },
+        {
+          "nct_id": "NCT03187262",
+          "title": "A Phase 2 Study of Daratumumab in Patients With Relapsed or Refractory Waldenström Macroglobulinemia",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Waldenström Macroglobulinemia"
+          ],
+          "lead_sponsor": "Dana-Farber Cancer Institute",
+          "collaborators": [
+            "Janssen, LP"
+          ],
+          "interventions": [
+            "Daratumumab"
+          ],
+          "last_update": "2022-11-23",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03187262"
+        },
+        {
+          "nct_id": "NCT03500445",
+          "title": "Open-label, Single-arm, Phase 2 Study of Initial Treatment With Daratumumab (Darzalex), Carfilzomib (Kyprolis), Lenalidomide (Revlimid) and Low Dose Dexamethasone (DKRd) in Newly Diagnosed, Multiple Myeloma Requiring Systemic Chemotherapy",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Myeloma",
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "University of Chicago",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC",
+            "Amgen"
+          ],
+          "interventions": [
+            "Daratumumab",
+            "Carfilzomib",
+            "Lenalidomide",
+            "Dexamethasone"
+          ],
+          "last_update": "2025-10-03",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03500445"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 2",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "IMBRUVICA (ibrutinib)",
@@ -31,7 +503,96 @@
       "phase": null,
       "trial_or_program": "GLOW",
       "partner": "Pharmacyclics, LLC, an AbbVie company",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT02315326",
+          "title": "A Phase I/II Trial of the Bruton's Tyrosine Kinase (BTK) Inhibitor, Ibrutinib, in Patients With Newly Diagnosed or Refractory/Recurrent Primary Central Nervous System Lymphoma (PCNSL) and Refractory/Recurrent Secondary Central Nervous System Lymphoma (SCNSL)",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Adult Patients With Newly Diagnosed or Relapsed or Refractory Primary Central Nervous System Lymphoma (PCNSL)",
+            "Or Relapsed or Refractory Secondary Central Nervous System Lymphoma (SCNSL)"
+          ],
+          "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+          "collaborators": [
+            "Pharmacyclics LLC.",
+            "Janssen Biotech, Inc."
+          ],
+          "interventions": [
+            "Ibrutinib",
+            "HD- Methotrexate (MTX)",
+            "Rituximab + HD- Methotrexate (MTX)",
+            "procarbazine"
+          ],
+          "last_update": "2025-07-01",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT02315326"
+        },
+        {
+          "nct_id": "NCT01236391",
+          "title": "Multicenter Phase 2 Study of Bruton's Tyrosine Kinase (Btk) Inhibitor, PCI-32765, in Relapsed or Refractory Mantle Cell Lymphoma",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Mantle Cell Lymphoma"
+          ],
+          "lead_sponsor": "Pharmacyclics LLC.",
+          "collaborators": [
+            "Janssen Pharmaceuticals"
+          ],
+          "interventions": [
+            "PCI-32765"
+          ],
+          "last_update": "2015-08-28",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT01236391"
+        },
+        {
+          "nct_id": "NCT04010968",
+          "title": "Evaluation of Risk-Adapted and MRD-Driven Strategy for Untreated Fit Patients With Intermediate Risk Chronic Lymphocytic Leukemia: a Randomized Phase II Trial Comparing FCR and a Chemo-free Combination of Venetoclax and Ibrutinib. A FILO Study",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Intermediate Risk Chronic Lymphocytic Leukemia",
+            "Fit Patients",
+            "Risk-Adapted and MRD-Driven Strategy"
+          ],
+          "lead_sponsor": "French Innovative Leukemia Organisation",
+          "collaborators": [
+            "AbbVie",
+            "Janssen-Cilag Ltd."
+          ],
+          "interventions": [
+            "venetoclax and ibrutinib (I+VEN)",
+            "FCR"
+          ],
+          "last_update": "2025-11-26",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04010968"
+        },
+        {
+          "nct_id": "NCT01820936",
+          "title": "Open-Label, Randomized, 4-Way Crossover Study to Determine the Effect of Food on the Pharmacokinetics of PCI-32765",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 1",
+          "conditions": [
+            "Healthy Volunteers"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [
+            "Pharmacyclics LLC."
+          ],
+          "interventions": [
+            "Sequence 1: PCI-32765",
+            "Sequence 2: PCI-32765",
+            "Sequence 3: PCI-32765",
+            "Sequence 4: PCI-32765",
+            "Sequence 5: PCI-32765"
+          ],
+          "last_update": "2014-07-15",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT01820936"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 2",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "IMBRUVICA (ibrutinib)",
@@ -39,7 +600,96 @@
       "phase": null,
       "trial_or_program": "Triangle",
       "partner": "Pharmacyclics, LLC, an AbbVie company",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT02315326",
+          "title": "A Phase I/II Trial of the Bruton's Tyrosine Kinase (BTK) Inhibitor, Ibrutinib, in Patients With Newly Diagnosed or Refractory/Recurrent Primary Central Nervous System Lymphoma (PCNSL) and Refractory/Recurrent Secondary Central Nervous System Lymphoma (SCNSL)",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Adult Patients With Newly Diagnosed or Relapsed or Refractory Primary Central Nervous System Lymphoma (PCNSL)",
+            "Or Relapsed or Refractory Secondary Central Nervous System Lymphoma (SCNSL)"
+          ],
+          "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+          "collaborators": [
+            "Pharmacyclics LLC.",
+            "Janssen Biotech, Inc."
+          ],
+          "interventions": [
+            "Ibrutinib",
+            "HD- Methotrexate (MTX)",
+            "Rituximab + HD- Methotrexate (MTX)",
+            "procarbazine"
+          ],
+          "last_update": "2025-07-01",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT02315326"
+        },
+        {
+          "nct_id": "NCT01236391",
+          "title": "Multicenter Phase 2 Study of Bruton's Tyrosine Kinase (Btk) Inhibitor, PCI-32765, in Relapsed or Refractory Mantle Cell Lymphoma",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Mantle Cell Lymphoma"
+          ],
+          "lead_sponsor": "Pharmacyclics LLC.",
+          "collaborators": [
+            "Janssen Pharmaceuticals"
+          ],
+          "interventions": [
+            "PCI-32765"
+          ],
+          "last_update": "2015-08-28",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT01236391"
+        },
+        {
+          "nct_id": "NCT04010968",
+          "title": "Evaluation of Risk-Adapted and MRD-Driven Strategy for Untreated Fit Patients With Intermediate Risk Chronic Lymphocytic Leukemia: a Randomized Phase II Trial Comparing FCR and a Chemo-free Combination of Venetoclax and Ibrutinib. A FILO Study",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Intermediate Risk Chronic Lymphocytic Leukemia",
+            "Fit Patients",
+            "Risk-Adapted and MRD-Driven Strategy"
+          ],
+          "lead_sponsor": "French Innovative Leukemia Organisation",
+          "collaborators": [
+            "AbbVie",
+            "Janssen-Cilag Ltd."
+          ],
+          "interventions": [
+            "venetoclax and ibrutinib (I+VEN)",
+            "FCR"
+          ],
+          "last_update": "2025-11-26",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04010968"
+        },
+        {
+          "nct_id": "NCT01820936",
+          "title": "Open-Label, Randomized, 4-Way Crossover Study to Determine the Effect of Food on the Pharmacokinetics of PCI-32765",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 1",
+          "conditions": [
+            "Healthy Volunteers"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [
+            "Pharmacyclics LLC."
+          ],
+          "interventions": [
+            "Sequence 1: PCI-32765",
+            "Sequence 2: PCI-32765",
+            "Sequence 3: PCI-32765",
+            "Sequence 4: PCI-32765",
+            "Sequence 5: PCI-32765"
+          ],
+          "last_update": "2014-07-15",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT01820936"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 2",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "INLEXZO (gemcitabine intravesical system)",
@@ -47,7 +697,10 @@
       "phase": null,
       "trial_or_program": "SunRISe-1",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "RYBREVANT (amivantamab)",
@@ -55,7 +708,69 @@
       "phase": null,
       "trial_or_program": "PAPILLON",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05379595",
+          "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Advanced or Metastatic Colorectal Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab IV",
+            "Fluorouracil",
+            "Leucovorin",
+            "Oxaliplatin",
+            "Irinotecan",
+            "Amivantamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
+        },
+        {
+          "nct_id": "NCT07276399",
+          "title": "A Phase 3, Randomized, Open-Label, Multicenter Study of Amivantamab in Addition to Carboplatin and Pembrolizumab, Compared to Standard of Care Platinum and Pembrolizumab and 5-FU, in Participants With Treatment-Naïve Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Squamous Cell Carcinoma of Head and Neck"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Pembrolizumab",
+            "Carboplatin",
+            "5-Flurouracil",
+            "Cisplatin"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07276399"
+        },
+        {
+          "nct_id": "NCT07227025",
+          "title": "A Phase 1/2 Study Evaluating the Safety and Efficacy of Amivantamab and Olomorasib Combination Therapy in Metastatic Non-small Cell Lung Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Carcinoma, Non-Small-Cell Lung"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Olomorasib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07227025"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "RYBREVANT (amivantamab)",
@@ -63,7 +778,69 @@
       "phase": null,
       "trial_or_program": "PALOMA-3",
       "partner": null,
-      "notes": "Subcutaneous"
+      "notes": "Subcutaneous",
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05379595",
+          "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Advanced or Metastatic Colorectal Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab IV",
+            "Fluorouracil",
+            "Leucovorin",
+            "Oxaliplatin",
+            "Irinotecan",
+            "Amivantamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
+        },
+        {
+          "nct_id": "NCT07276399",
+          "title": "A Phase 3, Randomized, Open-Label, Multicenter Study of Amivantamab in Addition to Carboplatin and Pembrolizumab, Compared to Standard of Care Platinum and Pembrolizumab and 5-FU, in Participants With Treatment-Naïve Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Squamous Cell Carcinoma of Head and Neck"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Pembrolizumab",
+            "Carboplatin",
+            "5-Flurouracil",
+            "Cisplatin"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07276399"
+        },
+        {
+          "nct_id": "NCT07227025",
+          "title": "A Phase 1/2 Study Evaluating the Safety and Efficacy of Amivantamab and Olomorasib Combination Therapy in Metastatic Non-small Cell Lung Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Carcinoma, Non-Small-Cell Lung"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Olomorasib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07227025"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "Bleximenib",
@@ -71,7 +848,87 @@
       "phase": null,
       "trial_or_program": "cAMeLot-2",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT06852222",
+          "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, Study of Bleximenib, Venetoclax and Azacitidine for the Treatment of Participants With Newly Diagnosed Acute Myeloid Leukemia Harboring KMT2A Rearrangements or NPM1 Mutations Who Are Ineligible for Intensive Chemotherapy",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Leukemia, Myeloid, Acute"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Bleximenib",
+            "Venetoclax (VEN)",
+            "Azacitidine (AZA)",
+            "Placebo"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06852222"
+        },
+        {
+          "nct_id": "NCT07295951",
+          "title": "An Open-Label Study to Investigate the Absorption, Metabolism, And Excretion (AME) Of 14C-Bleximenib (JNJ-75276617) in Participants With Acute Leukemia",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Acute Lymphoblastic Leukemia",
+            "Acute Leukemias",
+            "Acute Myeloid Leukemia"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "14C-bleximenib",
+            "bleximenib"
+          ],
+          "last_update": "2025-12-22",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07295951"
+        },
+        {
+          "nct_id": "NCT05453903",
+          "title": "A Phase 1b Study of Bleximenib in Combination With AML-Directed Therapies for Participants With Acute Myeloid Leukemia Harboring KMT2A or NPM1 Alterations",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Leukemia, Myeloid, Acute"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Bleximenib",
+            "Venetoclax (VEN)",
+            "Azacitidine (AZA)",
+            "Cytarabine",
+            "Daunorubicin or Idarubicin"
+          ],
+          "last_update": "2025-12-24",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05453903"
+        },
+        {
+          "nct_id": "NCT04811560",
+          "title": "A Phase 1/2, First-in-Human Study of the Menin-KMT2A (MLL1) Inhibitor Bleximenib in Participants With Acute Leukemia (cAMeLot-1)",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Acute Leukemias",
+            "Acute Myeloid Leukemia",
+            "Acute Lymphoblastic Leukemia"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Bleximenib"
+          ],
+          "last_update": "2025-12-10",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04811560"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "CARVYKTI (Ciltacabtagene autoleucel)",
@@ -79,7 +936,27 @@
       "phase": null,
       "trial_or_program": "CARTITUDE-5",
       "partner": "Legend Biotech",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05346835",
+          "title": "Intermediate-Size Population Expanded Access Program (EAP) for Ciltacabtagene Autoleucel (Cilta-cel) Out-of-Specification (OOS) in Patients With Multiple Myeloma",
+          "overall_status": "AVAILABLE",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Scientific Affairs, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Cilta-cel OOS Therapy"
+          ],
+          "last_update": "2025-08-27",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05346835"
+        }
+      ],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "CARVYKTI (Ciltacabtagene autoleucel)",
@@ -87,7 +964,27 @@
       "phase": null,
       "trial_or_program": "CARTITUDE-6",
       "partner": "Legend Biotech",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05346835",
+          "title": "Intermediate-Size Population Expanded Access Program (EAP) for Ciltacabtagene Autoleucel (Cilta-cel) Out-of-Specification (OOS) in Patients With Multiple Myeloma",
+          "overall_status": "AVAILABLE",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Scientific Affairs, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Cilta-cel OOS Therapy"
+          ],
+          "last_update": "2025-08-27",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05346835"
+        }
+      ],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "ERLEADA (apalutamide)",
@@ -95,7 +992,121 @@
       "phase": null,
       "trial_or_program": "ATLAS",
       "partner": "Regents of California and Memorial Sload Kettering",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT04662580",
+          "title": "A Phase 1, Multicenter, Open-Label, Dose-Escalation, and Dose-Expansion Study to Evaluate the Safety, Pharmacokinetics, and Anti-Tumor Activity of ARX517 as Monotherapy and in Combination With Androgen Receptor Pathway Inhibitors in Subjects With Metastatic Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Metastatic Prostate Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "ARX517",
+            "Apalutamide",
+            "Abiraterone acetate",
+            "Prednisone"
+          ],
+          "last_update": "2025-12-05",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04662580"
+        },
+        {
+          "nct_id": "NCT04325828",
+          "title": "An Open-label Phase 2 Study to Evaluate the Efficacy and Safety of Apalutamide in Combination With Gonadotropin-releasing Hormone (GnRH) Agonist in Subjects With Locally Advanced or Recurrent/Metastatic and Androgen Receptor (AR) Expressing Salivary Gland Carcinoma",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Salivary Gland Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Pharmaceutical K.K.",
+          "collaborators": [],
+          "interventions": [
+            "Apalutamide",
+            "GnRH Agonist"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04325828"
+        },
+        {
+          "nct_id": "NCT06019676",
+          "title": "Impact of Apalutamide in Metastatic Hormone Sensitive Prostate Cancer Patients, a Multicentre Prospective Observational Study",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+          ],
+          "lead_sponsor": "Royal Marsden NHS Foundation Trust",
+          "collaborators": [
+            "Janssen, LP"
+          ],
+          "interventions": [],
+          "last_update": "2025-09-18",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06019676"
+        },
+        {
+          "nct_id": "NCT02721979",
+          "title": "A Phase 2 Study of Apalutamide in Active Surveillance Patients",
+          "overall_status": "TERMINATED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Prostate Adenocarcinoma"
+          ],
+          "lead_sponsor": "University of Washington",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC",
+            "National Cancer Institute (NCI)"
+          ],
+          "interventions": [
+            "Apalutamide",
+            "Laboratory Biomarker Analysis",
+            "Quality-of-Life Assessment",
+            "Questionnaire Administration"
+          ],
+          "last_update": "2023-02-09",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT02721979"
+        },
+        {
+          "nct_id": "NCT04108208",
+          "title": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Phase IV Study of Apalutamide in Chinese Participants With Non-Metastatic Castration-Resistant Prostate Cancer (NM-CRPC)",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Prostatic Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Apalutamide",
+            "Placebo",
+            "Androgen-deprivation Therapy (ADT)"
+          ],
+          "last_update": "2025-12-18",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04108208"
+        },
+        {
+          "nct_id": "NCT03365297",
+          "title": "Targeted Drug Intervention to Inhibit Cancer Progression in Men on Active Surveillance for Prostate Cancer. Therapeutics in Active Prostate Cancer Surveillance (TAPS01)",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Prostate Cancer"
+          ],
+          "lead_sponsor": "CCTU- Cancer Theme",
+          "collaborators": [
+            "Janssen-Cilag Ltd."
+          ],
+          "interventions": [
+            "Apalutamide"
+          ],
+          "last_update": "2019-11-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03365297"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 2",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "ERLEADA (apalutamide)",
@@ -103,7 +1114,121 @@
       "phase": null,
       "trial_or_program": "PROTEUS",
       "partner": "Regents of California and Memorial Sload Kettering",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT04662580",
+          "title": "A Phase 1, Multicenter, Open-Label, Dose-Escalation, and Dose-Expansion Study to Evaluate the Safety, Pharmacokinetics, and Anti-Tumor Activity of ARX517 as Monotherapy and in Combination With Androgen Receptor Pathway Inhibitors in Subjects With Metastatic Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Metastatic Prostate Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "ARX517",
+            "Apalutamide",
+            "Abiraterone acetate",
+            "Prednisone"
+          ],
+          "last_update": "2025-12-05",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04662580"
+        },
+        {
+          "nct_id": "NCT04325828",
+          "title": "An Open-label Phase 2 Study to Evaluate the Efficacy and Safety of Apalutamide in Combination With Gonadotropin-releasing Hormone (GnRH) Agonist in Subjects With Locally Advanced or Recurrent/Metastatic and Androgen Receptor (AR) Expressing Salivary Gland Carcinoma",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Salivary Gland Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Pharmaceutical K.K.",
+          "collaborators": [],
+          "interventions": [
+            "Apalutamide",
+            "GnRH Agonist"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04325828"
+        },
+        {
+          "nct_id": "NCT06019676",
+          "title": "Impact of Apalutamide in Metastatic Hormone Sensitive Prostate Cancer Patients, a Multicentre Prospective Observational Study",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+          ],
+          "lead_sponsor": "Royal Marsden NHS Foundation Trust",
+          "collaborators": [
+            "Janssen, LP"
+          ],
+          "interventions": [],
+          "last_update": "2025-09-18",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06019676"
+        },
+        {
+          "nct_id": "NCT02721979",
+          "title": "A Phase 2 Study of Apalutamide in Active Surveillance Patients",
+          "overall_status": "TERMINATED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Prostate Adenocarcinoma"
+          ],
+          "lead_sponsor": "University of Washington",
+          "collaborators": [
+            "Janssen Scientific Affairs, LLC",
+            "National Cancer Institute (NCI)"
+          ],
+          "interventions": [
+            "Apalutamide",
+            "Laboratory Biomarker Analysis",
+            "Quality-of-Life Assessment",
+            "Questionnaire Administration"
+          ],
+          "last_update": "2023-02-09",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT02721979"
+        },
+        {
+          "nct_id": "NCT04108208",
+          "title": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Phase IV Study of Apalutamide in Chinese Participants With Non-Metastatic Castration-Resistant Prostate Cancer (NM-CRPC)",
+          "overall_status": "ACTIVE_NOT_RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Prostatic Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Apalutamide",
+            "Placebo",
+            "Androgen-deprivation Therapy (ADT)"
+          ],
+          "last_update": "2025-12-18",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04108208"
+        },
+        {
+          "nct_id": "NCT03365297",
+          "title": "Targeted Drug Intervention to Inhibit Cancer Progression in Men on Active Surveillance for Prostate Cancer. Therapeutics in Active Prostate Cancer Surveillance (TAPS01)",
+          "overall_status": "COMPLETED",
+          "phase": "Phase 2",
+          "conditions": [
+            "Prostate Cancer"
+          ],
+          "lead_sponsor": "CCTU- Cancer Theme",
+          "collaborators": [
+            "Janssen-Cilag Ltd."
+          ],
+          "interventions": [
+            "Apalutamide"
+          ],
+          "last_update": "2019-11-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT03365297"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 2",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "INLEXZO (gemcitabine intravesical system)",
@@ -111,7 +1236,10 @@
       "phase": null,
       "trial_or_program": "SunRISe-3",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "INLEXZO (gemcitabine intravesical system)",
@@ -119,7 +1247,10 @@
       "phase": null,
       "trial_or_program": "SunRISe-5",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-1900 (NBTXR3)",
@@ -127,7 +1258,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "Nanobiotix",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "pasritamig",
@@ -135,7 +1269,98 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT07225946",
+          "title": "A Phase 3 Randomized, Open-label Study of Pasritamig (JNJ-78278343), a T-cell-redirecting Agent Targeting Human Kallikrein 2, With Docetaxel Versus Docetaxel for Metastatic Castration-resistant Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Prostatic Neoplasms, Castration-Resistant"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Pasritamig",
+            "Docetaxel",
+            "Prednisone"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07225946"
+        },
+        {
+          "nct_id": "NCT06095089",
+          "title": "A Phase 1 Study of JNJ-87189401 (PSMA-CD28 Bispecific Antibody) Combined With JNJ-78278343 (KLK2-CD3 Bispecific Antibody) for Advanced Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Advanced Prostate Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "JNJ-78278343",
+            "JNJ-87189401"
+          ],
+          "last_update": "2025-12-05",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06095089"
+        },
+        {
+          "nct_id": "NCT07164443",
+          "title": "A Phase 3 Randomized, Double-blind, Placebo-controlled Study of Pasritamig (JNJ-78278343), a T Cell Redirecting Agent Targeting Human Kallikrein 2, + Best Supportive Care Versus Best Supportive Care for Metastatic Castration-resistant Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Metastatic Castration-resistant Prostate Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Pasritamig",
+            "Placebo",
+            "Best Supportive Care (BSC)"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07164443"
+        },
+        {
+          "nct_id": "NCT07082920",
+          "title": "A Phase 1b Study of JNJ-78278343, a T-cell Redirecting Agent Targeting Human Kallikrein 2 (KLK2), in Combination With JNJ-95298177, an Antibody Drug Conjugate Targeting Prostate Specific Membrane Antigen, for Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Prostatic Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "JNJ-78278343",
+            "JNJ-95298177"
+          ],
+          "last_update": "2025-12-17",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07082920"
+        },
+        {
+          "nct_id": "NCT07319871",
+          "title": "A Phase 1b Study of Pasritamig (JNJ-78278343), a T-cell Redirecting Agent Targeting Human Kallikrein 2 (KLK2), in Combination With JNJ-86974680, an A2a Receptor (A2aR) Antagonist, for Prostate Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Prostatic Neoplasms"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Pasritamig",
+            "JNJ-86974680"
+          ],
+          "last_update": "2026-01-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07319871"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "RYBREVANT (amivantamab)",
@@ -143,7 +1368,69 @@
       "phase": null,
       "trial_or_program": "ORIGAMI-2",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05379595",
+          "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Advanced or Metastatic Colorectal Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab IV",
+            "Fluorouracil",
+            "Leucovorin",
+            "Oxaliplatin",
+            "Irinotecan",
+            "Amivantamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
+        },
+        {
+          "nct_id": "NCT07276399",
+          "title": "A Phase 3, Randomized, Open-Label, Multicenter Study of Amivantamab in Addition to Carboplatin and Pembrolizumab, Compared to Standard of Care Platinum and Pembrolizumab and 5-FU, in Participants With Treatment-Naïve Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Squamous Cell Carcinoma of Head and Neck"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Pembrolizumab",
+            "Carboplatin",
+            "5-Flurouracil",
+            "Cisplatin"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07276399"
+        },
+        {
+          "nct_id": "NCT07227025",
+          "title": "A Phase 1/2 Study Evaluating the Safety and Efficacy of Amivantamab and Olomorasib Combination Therapy in Metastatic Non-small Cell Lung Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Carcinoma, Non-Small-Cell Lung"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Olomorasib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07227025"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "RYBREVANT (amivantamab)",
@@ -151,7 +1438,69 @@
       "phase": null,
       "trial_or_program": "ORIGAMI-3",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05379595",
+          "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Advanced or Metastatic Colorectal Cancer"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab IV",
+            "Fluorouracil",
+            "Leucovorin",
+            "Oxaliplatin",
+            "Irinotecan",
+            "Amivantamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
+        },
+        {
+          "nct_id": "NCT07276399",
+          "title": "A Phase 3, Randomized, Open-Label, Multicenter Study of Amivantamab in Addition to Carboplatin and Pembrolizumab, Compared to Standard of Care Platinum and Pembrolizumab and 5-FU, in Participants With Treatment-Naïve Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Squamous Cell Carcinoma of Head and Neck"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Pembrolizumab",
+            "Carboplatin",
+            "5-Flurouracil",
+            "Cisplatin"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07276399"
+        },
+        {
+          "nct_id": "NCT07227025",
+          "title": "A Phase 1/2 Study Evaluating the Safety and Efficacy of Amivantamab and Olomorasib Combination Therapy in Metastatic Non-small Cell Lung Cancer",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Carcinoma, Non-Small-Cell Lung"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Amivantamab",
+            "Olomorasib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07227025"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TALVEY + TECVAYLI",
@@ -159,7 +1508,88 @@
       "phase": null,
       "trial_or_program": "MonumenTAL-6",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TALVEY (talquetamab)",
@@ -167,7 +1597,88 @@
       "phase": null,
       "trial_or_program": "MonumenTAL-6",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TALVEY (talquetamab)",
@@ -175,7 +1686,88 @@
       "phase": null,
       "trial_or_program": "MonumenTAL-3",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TAR-210 (RIS/erdafitinib)",
@@ -183,7 +1775,10 @@
       "phase": null,
       "trial_or_program": "MoonRISe-1",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -191,7 +1786,147 @@
       "phase": null,
       "trial_or_program": "MajesTEC-3",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT06251076",
+          "title": "Outpatient-based Teclistamab Step-up Dosing in Patients With Relapsed/Refractory Multiple Myeloma: Process Development in Academic and Community Centres, and Evaluating Impact on Caregiver Burden",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Relapsed Cancer",
+            "Refractory Cancer"
+          ],
+          "lead_sponsor": "University Health Network, Toronto",
+          "collaborators": [
+            "Janssen Inc."
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-12-10",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06251076"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        },
+        {
+          "nct_id": "NCT06477783",
+          "title": "Prospective Observational Study on the Clinical Efficacy of Teclistamab in Patients With Relapsed and Refractory Multiple Myeloma in Belgium",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Hematologic Diseases"
+          ],
+          "lead_sponsor": "Universitaire Ziekenhuizen KU Leuven",
+          "collaborators": [
+            "Janssen Pharmaceutica"
+          ],
+          "interventions": [
+            "Teclistamab"
+          ],
+          "last_update": "2025-03-12",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06477783"
+        },
+        {
+          "nct_id": "NCT07110844",
+          "title": "A Phase 2 Clinical Trial of Teclistamab and Daratumumab in Previously Untreated AL Amyloidosis",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Amyloid Light-chain Amyloidosis"
+          ],
+          "lead_sponsor": "Suzanne Lentzsch, MD",
+          "collaborators": [
+            "Janssen Pharmaceuticals"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Daratumumab and Hyaluronidase-fihj"
+          ],
+          "last_update": "2025-11-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07110844"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -199,7 +1934,147 @@
       "phase": null,
       "trial_or_program": "MajesTEC-4",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT06251076",
+          "title": "Outpatient-based Teclistamab Step-up Dosing in Patients With Relapsed/Refractory Multiple Myeloma: Process Development in Academic and Community Centres, and Evaluating Impact on Caregiver Burden",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Relapsed Cancer",
+            "Refractory Cancer"
+          ],
+          "lead_sponsor": "University Health Network, Toronto",
+          "collaborators": [
+            "Janssen Inc."
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-12-10",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06251076"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        },
+        {
+          "nct_id": "NCT06477783",
+          "title": "Prospective Observational Study on the Clinical Efficacy of Teclistamab in Patients With Relapsed and Refractory Multiple Myeloma in Belgium",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Hematologic Diseases"
+          ],
+          "lead_sponsor": "Universitaire Ziekenhuizen KU Leuven",
+          "collaborators": [
+            "Janssen Pharmaceutica"
+          ],
+          "interventions": [
+            "Teclistamab"
+          ],
+          "last_update": "2025-03-12",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06477783"
+        },
+        {
+          "nct_id": "NCT07110844",
+          "title": "A Phase 2 Clinical Trial of Teclistamab and Daratumumab in Previously Untreated AL Amyloidosis",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Amyloid Light-chain Amyloidosis"
+          ],
+          "lead_sponsor": "Suzanne Lentzsch, MD",
+          "collaborators": [
+            "Janssen Pharmaceuticals"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Daratumumab and Hyaluronidase-fihj"
+          ],
+          "last_update": "2025-11-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07110844"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -207,7 +2082,147 @@
       "phase": null,
       "trial_or_program": "MajesTEC-7",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT06251076",
+          "title": "Outpatient-based Teclistamab Step-up Dosing in Patients With Relapsed/Refractory Multiple Myeloma: Process Development in Academic and Community Centres, and Evaluating Impact on Caregiver Burden",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Relapsed Cancer",
+            "Refractory Cancer"
+          ],
+          "lead_sponsor": "University Health Network, Toronto",
+          "collaborators": [
+            "Janssen Inc."
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-12-10",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06251076"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        },
+        {
+          "nct_id": "NCT06477783",
+          "title": "Prospective Observational Study on the Clinical Efficacy of Teclistamab in Patients With Relapsed and Refractory Multiple Myeloma in Belgium",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Hematologic Diseases"
+          ],
+          "lead_sponsor": "Universitaire Ziekenhuizen KU Leuven",
+          "collaborators": [
+            "Janssen Pharmaceutica"
+          ],
+          "interventions": [
+            "Teclistamab"
+          ],
+          "last_update": "2025-03-12",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06477783"
+        },
+        {
+          "nct_id": "NCT07110844",
+          "title": "A Phase 2 Clinical Trial of Teclistamab and Daratumumab in Previously Untreated AL Amyloidosis",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Amyloid Light-chain Amyloidosis"
+          ],
+          "lead_sponsor": "Suzanne Lentzsch, MD",
+          "collaborators": [
+            "Janssen Pharmaceuticals"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Daratumumab and Hyaluronidase-fihj"
+          ],
+          "last_update": "2025-11-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07110844"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TALVEY + TECVAYLI",
@@ -215,7 +2230,88 @@
       "phase": null,
       "trial_or_program": "MajesTEC-7",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "TECVAYLI (teclistamab)",
@@ -223,7 +2319,147 @@
       "phase": null,
       "trial_or_program": "MajesTEC-9",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT06251076",
+          "title": "Outpatient-based Teclistamab Step-up Dosing in Patients With Relapsed/Refractory Multiple Myeloma: Process Development in Academic and Community Centres, and Evaluating Impact on Caregiver Burden",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Relapsed Cancer",
+            "Refractory Cancer"
+          ],
+          "lead_sponsor": "University Health Network, Toronto",
+          "collaborators": [
+            "Janssen Inc."
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-12-10",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06251076"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        },
+        {
+          "nct_id": "NCT06477783",
+          "title": "Prospective Observational Study on the Clinical Efficacy of Teclistamab in Patients With Relapsed and Refractory Multiple Myeloma in Belgium",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Multiple Myeloma",
+            "Hematologic Diseases"
+          ],
+          "lead_sponsor": "Universitaire Ziekenhuizen KU Leuven",
+          "collaborators": [
+            "Janssen Pharmaceutica"
+          ],
+          "interventions": [
+            "Teclistamab"
+          ],
+          "last_update": "2025-03-12",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06477783"
+        },
+        {
+          "nct_id": "NCT07110844",
+          "title": "A Phase 2 Clinical Trial of Teclistamab and Daratumumab in Previously Untreated AL Amyloidosis",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Amyloid Light-chain Amyloidosis"
+          ],
+          "lead_sponsor": "Suzanne Lentzsch, MD",
+          "collaborators": [
+            "Janssen Pharmaceuticals"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Daratumumab and Hyaluronidase-fihj"
+          ],
+          "last_update": "2025-11-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07110844"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "Bleximenib",
@@ -231,7 +2467,87 @@
       "phase": null,
       "trial_or_program": "ALE1001",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT06852222",
+          "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, Study of Bleximenib, Venetoclax and Azacitidine for the Treatment of Participants With Newly Diagnosed Acute Myeloid Leukemia Harboring KMT2A Rearrangements or NPM1 Mutations Who Are Ineligible for Intensive Chemotherapy",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Leukemia, Myeloid, Acute"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Bleximenib",
+            "Venetoclax (VEN)",
+            "Azacitidine (AZA)",
+            "Placebo"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06852222"
+        },
+        {
+          "nct_id": "NCT07295951",
+          "title": "An Open-Label Study to Investigate the Absorption, Metabolism, And Excretion (AME) Of 14C-Bleximenib (JNJ-75276617) in Participants With Acute Leukemia",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Acute Lymphoblastic Leukemia",
+            "Acute Leukemias",
+            "Acute Myeloid Leukemia"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "14C-bleximenib",
+            "bleximenib"
+          ],
+          "last_update": "2025-12-22",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07295951"
+        },
+        {
+          "nct_id": "NCT05453903",
+          "title": "A Phase 1b Study of Bleximenib in Combination With AML-Directed Therapies for Participants With Acute Myeloid Leukemia Harboring KMT2A or NPM1 Alterations",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 1",
+          "conditions": [
+            "Leukemia, Myeloid, Acute"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Bleximenib",
+            "Venetoclax (VEN)",
+            "Azacitidine (AZA)",
+            "Cytarabine",
+            "Daunorubicin or Idarubicin"
+          ],
+          "last_update": "2025-12-24",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05453903"
+        },
+        {
+          "nct_id": "NCT04811560",
+          "title": "A Phase 1/2, First-in-Human Study of the Menin-KMT2A (MLL1) Inhibitor Bleximenib in Participants With Acute Leukemia (cAMeLot-1)",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Acute Leukemias",
+            "Acute Myeloid Leukemia",
+            "Acute Lymphoblastic Leukemia"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Bleximenib"
+          ],
+          "last_update": "2025-12-10",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT04811560"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "JNJ-0683 (ARX788)",
@@ -239,7 +2555,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-1900 (NBTXR3)",
@@ -247,7 +2566,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "Nanobiotix",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TALVEY + TECVAYLI",
@@ -255,7 +2577,88 @@
       "phase": null,
       "trial_or_program": "RedirecTT-1",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [
+        {
+          "nct_id": "NCT05972135",
+          "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "SCRI Development Innovations, LLC",
+          "collaborators": [
+            "Johnson & Johnson"
+          ],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab",
+            "Tocilizumab"
+          ],
+          "last_update": "2025-10-29",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+        },
+        {
+          "nct_id": "NCT06285318",
+          "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
+          "overall_status": "RECRUITING",
+          "phase": null,
+          "conditions": [
+            "Relapsed/Refractory Multiple Myeloma (RRMM)"
+          ],
+          "lead_sponsor": "Janssen-Cilag Ltd.",
+          "collaborators": [],
+          "interventions": [
+            "Teclistamab",
+            "Talquetamab"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
+        },
+        {
+          "nct_id": "NCT07029776",
+          "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
+          "overall_status": "NOT_YET_RECRUITING",
+          "phase": "Phase 2",
+          "conditions": [
+            "Multiple Myeloma (MM)"
+          ],
+          "lead_sponsor": "University of Arkansas",
+          "collaborators": [
+            "Janssen Research & Development, LLC"
+          ],
+          "interventions": [
+            "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
+            "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
+          ],
+          "last_update": "2025-11-06",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
+        },
+        {
+          "nct_id": "NCT06208150",
+          "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
+          "overall_status": "RECRUITING",
+          "phase": "Phase 3",
+          "conditions": [
+            "Multiple Myeloma"
+          ],
+          "lead_sponsor": "Janssen Research & Development, LLC",
+          "collaborators": [],
+          "interventions": [
+            "Talquetamab",
+            "Pomalidomide",
+            "Teclistamab",
+            "Elotuzumab",
+            "Dexamethasone",
+            "Bortezomib"
+          ],
+          "last_update": "2025-12-19",
+          "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+        }
+      ],
+      "_ctgov_best_phase": "Phase 3",
+      "_ctgov_phase_flag": "ok"
     },
     {
       "asset": "JNJ-0387",
@@ -263,7 +2666,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-0631 (ARX305)",
@@ -271,7 +2677,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-1493",
@@ -279,7 +2688,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-2638",
@@ -287,7 +2699,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-2761",
@@ -295,7 +2710,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-3413",
@@ -303,7 +2721,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4496",
@@ -311,7 +2732,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4680",
@@ -319,7 +2743,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4681",
@@ -327,7 +2754,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4916",
@@ -335,7 +2765,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-5322",
@@ -343,7 +2776,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-6420",
@@ -351,7 +2787,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-7446",
@@ -359,7 +2798,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-8177 (ARX517)",
@@ -367,7 +2809,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-8377",
@@ -375,7 +2820,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-8543",
@@ -383,7 +2831,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-9401",
@@ -391,7 +2842,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-9530",
@@ -399,7 +2853,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-9892",
@@ -407,7 +2864,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-9968",
@@ -415,7 +2875,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "icotrokinra",
@@ -423,7 +2886,10 @@
       "phase": null,
       "trial_or_program": "ICONIC",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "SIMPONI (golimumab)",
@@ -431,7 +2897,10 @@
       "phase": null,
       "trial_or_program": "PURSUIT 2",
       "partner": "Schering-Plough (Ireland) Company, a subsidiary of Merck & Co., Inc. and Mitsubishi Tanabe Pharma Corporation",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "STELARA (ustekinumab)",
@@ -439,7 +2908,10 @@
       "phase": null,
       "trial_or_program": "UNITI JR",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "STELARA (ustekinumab)",
@@ -447,7 +2919,10 @@
       "phase": null,
       "trial_or_program": "UNIFI JR",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TREMFYA (guselkumab)",
@@ -455,7 +2930,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "MorphoSys AG",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TREMFYA (guselkumab)",
@@ -463,7 +2941,10 @@
       "phase": null,
       "trial_or_program": "PROTOSTAR",
       "partner": "MorphoSys AG",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TREMFYA (guselkumab)",
@@ -471,7 +2952,10 @@
       "phase": null,
       "trial_or_program": "APEX",
       "partner": "MorphoSys AG",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TREMFYA (guselkumab)",
@@ -479,7 +2963,10 @@
       "phase": null,
       "trial_or_program": "ASTRO",
       "partner": "MorphoSys AG",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "icotrokinra",
@@ -487,7 +2974,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -495,7 +2985,10 @@
       "phase": null,
       "trial_or_program": "ENERGY",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -503,7 +2996,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -511,7 +3007,10 @@
       "phase": null,
       "trial_or_program": "AZALEA",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -519,7 +3018,10 @@
       "phase": null,
       "trial_or_program": "FREESIA",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "TREMFYA (guselkumab)",
@@ -527,7 +3029,10 @@
       "phase": null,
       "trial_or_program": "QUASAR JR",
       "partner": "MorphoSys AG",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "icotrokinra",
@@ -535,7 +3040,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4804 Co-antibody Therapy",
@@ -543,7 +3051,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4804 Co-antibody Therapy",
@@ -551,7 +3062,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-4804 Co-antibody Therapy",
@@ -559,7 +3073,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-5939",
@@ -567,7 +3084,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -575,7 +3095,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -583,7 +3106,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-5108",
@@ -591,7 +3117,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-6848",
@@ -599,7 +3128,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-7528",
@@ -607,7 +3139,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "CAPLYTA (lumateperone)",
@@ -615,7 +3150,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "IMAAVY (nipocalimab)",
@@ -623,7 +3161,10 @@
       "phase": null,
       "trial_or_program": "Vivacity MG3",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "IMAAVY (nipocalimab)",
@@ -631,7 +3172,10 @@
       "phase": null,
       "trial_or_program": "VIBRANCE MG",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "SPRAVATO (esketamine)",
@@ -639,7 +3183,10 @@
       "phase": null,
       "trial_or_program": "TRD4005",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "CAPLYTA (lumateperone)",
@@ -647,7 +3194,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "CAPLYTA (lumateperone)",
@@ -655,7 +3205,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "nipocalimab",
@@ -663,7 +3216,10 @@
       "phase": null,
       "trial_or_program": "ARISE",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "RPGR Gene Therapy",
@@ -671,7 +3227,10 @@
       "phase": null,
       "trial_or_program": "LUMEOS",
       "partner": "UCL Business Plc",
-      "notes": "AAV-RPGR"
+      "notes": "AAV-RPGR",
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "seltorexant",
@@ -679,7 +3238,10 @@
       "phase": null,
       "trial_or_program": "OARS",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "ITI-1284",
@@ -687,7 +3249,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "ITI-1284",
@@ -695,7 +3260,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "ITI-1284",
@@ -703,7 +3271,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-1887 sCD59",
@@ -711,7 +3282,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "Hemera Biosciences",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-2056 (tau active immunotherapy)",
@@ -719,7 +3293,10 @@
       "phase": null,
       "trial_or_program": "RETAIN",
       "partner": "AC Immune SA",
-      "notes": "AC Immune ACI-35.030"
+      "notes": "AC Immune ACI-35.030",
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "JNJ-5120",
@@ -727,7 +3304,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "posdinemab",
@@ -735,7 +3315,10 @@
       "phase": null,
       "trial_or_program": "AUTONOMY",
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "SPRAVATO (esketamine)",
@@ -743,7 +3326,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "CABENUVA",
@@ -751,7 +3337,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "ViiV Healthcare",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "UPTRAVI (selexipag)",
@@ -759,7 +3348,10 @@
       "phase": null,
       "trial_or_program": "SALTO",
       "partner": "Nippon Shinyaku",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "macitentan",
@@ -767,7 +3359,10 @@
       "phase": null,
       "trial_or_program": "UNISUS",
       "partner": "Nippon Shinyaku",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "milvexian (Factor Xla)",
@@ -775,7 +3370,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "Bristol Myers Squibb",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "milvexian (Factor Xla)",
@@ -783,7 +3381,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "Bristol Myers Squibb",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "milvexian (Factor Xla)",
@@ -791,7 +3392,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": "Bristol Myers Squibb",
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "SIRTURO",
@@ -799,7 +3403,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     },
     {
       "asset": "SIRTURO",
@@ -807,7 +3414,10 @@
       "phase": null,
       "trial_or_program": null,
       "partner": null,
-      "notes": null
+      "notes": null,
+      "_ctgov_matches": [],
+      "_ctgov_best_phase": null,
+      "_ctgov_phase_flag": "none"
     }
   ],
   "_meta": {
@@ -821,6 +3431,47 @@
     "source_sha256": "7be7a71814f547e8772f826b14552f40244c9d6a9dd0548d8b79a85c3f1a9e04",
     "doc_unchanged": true,
     "doc_unchanged_note": "Source PDF SHA256 unchanged; reused prior snapshot to avoid extraction variability.",
-    "extraction_ok": true
+    "extraction_ok": true,
+    "ctgov": {
+      "enabled": true,
+      "queried_assets": [
+        "AKEEGA (niraparib/abiraterone)",
+        "DARZALEX (daratumumab)",
+        "IMBRUVICA (ibrutinib)",
+        "INLEXZO (gemcitabine intravesical system)",
+        "RYBREVANT (amivantamab)",
+        "Bleximenib",
+        "CARVYKTI (Ciltacabtagene autoleucel)",
+        "ERLEADA (apalutamide)",
+        "JNJ-1900 (NBTXR3)",
+        "pasritamig",
+        "TALVEY + TECVAYLI",
+        "TALVEY (talquetamab)",
+        "TAR-210 (RIS/erdafitinib)",
+        "TECVAYLI (teclistamab)",
+        "JNJ-0683 (ARX788)",
+        "JNJ-0387",
+        "JNJ-0631 (ARX305)",
+        "JNJ-1493",
+        "JNJ-2638",
+        "JNJ-2761",
+        "JNJ-3413",
+        "JNJ-4496",
+        "JNJ-4680"
+      ],
+      "queries_executed": 23,
+      "programs_total": 101,
+      "programs_with_matches": 25,
+      "phase_mismatches": 0,
+      "sources_path": "sources/jnj/ctgov/2026-01-08",
+      "api_base": "https://clinicaltrials.gov/api/v2"
+    },
+    "sec_edgar": {
+      "enabled": true,
+      "since_date": "2026-01-08",
+      "filings_considered": 0,
+      "filings_with_events": 0,
+      "sources_path": "sources/jnj/sec/2026-01-08"
+    }
   }
 }

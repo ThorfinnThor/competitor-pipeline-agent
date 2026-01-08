@@ -1,0 +1,118 @@
+{
+  "query_term": "ERLEADA (apalutamide)",
+  "total_count": 179,
+  "returned": 20,
+  "kept": 6,
+  "studies": [
+    {
+      "nct_id": "NCT04662580",
+      "title": "A Phase 1, Multicenter, Open-Label, Dose-Escalation, and Dose-Expansion Study to Evaluate the Safety, Pharmacokinetics, and Anti-Tumor Activity of ARX517 as Monotherapy and in Combination With Androgen Receptor Pathway Inhibitors in Subjects With Metastatic Prostate Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Metastatic Prostate Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "ARX517",
+        "Apalutamide",
+        "Abiraterone acetate",
+        "Prednisone"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04662580"
+    },
+    {
+      "nct_id": "NCT04325828",
+      "title": "An Open-label Phase 2 Study to Evaluate the Efficacy and Safety of Apalutamide in Combination With Gonadotropin-releasing Hormone (GnRH) Agonist in Subjects With Locally Advanced or Recurrent/Metastatic and Androgen Receptor (AR) Expressing Salivary Gland Carcinoma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Salivary Gland Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Pharmaceutical K.K.",
+      "collaborators": [],
+      "interventions": [
+        "Apalutamide",
+        "GnRH Agonist"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04325828"
+    },
+    {
+      "nct_id": "NCT06019676",
+      "title": "Impact of Apalutamide in Metastatic Hormone Sensitive Prostate Cancer Patients, a Multicentre Prospective Observational Study",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+      ],
+      "lead_sponsor": "Royal Marsden NHS Foundation Trust",
+      "collaborators": [
+        "Janssen, LP"
+      ],
+      "interventions": [],
+      "last_update": "2025-09-18",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06019676"
+    },
+    {
+      "nct_id": "NCT02721979",
+      "title": "A Phase 2 Study of Apalutamide in Active Surveillance Patients",
+      "overall_status": "TERMINATED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Prostate Adenocarcinoma"
+      ],
+      "lead_sponsor": "University of Washington",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC",
+        "National Cancer Institute (NCI)"
+      ],
+      "interventions": [
+        "Apalutamide",
+        "Laboratory Biomarker Analysis",
+        "Quality-of-Life Assessment",
+        "Questionnaire Administration"
+      ],
+      "last_update": "2023-02-09",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02721979"
+    },
+    {
+      "nct_id": "NCT04108208",
+      "title": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Phase IV Study of Apalutamide in Chinese Participants With Non-Metastatic Castration-Resistant Prostate Cancer (NM-CRPC)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Prostatic Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Apalutamide",
+        "Placebo",
+        "Androgen-deprivation Therapy (ADT)"
+      ],
+      "last_update": "2025-12-18",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04108208"
+    },
+    {
+      "nct_id": "NCT03365297",
+      "title": "Targeted Drug Intervention to Inhibit Cancer Progression in Men on Active Surveillance for Prostate Cancer. Therapeutics in Active Prostate Cancer Surveillance (TAPS01)",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Prostate Cancer"
+      ],
+      "lead_sponsor": "CCTU- Cancer Theme",
+      "collaborators": [
+        "Janssen-Cilag Ltd."
+      ],
+      "interventions": [
+        "Apalutamide"
+      ],
+      "last_update": "2019-11-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03365297"
+    }
+  ]
+}

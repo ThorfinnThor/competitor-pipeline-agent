@@ -1,0 +1,94 @@
+{
+  "query_term": "AKEEGA (niraparib/abiraterone)",
+  "total_count": 4,
+  "returned": 4,
+  "kept": 3,
+  "studies": [
+    {
+      "nct_id": "NCT06392841",
+      "title": "Hispanic/Latino and Non-Hispanic BlAck Patients Treated With niRaparib and Abiraterone Acetate Plus Prednisone for Metastatic hOrmone Sensitive Prostate Cancer With Deleterious Homologous recombinatioN Repair Alterations: a Phase II, Open Label studY",
+      "overall_status": "WITHDRAWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "Metastatic Hormone-sensitive Prostate Cancer (mHSPC)",
+        "Deleterious HRR Gene Mutation",
+        "BRCA1 Gene Mutation",
+        "BRCA2 Gene Mutation",
+        "BRIP1 Gene Mutation",
+        "CHEK2 Gene Mutation",
+        "FANCA Gene Mutation",
+        "PALB2 Gene Mutation",
+        "RAD51B Gene Mutation",
+        "RAD54L Gene Mutation"
+      ],
+      "lead_sponsor": "Qian Qin",
+      "collaborators": [
+        "UT Southwestern Comprehensive Cancer Center",
+        "Janssen, LP"
+      ],
+      "interventions": [
+        "Androgen Deprivation Therapy (ADT)",
+        "Niraparib/Abiraterone Acetate DAT",
+        "Abiraterone Acetate",
+        "Prednisone",
+        "Docetaxel"
+      ],
+      "last_update": "2025-10-20",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06392841"
+    },
+    {
+      "nct_id": "NCT06329830",
+      "title": "Safety and Anti-tumor Activity of Lutetium-177 (177Lu)-PSMA-617 Along With Niraparib and Abiraterone Acetate Plus Prednisone in Metastatic Castration Resistant Prostate Cancer - LUNAAR Study",
+      "overall_status": "WITHDRAWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "Metastatic Prostate Cancer",
+        "Castration-resistant Prostate Cancer",
+        "Metastatic Castration-resistant Prostate Cancer"
+      ],
+      "lead_sponsor": "Baptist Health South Florida",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC"
+      ],
+      "interventions": [
+        "177Lu-PSMA-617",
+        "Niraparib abiraterone acetate",
+        "Prednisone"
+      ],
+      "last_update": "2024-09-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06329830"
+    },
+    {
+      "nct_id": "NCT03903835",
+      "title": "ProBio: An Outcome-adaptive and Randomized Multi-arm Biomarker Driven Study in Patients With Metastatic Prostate Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Metastatic Castration-resistant Prostate Cancer (mCRPC)",
+        "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC)"
+      ],
+      "lead_sponsor": "Karolinska Institutet",
+      "collaborators": [
+        "The Swedish Research Council",
+        "Kom Op Tegen Kanker",
+        "Janssen Pharmaceutica N.V., Belgium",
+        "AstraZeneca",
+        "Cancerfonden"
+      ],
+      "interventions": [
+        "Enzalutamide Oral Capsule",
+        "Abiraterone Oral Tablet",
+        "Carboplatin",
+        "Cabazitaxel 60 mg Solution for Injection",
+        "Docetaxel Injectable Solution",
+        "Radium Chloride Ra-223",
+        "Niraparib plus Abiraterone acetate plus Prednisone",
+        "Capivasertib plus Docetaxel",
+        "Apalutamide",
+        "Darolutamide"
+      ],
+      "last_update": "2025-04-09",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03903835"
+    }
+  ]
+}

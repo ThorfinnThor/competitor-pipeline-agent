@@ -1,0 +1,24 @@
+{
+  "query_term": "CARVYKTI (Ciltacabtagene autoleucel)",
+  "total_count": 4,
+  "returned": 4,
+  "kept": 1,
+  "studies": [
+    {
+      "nct_id": "NCT05346835",
+      "title": "Intermediate-Size Population Expanded Access Program (EAP) for Ciltacabtagene Autoleucel (Cilta-cel) Out-of-Specification (OOS) in Patients With Multiple Myeloma",
+      "overall_status": "AVAILABLE",
+      "phase": null,
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Scientific Affairs, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Cilta-cel OOS Therapy"
+      ],
+      "last_update": "2025-08-27",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05346835"
+    }
+  ]
+}

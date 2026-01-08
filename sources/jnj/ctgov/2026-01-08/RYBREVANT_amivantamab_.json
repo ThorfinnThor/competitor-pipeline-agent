@@ -1,0 +1,66 @@
+{
+  "query_term": "RYBREVANT (amivantamab)",
+  "total_count": 5,
+  "returned": 5,
+  "kept": 3,
+  "studies": [
+    {
+      "nct_id": "NCT05379595",
+      "title": "A Phase 1b/2, Open-Label Study of Amivantamab Monotherapy and in Addition to Standard-of-Care Chemotherapy in Participants With Advanced or Metastatic Colorectal Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Advanced or Metastatic Colorectal Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Amivantamab IV",
+        "Fluorouracil",
+        "Leucovorin",
+        "Oxaliplatin",
+        "Irinotecan",
+        "Amivantamab"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05379595"
+    },
+    {
+      "nct_id": "NCT07276399",
+      "title": "A Phase 3, Randomized, Open-Label, Multicenter Study of Amivantamab in Addition to Carboplatin and Pembrolizumab, Compared to Standard of Care Platinum and Pembrolizumab and 5-FU, in Participants With Treatment-Naïve Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Squamous Cell Carcinoma of Head and Neck"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Amivantamab",
+        "Pembrolizumab",
+        "Carboplatin",
+        "5-Flurouracil",
+        "Cisplatin"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07276399"
+    },
+    {
+      "nct_id": "NCT07227025",
+      "title": "A Phase 1/2 Study Evaluating the Safety and Efficacy of Amivantamab and Olomorasib Combination Therapy in Metastatic Non-small Cell Lung Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Carcinoma, Non-Small-Cell Lung"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Amivantamab",
+        "Olomorasib"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07227025"
+    }
+  ]
+}

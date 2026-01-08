@@ -1,0 +1,93 @@
+{
+  "query_term": "IMBRUVICA (ibrutinib)",
+  "total_count": 441,
+  "returned": 20,
+  "kept": 4,
+  "studies": [
+    {
+      "nct_id": "NCT02315326",
+      "title": "A Phase I/II Trial of the Bruton's Tyrosine Kinase (BTK) Inhibitor, Ibrutinib, in Patients With Newly Diagnosed or Refractory/Recurrent Primary Central Nervous System Lymphoma (PCNSL) and Refractory/Recurrent Secondary Central Nervous System Lymphoma (SCNSL)",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Adult Patients With Newly Diagnosed or Relapsed or Refractory Primary Central Nervous System Lymphoma (PCNSL)",
+        "Or Relapsed or Refractory Secondary Central Nervous System Lymphoma (SCNSL)"
+      ],
+      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+      "collaborators": [
+        "Pharmacyclics LLC.",
+        "Janssen Biotech, Inc."
+      ],
+      "interventions": [
+        "Ibrutinib",
+        "HD- Methotrexate (MTX)",
+        "Rituximab + HD- Methotrexate (MTX)",
+        "procarbazine"
+      ],
+      "last_update": "2025-07-01",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02315326"
+    },
+    {
+      "nct_id": "NCT01236391",
+      "title": "Multicenter Phase 2 Study of Bruton's Tyrosine Kinase (Btk) Inhibitor, PCI-32765, in Relapsed or Refractory Mantle Cell Lymphoma",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Mantle Cell Lymphoma"
+      ],
+      "lead_sponsor": "Pharmacyclics LLC.",
+      "collaborators": [
+        "Janssen Pharmaceuticals"
+      ],
+      "interventions": [
+        "PCI-32765"
+      ],
+      "last_update": "2015-08-28",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT01236391"
+    },
+    {
+      "nct_id": "NCT04010968",
+      "title": "Evaluation of Risk-Adapted and MRD-Driven Strategy for Untreated Fit Patients With Intermediate Risk Chronic Lymphocytic Leukemia: a Randomized Phase II Trial Comparing FCR and a Chemo-free Combination of Venetoclax and Ibrutinib. A FILO Study",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Intermediate Risk Chronic Lymphocytic Leukemia",
+        "Fit Patients",
+        "Risk-Adapted and MRD-Driven Strategy"
+      ],
+      "lead_sponsor": "French Innovative Leukemia Organisation",
+      "collaborators": [
+        "AbbVie",
+        "Janssen-Cilag Ltd."
+      ],
+      "interventions": [
+        "venetoclax and ibrutinib (I+VEN)",
+        "FCR"
+      ],
+      "last_update": "2025-11-26",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04010968"
+    },
+    {
+      "nct_id": "NCT01820936",
+      "title": "Open-Label, Randomized, 4-Way Crossover Study to Determine the Effect of Food on the Pharmacokinetics of PCI-32765",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Healthy Volunteers"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [
+        "Pharmacyclics LLC."
+      ],
+      "interventions": [
+        "Sequence 1: PCI-32765",
+        "Sequence 2: PCI-32765",
+        "Sequence 3: PCI-32765",
+        "Sequence 4: PCI-32765",
+        "Sequence 5: PCI-32765"
+      ],
+      "last_update": "2014-07-15",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT01820936"
+    }
+  ]
+}
