@@ -643,9 +643,13 @@ def main() -> None:
     pdf_resp = http_get(source_url)
     pdf_resp.raise_for_status()
     pdf_bytes = pdf_resp.content
-    pdf_hash = sha256_bytes(pdf_bytes)
 
-    # Store the exact PDF used (audit trail)
+    # Ensure a persistent audit trail of the exact source PDF used
+    sources_dir = os.path.join("sources", "jnj")
+    ensure_dir(sources_dir)
+
+    pdf_hash = sha256_bytes(pdf_bytes)
+    
     source_pdf_path = os.path.join(sources_dir, f"{run_date}.pdf")
     with open(source_pdf_path, "wb") as f:
         f.write(pdf_bytes)
@@ -654,6 +658,10 @@ def main() -> None:
         os.path.join(raw_dir, f"{run_date}.source.txt"),
         f"Source URL: {source_url}\nStored PDF: {source_pdf_path}\nSHA256: {pdf_hash}\n",
     )
+
+   
+
+    
 
     # 2) Extract text + OCR fallback
     extracted_text = pdf_to_text(pdf_bytes)
