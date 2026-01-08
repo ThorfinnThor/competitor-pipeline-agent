@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: "0 7 1 * *"   # 07:00 UTC on the 1st of every month
 
+# Prevent overlapping runs that cause push conflicts
+concurrency:
+  group: pipeline-agent-main
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed for pull --rebase to work reliably
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,7 +31,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr
-    
 
       - name: Install dependencies
         run: |
@@ -41,10 +46,21 @@ jobs:
 
       - name: Commit outputs
         run: |
-          git config user.name "pipeline-bot"
+          set -e
+
           git config user.name "pipeline-bot"
           git config user.email "pipeline-bot@users.noreply.github.com"
+
           git add raw snapshots reports sources
-          git commit -m "Update pipeline snapshots and reports" || echo "No changes"
-          git push
-        fi
+          git status
+
+          # If nothing changed, exit cleanly
+          git diff --cached --quiet && echo "No changes" && exit 0
+
+          git commit -m "Update pipeline snapshots and reports"
+
+          # Sync with remote (handles cases where remote advanced)
+          git pull --rebase origin main
+
+          # Push (retry once if remote advanced again)
+          git push origin main || (sleep 5 && git pull --rebase origin main && git push origin main)
