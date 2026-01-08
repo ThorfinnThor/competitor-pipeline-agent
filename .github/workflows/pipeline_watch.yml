@@ -44,7 +44,7 @@ jobs:
           git config user.name "pipeline-bot"
           git config user.email "pipeline-bot@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
-            git add raw snapshots reports
+            git add raw snapshots reports sources
             git commit -m "Update pipeline snapshots and reports"
             git push
           else
