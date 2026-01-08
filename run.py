@@ -1586,6 +1586,9 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
 
     lines.append(f"# Competitive Pipeline Report — {name}\n")
 
+    # ------------------------------------------------------------------
+    # Run coverage & provenance
+    # ------------------------------------------------------------------
     lines.append("## Run coverage & provenance")
     lines.append(f"- Run date (UTC): {run_date}")
     lines.append(f"- Pipeline source URL: {source_url}")
@@ -1599,6 +1602,9 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
     lines.append(f"- Inventory export: `{programs_csv_path}`")
     lines.append(f"- Evidence pack: `{evidence_json_path}`\n")
 
+    # ------------------------------------------------------------------
+    # Executive summary
+    # ------------------------------------------------------------------
     lines.append("## Executive summary")
     lines.append(f"**{final_brief.get('headline','Pipeline monitoring update')}**\n")
     if final_brief.get("executive_summary"):
@@ -1606,13 +1612,19 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
     if final_brief.get("_deterministic"):
         lines.append("_Narrative generated via deterministic fallback (LLM not required)._ \n")
 
+    # ------------------------------------------------------------------
+    # Top changes (ranked)
+    # ------------------------------------------------------------------
     lines.append("## Top changes (ranked)")
     tc = final_brief.get("top_changes") or []
     if not tc:
         lines.append("_No ranked changes generated._\n")
     else:
         for c in tc:
-            lines.append(f"- **{c.get('change_type','')}** — {c.get('asset') or ''} — {c.get('indication') or ''} (conf: {float(c.get('confidence',0)):.2f})")
+            lines.append(
+                f"- **{c.get('change_type','')}** — {c.get('asset') or ''} — {c.get('indication') or ''} "
+                f"(conf: {float(c.get('confidence',0)):.2f})"
+            )
             lines.append(f"  - {c.get('why_it_matters','')}")
             ev = c.get("evidence") or []
             if ev:
@@ -1621,16 +1633,19 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
                     lines.append(f"    - {e}")
         lines.append("")
 
+    # ------------------------------------------------------------------
     # Change log
+    # ------------------------------------------------------------------
     lines.append("## Change log (previous vs current)")
+
     def sec(title: str, items: List[dict]):
         lines.append(f"### {title}")
         if not items:
             lines.append("_None detected._\n")
             return
         for it in items[:200]:
-            a = it.get("asset","")
-            ind = it.get("indication","")
+            a = it.get("asset", "")
+            ind = it.get("indication", "")
             ph = it.get("phase") or ""
             pg = it.get("source_page") or ""
             lines.append(f"- **{a}** — {ind} — {ph} (p.{pg})")
@@ -1645,62 +1660,124 @@ def render_markdown(company: dict, run_date: str, snapshot: dict, diff: dict, fi
         lines.append("_None detected._\n")
     else:
         for it in pcs[:200]:
-            lines.append(f"- **{it.get('asset')}** — {it.get('indication') or ''} — {it.get('from_phase')} → {it.get('to_phase')} (p.{it.get('source_page')})")
+            lines.append(
+                f"- **{it.get('asset')}** — {it.get('indication') or ''} — "
+                f"{it.get('from_phase')} → {it.get('to_phase')} (p.{it.get('source_page')})"
+            )
         lines.append("")
 
-    # CT.gov
+    # ------------------------------------------------------------------
+    # ClinicalTrials.gov
+    # ------------------------------------------------------------------
     lines.append("## ClinicalTrials.gov corroboration")
     if not ctgov_summary.get("enabled"):
         lines.append("_Disabled._\n")
     else:
         lines.append(f"- API base: {ctgov_summary.get('api_base')}")
-        lines.append(f"- Programs with matches: {ctgov_summary.get('programs_with_matches')}/{ctgov_summary.get('programs_total')}")
+        lines.append(
+            f"- Programs with matches: {ctgov_summary.get('programs_with_matches')}/{ctgov_summary.get('programs_total')}"
+        )
         lines.append(f"- Phase mismatches (pipeline vs registry): {ctgov_summary.get('phase_mismatches')}")
         lines.append(f"- Stored CT.gov evidence: `{ctgov_summary.get('sources_path')}`\n")
 
-    # EDGAR
+    # ------------------------------------------------------------------
+    # SEC EDGAR (IMPORTANT: indentation is now correct)
+    # ------------------------------------------------------------------
     lines.append("## SEC EDGAR signals")
     ed_sum = (edgar_pack or {}).get("summary") or {}
     if not ed_sum.get("enabled"):
         lines.append("_Disabled._\n")
     else:
         lines.append(f"- Filings since: {ed_sum.get('since_date')}")
-        lines.append(f"- Filings considered (new): {ed_sum.get('filings_considered')}")
+        lines.append(f"- New filings processed this run: {ed_sum.get('filings_considered')}")
         lines.append(f"- Filings with extracted events: {ed_sum.get('filings_with_events')}")
-        lines.append(f"- Stored EDGAR evidence: `{ed_sum.get('sources_path')}`\n")
+        lines.append(f"- Stored EDGAR evidence: `{ed_sum.get('sources_path')}`")
+        if ed_sum.get("processed_skipped") is not None:
+            lines.append(f"- Previously processed filings skipped: {ed_sum.get('processed_skipped')}")
+        lines.append("")
 
-    # Press
+        # Coverage list (recent filings), if you stored recent_filings.json
+        recent_items = []
+        recent_path = os.path.join(ed_sum.get("sources_path") or "", "recent_filings.json")
+        recent_obj = safe_json_load(recent_path) if (ed_sum.get("sources_path") and os.path.exists(recent_path)) else None
+        if isinstance(recent_obj, dict):
+            recent_items = recent_obj.get("items") or []
+
+        if recent_items:
+            lines.append("### Recent filings scanned (coverage)")
+            for f in recent_items[:8]:
+                status = "already processed" if f.get("already_processed") else "new"
+                url = f.get("url") or ""
+                lines.append(f"- {f.get('filing_date')} — {f.get('form')} — {status} — {url}")
+            lines.append("")
+        else:
+            lines.append("_No recent filings list stored for this run._\n")
+
+    # ------------------------------------------------------------------
+    # Press (this is what you are missing right now)
+    # ------------------------------------------------------------------
     lines.append("## IR press release signals")
     pr_sum = (press_pack or {}).get("summary") or {}
+    feed_items = (press_pack or {}).get("feed_items") or []
     if not pr_sum.get("enabled"):
         lines.append("_Disabled._\n")
     else:
+        # Support both old and new key names
+        releases_with_events = pr_sum.get("releases_with_extracted_events")
+        if releases_with_events is None:
+            releases_with_events = pr_sum.get("releases_with_events")
+
         lines.append(f"- Feed URL: {pr_sum.get('feed_url')}")
         lines.append(f"- Links scanned: {pr_sum.get('links_scanned')}")
         lines.append(f"- New releases processed: {pr_sum.get('new_releases_processed')}")
-        lines.append(f"- Releases with extracted events: {pr_sum.get('releases_with_events')}")
+        lines.append(f"- Releases with extracted events: {releases_with_events}")
+        if pr_sum.get("processed_skipped") is not None:
+            lines.append(f"- Previously processed releases skipped: {pr_sum.get('processed_skipped')}")
         lines.append(f"- Stored press evidence: `{pr_sum.get('sources_path')}`\n")
-        pe = (press_pack or {}).get("press_events") or []
-        for block in pe[:10]:
-            meta = block.get("press_release") or {}
-            events = block.get("events") or []
-            if not events:
-                continue
-            lines.append(f"### {meta.get('date') or ''} — {meta.get('title') or ''}")
-            lines.append(f"- URL: {meta.get('url')}")
-            for ev in events[:4]:
-                lines.append(f"- **{ev.get('event_type')}** (conf {float(ev.get('confidence',0)):.2f}): {ev.get('summary','')}")
-            lines.append("")
 
+        # Always show latest headlines if we have them
+        if feed_items:
+            lines.append("### Latest press releases (coverage)")
+            for it in feed_items[:10]:
+                status = "already processed" if it.get("already_processed") else "new"
+                lines.append(f"- {it.get('date') or ''} — {status} — {it.get('title') or ''}")
+                lines.append(f"  - {it.get('url')}")
+            lines.append("")
+        else:
+            lines.append("_No RSS/Atom headlines captured into the report object for this run._\n")
+
+        # Show extracted pipeline-relevant signals (low-noise)
+        pe = (press_pack or {}).get("press_events") or []
+        if pe:
+            lines.append("### Pipeline-relevant press signals (extracted)")
+            for block in pe[:10]:
+                meta = block.get("press_release") or {}
+                events = block.get("events") or []
+                if not events:
+                    continue
+                lines.append(f"#### {meta.get('date') or ''} — {meta.get('title') or ''}")
+                lines.append(f"- URL: {meta.get('url')}")
+                for ev in events[:4]:
+                    lines.append(f"- **{ev.get('event_type')}** (conf {float(ev.get('confidence',0)):.2f}): {ev.get('summary','')}")
+                lines.append("")
+        else:
+            lines.append("_No pipeline-relevant press signals extracted in this run._\n")
+
+    # ------------------------------------------------------------------
     # Inventory
+    # ------------------------------------------------------------------
     lines.append("## Pipeline inventory (full list)")
     lines.append("| Asset | Indication | Phase | Page | CT.gov phase | Flag |")
     lines.append("|---|---|---|---:|---|---|")
     for p in sorted(snapshot.get("programs") or [], key=lambda x: (x.get("phase") or "ZZZ", x.get("asset") or "")):
-        lines.append(f"| {p.get('asset','')} | {p.get('indication','') or ''} | {p.get('phase') or ''} | {p.get('source_page') or ''} | {p.get('_ctgov_best_phase') or ''} | {p.get('_ctgov_phase_flag') or ''} |")
+        lines.append(
+            f"| {p.get('asset','')} | {p.get('indication','') or ''} | {p.get('phase') or ''} | "
+            f"{p.get('source_page') or ''} | {p.get('_ctgov_best_phase') or ''} | {p.get('_ctgov_phase_flag') or ''} |"
+        )
     lines.append("")
 
     return "\n".join(lines)
+
 
 def build_pdf(pdf_path: str, company: dict, run_date: str, snapshot: dict, diff: dict, final_brief: dict,
               source_url: str, source_pdf_path: str, source_sha256: str,
