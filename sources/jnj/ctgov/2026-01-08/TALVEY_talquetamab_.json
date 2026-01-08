@@ -1,29 +1,13 @@
 {
-  "query_term": "TALVEY (talquetamab)",
-  "total_count": 5,
-  "returned": 5,
-  "kept": 4,
+  "asset": "TALVEY (talquetamab)",
+  "query_terms": [
+    "TALVEY (talquetamab)",
+    "talquetamab",
+    "TALVEY"
+  ],
+  "returned_unique": 22,
+  "kept": 10,
   "studies": [
-    {
-      "nct_id": "NCT05972135",
-      "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "lead_sponsor": "SCRI Development Innovations, LLC",
-      "collaborators": [
-        "Johnson & Johnson"
-      ],
-      "interventions": [
-        "Teclistamab",
-        "Talquetamab",
-        "Tocilizumab"
-      ],
-      "last_update": "2025-10-29",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
-    },
     {
       "nct_id": "NCT06285318",
       "title": "A Retrospective, Multicountry Study of Clinical Outcomes in Patients With Relapsed/Refractory Multiple Myeloma Treated With T-cell Redirectors Outside of Clinical Trials",
@@ -40,25 +24,6 @@
       ],
       "last_update": "2025-12-19",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06285318"
-    },
-    {
-      "nct_id": "NCT07029776",
-      "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
-      "overall_status": "NOT_YET_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Multiple Myeloma (MM)"
-      ],
-      "lead_sponsor": "University of Arkansas",
-      "collaborators": [
-        "Janssen Research & Development, LLC"
-      ],
-      "interventions": [
-        "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
-        "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
-      ],
-      "last_update": "2025-11-06",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
     },
     {
       "nct_id": "NCT06208150",
@@ -80,6 +45,153 @@
       ],
       "last_update": "2025-12-19",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
+    },
+    {
+      "nct_id": "NCT05050097",
+      "title": "A Multi-arm Phase 1b Study of Talquetamab With Other Anticancer Therapies in Participants With Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab",
+        "Carfilzomib",
+        "Daratumumab SC",
+        "Lenalidomide",
+        "Pomalidomide"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05050097"
+    },
+    {
+      "nct_id": "NCT04108195",
+      "title": "A Phase 1b Study of Subcutaneous Daratumumab Regimens in Combination With Bispecific T Cell Redirection Antibodies for the Treatment of Subjects With Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Daratumumab",
+        "Talquetamab",
+        "Teclistamab",
+        "Pomalidomide"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04108195"
+    },
+    {
+      "nct_id": "NCT05455320",
+      "title": "A Phase 3 Randomized Study Comparing Talquetamab SC in Combination With Daratumumab SC and Pomalidomide (Tal-DP) or Talquetamab SC in Combination With Daratumumab SC (Tal-D) Versus Daratumumab SC, Pomalidomide and Dexamethasone (DPd), in Participants With Relapsed or Refractory Multiple Myeloma Who Have Received at Least 1 Prior Line of Therapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Relapsed or Refractory Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab",
+        "Daratumumab",
+        "Pomalidomide",
+        "Dexamethasone"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05455320"
+    },
+    {
+      "nct_id": "NCT05503550",
+      "title": "Pre-Approval Access Single Patient Request Treatment for Talquetamab for Treating Physician Use in Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "NO_LONGER_AVAILABLE",
+      "phase": null,
+      "conditions": [
+        "Relapsed or Refractory Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab"
+      ],
+      "last_update": "2025-12-16",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05503550"
+    },
+    {
+      "nct_id": "NCT04586426",
+      "title": "A Phase 1b/2 Dose Escalation and Expansion Study of the Combination of the Bispecific T Cell Redirection Antibodies Talquetamab and Teclistamab in Participants With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab",
+        "Teclistamab"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04586426"
+    },
+    {
+      "nct_id": "NCT06500884",
+      "title": "A Phase 2, Open-label, Randomized Study to Evaluate Prophylactic Interventions on Talquetamab-related Oral Toxicity",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Relapse Multiple Myeloma",
+        "Refractory Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab",
+        "Prophylaxis A",
+        "Prophylaxis B",
+        "Prophylaxis C"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06500884"
+    },
+    {
+      "nct_id": "NCT03399799",
+      "title": "A Phase 1, First-in-Human, Open-Label, Dose Escalation Study of Talquetamab, a Humanized GPRC5D x CD3 Bispecific Antibody, in Subjects With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Hematological Malignancies"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Talquetamab"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03399799"
+    },
+    {
+      "nct_id": "NCT05972135",
+      "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "SCRI Development Innovations, LLC",
+      "collaborators": [
+        "Johnson & Johnson"
+      ],
+      "interventions": [
+        "Teclistamab",
+        "Talquetamab",
+        "Tocilizumab"
+      ],
+      "last_update": "2025-10-29",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
     }
   ]
 }

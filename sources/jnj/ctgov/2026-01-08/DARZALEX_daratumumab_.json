@@ -1,9 +1,36 @@
 {
-  "query_term": "DARZALEX (daratumumab)",
-  "total_count": 433,
-  "returned": 20,
-  "kept": 9,
+  "asset": "DARZALEX (daratumumab)",
+  "query_terms": [
+    "DARZALEX (daratumumab)",
+    "daratumumab",
+    "DARZALEX"
+  ],
+  "returned_unique": 20,
+  "kept": 10,
   "studies": [
+    {
+      "nct_id": "NCT03500445",
+      "title": "Open-label, Single-arm, Phase 2 Study of Initial Treatment With Daratumumab (Darzalex), Carfilzomib (Kyprolis), Lenalidomide (Revlimid) and Low Dose Dexamethasone (DKRd) in Newly Diagnosed, Multiple Myeloma Requiring Systemic Chemotherapy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Myeloma",
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "University of Chicago",
+      "collaborators": [
+        "Janssen Scientific Affairs, LLC",
+        "Amgen"
+      ],
+      "interventions": [
+        "Daratumumab",
+        "Carfilzomib",
+        "Lenalidomide",
+        "Dexamethasone"
+      ],
+      "last_update": "2025-10-03",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03500445"
+    },
     {
       "nct_id": "NCT03289299",
       "title": "Aggressive Smoldering Curative Approach Evaluating Novel Therapies (ASCENT): A Phase 2 Trial of Induction, Consolidation, and Maintenance in Subjects With High Risk Smoldering Multiple Myeloma (SMM)",
@@ -132,25 +159,6 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT05849610"
     },
     {
-      "nct_id": "NCT07149857",
-      "title": "A Phase 2 Multicohort Trial to Further Characterize the Efficacy and Safety of Ciltacabtagene Autoleucel",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Cilta-cel",
-        "Cyclophosphamide",
-        "Induction therapy",
-        "Fludarabine"
-      ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT07149857"
-    },
-    {
       "nct_id": "NCT03187262",
       "title": "A Phase 2 Study of Daratumumab in Patients With Relapsed or Refractory Waldenström Macroglobulinemia",
       "overall_status": "COMPLETED",
@@ -169,27 +177,45 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT03187262"
     },
     {
-      "nct_id": "NCT03500445",
-      "title": "Open-label, Single-arm, Phase 2 Study of Initial Treatment With Daratumumab (Darzalex), Carfilzomib (Kyprolis), Lenalidomide (Revlimid) and Low Dose Dexamethasone (DKRd) in Newly Diagnosed, Multiple Myeloma Requiring Systemic Chemotherapy",
+      "nct_id": "NCT03447808",
+      "title": "Daratumumab and Ibrutinib for Symptomatic, Treatment-Naive CLL: A Phase 1b Proof-of-Concept Study",
       "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": "Phase 2",
+      "phase": "Phase 1",
       "conditions": [
-        "Myeloma",
-        "Multiple Myeloma"
+        "Chronic Lymphocytic Leukemia"
       ],
-      "lead_sponsor": "University of Chicago",
-      "collaborators": [
-        "Janssen Scientific Affairs, LLC",
-        "Amgen"
-      ],
+      "lead_sponsor": "Jennifer Woyach",
+      "collaborators": [],
       "interventions": [
         "Daratumumab",
-        "Carfilzomib",
-        "Lenalidomide",
+        "Ibrutinib",
+        "Laboratory Biomarker Analysis",
+        "Pharmacological Study"
+      ],
+      "last_update": "2026-01-07",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03447808"
+    },
+    {
+      "nct_id": "NCT04910568",
+      "title": "An Open-Label, Multicenter, Phase Ib Trial Evaluating the Safety, Pharmacokinetics, and Activity of Cevostamab as Monotherapy and Cevostamab Plus Pomalidomide and Dexamethasone or Cevostamab Plus Daratumumab and Dexamethasone in Patients With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Genentech, Inc.",
+      "collaborators": [
+        "Hoffmann-La Roche"
+      ],
+      "interventions": [
+        "Cevostamab",
+        "Tocilizumab",
+        "Pomalidomide",
+        "Daratumumab",
         "Dexamethasone"
       ],
-      "last_update": "2025-10-03",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT03500445"
+      "last_update": "2025-12-24",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04910568"
     }
   ]
 }

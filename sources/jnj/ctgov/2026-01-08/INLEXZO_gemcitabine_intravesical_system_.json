@@ -1,7 +1,202 @@
 {
-  "query_term": "INLEXZO (gemcitabine intravesical system)",
-  "total_count": 0,
-  "returned": 0,
-  "kept": 0,
-  "studies": []
+  "asset": "INLEXZO (gemcitabine intravesical system)",
+  "query_terms": [
+    "INLEXZO (gemcitabine intravesical system)",
+    "gemcitabine intravesical system",
+    "INLEXZO"
+  ],
+  "returned_unique": 20,
+  "kept": 10,
+  "studies": [
+    {
+      "nct_id": "NCT04658862",
+      "title": "A Phase 3, Multi-center, Randomized Study Evaluating Efficacy of TAR-200 in Combination With Cetrelimab Versus Concurrent Chemoradiotherapy in Participants With Muscle-Invasive Urothelial Carcinoma (MIBC) of the Bladder Who Are Not Receiving Radical Cystectomy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Urinary Bladder Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Cetrelimab",
+        "TAR-200",
+        "Cisplatin",
+        "Gemcitabine",
+        "Conventional radiation therapy",
+        "Hypo-fractioned radiation therapy"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04658862"
+    },
+    {
+      "nct_id": "NCT06319820",
+      "title": "A Phase 3, Randomized Study Evaluating the Efficacy and Safety of TAR-210 Erdafitinib Intravesical Delivery System Versus Single Agent Intravesical Chemotherapy in Participants With Intermediate-risk Non-muscle Invasive Bladder Cancer (IR-NMIBC) and Susceptible FGFR Alterations",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Non-Muscle Invasive Bladder Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "TAR-210",
+        "Gemcitabine",
+        "MMC"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06319820"
+    },
+    {
+      "nct_id": "NCT04640623",
+      "title": "Phase 2b Clinical Study Evaluating Efficacy and Safety of TAR-200 in Combination With Cetrelimab, TAR-200 Alone, or Cetrelimab Alone in Participants With High-Risk Non-Muscle Invasive Bladder Cancer (NMIBC) Unresponsive to Intravesical Bacillus Calmette-Guérin (BCG) Who Are Ineligible for or Elected Not to Undergo Radical Cystectomy",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Urinary Bladder Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "TAR-200",
+        "Cetrelimab"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04640623"
+    },
+    {
+      "nct_id": "NCT06919965",
+      "title": "A Phase 3, Randomized, Open-label, Multicenter Study Evaluating the Efficacy and Safety of TAR-210 Erdafitinib Intravesical Delivery System Versus Investigator's Choice of Intravesical Chemotherapy in Participants With High-risk Non-muscle-invasive Bladder Cancer With Susceptible FGFR Alterations Who Had Received Intravesical Bacillus Calmette-Guérin (BCG)",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Non-Muscle Invasive Bladder Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "TAR-210",
+        "Mitomycin C",
+        "Gemcitabine"
+      ],
+      "last_update": "2025-12-19",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06919965"
+    },
+    {
+      "nct_id": "NCT03404791",
+      "title": "A Multicenter Study Evaluating Safety and Efficacy of TAR-200 in Subjects With Muscle-Invasive Urothelial Carcinoma of the Bladder Who Are Ineligible for or Refuse Cisplatin-based Chemotherapy and Who Are Unfit for Radical Cystectomy",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Urinary Bladder Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "TAR-200"
+      ],
+      "last_update": "2025-02-04",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03404791"
+    },
+    {
+      "nct_id": "NCT04172675",
+      "title": "A Randomized Phase 2 Study of Erdafitinib Versus Investigator Choice of Intravesical Chemotherapy in Subjects Who Received Bacillus Calmette-Guérin (BCG) and Recurred With High Risk Non-Muscle-Invasive Bladder Cancer (NMIBC) and FGFR Mutations or Fusions",
+      "overall_status": "COMPLETED",
+      "phase": "Phase 2",
+      "conditions": [
+        "Urinary Bladder Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Erdafitinib",
+        "Investigator Choice (Gemcitabine)",
+        "Investigator Choice (Mitomycin C)"
+      ],
+      "last_update": "2025-08-01",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04172675"
+    },
+    {
+      "nct_id": "NCT07000084",
+      "title": "GAIN-BCG: Gemcitabine Alternating With INtravesical BCG Randomized Against BCG Alone for Patients With Recurrent High Grade Non-Muscle Invasive Bladder Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Recurrent Non-Muscle Invasive Bladder Carcinoma",
+        "Stage 0a Bladder Cancer AJCC v8",
+        "Stage I Bladder Cancer AJCC v8"
+      ],
+      "lead_sponsor": "Alliance for Clinical Trials in Oncology",
+      "collaborators": [
+        "National Cancer Institute (NCI)"
+      ],
+      "interventions": [
+        "BCG Solution",
+        "Biopsy of Bladder",
+        "Cystoscopy",
+        "Computed Tomography",
+        "Magnetic Resonance Imaging",
+        "Biospecimen Collection",
+        "Transurethral Resection of Bladder Tumor",
+        "Gemcitabine"
+      ],
+      "last_update": "2026-01-07",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07000084"
+    },
+    {
+      "nct_id": "NCT07307456",
+      "title": "A Prospective, Open-label, Single-center Clinical Study Evaluating the Efficacy and Safety of Trastuzumab Combined With BCG Perfusion as an Adjuvant Treatment After TURBT in High-risk/Very High-risk Non-muscle-invasive Bladder Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Bladder Cancer"
+      ],
+      "lead_sponsor": "Changhai Hospital",
+      "collaborators": [],
+      "interventions": [
+        "Treatment with toripalimab combined with BCG perfusion following transurethral resection of bladder tumor (TURBT)"
+      ],
+      "last_update": "2025-12-29",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07307456"
+    },
+    {
+      "nct_id": "NCT05538663",
+      "title": "A Randomized Phase III Trial of Intravesical BCG veRsus Intravesical Docetaxel and GEmcitabine Treatment in BCG Naïve High Grade Non-Muscle Invasive Bladder Cancer (BRIDGE)",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Non-muscle-invasive Bladder Cancer"
+      ],
+      "lead_sponsor": "ECOG-ACRIN Cancer Research Group",
+      "collaborators": [
+        "National Cancer Institute (NCI)"
+      ],
+      "interventions": [
+        "Gemcitabine",
+        "Docetaxel",
+        "Bacillus Calmette Guerin"
+      ],
+      "last_update": "2025-12-30",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05538663"
+    },
+    {
+      "nct_id": "NCT06545955",
+      "title": "A Phase 3, Randomised, Multi-center, Open Label Trial to Evaluate the Safety and Efficacy of Intravesical Nadofaragene Firadenovec Alone or in Combination With Chemotherapy or Immunotherapy in Participants With High-grade Bacillus Calmette-Guerin Therapy (BCG) Unresponsive Non-muscle Invasive Bladder Cancer (NMIBC)",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Non-muscle Invasive Bladder Cancer With Carcinoma in Situ"
+      ],
+      "lead_sponsor": "Ferring Pharmaceuticals",
+      "collaborators": [],
+      "interventions": [
+        "Nadofaragene Firadenovec",
+        "Gemcitabine",
+        "Docetaxel",
+        "Pembrolizumab"
+      ],
+      "last_update": "2026-01-06",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06545955"
+    }
+  ]
 }

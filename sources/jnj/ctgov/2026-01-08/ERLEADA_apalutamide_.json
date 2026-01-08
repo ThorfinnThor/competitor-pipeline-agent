@@ -1,8 +1,12 @@
 {
-  "query_term": "ERLEADA (apalutamide)",
-  "total_count": 179,
-  "returned": 20,
-  "kept": 6,
+  "asset": "ERLEADA (apalutamide)",
+  "query_terms": [
+    "ERLEADA (apalutamide)",
+    "apalutamide",
+    "ERLEADA"
+  ],
+  "returned_unique": 20,
+  "kept": 10,
   "studies": [
     {
       "nct_id": "NCT04662580",
@@ -39,6 +43,24 @@
       ],
       "last_update": "2025-12-19",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT04325828"
+    },
+    {
+      "nct_id": "NCT04108208",
+      "title": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Phase IV Study of Apalutamide in Chinese Participants With Non-Metastatic Castration-Resistant Prostate Cancer (NM-CRPC)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Prostatic Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Apalutamide",
+        "Placebo",
+        "Androgen-deprivation Therapy (ADT)"
+      ],
+      "last_update": "2025-12-18",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04108208"
     },
     {
       "nct_id": "NCT06019676",
@@ -79,24 +101,6 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT02721979"
     },
     {
-      "nct_id": "NCT04108208",
-      "title": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Phase IV Study of Apalutamide in Chinese Participants With Non-Metastatic Castration-Resistant Prostate Cancer (NM-CRPC)",
-      "overall_status": "ACTIVE_NOT_RECRUITING",
-      "phase": null,
-      "conditions": [
-        "Prostatic Neoplasms"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Apalutamide",
-        "Placebo",
-        "Androgen-deprivation Therapy (ADT)"
-      ],
-      "last_update": "2025-12-18",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT04108208"
-    },
-    {
       "nct_id": "NCT03365297",
       "title": "Targeted Drug Intervention to Inhibit Cancer Progression in Men on Active Surveillance for Prostate Cancer. Therapeutics in Active Prostate Cancer Surveillance (TAPS01)",
       "overall_status": "COMPLETED",
@@ -113,6 +117,96 @@
       ],
       "last_update": "2019-11-19",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT03365297"
+    },
+    {
+      "nct_id": "NCT02257736",
+      "title": "A Phase 3 Randomized, Placebo-controlled Double-blind Study of JNJ-56021927 in Combination With Abiraterone Acetate and Prednisone Versus Abiraterone Acetate and Prednisone in Subjects With Chemotherapy-naive Metastatic Castration-resistant Prostate Cancer (mCRPC)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Prostatic Neoplasms"
+      ],
+      "lead_sponsor": "Aragon Pharmaceuticals, Inc.",
+      "collaborators": [],
+      "interventions": [
+        "Apalutamide",
+        "Abiraterone acetate",
+        "Prednisone",
+        "Placebo"
+      ],
+      "last_update": "2025-12-22",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT02257736"
+    },
+    {
+      "nct_id": "NCT03436654",
+      "title": "Multi-arm Multi-modality Therapy for Very High Risk Localized and Low Volume Metastatic Prostatic Adenocarcinoma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Prostate Cancer"
+      ],
+      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+      "collaborators": [
+        "Dana-Farber Cancer Institute"
+      ],
+      "interventions": [
+        "Apalutamide",
+        "Abiraterone Acetate",
+        "Prednisone",
+        "Radical Prostatectomy",
+        "Extended Pelvic lymphadenectomy",
+        "GnRH agonist/antagonist",
+        "Stereotactic Body Radiation Therapy"
+      ],
+      "last_update": "2025-11-28",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03436654"
+    },
+    {
+      "nct_id": "NCT04585932",
+      "title": "Phase 2 Response Evaluation of Finite Systemic Therapy With Advanced Androgen Signaling Inhibition and Radiation Therapy for Oligorecurrent Prostate Cancer (RESTART)",
+      "overall_status": "WITHDRAWN",
+      "phase": "Phase 2",
+      "conditions": [
+        "Biochemically Recurrent Prostate Carcinoma",
+        "Metastatic Prostate Carcinoma",
+        "Oligometastatic Prostate Carcinoma",
+        "Stage IV Prostate Cancer AJCC v8",
+        "Stage IVA Prostate Cancer AJCC v8",
+        "Stage IVB Prostate Cancer AJCC v8"
+      ],
+      "lead_sponsor": "M.D. Anderson Cancer Center",
+      "collaborators": [
+        "National Cancer Institute (NCI)"
+      ],
+      "interventions": [
+        "Apalutamide",
+        "Degarelix",
+        "Leuprolide Acetate",
+        "Quality-of-Life Assessment",
+        "Questionnaire Administration",
+        "Radiation Therapy"
+      ],
+      "last_update": "2021-01-20",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04585932"
+    },
+    {
+      "nct_id": "NCT04421222",
+      "title": "A Phase 1, Open-label Study to Evaluate the Safety, Pharmacokinetics, and Anti-Tumor Activity of Oral EPI-7386 in Patients with Castration-Resistant Prostate Cancer",
+      "overall_status": "TERMINATED",
+      "phase": "Phase 1",
+      "conditions": [
+        "Prostate Cancer"
+      ],
+      "lead_sponsor": "ESSA Pharmaceuticals",
+      "collaborators": [],
+      "interventions": [
+        "EPI-7386 (QD)",
+        "EPI-7386 (BID)",
+        "Abiraterone acetate",
+        "Apalutamide"
+      ],
+      "last_update": "2025-02-28",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04421222"
     }
   ]
 }

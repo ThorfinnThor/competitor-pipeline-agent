@@ -1,8 +1,10 @@
 {
-  "query_term": "Bleximenib",
-  "total_count": 5,
-  "returned": 5,
-  "kept": 4,
+  "asset": "Bleximenib",
+  "query_terms": [
+    "Bleximenib"
+  ],
+  "returned_unique": 5,
+  "kept": 5,
   "studies": [
     {
       "nct_id": "NCT06852222",
@@ -79,6 +81,27 @@
       ],
       "last_update": "2025-12-10",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT04811560"
+    },
+    {
+      "nct_id": "NCT07223814",
+      "title": "Bleximenib or Placebo in Combination With Standard Induction and Consolidation Therapy Followed by Maintenance for the Treatment of Patients With Newly Diagnosed KMT2A-rearranged or NPM1-mutant Acute Myeloid Leukemia Eligible for Intensive Chemotherapy: a Double-blind Phase 3 Study",
+      "overall_status": "NOT_YET_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Acute Myeloid Leukemia"
+      ],
+      "lead_sponsor": "Stichting Hemato-Oncologie voor Volwassenen Nederland",
+      "collaborators": [
+        "German-Austrian Acute Myeloid Leukemia Study Group"
+      ],
+      "interventions": [
+        "Bleximenib",
+        "Cytarabine",
+        "Daunorubicin or Idarubicin",
+        "Placebo"
+      ],
+      "last_update": "2025-11-03",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07223814"
     }
   ]
 }

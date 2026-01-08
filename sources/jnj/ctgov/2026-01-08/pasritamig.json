@@ -1,9 +1,28 @@
 {
-  "query_term": "pasritamig",
-  "total_count": 5,
-  "returned": 5,
+  "asset": "pasritamig",
+  "query_terms": [
+    "pasritamig"
+  ],
+  "returned_unique": 5,
   "kept": 5,
   "studies": [
+    {
+      "nct_id": "NCT07319871",
+      "title": "A Phase 1b Study of Pasritamig (JNJ-78278343), a T-cell Redirecting Agent Targeting Human Kallikrein 2 (KLK2), in Combination With JNJ-86974680, an A2a Receptor (A2aR) Antagonist, for Prostate Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Prostatic Neoplasms"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Pasritamig",
+        "JNJ-86974680"
+      ],
+      "last_update": "2026-01-06",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07319871"
+    },
     {
       "nct_id": "NCT07225946",
       "title": "A Phase 3 Randomized, Open-label Study of Pasritamig (JNJ-78278343), a T-cell-redirecting Agent Targeting Human Kallikrein 2, With Docetaxel Versus Docetaxel for Metastatic Castration-resistant Prostate Cancer",
@@ -21,23 +40,6 @@
       ],
       "last_update": "2025-12-19",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07225946"
-    },
-    {
-      "nct_id": "NCT06095089",
-      "title": "A Phase 1 Study of JNJ-87189401 (PSMA-CD28 Bispecific Antibody) Combined With JNJ-78278343 (KLK2-CD3 Bispecific Antibody) for Advanced Prostate Cancer",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 1",
-      "conditions": [
-        "Advanced Prostate Cancer"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "JNJ-78278343",
-        "JNJ-87189401"
-      ],
-      "last_update": "2025-12-05",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06095089"
     },
     {
       "nct_id": "NCT07164443",
@@ -58,6 +60,23 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07164443"
     },
     {
+      "nct_id": "NCT06095089",
+      "title": "A Phase 1 Study of JNJ-87189401 (PSMA-CD28 Bispecific Antibody) Combined With JNJ-78278343 (KLK2-CD3 Bispecific Antibody) for Advanced Prostate Cancer",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Advanced Prostate Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "JNJ-78278343",
+        "JNJ-87189401"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT06095089"
+    },
+    {
       "nct_id": "NCT07082920",
       "title": "A Phase 1b Study of JNJ-78278343, a T-cell Redirecting Agent Targeting Human Kallikrein 2 (KLK2), in Combination With JNJ-95298177, an Antibody Drug Conjugate Targeting Prostate Specific Membrane Antigen, for Prostate Cancer",
       "overall_status": "RECRUITING",
@@ -73,23 +92,6 @@
       ],
       "last_update": "2025-12-17",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07082920"
-    },
-    {
-      "nct_id": "NCT07319871",
-      "title": "A Phase 1b Study of Pasritamig (JNJ-78278343), a T-cell Redirecting Agent Targeting Human Kallikrein 2 (KLK2), in Combination With JNJ-86974680, an A2a Receptor (A2aR) Antagonist, for Prostate Cancer",
-      "overall_status": "RECRUITING",
-      "phase": "Phase 1",
-      "conditions": [
-        "Prostatic Neoplasms"
-      ],
-      "lead_sponsor": "Janssen Research & Development, LLC",
-      "collaborators": [],
-      "interventions": [
-        "Pasritamig",
-        "JNJ-86974680"
-      ],
-      "last_update": "2026-01-06",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT07319871"
     }
   ]
 }

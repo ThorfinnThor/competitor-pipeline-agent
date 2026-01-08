@@ -1,0 +1,14 @@
+{
+  "filing": {
+    "form": "8-K",
+    "filing_date": "2025-10-14",
+    "accession": "0000200406-25-000201",
+    "primary_document": "jnj-20251014.htm",
+    "primary_desc": "8-K",
+    "cik10": "0000200406",
+    "cik_int": "200406",
+    "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040625000201/jnj-20251014.htm"
+  },
+  "events": [],
+  "_llm_error": "All Gemini attempts failed. Last error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}"
+}

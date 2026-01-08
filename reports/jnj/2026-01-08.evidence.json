@@ -37,30 +37,344 @@
       "JNJ-4496",
       "JNJ-4680"
     ],
-    "queries_executed": 23,
+    "queries_executed": 51,
     "programs_total": 101,
-    "programs_with_matches": 25,
+    "programs_with_matches": 32,
     "phase_mismatches": 0,
+    "phase_mismatch_examples": [],
     "sources_path": "sources/jnj/ctgov/2026-01-08",
     "api_base": "https://clinicaltrials.gov/api/v2"
   },
   "sec_edgar": {
     "summary": {
       "enabled": true,
-      "since_date": "2026-01-08",
-      "filings_considered": 0,
+      "since_date": "2025-10-10",
+      "forms": [
+        "10-K",
+        "10-Q",
+        "8-K",
+        "6-K",
+        "20-F"
+      ],
+      "filings_considered": 2,
       "filings_with_events": 0,
-      "sources_path": "sources/jnj/sec/2026-01-08"
+      "sources_path": "sources/jnj/sec/2026-01-08",
+      "deduped_accessions_count": 0
     },
-    "filing_events": []
+    "filing_events": [
+      {
+        "filing": {
+          "form": "10-Q",
+          "filing_date": "2025-10-22",
+          "accession": "0000200406-25-000209",
+          "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040625000209/jnj-20250928.htm"
+        },
+        "events": []
+      },
+      {
+        "filing": {
+          "form": "8-K",
+          "filing_date": "2025-10-14",
+          "accession": "0000200406-25-000201",
+          "primary_document": "jnj-20251014.htm",
+          "primary_desc": "8-K",
+          "cik10": "0000200406",
+          "cik_int": "200406",
+          "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040625000201/jnj-20251014.htm"
+        },
+        "events": [],
+        "_llm_error": "All Gemini attempts failed. Last error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      }
+    ]
+  },
+  "press": {
+    "summary": {
+      "enabled": true,
+      "feed_url": "https://www.jnj.com/rss-feed/all",
+      "links_scanned": 10,
+      "new_releases_processed": 10,
+      "releases_with_events": 10,
+      "sources_path": "sources/jnj/press/2026-01-08"
+    },
+    "press_events": [
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-celebrates-innovation-in-cancer-research-with-2025-dr-paul-janssen-award",
+          "title": "Johnson & Johnson celebrates innovation in cancer research with 2025 Dr. Paul Janssen Award",
+          "date": "2026-01-08"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'ema'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 30.571167954s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '30s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-ottava-robotic-surgical-system-to-the-u-s-food-and-drug-administration",
+          "title": "Johnson & Johnson Submits OTTAVA™ Robotic Surgical System to the U.S. Food and Drug Administration",
+          "date": "2026-01-07"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'collaboration'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'fda'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 29.851873516s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-application-to-the-european-medicines-agency-for-tecvayli-teclistamab-in-combination-with-darzalex-daratumumab-subcutaneous-formulation-for-patients-with-relapsed-refractory-multiple-myeloma",
+          "title": "Johnson & Johnson submits application to the European Medicines Agency for TECVAYLI®▼ (teclistamab) in combination with DARZALEX® (daratumumab) subcutaneous formulation for patients with relapsed/refractory multiple myeloma",
+          "date": "2026-01-06"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'fda'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "phase_progression",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'phase 3'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 29.04267946s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-unveils-new-data-showing-nipocalimab-is-the-first-and-only-investigational-fcrn-blocker-with-potential-to-reduce-systemic-lupus-erythematosus-sle-activity-in-a-phase-2-study",
+          "title": "Johnson & Johnson unveils new data showing nipocalimab is the first and only investigational FcRn blocker with potential to reduce systemic lupus erythematosus (SLE) activity in a Phase 2 study",
+          "date": "2026-01-06"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'fda'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "phase_progression",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'phase 3'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 28.005947688s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-quarterly-dividend-for-first-quarter-2026",
+          "title": "Johnson & Johnson Announces Quarterly Dividend for First Quarter 2026",
+          "date": "2026-01-02"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 27.276120638s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '27s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-completes-acquisition-of-halda-therapeutics-and-its-novel-platform-to-revolutionize-cancer-treatment-and-enable-next-generation-oral-therapies",
+          "title": "Johnson & Johnson completes acquisition of Halda Therapeutics and its novel platform to revolutionize cancer treatment and enable next-generation oral therapies",
+          "date": "2025-12-29"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'approval'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 26.532702081s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '26s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-statement-on-the-phase-2b-duplex-ad-study",
+          "title": "Johnson & Johnson Statement on the Phase 2b DUPLEX-AD Study",
+          "date": "2025-12-26"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "discontinuation",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'termination'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'ema'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "phase_progression",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'phase 2'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 25.798412206s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '25s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/european-commission-approves-tremfya-guselkumab-for-the-treatment-of-children-with-plaque-psoriasis-marking-the-first-paediatric-indication-for-an-il-23-inhibitor",
+          "title": "European Commission approves TREMFYA® (guselkumab) for the treatment of children with plaque psoriasis, marking the first paediatric indication for an IL-23 inhibitor",
+          "date": "2025-12-22"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'ema'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "phase_progression",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'phase 3'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 25.023213961s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '25s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-backs-hrs-registry-to-advance-real-world-evidence-in-pfa",
+          "title": "Johnson & Johnson Backs HRS Registry to Advance Real-World Evidence in PFA",
+          "date": "2025-12-19"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'partnership'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'bla'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 24.306500314s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '24s'}]}}"
+      },
+      {
+        "press_release": {
+          "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-fda-approval-for-trufill-n-bca-liquid-embolic-system-for-the-treatment-of-symptomatic-chronic-subdural-hematoma",
+          "title": "Johnson & Johnson Receives FDA Approval for TRUFILL n‑BCA Liquid Embolic System for the Treatment of Symptomatic Chronic Subdural Hematoma",
+          "date": "2025-12-18"
+        },
+        "events": [
+          {
+            "event_type": "partnership",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'collaboration'. Review stored press release for details.",
+            "confidence": 0.25
+          },
+          {
+            "event_type": "regulatory",
+            "asset": null,
+            "indication": null,
+            "summary": "Keyword signal detected in press release text: 'fda'. Review stored press release for details.",
+            "confidence": 0.25
+          }
+        ],
+        "_llm_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 23.609260412s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '23s'}]}}"
+      }
+    ]
   },
   "final_brief": {
-    "headline": "No pipeline update detected",
-    "executive_summary": "The pipeline deck appears unchanged versus the last valid snapshot and no pipeline-relevant EDGAR signals were extracted in this run. See corroboration sections for ClinicalTrials.gov and filing coverage.",
+    "headline": "Pipeline monitoring update (LLM unavailable)",
+    "executive_summary": "The run completed, but narrative synthesis failed due to model quota/rate limits. Use the change log, inventory CSV, and evidence pack for decisions.",
     "top_changes": [],
     "watchlist": [
-      "Monitor ClinicalTrials.gov for phase/status updates on priority assets.",
-      "Monitor new SEC filings and earnings commentary for reprioritization or portfolio actions."
-    ]
+      "Re-run when quota is available to generate a ranked narrative summary.",
+      "Use evidence JSON + stored sources to validate any key asset changes."
+    ],
+    "_error": "All Gemini attempts failed. Last error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 23.198490203s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '23s'}]}}"
   }
 }

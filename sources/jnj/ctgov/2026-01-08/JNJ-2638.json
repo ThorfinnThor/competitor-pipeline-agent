@@ -1,7 +1,9 @@
 {
-  "query_term": "JNJ-2638",
-  "total_count": 0,
-  "returned": 0,
+  "asset": "JNJ-2638",
+  "query_terms": [
+    "JNJ-2638"
+  ],
+  "returned_unique": 0,
   "kept": 0,
   "studies": []
 }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>RSS feed all</title>
+    <link>https://www.jnj.com/rss-feed/all.rss</link>
+    <description>RSS feed all</description>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 08 Jan 2026 13:03:00 GMT</lastBuildDate>
+    <atom:link href="https://www.jnj.com/rss-feed/all.rss" type="application/rss+xml" rel="self" />
+    <item>
+      <title>Johnson &amp; Johnson celebrates innovation in cancer research with 2025 Dr. Paul Janssen Award</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-celebrates-innovation-in-cancer-research-with-2025-dr-paul-janssen-award</link>
+      <description>Tony Hunter, Ph.D., celebrated for pioneering discoveries that inspired the development of more than 80 cancer therapies that continue to transform patient lives</description>
+      <pubDate>Thu, 08 Jan 2026 13:03:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-celebrates-innovation-in-cancer-research-with-2025-dr-paul-janssen-award</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Submits OTTAVA™ Robotic Surgical System to the U.S. Food and Drug Administration</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-ottava-robotic-surgical-system-to-the-u-s-food-and-drug-administration</link>
+      <description>Data from Investigational Device Exemption (IDE) study in Roux-en-Y gastric bypass procedures used to support application for De Novo classification Second IDE approved for U.S. clinical trial for OTTAVA in inguinal hernia procedures</description>
+      <pubDate>Wed, 07 Jan 2026 13:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-ottava-robotic-surgical-system-to-the-u-s-food-and-drug-administration</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson submits application to the European Medicines Agency for TECVAYLI®▼ (teclistamab) in combination with DARZALEX® (daratumumab) subcutaneous formulation for patients with relapsed/refractory multiple myeloma</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-application-to-the-european-medicines-agency-for-tecvayli-teclistamab-in-combination-with-darzalex-daratumumab-subcutaneous-formulation-for-patients-with-relapsed-refractory-multiple-myeloma</link>
+      <description>Novel immunotherapy combination regimen brings together two complementary therapies to improve outcomes for people living with multiple myeloma as early as second-line1 The application is supported by data from the Phase 3 MajesTEC-3 study demonstrating a statistically significant improvement in progression-free and overall survival compared to standard treatment1</description>
+      <pubDate>Tue, 06 Jan 2026 13:06:10 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-submits-application-to-the-european-medicines-agency-for-tecvayli-teclistamab-in-combination-with-darzalex-daratumumab-subcutaneous-formulation-for-patients-with-relapsed-refractory-multiple-myeloma</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson unveils new data showing nipocalimab is the first and only investigational FcRn blocker with potential to reduce systemic lupus erythematosus (SLE) activity in a Phase 2 study</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-unveils-new-data-showing-nipocalimab-is-the-first-and-only-investigational-fcrn-blocker-with-potential-to-reduce-systemic-lupus-erythematosus-sle-activity-in-a-phase-2-study</link>
+      <description>The JASMINE study met the primary endpoint and key secondary and exploratory endpoints, including those indicating the potential of nipocalimab for steroid sparing SLE is one of the most prevalent and debilitating autoantibody diseases, causing one’s own immune system to mistakenly attack various tissues, which can lead to potentially life-threatening systemic organ damage Based on these positive topline results, the company plans to initiate a Phase 3 program for nipocalimab in SLE</description>
+      <pubDate>Tue, 06 Jan 2026 13:05:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-unveils-new-data-showing-nipocalimab-is-the-first-and-only-investigational-fcrn-blocker-with-potential-to-reduce-systemic-lupus-erythematosus-sle-activity-in-a-phase-2-study</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Announces Quarterly Dividend for First Quarter 2026</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-quarterly-dividend-for-first-quarter-2026</link>
+      <description />
+      <pubDate>Fri, 02 Jan 2026 13:00:08 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-quarterly-dividend-for-first-quarter-2026</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson completes acquisition of Halda Therapeutics and its novel platform to revolutionize cancer treatment and enable next-generation oral therapies</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-completes-acquisition-of-halda-therapeutics-and-its-novel-platform-to-revolutionize-cancer-treatment-and-enable-next-generation-oral-therapies</link>
+      <description>Acquisition brings an advanced, highly differentiated treatment for prostate cancer, strengthening Johnson &amp; Johnson’s longstanding commitment to innovation in the disease Lead asset demonstrates potential to overcome key resistance pathways in prostate cancer through targeted tumor cell eradication</description>
+      <pubDate>Mon, 29 Dec 2025 13:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-completes-acquisition-of-halda-therapeutics-and-its-novel-platform-to-revolutionize-cancer-treatment-and-enable-next-generation-oral-therapies</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Statement on the Phase 2b DUPLEX-AD Study</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-statement-on-the-phase-2b-duplex-ad-study</link>
+      <description />
+      <pubDate>Fri, 26 Dec 2025 13:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-statement-on-the-phase-2b-duplex-ad-study</guid>
+    </item>
+    <item>
+      <title>European Commission approves TREMFYA® (guselkumab) for the treatment of children with plaque psoriasis, marking the first paediatric indication for an IL-23 inhibitor</title>
+      <link>https://www.jnj.com/media-center/press-releases/european-commission-approves-tremfya-guselkumab-for-the-treatment-of-children-with-plaque-psoriasis-marking-the-first-paediatric-indication-for-an-il-23-inhibitor</link>
+      <description>Guselkumab has received approval for moderate to severe plaque psoriasis in children and adolescents from the age of 6 years who are candidates for systemic therapy.1 The decision is supported by the Phase 3 PROTOSTAR study, where guselkumab demonstrated higher levels of skin clearance vs. placebo at Week 16.2</description>
+      <pubDate>Mon, 22 Dec 2025 15:12:10 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/european-commission-approves-tremfya-guselkumab-for-the-treatment-of-children-with-plaque-psoriasis-marking-the-first-paediatric-indication-for-an-il-23-inhibitor</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Backs HRS Registry to Advance Real-World Evidence in PFA</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-backs-hrs-registry-to-advance-real-world-evidence-in-pfa</link>
+      <description>The initiative from the Heart Rhythm Society will generate impactful and high-quality clinical insights to advance innovation and help improve outcomes in atrial fibrillation care</description>
+      <pubDate>Fri, 19 Dec 2025 13:00:08 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-backs-hrs-registry-to-advance-real-world-evidence-in-pfa</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Receives FDA Approval for TRUFILL n‑BCA Liquid Embolic System for the Treatment of Symptomatic Chronic Subdural Hematoma</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-fda-approval-for-trufill-n-bca-liquid-embolic-system-for-the-treatment-of-symptomatic-chronic-subdural-hematoma</link>
+      <description>- TRUFILL n-BCA is now indicated for embolization of the middle meningeal artery (MMA) for the treatment of symptomatic subacute and Chronic Subdural Hematoma (cSDH) as an adjunct to surgery. - Approval builds on a trusted solution in neurovascular embolization for over 25 years</description>
+      <pubDate>Thu, 18 Dec 2025 13:00:02 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-fda-approval-for-trufill-n-bca-liquid-embolic-system-for-the-treatment-of-symptomatic-chronic-subdural-hematoma</guid>
+    </item>
+    <item>
+      <title>U.S. FDA Approval of RYBREVANT FASPRO™ (amivantamab and hyaluronidase-lpuj) Enables the Simplest, Shortest Administration Time for a First-Line Combination Regimen when combined with LAZCLUZE® (lazertinib)</title>
+      <link>https://www.jnj.com/media-center/press-releases/u-s-fda-approval-of-rybrevant-faspro-amivantamab-and-hyaluronidase-lpuj-enables-the-simplest-shortest-administration-time-for-a-first-line-combination-regimen-when-combined-with-lazcluze-lazertinib</link>
+      <description>RYBREVANT FASPRO™, the first and only subcutaneous therapy for patients with EGFR-mutated NSCLC, reduces administration time from hours to minutes and significantly reduces administration-related reactions1-5 Approval builds on previously reported Phase 3 MARIPOSA data showing unmatched overall survival benefit of this chemotherapy-free regimen, projected to exceed four years6</description>
+      <pubDate>Wed, 17 Dec 2025 23:16:31 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/u-s-fda-approval-of-rybrevant-faspro-amivantamab-and-hyaluronidase-lpuj-enables-the-simplest-shortest-administration-time-for-a-first-line-combination-regimen-when-combined-with-lazcluze-lazertinib</guid>
+    </item>
+    <item>
+      <title>TECVAYLI® plus DARZALEX FASPRO® combination selected for Commissioner’s National Priority Voucher Pilot program</title>
+      <link>https://www.jnj.com/media-center/press-releases/tecvayli-plus-darzalex-faspro-combination-selected-for-commissioners-national-priority-voucher-pilot-program</link>
+      <description />
+      <pubDate>Mon, 15 Dec 2025 22:38:33 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/tecvayli-plus-darzalex-faspro-combination-selected-for-commissioners-national-priority-voucher-pilot-program</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson to Host Investor Conference Call on Fourth-Quarter Results</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-to-host-investor-conference-call-on-fourth-quarter-results-2025</link>
+      <description />
+      <pubDate>Mon, 15 Dec 2025 21:27:40 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-to-host-investor-conference-call-on-fourth-quarter-results-2025</guid>
+    </item>
+    <item>
+      <title>U.S. FDA approves AKEEGA® as the first precision therapy for BRCA2-mutated metastatic castration-sensitive prostate cancer with 54% reduction in disease progression vs standard of care*</title>
+      <link>https://www.jnj.com/media-center/press-releases/u-s-fda-approves-akeega-as-the-first-precision-therapy-for-brca2-mutated-metastatic-castration-sensitive-prostate-cancer-with-54-reduction-in-disease-progression-vs-standard-of-care</link>
+      <description>Expanded indication for AKEEGA® (niraparib and abiraterone acetate dual-action tablet) plus prednisone marks the first FDA-approved precision medicine combination treatment for patients with BRCA2-mutated mCSPC</description>
+      <pubDate>Sat, 13 Dec 2025 01:50:46 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/u-s-fda-approves-akeega-as-the-first-precision-therapy-for-brca2-mutated-metastatic-castration-sensitive-prostate-cancer-with-54-reduction-in-disease-progression-vs-standard-of-care</guid>
+    </item>
+    <item>
+      <title>Unprecedented results from the Phase 3 MajesTEC-3 study support TECVAYLI® plus DARZALEX FASPRO® as a potential standard of care as early as second line for patients with relapsed/refractory multiple myeloma</title>
+      <link>https://www.jnj.com/media-center/press-releases/unprecedented-results-from-the-phase-3-majestec-3-study-support-tecvayli-plus-darzalex-faspro-as-a-potential-standard-of-care-as-early-as-second-line-for-patients-with-relapsed-refractory-multiple-myeloma</link>
+      <description>TECVAYLI® and DARZALEX FASPRO® combination led to a statistically significant progression-free survival and overall survival advantage compared to standard treatment after three years of follow-up Combination regimen granted Breakthrough Therapy Designation by U.S. FDA</description>
+      <pubDate>Tue, 09 Dec 2025 13:27:46 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/unprecedented-results-from-the-phase-3-majestec-3-study-support-tecvayli-plus-darzalex-faspro-as-a-potential-standard-of-care-as-early-as-second-line-for-patients-with-relapsed-refractory-multiple-myeloma</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson to Participate in the 44th Annual J.P. Morgan Healthcare Conference</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-to-participate-in-the-44th-annual-j-p-morgan-healthcare-conference</link>
+      <description />
+      <pubDate>Mon, 08 Dec 2025 21:22:19 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-to-participate-in-the-44th-annual-j-p-morgan-healthcare-conference</guid>
+    </item>
+    <item>
+      <title>RYBREVANT® (amivantamab-vmjw) plus LAZCLUZE® (lazertinib) delivers statistically significant and clinic ally meaningful improvement in overall survival benefit for Asian patients withEGFR-mutated non-small cell lung cancer in the Phase 3 MARIPOSA study</title>
+      <link>https://www.jnj.com/media-center/press-releases/rybrevant-amivantamab-vmjw-plus-lazcluze-lazertinib-delivers-statistically-significant-and-clinic-ally-meaningful-improvement-in-overall-survival-benefit-for-asian-patients-withegfr-mutated-non-small-cell-lung-cancer-in-the-phase-3-mariposa-study</link>
+      <description>First and only chemotherapy-free combination in the first-line setting to demonstrate an overall survival benefit versus osimertinib among Asian patients Median overall survival not yet reached and is projected to exceed four years, which would surpass osimertinib monotherapy by more than one year</description>
+      <pubDate>Mon, 08 Dec 2025 01:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/rybrevant-amivantamab-vmjw-plus-lazcluze-lazertinib-delivers-statistically-significant-and-clinic-ally-meaningful-improvement-in-overall-survival-benefit-for-asian-patients-withegfr-mutated-non-small-cell-lung-cancer-in-the-phase-3-mariposa-study</guid>
+    </item>
+    <item>
+      <title>Earlier use of CARVYKTI® demonstrated lasting treatment-free remissions at 2.5 years in patients with relapsed or refractory multiple myeloma</title>
+      <link>https://www.jnj.com/media-center/press-releases/earlier-use-of-carvykti-demonstrated-lasting-treatment-free-remissions-at-2-5-years-in-patients-with-relapsed-or-refractory-multiple-myeloma</link>
+      <description>Follow-up data from CARTITUDE-4 show at least 80 percent of as-treated standard-risk patients remained progression and treatment-free following a single infusion as early as second line Data suggest stronger immune fitness in earlier lines may be associated with longer progression free survival</description>
+      <pubDate>Sat, 06 Dec 2025 14:30:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/earlier-use-of-carvykti-demonstrated-lasting-treatment-free-remissions-at-2-5-years-in-patients-with-relapsed-or-refractory-multiple-myeloma</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson’s INLEXZO™ (gemcitabine intravesical system) delivers 74 percent disease-free survival at one year in BCG-unresponsive, high-risk, papillary-only NMIBC</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnsons-inlexzo-gemcitabine-intravesical-system-delivers-74-percent-disease-free-survival-at-one-year-in-bcg-unresponsive-high-risk-papillary-only-nmibc</link>
+      <description>New data from Cohort 4 of the SunRISe-1 study show more than 95 percent of patients remained progression free at one year, with more than 92 percent not undergoing bladder removal Patients with this type of bladder cancer have limited choices beyond radical cystectomy, highlighting the need for newer therapies for bladder preservation</description>
+      <pubDate>Fri, 05 Dec 2025 21:20:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnsons-inlexzo-gemcitabine-intravesical-system-delivers-74-percent-disease-free-survival-at-one-year-in-bcg-unresponsive-high-risk-papillary-only-nmibc</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Teams Up with Naomi Watts to Reveal Why an Eye Exam is the Ultimate Self-Care Move for Women Over 40</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-teams-up-with-naomi-watts-to-reveal-why-an-eye-exam-is-the-ultimate-self-care-move-for-women-over-40</link>
+      <description>New survey reveals Americans overlook eye health—despite its impact on confidence, independence and early disease detection.</description>
+      <pubDate>Wed, 03 Dec 2025 13:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-teams-up-with-naomi-watts-to-reveal-why-an-eye-exam-is-the-ultimate-self-care-move-for-women-over-40</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson receives European Commission approval of IMAAVY®▼ (nipocalimab), a new FcRn blocker offering sustained disease control in a broad population of people living with generalised myasthenia gravis (gMG)</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-european-commission-approval-of-imaavy-nipocalimab-a-new-fcrn-blocker-offering-sustained-disease-control-in-a-broad-population-of-people-living-with-generalised-myasthenia-gravis-gmg</link>
+      <description>Nipocalimab is the first FcRn blocker approved in both adult and adolescent gMG patients aged 12 and older who are anti-AChR or anti-MuSK antibody-positive In the pivotal Phase 3 Vivacity-MG3 and Phase 2/3 Vibrance-MG studies over 24 weeks, nipocalimab demonstrated rapid and substantial reduction in immunoglobulin G levels, one of the root causes of gMG gMG patients taking nipocalimab demonstrated up to 20 months of sustained disease control and symptom relief in the Vivacity-MG3 study and ongoing open-label extension</description>
+      <pubDate>Tue, 02 Dec 2025 19:29:35 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-receives-european-commission-approval-of-imaavy-nipocalimab-a-new-fcrn-blocker-offering-sustained-disease-control-in-a-broad-population-of-people-living-with-generalised-myasthenia-gravis-gmg</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson Statement on the Auτonomy Study</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-statement-on-the-auτonomy-study</link>
+      <description />
+      <pubDate>Fri, 21 Nov 2025 22:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-statement-on-the-auτonomy-study</guid>
+    </item>
+    <item>
+      <title>New long-term data reinforces TREMFYA® (guselkumab) as the only IL-23 inhibitor proven to substantially inhibit structural joint damage in active psoriatic arthritis</title>
+      <link>https://www.jnj.com/media-center/press-releases/new-long-term-data-reinforces-tremfya-guselkumab-as-the-only-il-23-inhibitor-proven-to-substantially-inhibit-structural-joint-damage-in-active-psoriatic-arthritis</link>
+      <description>First-line treatment with TREMFYA® shows significant inhibition of radiographic progression at Week 24, which was sustained through Week 48, preserving joint health with a well-established safety profile More than half of TREMFYA®-treated patients across both dose groups achieved a 50% improvement in signs and symptoms of psoriatic arthritis by Week 48 in the Phase 3b APEX study</description>
+      <pubDate>Mon, 17 Nov 2025 13:05:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/new-long-term-data-reinforces-tremfya-guselkumab-as-the-only-il-23-inhibitor-proven-to-substantially-inhibit-structural-joint-damage-in-active-psoriatic-arthritis</guid>
+    </item>
+    <item>
+      <title>Johnson &amp; Johnson set to revolutionize the treatment of cancer with the acquisition of Halda Therapeutics</title>
+      <link>https://www.jnj.com/media-center/press-releases/johnson-johnson-set-to-revolutionize-the-treatment-of-cancer-with-the-acquisition-of-halda-therapeutics</link>
+      <description>Acquisition provides highly differentiated clinical-stage treatment for prostate cancer, building on Johnson &amp; Johnson’s nearly two decades of innovation in the disease area Lead asset shows potential to overcome common types of resistance to treatment in prostate cancer with a precision tumor cell-killing approach Includes novel technology platform capable of developing the next generation of highly targeted oral treatments for multiple solid tumors, including breast and lung cancers</description>
+      <pubDate>Mon, 17 Nov 2025 13:00:00 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/johnson-johnson-set-to-revolutionize-the-treatment-of-cancer-with-the-acquisition-of-halda-therapeutics</guid>
+    </item>
+    <item>
+      <title>DARZALEX FASPRO® is the first and only treatment approved by the U.S. FDA for patients with high-risk smoldering multiple myeloma</title>
+      <link>https://www.jnj.com/media-center/press-releases/darzalex-faspro-is-the-first-and-only-treatment-approved-by-the-u-s-fda-for-patients-with-high-risk-smoldering-multiple-myeloma</link>
+      <description>Phase 3 AQUILA study showed DARZALEX FASPRO® significantly reduced the risk of progression to active multiple myeloma or death by 51 percent compared to active monitoring Landmark approval supports earlier intervention and disease interception of multiple myeloma for the first time</description>
+      <pubDate>Thu, 06 Nov 2025 22:43:33 GMT</pubDate>
+      <guid>https://www.jnj.com/media-center/press-releases/darzalex-faspro-is-the-first-and-only-treatment-approved-by-the-u-s-fda-for-patients-with-high-risk-smoldering-multiple-myeloma</guid>
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,11 @@
 {
-  "query_term": "JNJ-0631 (ARX305)",
-  "total_count": 0,
-  "returned": 0,
+  "asset": "JNJ-0631 (ARX305)",
+  "query_terms": [
+    "JNJ-0631 (ARX305)",
+    "ARX305",
+    "JNJ-0631"
+  ],
+  "returned_unique": 0,
   "kept": 0,
   "studies": []
 }

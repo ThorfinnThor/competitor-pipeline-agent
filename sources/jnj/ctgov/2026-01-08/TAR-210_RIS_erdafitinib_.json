@@ -1,7 +1,33 @@
 {
-  "query_term": "TAR-210 (RIS/erdafitinib)",
-  "total_count": 0,
-  "returned": 0,
-  "kept": 0,
-  "studies": []
+  "asset": "TAR-210 (RIS/erdafitinib)",
+  "query_terms": [
+    "TAR-210 (RIS/erdafitinib)",
+    "RIS/erdafitinib",
+    "TAR-210 (RIS",
+    "erdafitinib)"
+  ],
+  "returned_unique": 1,
+  "kept": 1,
+  "studies": [
+    {
+      "nct_id": "NCT03390504",
+      "title": "A Phase 3 Study of Erdafitinib Compared With Vinflunine or Docetaxel or Pembrolizumab in Subjects With Advanced Urothelial Cancer and Selected FGFR Gene Aberrations",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 3",
+      "conditions": [
+        "Urothelial Cancer"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Erdafitinib",
+        "Vinflunine",
+        "Docetaxel",
+        "Pembrolizumab",
+        "Fibroblast Growth Factor Receptor inhibitor Clinical Trial Assay (FGFRi CTA)"
+      ],
+      "last_update": "2025-12-22",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT03390504"
+    }
+  ]
 }

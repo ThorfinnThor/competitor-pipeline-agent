@@ -1,28 +1,31 @@
 {
-  "query_term": "TECVAYLI (teclistamab)",
-  "total_count": 11,
-  "returned": 11,
-  "kept": 7,
+  "asset": "TECVAYLI (teclistamab)",
+  "query_terms": [
+    "TECVAYLI (teclistamab)",
+    "teclistamab",
+    "TECVAYLI"
+  ],
+  "returned_unique": 27,
+  "kept": 10,
   "studies": [
     {
-      "nct_id": "NCT05972135",
-      "title": "Outpatient Administration of Teclistamab or Talquetamab for Multiple Myeloma",
+      "nct_id": "NCT05243797",
+      "title": "Phase 3 Study of Teclistamab in Combination With Lenalidomide and Teclistamab Alone Versus Lenalidomide Alone in Participants With Newly Diagnosed Multiple Myeloma as Maintenance Therapy Following Autologous Stem Cell Transplantation - MajesTEC-4",
       "overall_status": "RECRUITING",
-      "phase": "Phase 2",
+      "phase": "Phase 3",
       "conditions": [
         "Multiple Myeloma"
       ],
-      "lead_sponsor": "SCRI Development Innovations, LLC",
+      "lead_sponsor": "European Myeloma Network B.V.",
       "collaborators": [
-        "Johnson & Johnson"
+        "Janssen Pharmaceutica"
       ],
       "interventions": [
         "Teclistamab",
-        "Talquetamab",
-        "Tocilizumab"
+        "Lenalidomide"
       ],
-      "last_update": "2025-10-29",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT05972135"
+      "last_update": "2025-12-30",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT05243797"
     },
     {
       "nct_id": "NCT06285318",
@@ -63,25 +66,6 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06251076"
     },
     {
-      "nct_id": "NCT07029776",
-      "title": "A Phase 2 Study Exploring the Use of Bispecific Antibodies to Improve Progression Free Survival in Patients With High-Risk Newly Diagnosed Multiple Myeloma (MMulti-Immune HR)",
-      "overall_status": "NOT_YET_RECRUITING",
-      "phase": "Phase 2",
-      "conditions": [
-        "Multiple Myeloma (MM)"
-      ],
-      "lead_sponsor": "University of Arkansas",
-      "collaborators": [
-        "Janssen Research & Development, LLC"
-      ],
-      "interventions": [
-        "teclistamab+daratumumab followed by talquetamab+daratumumab followed by duration treatment with daratumumab and lenalidomide extended/maintenance",
-        "melphalan (MEL)-based hematopietic stem cell transplantation (HSCT) followed by drug therapy"
-      ],
-      "last_update": "2025-11-06",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT07029776"
-    },
-    {
       "nct_id": "NCT06208150",
       "title": "A Phase 3 Randomized Study Comparing Talquetamab in Combination With Pomalidomide (Tal-P), Talquetamab in Combination With Teclistamab (Tal-Tec), and Investigator's Choice of Either Elotuzumab, Pomalidomide, and Dexamethasone (EPd) or Pomalidomide, Bortezomib, and Dexamethasone (PVd) in Participants With Relapsed or Refractory Myeloma Who Have Received 1 to 4 Prior Lines of Therapy Including an Anti-CD38 Antibody and Lenalidomide",
       "overall_status": "RECRUITING",
@@ -103,25 +87,6 @@
       "ctgov_url": "https://clinicaltrials.gov/study/NCT06208150"
     },
     {
-      "nct_id": "NCT06477783",
-      "title": "Prospective Observational Study on the Clinical Efficacy of Teclistamab in Patients With Relapsed and Refractory Multiple Myeloma in Belgium",
-      "overall_status": "RECRUITING",
-      "phase": null,
-      "conditions": [
-        "Multiple Myeloma",
-        "Hematologic Diseases"
-      ],
-      "lead_sponsor": "Universitaire Ziekenhuizen KU Leuven",
-      "collaborators": [
-        "Janssen Pharmaceutica"
-      ],
-      "interventions": [
-        "Teclistamab"
-      ],
-      "last_update": "2025-03-12",
-      "ctgov_url": "https://clinicaltrials.gov/study/NCT06477783"
-    },
-    {
       "nct_id": "NCT07110844",
       "title": "A Phase 2 Clinical Trial of Teclistamab and Daratumumab in Previously Untreated AL Amyloidosis",
       "overall_status": "RECRUITING",
@@ -139,6 +104,93 @@
       ],
       "last_update": "2025-11-19",
       "ctgov_url": "https://clinicaltrials.gov/study/NCT07110844"
+    },
+    {
+      "nct_id": "NCT04696809",
+      "title": "A Phase 1/2 Study of JNJ-64007957, a Humanized BCMA * CD3 Bispecific Antibody in Japanese Patients With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Hematologic Malignancies"
+      ],
+      "lead_sponsor": "Janssen Pharmaceutical K.K.",
+      "collaborators": [],
+      "interventions": [
+        "Teclistamab"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04696809"
+    },
+    {
+      "nct_id": "NCT04557098",
+      "title": "A Phase 1/2, First-in-Human, Open-Label, Dose Escalation Study of Teclistamab, a Humanized BCMA x CD3 Bispecific Antibody, in Subjects With Relapsed or Refractory Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 2",
+      "conditions": [
+        "Hematological Malignancies"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Teclistamab"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04557098"
+    },
+    {
+      "nct_id": "NCT07105059",
+      "title": "Teclistamab and Mezigdomide for Relapsed/Refractory Multiple Myeloma",
+      "overall_status": "RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+      "collaborators": [
+        "Bristol-Myers Squibb",
+        "Johnson & Johnson"
+      ],
+      "interventions": [
+        "Teclistamab",
+        "Mezigdomide"
+      ],
+      "last_update": "2025-11-28",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07105059"
+    },
+    {
+      "nct_id": "NCT07030517",
+      "title": "An Open Label, Multicenter, Phase IV Study of Teclistamab to Evaluate Its Safety in Indian Participants With Relapsed and Refractory Multiple Myeloma Who Have Previously Received at Least 3 Prior Lines of Therapy Including an Immunomodulatory Agent, a Proteasome Inhibitor and an Anti-CD38 Antibody and Have Demonstrated Disease Progression on the Last Therapy",
+      "overall_status": "RECRUITING",
+      "phase": null,
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Johnson & Johnson Private Limited",
+      "collaborators": [],
+      "interventions": [
+        "Teclistamab"
+      ],
+      "last_update": "2025-12-24",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT07030517"
+    },
+    {
+      "nct_id": "NCT04108195",
+      "title": "A Phase 1b Study of Subcutaneous Daratumumab Regimens in Combination With Bispecific T Cell Redirection Antibodies for the Treatment of Subjects With Multiple Myeloma",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "phase": "Phase 1",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "lead_sponsor": "Janssen Research & Development, LLC",
+      "collaborators": [],
+      "interventions": [
+        "Daratumumab",
+        "Talquetamab",
+        "Teclistamab",
+        "Pomalidomide"
+      ],
+      "last_update": "2025-12-05",
+      "ctgov_url": "https://clinicaltrials.gov/study/NCT04108195"
     }
   ]
 }

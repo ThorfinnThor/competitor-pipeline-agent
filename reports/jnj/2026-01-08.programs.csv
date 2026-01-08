@@ -4,32 +4,32 @@ DARZALEX (daratumumab),Smoldering Multiple Myeloma,,AQUILA,Genmab A/S,,,Phase 2,
 DARZALEX (daratumumab),Frontline multiple myeloma transplant ineligible,,CEPHEUS,Genmab A/S,,,Phase 2,ok
 IMBRUVICA (ibrutinib),Frontline Chronic Lymphocytic Leukemia (I + V fixed duration),,GLOW,"Pharmacyclics, LLC, an AbbVie company",,,Phase 2,ok
 IMBRUVICA (ibrutinib),Frontline Mantle Cell Lymphoma,,Triangle,"Pharmacyclics, LLC, an AbbVie company",,,Phase 2,ok
-INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer,,SunRISe-1,,,,,none
+INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer,,SunRISe-1,,,,Phase 3,ok
 RYBREVANT (amivantamab),Frontline Non Small Cell Lung Cancer in combination with chemotherapy,,PAPILLON,,,,Phase 3,ok
 RYBREVANT (amivantamab),,,PALOMA-3,,Subcutaneous,,Phase 3,ok
 Bleximenib,"Newly Diagnosed AML, chemo ineligible in combination with Venetoclax and Azacitidine",,cAMeLot-2,,,,Phase 3,ok
-CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma TNI,,CARTITUDE-5,Legend Biotech,,,,ok
-CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma Transplant Eligible vs ASCT,,CARTITUDE-6,Legend Biotech,,,,ok
-ERLEADA (apalutamide),Localized Prostate Cancer,,ATLAS,Regents of California and Memorial Sload Kettering,,,Phase 2,ok
-ERLEADA (apalutamide),High Risk Prostate Cancer,,PROTEUS,Regents of California and Memorial Sload Kettering,,,Phase 2,ok
-INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer BCG-naïve High Risk,,SunRISe-3,,,,,none
-INLEXZO (gemcitabine intravesical system),High Risk Non Muscle Invasive Bladder Cancer BGC Experienced,,SunRISe-5,,,,,none
-JNJ-1900 (NBTXR3),Head and Neck Cancer,,,Nanobiotix,,,,none
+CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma TNI,,CARTITUDE-5,Legend Biotech,,,Phase 3,ok
+CARVYKTI (Ciltacabtagene autoleucel),Frontline Multiple Myeloma Transplant Eligible vs ASCT,,CARTITUDE-6,Legend Biotech,,,Phase 3,ok
+ERLEADA (apalutamide),Localized Prostate Cancer,,ATLAS,Regents of California and Memorial Sload Kettering,,,Phase 3,ok
+ERLEADA (apalutamide),High Risk Prostate Cancer,,PROTEUS,Regents of California and Memorial Sload Kettering,,,Phase 3,ok
+INLEXZO (gemcitabine intravesical system),Non Muscle Invasive Bladder Cancer BCG-naïve High Risk,,SunRISe-3,,,,Phase 3,ok
+INLEXZO (gemcitabine intravesical system),High Risk Non Muscle Invasive Bladder Cancer BGC Experienced,,SunRISe-5,,,,Phase 3,ok
+JNJ-1900 (NBTXR3),Head and Neck Cancer,,,Nanobiotix,,,Phase 3,ok
 pasritamig,Prostate Cancer,,,,,,Phase 3,ok
 RYBREVANT (amivantamab),Colorectal Cancer,,ORIGAMI-2,,,,Phase 3,ok
 RYBREVANT (amivantamab),Colorectal Cancer 2L,,ORIGAMI-3,,,,Phase 3,ok
 TALVEY + TECVAYLI,Relapsed Refractory Multiple Myeloma CD38 exposed,,MonumenTAL-6,,,,Phase 3,ok
 TALVEY (talquetamab),Relapsed Refractory Multiple Myeloma CD38 exposed,,MonumenTAL-6,,,,Phase 3,ok
 TALVEY (talquetamab),Relapsed Refractory Multiple Myeloma A-CD38 Naïve,,MonumenTAL-3,,,,Phase 3,ok
-TAR-210 (RIS/erdafitinib),Intravesical Delivery System for Localized Bladder Cancer,,MoonRISe-1,,,,,none
+TAR-210 (RIS/erdafitinib),Intravesical Delivery System for Localized Bladder Cancer,,MoonRISe-1,,,,Phase 3,ok
 TECVAYLI (teclistamab),Multiple Myeloma 1-3PLs,,MajesTEC-3,,,,Phase 3,ok
 TECVAYLI (teclistamab),TE NDMM maintenance,,MajesTEC-4,,,,Phase 3,ok
 TECVAYLI (teclistamab),TIE NDMM in combination with DR,,MajesTEC-7,,,,Phase 3,ok
 TALVEY + TECVAYLI,TIE NDMM in combination with DR,,MajesTEC-7,,,,Phase 3,ok
 TECVAYLI (teclistamab),Relapsed Refractory Multiple Myeloma CD38 exposed,,MajesTEC-9,,,,Phase 3,ok
 Bleximenib,Relapsed Refractory Acute Myeloid Leukemia,,ALE1001,,,,Phase 3,ok
-JNJ-0683 (ARX788),Breast Cancer,,,,,,,none
-JNJ-1900 (NBTXR3),Lung Cancer,,,Nanobiotix,,,,none
+JNJ-0683 (ARX788),Breast Cancer,,,,,,Phase 3,ok
+JNJ-1900 (NBTXR3),Lung Cancer,,,Nanobiotix,,,Phase 3,ok
 TALVEY + TECVAYLI,Relapsed Refractory Multiple Myeloma,,RedirecTT-1,,,,Phase 3,ok
 JNJ-0387,Solid Tumors,,,,,,,none
 JNJ-0631 (ARX305),Renal Cancer,,,,,,,none
