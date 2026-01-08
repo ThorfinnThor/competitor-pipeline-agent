@@ -180,7 +180,28 @@ def _try_parse_json(text: str) -> Optional[dict]:
             return None
     return None
 
-def llm_extract_pipeline(company_name: str, source_text: str, model: str) -> dict:
+def gemini_generate_with_fallback(models: List[str], prompt: str, max_attempts_per_model: int = 2) -> str:
+    """
+    Try multiple models in order. For each model, try a couple times.
+    If a model is overloaded (503) or transient error occurs, fall back.
+    """
+    client = gemini_client()
+    last_err = None
+
+    for m in models:
+        for attempt in range(1, max_attempts_per_model + 1):
+            try:
+                resp = client.models.generate_content(model=m, contents=prompt)
+                return (resp.text or "").strip()
+            except Exception as e:
+                last_err = e
+                # Small backoff; keep it short for CI
+                time.sleep(2 * attempt)
+
+    raise RuntimeError(f"All Gemini model attempts failed. Last error: {last_err}")
+
+
+def llm_extract_pipeline(company_name: str, source_text: str, models: List[str]) -> dict:
     prompt = f"""
 You are a pharmaceutical competitive intelligence analyst.
 
@@ -214,22 +235,29 @@ RAW TEXT:
 {source_text}
 """.strip()
 
-    client = gemini_client()
-    resp = client.models.generate_content(model=model, contents=prompt)
-    out = (resp.text or "").strip()
+    try:
+        out = gemini_generate_with_fallback(models=models, prompt=prompt, max_attempts_per_model=2)
+        parsed = _try_parse_json(out)
+        if parsed is not None:
+            parsed.setdefault("as_of_date", None)
+            parsed.setdefault("programs", [])
+            return parsed
 
-    parsed = _try_parse_json(out)
-    if parsed is not None:
-        parsed.setdefault("as_of_date", None)
-        parsed.setdefault("programs", [])
-        return parsed
+        return {
+            "as_of_date": None,
+            "programs": [],
+            "_llm_parse_error": "Could not parse JSON from model output",
+            "_llm_raw_output": out[:8000],
+        }
 
-    return {
-        "as_of_date": None,
-        "programs": [],
-        "_llm_parse_error": "Could not parse JSON from model output",
-        "_llm_raw_output": out[:8000],
-    }
+    except Exception as e:
+        # CRITICAL: do not crash the workflow; degrade gracefully
+        return {
+            "as_of_date": None,
+            "programs": [],
+            "_llm_error": str(e),
+        }
+
 
 def llm_write_executive_brief(company_name: str, changes: dict, model: str) -> dict:
     """
