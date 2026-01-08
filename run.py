@@ -26,6 +26,10 @@ from xml.sax.saxutils import escape as xml_escape
 # =============================
 # Utilities
 # =============================
+DATE_JSON_RE = re.compile(r"^\d{4}-\d{2}-\d{2}\.json$")
+DATE_PDF_RE = re.compile(r"^\d{4}-\d{2}-\d{2}\.pdf$")
+
+
 def utc_today_str() -> str:
     return datetime.datetime.utcnow().date().isoformat()
 
@@ -37,6 +41,14 @@ def ensure_dir(path: str) -> None:
 
 def sha256_bytes(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
+
+
+def sha256_file(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def norm_ws(s: str) -> str:
@@ -76,6 +88,92 @@ def http_head_ok(url: str, timeout: int = 30) -> bool:
 
 def deep_copy(obj: Any) -> Any:
     return json.loads(json.dumps(obj))
+
+
+def program_count(snapshot: Optional[dict]) -> int:
+    if not snapshot:
+        return 0
+    return len(snapshot.get("programs", []) or [])
+
+
+def find_latest_valid_snapshot(snap_dir: str) -> Tuple[Optional[dict], Optional[str]]:
+    """
+    Recover the most recent dated snapshot that has programs > 0.
+    This protects you if latest.json was overwritten by an empty/bad run.
+    """
+    if not os.path.isdir(snap_dir):
+        return None, None
+
+    dated = [fn for fn in os.listdir(snap_dir) if DATE_JSON_RE.match(fn)]
+    dated.sort(reverse=True)  # newest first
+
+    for fn in dated:
+        path = os.path.join(snap_dir, fn)
+        s = safe_json_load(path)
+        if program_count(s) > 0:
+            return s, path
+
+    return None, None
+
+
+def get_snapshot_date_from_path(path: str) -> Optional[str]:
+    base = os.path.basename(path)
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})\.(json|pdf)$", base)
+    return m.group(1) if m else None
+
+
+def best_prev_pdf_hash(prev_snapshot: Optional[dict], sources_dir: str, snap_dir: str) -> Optional[str]:
+    """
+    Determine the previous PDF SHA256 robustly:
+    1) prev_snapshot._meta.source_sha256
+    2) hash prev_snapshot._meta.stored_pdf_path if exists
+    3) hash sources_dir/<snapshot_date>.pdf if exists
+    4) hash most recent sources_dir/*.pdf (older than today) if exists
+    """
+    if not prev_snapshot:
+        return None
+
+    meta = prev_snapshot.get("_meta", {}) or {}
+    if meta.get("source_sha256"):
+        return meta["source_sha256"]
+
+    stored = meta.get("stored_pdf_path")
+    if stored and os.path.exists(stored):
+        try:
+            return sha256_file(stored)
+        except Exception:
+            pass
+
+    # Try date-based source PDF
+    # Prefer the date from meta/run_date_utc if available
+    date_guess = meta.get("run_date_utc")
+    if not date_guess:
+        # try find most recent valid dated snapshot file and use that date
+        _, path = find_latest_valid_snapshot(snap_dir)
+        if path:
+            date_guess = get_snapshot_date_from_path(path)
+
+    if date_guess:
+        candidate = os.path.join(sources_dir, f"{date_guess}.pdf")
+        if os.path.exists(candidate):
+            try:
+                return sha256_file(candidate)
+            except Exception:
+                pass
+
+    # Last resort: newest pdf in sources_dir
+    if os.path.isdir(sources_dir):
+        pdfs = [fn for fn in os.listdir(sources_dir) if DATE_PDF_RE.match(fn)]
+        pdfs.sort(reverse=True)
+        for fn in pdfs:
+            p = os.path.join(sources_dir, fn)
+            if os.path.exists(p):
+                try:
+                    return sha256_file(p)
+                except Exception:
+                    continue
+
+    return None
 
 
 # =============================
@@ -162,7 +260,6 @@ def ocr_pdf_pages(pdf_bytes: bytes, max_pages: int = 12, dpi: int = 220) -> str:
 
 
 def maybe_add_ocr(pdf_bytes: bytes, text_extracted: str, ocr_max_pages: int, ocr_dpi: int) -> str:
-    # If text extraction is sparse, add OCR
     if len((text_extracted or "").strip()) >= 5000:
         return text_extracted
     return (text_extracted or "") + "\n\n" + ocr_pdf_pages(pdf_bytes, max_pages=ocr_max_pages, dpi=ocr_dpi)
@@ -196,9 +293,6 @@ def _try_parse_json(text: str) -> Optional[dict]:
 
 
 def gemini_generate_with_fallback(models: List[str], prompt: str, max_attempts_per_model: int = 2) -> str:
-    """
-    Tries models in order. Retries transient failures briefly.
-    """
     client = gemini_client()
     last_err: Optional[Exception] = None
 
@@ -240,7 +334,6 @@ RULES:
 - Return ONLY valid JSON (no markdown).
 - Do not invent assets. Only extract what is present.
 - Phase should be one of: "Preclinical", "Phase 1", "Phase 1/2", "Phase 2", "Phase 2/3", "Phase 3", "Registration", "Approved".
-- If unsure about a field, set it to null.
 - If no pipeline content is found, return {{"as_of_date": null, "programs": []}}.
 
 RAW TEXT:
@@ -261,7 +354,6 @@ RAW TEXT:
             "_llm_raw_output": out[:8000],
         }
     except Exception as e:
-        # Do not crash the run; degrade gracefully
         return {
             "as_of_date": None,
             "programs": [],
@@ -270,9 +362,6 @@ RAW TEXT:
 
 
 def llm_write_executive_brief(company_name: str, diff_obj: dict, models: List[str]) -> dict:
-    """
-    Optional narrative. If LLM fails, return a deterministic minimal brief.
-    """
     payload = {"company": company_name, "diff": diff_obj}
     prompt = f"""
 You are a senior pharma competitive intelligence analyst.
@@ -289,9 +378,9 @@ Return ONLY valid JSON:
 
 Rules:
 - executive_summary: 4–7 sentences.
-- why_it_matters: 3–6 bullets, decision-oriented.
+- why_it_matters: 3–6 bullets.
 - watchlist: 3–6 bullets.
-- If there are no changes, explain that the document may be unchanged or this run is a baseline.
+- If there are no changes, explain that the source document may be unchanged.
 
 INPUT_JSON:
 {json.dumps(payload, ensure_ascii=False)}
@@ -306,18 +395,17 @@ INPUT_JSON:
             parsed.setdefault("why_it_matters", [])
             parsed.setdefault("watchlist", [])
             return parsed
-        raise RuntimeError("Narrative JSON parse failed.")
     except Exception:
-        # deterministic fallback
-        return {
-            "headline": "Pipeline monitoring update",
-            "executive_summary": (
-                "This monitoring run completed successfully. "
-                "Narrative generation was unavailable; please refer to the change log and provenance section."
-            ),
-            "why_it_matters": [],
-            "watchlist": [],
-        }
+        pass
+
+    return {
+        "headline": "Pipeline monitoring update",
+        "executive_summary": (
+            "This monitoring run completed. Narrative generation was unavailable; refer to the change log and provenance."
+        ),
+        "why_it_matters": [],
+        "watchlist": [],
+    }
 
 
 # =============================
@@ -373,7 +461,6 @@ def phase_counts(programs: List[dict]) -> Dict[str, int]:
 
 
 def confidence_score(d: dict) -> float:
-    # Conservative until you add trial-registry corroboration
     score = 0.35
     if d.get("phase_changes"):
         score += 0.30
@@ -394,6 +481,7 @@ def render_markdown_report(
     snapshot: dict,
     prev_exists: bool,
     reused_snapshot: bool,
+    recovered_baseline: bool,
     d: dict,
     brief: dict,
 ) -> str:
@@ -416,8 +504,10 @@ def render_markdown_report(
     lines.append(f"- Extracted 'as of' date: {as_of}")
     lines.append(f"- Programs extracted: {len(programs)}")
     lines.append(f"- Extraction OK: {extraction_ok}")
+    if recovered_baseline:
+        lines.append("- Note: latest.json was invalid; recovered the most recent valid dated snapshot as baseline.")
     if reused_snapshot:
-        lines.append(f"- Note: PDF unchanged; reused prior snapshot to avoid extraction variability.")
+        lines.append("- Note: PDF unchanged; reused prior snapshot to avoid extraction variability.")
     lines.append("")
 
     lines.append(f"**{brief.get('headline', '')}**")
@@ -506,6 +596,7 @@ def build_pdf_report(
     snapshot: dict,
     prev_exists: bool,
     reused_snapshot: bool,
+    recovered_baseline: bool,
     d: dict,
     brief: dict,
 ) -> None:
@@ -542,6 +633,7 @@ def build_pdf_report(
         ["Extracted 'as of' date", snapshot.get("as_of_date") or "Unknown"],
         ["Programs extracted", str(len(snapshot.get("programs", []) or []))],
         ["Extraction OK", str(extraction_ok)],
+        ["Recovered baseline", "Yes" if recovered_baseline else "No"],
         ["Doc unchanged / reused", "Yes" if reused_snapshot else "No"],
     ]
     tbl = Table(prov_rows, colWidths=[1.6 * inch, 4.9 * inch])
@@ -560,8 +652,10 @@ def build_pdf_report(
     story.append(P(brief.get("headline", "Pipeline monitoring update"), "Bodyx"))
     story.append(P(brief.get("executive_summary", ""), "Bodyx"))
 
+    if recovered_baseline:
+        story.append(P("Note: latest.json baseline was invalid; recovered most recent valid dated snapshot.", "Bodyx"))
     if reused_snapshot:
-        story.append(P("Note: Source PDF is unchanged; the prior extracted snapshot was reused to avoid extraction variability.", "Bodyx"))
+        story.append(P("Note: Source PDF is unchanged; reused the prior snapshot to avoid extraction variability.", "Bodyx"))
 
     if brief.get("why_it_matters"):
         story.append(P("Why it matters", "H2x"))
@@ -573,7 +667,6 @@ def build_pdf_report(
         bullets = "<br/>".join([f"• {xml_escape(x)}" for x in brief["watchlist"]])
         story.append(Paragraph(bullets, styles["Bodyx"]))
 
-    # Snapshot counts
     story.append(P("Pipeline snapshot (counts by phase)", "H2x"))
     counts = phase_counts(snapshot.get("programs", []) or [])
     if counts:
@@ -590,7 +683,6 @@ def build_pdf_report(
         story.append(P("No programs extracted in this run.", "Bodyx"))
     story.append(Spacer(1, 12))
 
-    # Change log
     story.append(P("Change log (previous vs current)", "H2x"))
     story.append(P(f"Confidence score (0–1): {confidence_score(d):.2f}", "Bodyx"))
 
@@ -604,7 +696,7 @@ def build_pdf_report(
                 story.append(Spacer(1, 6))
                 return
 
-            items = items[:60]  # keep PDF readable
+            items = items[:60]
             if mode == "phase":
                 rows = [["Asset", "Indication", "Phase change"]]
                 for it in items:
@@ -649,16 +741,19 @@ def main() -> None:
     with open("config.yml", "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
 
-    # Models config: prefer llm_models list, fallback to llm_model
     llm_models = cfg.get("llm_models") or [cfg.get("llm_model", "gemini-2.5-flash")]
 
-    company = cfg.get("company") or {}
+    company = cfg.get("company")
+    if not company:
+        comps = cfg.get("companies") or []
+        if not comps:
+            raise RuntimeError("config.yml must contain either 'company' or non-empty 'companies'.")
+        company = comps[0]
+
     company_name = company.get("name", "Johnson & Johnson")
     slug = company.get("slug", "jnj")
-
     run_date = utc_today_str()
 
-    # Dirs
     sources_dir = os.path.join("sources", slug)
     raw_dir = os.path.join("raw", slug)
     snap_dir = os.path.join("snapshots", slug)
@@ -666,32 +761,39 @@ def main() -> None:
     for d in [sources_dir, raw_dir, snap_dir, rep_dir]:
         ensure_dir(d)
 
-    # Load previous baseline
     prev_path = os.path.join(snap_dir, "latest.json")
     prev_snapshot = safe_json_load(prev_path)
-    prev_exists = prev_snapshot is not None
-    reused_snapshot = False
+    recovered_baseline = False
 
-    # Discover source URL
-    source_type = company.get("source_type", "jnj_q4cdn_auto")
+    # Recover baseline if latest.json is missing/empty
+    if program_count(prev_snapshot) == 0:
+        recovered, recovered_path = find_latest_valid_snapshot(snap_dir)
+        if recovered:
+            prev_snapshot = recovered
+            recovered_baseline = True
+
+    prev_exists = prev_snapshot is not None and program_count(prev_snapshot) > 0
+
+    # Resolve source URL
+    source_type = company.get("source_type") or company.get("type") or "jnj_q4cdn_auto"
     if source_type == "jnj_q4cdn_auto":
         source_url = discover_latest_jnj_pipeline_pdf(
             q4cdn_base=company["q4cdn_base"],
             filename_prefix=company.get("filename_prefix", "JNJ-Pipeline"),
             lookback_quarters=int(company.get("lookback_quarters", 10)),
         )
-    elif source_type == "direct_pdf":
+    elif source_type in ("direct_pdf", "direct"):
         source_url = company["pdf_url"]
     else:
-        raise RuntimeError("Unsupported source_type for this J&J-only run.py. Use jnj_q4cdn_auto or direct_pdf.")
+        raise RuntimeError("Unsupported source_type. Use jnj_q4cdn_auto or direct_pdf.")
 
-    # Download PDF
+    # Download current PDF
     pdf_resp = http_get(source_url)
     pdf_resp.raise_for_status()
     pdf_bytes = pdf_resp.content
     pdf_hash = sha256_bytes(pdf_bytes)
 
-    # Store exact PDF used (audit trail)
+    # Store current PDF (audit trail)
     source_pdf_path = os.path.join(sources_dir, f"{run_date}.pdf")
     with open(source_pdf_path, "wb") as f:
         f.write(pdf_bytes)
@@ -701,43 +803,41 @@ def main() -> None:
         f"Source URL: {source_url}\nStored PDF: {source_pdf_path}\nSHA256: {pdf_hash}\n",
     )
 
-    # Reuse snapshot if document unchanged and previous snapshot is valid
-    if prev_snapshot:
-        prev_meta = prev_snapshot.get("_meta", {}) or {}
-        prev_hash = prev_meta.get("source_sha256")
-        prev_count = len(prev_snapshot.get("programs", []) or [])
+    # Determine previous PDF hash robustly (from meta or from sources folder)
+    prev_pdf_hash = best_prev_pdf_hash(prev_snapshot, sources_dir=sources_dir, snap_dir=snap_dir)
 
-        if prev_hash == pdf_hash and prev_count > 0:
-            reused_snapshot = True
-            snapshot = deep_copy(prev_snapshot)
-            snapshot.setdefault("_meta", {})
-            snapshot["_meta"].update({
-                "run_date_utc": run_date,
-                "source_url": source_url,
-                "stored_pdf_path": source_pdf_path,
-                "source_sha256": pdf_hash,
-                "doc_unchanged": True,
-                "doc_unchanged_note": "Source PDF SHA256 unchanged; reused prior snapshot to avoid extraction variability.",
-                "extraction_ok": True,
-            })
+    reused_snapshot = False
 
-            d = {"added": [], "removed": [], "phase_changes": []}
-            brief = {
-                "headline": "No pipeline update detected",
-                "executive_summary": (
-                    "The source pipeline PDF is unchanged since the last run (same SHA256). "
-                    "This report reuses the prior extracted snapshot to avoid false differences caused by OCR/LLM variability."
-                ),
-                "why_it_matters": [],
-                "watchlist": [],
-            }
+    # If document unchanged and we have a valid previous snapshot, reuse it
+    if prev_exists and prev_pdf_hash and prev_pdf_hash == pdf_hash:
+        reused_snapshot = True
+        snapshot = deep_copy(prev_snapshot)
+        snapshot.setdefault("_meta", {})
+        snapshot["_meta"].update({
+            "run_date_utc": run_date,
+            "source_url": source_url,
+            "stored_pdf_path": source_pdf_path,
+            "source_sha256": pdf_hash,
+            "doc_unchanged": True,
+            "doc_unchanged_note": "Source PDF SHA256 unchanged; reused prior snapshot to avoid extraction variability.",
+            "extraction_ok": True,
+        })
+        d = {"added": [], "removed": [], "phase_changes": []}
+        brief = {
+            "headline": "No pipeline update detected",
+            "executive_summary": (
+                "The source pipeline PDF is unchanged since the last valid snapshot (same SHA256). "
+                "This report reuses the prior extracted snapshot to avoid false differences caused by OCR/LLM variability."
+            ),
+            "why_it_matters": [],
+            "watchlist": [],
+        }
+        safe_text_dump(
+            os.path.join(raw_dir, f"{run_date}.extracted_text_preview.txt"),
+            "Reused previous snapshot (PDF unchanged). No new extraction performed.\n",
+        )
 
-            safe_text_dump(
-                os.path.join(raw_dir, f"{run_date}.extracted_text_preview.txt"),
-                "Reused previous snapshot (PDF unchanged). No new extraction performed.\n",
-            )
-
-    # If not reused, perform extraction
+    # Otherwise, attempt extraction
     if not reused_snapshot:
         extracted_text = pdf_to_text(pdf_bytes)
         combined_text = maybe_add_ocr(
@@ -759,25 +859,29 @@ def main() -> None:
             "doc_unchanged": False,
         })
 
-        # Determine extraction health
-        program_count = len(snapshot.get("programs", []) or [])
-        snapshot["_meta"]["extraction_ok"] = program_count > 0
-        if program_count == 0:
+        # Quality gate
+        pc = program_count(snapshot)
+        snapshot["_meta"]["extraction_ok"] = pc > 0
+        if pc == 0:
             snapshot["_meta"]["extraction_note"] = "0 programs extracted (likely OCR/LLM issue). Baseline not overwritten."
 
-        # Diff and narrative
+            # If doc is unchanged but we couldn't detect it (e.g., no prev hash), still try to reuse valid baseline
+            if prev_exists:
+                snapshot["_meta"]["fallback_reused_note"] = "Extraction failed; baseline exists. Compare stored PDFs manually."
+
         d = diff_programs(prev_snapshot or {}, snapshot)
-        if not prev_exists:
+
+        if not prev_exists and pc > 0:
             brief = {
                 "headline": "Baseline pipeline snapshot created",
                 "executive_summary": (
-                    "This is the first successful snapshot in this repository context. "
+                    "This is the first valid snapshot in this repository context. "
                     "Future runs will compare new source documents against this baseline to detect pipeline changes."
                 ),
                 "why_it_matters": [],
                 "watchlist": [],
             }
-        elif program_count == 0:
+        elif pc == 0:
             brief = {
                 "headline": "Extraction issue detected",
                 "executive_summary": (
@@ -802,7 +906,7 @@ def main() -> None:
         if ok:
             safe_json_dump(prev_path, snapshot)
 
-    # Reports
+    # Write reports
     md_path = os.path.join(rep_dir, f"{run_date}.md")
     pdf_report_path = os.path.join(rep_dir, f"{run_date}.pdf")
     changes_json_path = os.path.join(rep_dir, f"{run_date}.changes.json")
@@ -816,6 +920,7 @@ def main() -> None:
         snapshot=snapshot,
         prev_exists=prev_exists,
         reused_snapshot=reused_snapshot,
+        recovered_baseline=recovered_baseline,
         d=d,
         brief=brief,
     )
@@ -831,6 +936,7 @@ def main() -> None:
         snapshot=snapshot,
         prev_exists=prev_exists,
         reused_snapshot=reused_snapshot,
+        recovered_baseline=recovered_baseline,
         d=d,
         brief=brief,
     )
@@ -840,6 +946,7 @@ def main() -> None:
         "diff": d,
         "brief": brief,
         "reused_snapshot": reused_snapshot,
+        "recovered_baseline": recovered_baseline,
     })
 
     print("Done.")
