@@ -44,7 +44,7 @@ jobs:
         run: |
           python run.py
 
-           - name: Commit outputs
+      - name: Commit outputs
         run: |
           git config user.name "pipeline-bot"
           git config user.email "pipeline-bot@users.noreply.github.com"
