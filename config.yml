@@ -1,19 +1,16 @@
-llm_models:
-  - "gemini-2.5-flash"
-  - "gemini-2.5-pro"
-  - "gemini-1.5-flash"
-  - "gemini-1.5-pro"
-
 company:
-  name: "Johnson & Johnson"
-  slug: "jnj"
-
-  # Auto-discover the newest pipeline PDF from J&J’s Q4 CDN pattern
-  source_type: "jnj_q4cdn_auto"
-  q4cdn_base: "https://s203.q4cdn.com/636242992/files/doc_financials"
-  filename_prefix: "JNJ-Pipeline"
+  name: Johnson & Johnson
+  slug: jnj
+  source_type: jnj_q4cdn_auto
+  q4cdn_base: https://s203.q4cdn.com/636242992/files/doc_financials
+  filename_prefix: JNJ-Pipeline
   lookback_quarters: 10
 
-  # OCR settings (pipeline PDFs are often image/table heavy)
-  ocr_max_pages: 12
-  ocr_dpi: 220
+  # NEW: vision extraction for color/visual phases
+  use_vision: true
+  vision_max_pages: 8
+  vision_dpi: 170
+
+llm_models:
+  - gemini-2.5-flash
+  - gemini-2.5-pro
